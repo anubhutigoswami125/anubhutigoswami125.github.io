@@ -1,407 +1,714 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#e775b9">
-<title>ANUBHUTI WORLD ☆ pixel girl online!</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&display=swap');
-:root{--green:#414d01;--sedona:#db8c61;--persimmon:#f4ba98;--watermelon:#e85e8c;--cardinal:#bf183a;--velvet:#751e26;--blue:#44add2;--bud:#7fdd0f;--butter:#feedc0;--yellow:#f9de05;--orange:#f69910;--valentine:#f4244f;--coral:#ff976b;--lager:#fcc140;--gold:#ffd416;--citron:#c8cb4c;--downy:#73c8c1;--pink:#e775b9;--ink:#301c38;--paper:#fff8df}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:'VT323',monospace;font-size:22px;background:#20142f;cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 16 16'%3E%3Cpath fill='%23ffffff' stroke='%2320142f' stroke-width='1' d='M2 1v11l3-3 2 5 2-1-2-5h4z'/%3E%3Cpath fill='%23f4244f' d='M3 3v6l2-2 1-1z'/%3E%3C/svg%3E") 2 1,auto}
-a,button,input,textarea,select{cursor:pointer}button,a{ -webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px dashed var(--blue);outline-offset:3px}
-*{image-rendering:pixelated}a{color:var(--cardinal)}.screen{max-width:1160px;margin:18px auto;padding:10px;background:var(--pink);border:4px solid #fff1bd;box-shadow:0 0 0 4px #a83c87,0 0 0 9px #20142f,0 0 35px #e775b988}
-.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:var(--velvet);color:var(--butter);padding:10px 14px;border:3px solid #f4ba98;font:10px 'Press Start 2P';line-height:1.8}
-.pixel-btn{font:10px 'Press Start 2P';line-height:1.8;padding:11px 12px;border:0;border-top:3px solid #fff3bf;border-left:3px solid #fff3bf;border-right:4px solid #6e2349;border-bottom:4px solid #6e2349;background:var(--yellow);color:#42203e;box-shadow:3px 3px 0 #2b1730;text-decoration:none;display:inline-block;transition:transform .08s}.pixel-btn:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 #2b1730;filter:saturate(1.3)}.pixel-btn:active{transform:translate(3px,3px)}.pixel-btn.pink{background:var(--pink)}.pixel-btn.blue{background:var(--blue)}.pixel-btn.green{background:var(--bud)}
-.game-world{position:relative;overflow:hidden;min-height:490px;border:4px solid #fff1bd;background:linear-gradient(#322253 0%,#6e427a 54%,#f49a9b 100%);isolation:isolate}
-.stars{position:absolute;inset:0;background-image:radial-gradient(#fff4b4 1.5px,transparent 2px),radial-gradient(#f6d4ff 1px,transparent 2px);background-size:51px 48px,73px 66px;background-position:0 0,22px 12px;animation:starflow 18s linear infinite;z-index:-2}
-@keyframes starflow{to{background-position:180px 200px,-130px 160px}}
-.moon{position:absolute;top:34px;right:10%;width:78px;height:78px;background:var(--yellow);border:5px solid #fff1bd;box-shadow:0 0 0 5px #e775b9,0 0 30px #ffd41688;clip-path:polygon(25% 0,75% 0,75% 12%,88% 12%,88% 25%,100% 25%,100% 75%,88% 75%,88% 88%,75% 88%,75% 100%,25% 100%,25% 88%,12% 88%,12% 75%,0 75%,0 25%,12% 25%,12% 12%,25% 12%)}
-.cloud{position:absolute;top:150px;width:110px;height:25px;background:#d8c6ff;box-shadow:15px -14px #d8c6ff,35px -7px #d8c6ff,45px 4px #d8c6ff;animation:cloud 23s linear infinite;opacity:.8}.cloud.c2{top:235px;animation-duration:31s;animation-direction:reverse;transform:scale(.7)}@keyframes cloud{from{left:-160px}to{left:110%}}
-.hero-copy{position:relative;text-align:center;padding:42px 15px 0;z-index:2}.eyebrow{display:inline-block;color:var(--yellow);font:10px 'Press Start 2P';background:#351a48;border:2px solid var(--yellow);padding:8px 10px;line-height:1.8;transform:rotate(-2deg)}h1{font:clamp(24px,5vw,50px)/1.5 'Press Start 2P';color:#fff1bd;text-shadow:4px 4px 0 #bf183a,8px 8px 0 #751e26;margin:20px 0 12px;letter-spacing:-2px}.sub{font:27px 'VT323';color:#fff;letter-spacing:1px;text-shadow:2px 2px #351a48}.hero-copy p{max-width:680px;margin:12px auto 16px;color:#fff8df;line-height:1.4}
-.scene{height:168px;position:relative;margin-top:7px}.ground{position:absolute;bottom:0;left:0;right:0;height:40px;background:repeating-linear-gradient(90deg,#414d01 0 24px,#5b6d08 24px 48px);border-top:6px solid #7fdd0f;box-shadow:inset 0 8px #6b7e13}.ground:after{content:'';position:absolute;top:34px;left:0;right:0;height:28px;background:repeating-linear-gradient(90deg,#db8c61 0 24px,#bf7557 24px 48px);border-top:5px solid #751e26}
-.coin{position:absolute;font:26px 'Press Start 2P';color:var(--yellow);text-shadow:2px 2px #bf183a;animation:coinbob 1s steps(2,end) infinite}.coin.one{left:17%;top:35px}.coin.two{right:21%;top:18px;animation-delay:.4s}.coin.three{left:72%;top:62px;animation-delay:.7s}@keyframes coinbob{50%{transform:translateY(-9px) scaleX(.7)}}
-.pixel-avatar{--hair:#34202c;position:absolute;bottom:33px;left:calc(50% - 25px);width:50px;height:95px;animation:jump 1.6s steps(5,end) infinite;filter:drop-shadow(4px 4px 0 #542449)}
-@keyframes jump{0%,100%{transform:translateY(0)}50%{transform:translateY(-28px)}}
-.avatar-head{position:absolute;top:0;left:11px;width:29px;height:29px;background:#f6d3c6;border:4px solid var(--hair);box-shadow:0 -5px 0 var(--hair),-5px 4px 0 var(--hair),5px 0 0 var(--hair)}
-.avatar-head:before{content:'';position:absolute;top:11px;left:2px;width:7px;height:4px;background:#25152a;transform:skew(-25deg);box-shadow:10px 0 #25152a}.avatar-head:after{content:'';position:absolute;top:20px;left:10px;width:6px;height:2px;background:#bf183a}
-.bangs{position:absolute;top:-5px;left:10px;width:31px;height:14px;background:var(--hair);clip-path:polygon(0 0,100% 0,100% 75%,80% 75%,80% 100%,60% 100%,60% 65%,40% 65%,40% 100%,20% 100%,20% 65%,0 65%)}
-.labcoat{position:absolute;top:29px;left:7px;width:37px;height:35px;background:#fff8df;border:4px solid #e7d8d7;clip-path:polygon(18% 0,38% 0,50% 14%,63% 0,82% 0,100% 25%,84% 42%,82% 100%,18% 100%,16% 42%,0 25%);}.shirt{position:absolute;top:34px;left:19px;width:14px;height:25px;background:var(--pink);border:2px solid #bf183a}.arm{position:absolute;top:35px;width:9px;height:26px;background:#f6d3c6;border:3px solid #e7b8b1;transform-origin:top;animation:wave .55s steps(2,end) infinite alternate}.arm.left{left:2px;transform:rotate(28deg)}.arm.right{right:0;transform:rotate(-30deg);animation-delay:.3s}@keyframes wave{to{transform:rotate(-55deg)}}.legs{position:absolute;top:60px;left:11px;width:29px;height:31px;background:#171426;border-left:5px solid #29233e;border-right:5px solid #29233e;clip-path:polygon(0 0,100% 0,100% 70%,100% 100%,65% 100%,50% 58%,35% 100%,0 100%,0 70%)}
-.world-floor{height:14px;background:repeating-linear-gradient(90deg,#fff1bd 0 12px,#e775b9 12px 24px)}
-.menu-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:14px;background:#351a48;border-bottom:4px solid #fff1bd}
-.section{margin-top:14px;background:var(--paper);border:4px solid #fff;box-shadow:4px 4px 0 #751e26}.section-title{background:var(--green);color:#fff1bd;padding:12px 14px;font:11px 'Press Start 2P';line-height:1.8;border-bottom:4px solid #7fdd0f}.section-body{padding:17px}.section-body p{line-height:1.45}.columns{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{background:#fff;border:3px solid #db8c61;padding:14px;box-shadow:4px 4px 0 #f4ba98}.card h3{font:11px/1.8 'Press Start 2P';color:#751e26;margin:0 0 12px}.card p{margin:7px 0}.tag{display:inline-block;background:#feedc0;border:2px solid #fcc140;padding:4px 7px;font-size:18px;margin:3px}
-.cabinet{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.trophy{min-height:100px;border:3px solid #9a6a4a;background:#f6e5c8;box-shadow:inset 0 0 0 3px #fff8df;padding:8px;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center}.trophy .icon{font-size:31px;filter:grayscale(1);opacity:.35}.trophy.unlocked{background:#fff1ad;border-color:#e5a81d;box-shadow:inset 0 0 0 3px #fff8df,0 0 12px #ffd41666}.trophy.unlocked .icon{filter:none;opacity:1;animation:shine 2s steps(2,end) infinite}.trophy strong{font:8px/1.8 'Press Start 2P';margin-top:7px}.trophy small{font-size:15px}.trophy.unlocked small{color:#751e26}@keyframes shine{50%{transform:rotate(-8deg) scale(1.08)}}
-.terminal{background:#161723;color:#a7ff8d;border:5px solid #6c547b;box-shadow:inset 0 0 0 3px #342b43;padding:16px}.term-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:#ff8ed1;font:9px 'Press Start 2P';line-height:1.8;border-bottom:1px dashed #6d9561;padding-bottom:10px}.term-prompt{font:22px 'VT323';color:#f9de05;margin:14px 0 6px}.target{font:clamp(19px,3vw,27px) 'VT323';color:#fff8df;overflow-wrap:anywhere;margin:9px 0}.terminal input{width:100%;background:#0b1014;color:#a7ff8d;border:2px solid #7fdd0f;padding:12px;font:22px 'VT323';outline:none}.terminal input:focus{box-shadow:0 0 0 3px #7fdd0f55}.terminal .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin:13px 0}.stat{border:1px solid #53754e;padding:6px 10px;color:#feedc0;font-size:19px}.stat b{color:#7fdd0f}.bar{height:12px;background:#383345;border:2px solid #a6a1b4;margin-top:10px}.bar span{height:100%;display:block;background:#f4244f;width:100%;transition:width .3s}
-.avatar-studio{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:start}.avatar-stage{min-height:280px;background:linear-gradient(#44add2,#b4edee 68%,#7fdd0f 68%);border:4px solid #fff;box-shadow:4px 4px #db8c61;display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden}.avatar-stage:before{content:'✦  ✧  ☁';position:absolute;top:10px;color:#fff8df;font-size:24px;letter-spacing:9px}.avatar-stage .pixel-avatar{position:relative;left:auto;bottom:auto;transform:scale(1.8);transform-origin:center;animation:studio-bob 1.8s steps(4,end) infinite}.avatar-stage .pixel-avatar .avatar-head{background:var(--skin,#f6d3c6)}.avatar-stage .pixel-avatar .labcoat{background:var(--coat,#fff8df)}.avatar-stage .pixel-avatar .shirt{background:var(--top,var(--pink))}.avatar-stage .pixel-avatar .avatar-head{border-color:var(--hair,#34202c);box-shadow:0 -5px 0 var(--hair,#34202c),-5px 4px 0 var(--hair,#34202c),5px 0 0 var(--hair,#34202c)}.avatar-stage .pixel-avatar .bangs{background:var(--hair,#34202c)}.avatar-stage .pixel-avatar .legs{background:var(--pants,#171426)}@keyframes studio-bob{50%{translate:0 -8px}}
-.controls label{display:block;font:9px 'Press Start 2P';line-height:1.8;margin:10px 0 5px;color:#751e26}.controls select{width:100%;padding:9px;background:#fff;border:2px solid #db8c61;font:20px 'VT323';color:#301c38}.controls .rowbtn{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.notice{background:#fff0c4;border:2px dashed #f69910;padding:10px;font-size:19px;margin-top:10px}
-.scrapbook{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.scrap{background:#fff;border:3px dashed #e775b9;padding:13px;min-height:150px;transform:rotate(-1deg);box-shadow:3px 4px #f4ba98}.scrap:nth-child(even){transform:rotate(1.5deg);border-color:#44add2}.scrap .sticker{font-size:27px}.scrap h3{font:9px/1.8 'Press Start 2P';margin:9px 0;color:#751e26}.scrap p{font-size:18px;margin:6px 0}
-.guestbook{display:grid;grid-template-columns:1fr 1fr;gap:15px}.guestbook input,.guestbook textarea{width:100%;border:2px solid #db8c61;background:white;padding:10px;font:21px 'VT323';margin-bottom:8px}.guestbook textarea{min-height:90px;resize:vertical}.messages{display:grid;gap:9px;align-content:start;max-height:310px;overflow:auto}.message{background:#fff;border:2px solid #f4ba98;padding:10px;font-size:19px;overflow-wrap:anywhere}.message b{color:#bf183a}.message small{display:block;color:#9b6b80;font-size:15px}
-.toast{position:fixed;bottom:20px;right:20px;z-index:10;background:#20142f;color:#fff1bd;border:3px solid #ffd416;padding:14px 17px;font:10px/1.8 'Press Start 2P';max-width:300px;box-shadow:5px 5px #e775b9;animation:toast-in .2s steps(3,end)}@keyframes toast-in{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-backdrop{position:fixed;inset:0;background:#160e21d9;display:none;place-items:center;z-index:20;padding:16px}.modal-backdrop.show{display:grid}.modal{width:min(500px,100%);background:var(--paper);border:5px solid #e775b9;box-shadow:8px 8px #ffd416}.modal-head{background:#751e26;color:white;padding:12px;font:10px 'Press Start 2P';display:flex;justify-content:space-between;gap:10px}.modal-body{padding:20px}.loading{font:10px 'Press Start 2P';line-height:2;text-align:center}.loading .pixel-avatar{position:relative;left:auto;bottom:auto;margin:16px auto;width:50px}.loadbar{height:18px;background:#e9d4dc;border:3px solid #301c38;margin:15px 0}.loadbar span{display:block;width:0;height:100%;background:#7fdd0f;animation:load 2s steps(8,end) forwards}@keyframes load{to{width:100%}}
-.footer{text-align:center;color:#fff1bd;padding:18px 8px;font:10px/2 'Press Start 2P'}.footer span{color:#ffd416}
-@media(max-width:700px){.screen{margin:10px;padding:6px}.game-world{min-height:450px}.hero-copy{padding-top:32px}.columns,.guestbook{grid-template-columns:1fr}.cabinet{grid-template-columns:repeat(3,minmax(0,1fr))}.avatar-studio{grid-template-columns:1fr}.avatar-stage{min-height:240px}.scrapbook{grid-template-columns:1fr 1fr}.top{font-size:8px}.section-body{padding:12px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anubhuti World v.2006</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Portfolio-first redesign */
-.runner-instructions,.runner-status{font:9px/2 'Press Start 2P';text-align:center;color:#fff1bd;background:#351a48;padding:8px 10px}
-.runner-instructions span{color:#ffd416;padding:0 5px}
-.runner-scene{height:190px;margin-top:0;background:linear-gradient(#f4b5d5 0%,#d8c6ff 55%,#f49a9b 100%);overflow:hidden}
-.runner-scene .ground{height:43px}
-.runner-scene .pixel-avatar{width:64px;height:100px;left:11%;bottom:35px;animation:run-bob .22s steps(2,end) infinite alternate}
-.runner-scene .avatar-head{width:31px;height:30px;left:10px;border-radius:1px}
-.runner-scene .bangs{top:-5px;left:7px;width:37px;height:19px;clip-path:polygon(0 0,100% 0,100% 65%,84% 65%,84% 100%,68% 100%,68% 62%,48% 62%,48% 100%,29% 100%,29% 68%,12% 68%,12% 100%,0 100%)}
-.runner-scene .glasses{position:absolute;z-index:3;left:-3px;top:8px;width:34px;height:10px;border:2px solid #301c38;background:transparent;box-shadow:15px 0 0 -2px transparent}
-.runner-scene .glasses:before{content:'';position:absolute;left:12px;top:2px;width:7px;border-top:2px solid #301c38}
-.runner-scene .glasses:after{content:'';position:absolute;left:1px;top:2px;width:6px;height:2px;background:#301c38;box-shadow:17px 0 #301c38}
-.runner-scene .avatar-head:before{top:20px;left:9px;width:4px;height:2px;box-shadow:10px 0 #25152a}
-.runner-scene .avatar-head:after{top:24px;left:13px;width:4px;height:2px}
-.runner-scene.running .ground{background:repeating-linear-gradient(90deg,#414d01 0 24px,#5b6d08 24px 48px);animation:ground-scroll .32s linear infinite}
-.runner-scene .runner-player.jumping{animation:runner-jump .62s ease-out}
-@keyframes run-bob{from{transform:translateY(0)}to{transform:translateY(-4px)}}
-@keyframes runner-jump{0%,100%{transform:translateY(0)}40%,60%{transform:translateY(-78px)}}
-@keyframes ground-scroll{to{background-position:-48px 0}}
-.runner-obstacle{position:absolute;z-index:2;right:-35px;bottom:39px;color:#751e26;font:31px 'Press Start 2P';animation:obstacle-run 2.4s linear forwards}
-@keyframes obstacle-run{from{right:-35px}to{right:110%}}
-.runner-coin{position:absolute;z-index:3;left:auto;right:-25px;top:auto;bottom:88px;color:#ffd416;font-size:23px;animation:obstacle-run 2.6s linear forwards}
-.section-title{letter-spacing:.1px}
-.real-achievements .trophy{min-height:150px}
-.real-achievements .trophy .icon{filter:none;opacity:1}
-.real-achievements .trophy strong{font-size:8px;line-height:1.7}
-.scrapbook{grid-template-columns:repeat(2,minmax(0,1fr))}
-.scrap{transform:none;min-height:165px}
-.scrap:nth-child(even){transform:none}
-.scrap h3{font-size:10px}
-@media(max-width:700px){.runner-instructions,.runner-status{font-size:7px}.runner-scene{height:175px}.scrapbook{grid-template-columns:1fr}.real-achievements{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        body {
+            background-color: #d1b3e8;
+            background-image: radial-gradient(#e5ccf5 1px, transparent 1px);
+            background-size: 16px 16px;
+            font-family: 'Nunito', sans-serif;
+            color: #281236;
+            min-height: 100vh;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* Y2K scrapbook desktop UI refresh */
-:root{--pink:#ffb6d2;--ink:#292052;--paper:#fff3fa;--velvet:#8e63b6;--cardinal:#553b91;--butter:#fff4df}
-body{background-color:#f9afd0;background-image:linear-gradient(#fff8 1px,transparent 1px),linear-gradient(90deg,#fff8 1px,transparent 1px),radial-gradient(#fff9 1.5px,transparent 2px);background-size:24px 24px,24px 24px,90px 90px;color:#292052;font-family:'VT323',monospace}
-.screen{max-width:1540px;margin:0 auto;padding:10px;background:transparent;border:0;box-shadow:none}
-.top{background:#fff0f8;color:#553b91;border:2px solid #553b91;border-radius:7px;box-shadow:3px 4px 0 #9d68bc;padding:10px 16px;font:14px 'VT323';font-size:21px}
-.top span:first-child{font-weight:bold;font-size:24px}
-.browser-line{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 18px;padding:7px 12px;border:2px solid #553b91;border-radius:7px;background:#fff0f8;color:#553b91;font:20px 'VT323';box-shadow:3px 4px 0 #b779c6}
-.menu-strip{background:#fce9f7;border:2px solid #7450a0;border-radius:10px;box-shadow:3px 4px 0 #c57ac7;padding:7px;gap:0;margin:0 0 22px}
-.menu-strip .pixel-btn{flex:1;text-align:center;background:transparent!important;color:#35245f;border:0;border-right:1px solid #d7a5d7;box-shadow:none;padding:12px 7px;font:18px 'VT323';font-size:22px}
-.menu-strip .pixel-btn:hover,.menu-strip .pixel-btn:focus{background:#f9c7e4!important;transform:none}
-.pixel-btn{font-family:'VT323';font-size:20px;border:2px solid #64408e;border-radius:4px;box-shadow:3px 3px 0 #b97ac1;line-height:1.1}
-.game-world{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(330px,.9fr);grid-template-rows:auto auto auto auto;gap:0;min-height:0;overflow:hidden;background:transparent;border:0;isolation:auto}
-.game-world>.stars,.game-world>.moon,.game-world>.cloud{display:none}
-.hero-copy{grid-column:2;grid-row:1 / span 3;text-align:left;align-self:stretch;padding:22px 26px;background:#fff0f8;border:3px solid #76509e;border-radius:10px;box-shadow:4px 5px 0 #c57ac7;margin:0 0 0 14px;z-index:2}
-.hero-copy .eyebrow{font:12px 'VT323';letter-spacing:1px;color:#553b91;background:#f8d6ee;border:1px solid #b77cc5;transform:none;border-radius:4px}
-.hero-copy h1{font:clamp(22px,3vw,37px)/1.35 'Press Start 2P';color:#553b91;text-shadow:2px 2px #ffc2e1;margin:18px 0 12px;letter-spacing:-1px}
-.hero-copy .sub{font:23px 'VT323';color:#553b91;text-shadow:none}
-.hero-copy p{font-size:23px;color:#35245f;line-height:1.25}
-.hero-copy #start-run{display:none}
-.hero-copy>a{display:inline-block;margin-top:8px}
-.runner-instructions{grid-column:1;grid-row:2;position:relative;z-index:3;width:max-content;max-width:95%;margin:-72px 0 0 18px;padding:8px 13px;background:#f7d7f0;border:2px solid #76509e;border-radius:5px;color:#35245f;font:16px 'VT323';box-shadow:3px 3px 0 #c57ac7}
-.runner-scene{grid-column:1;grid-row:1 / span 3;height:370px;margin:0;border:3px solid #76509e;border-radius:10px;background:linear-gradient(#bda4ed 0%,#f6b8d9 50%,#f7b5d0 100%);box-shadow:4px 5px 0 #c57ac7}
-.runner-scene:before{content:'';position:absolute;inset:0;background:linear-gradient(transparent 62%,#8c6cc0 62%,#8c6cc0 63%,transparent 63%),linear-gradient(90deg,transparent 0 7%,#9e83cd 7% 10%,transparent 10% 15%,#a58ad4 15% 19%,transparent 19% 23%,#9e83cd 23% 27%,transparent 27% 34%,#a58ad4 34% 39%,transparent 39% 44%,#9e83cd 44% 48%,transparent 48% 55%,#a58ad4 55% 60%,transparent 60% 67%,#9e83cd 67% 72%,transparent 72% 78%,#a58ad4 78% 83%,transparent 83% 90%,#9e83cd 90% 94%,transparent 94%);opacity:.55}
-.runner-scene .ground{height:44px;background:#7652a5;border-top:7px solid #78c86a;box-shadow:inset 0 7px #b5e69a}
-.runner-scene .ground:after{top:36px;height:26px;background:repeating-linear-gradient(90deg,#7652a5 0 22px,#6b4a99 22px 44px);border-top:4px solid #5b3d87}
-.runner-scene .pixel-avatar{left:23%;bottom:40px;transform:scale(1.45);transform-origin:bottom center;animation:run-bob .25s steps(2,end) infinite alternate;filter:drop-shadow(3px 4px 0 #68477f)}
-.runner-scene .avatar-head{background:#f8dfd1;border:3px solid #2a1721;box-shadow:-5px 3px 0 #2a1721,5px 0 0 #2a1721}
-.runner-scene .bangs{background:#50372f;box-shadow:0 -5px #50372f}
-.runner-scene .labcoat{display:none}
-.runner-scene .shirt{top:31px;left:15px;width:22px;height:28px;background:#9e2d34;border:3px solid #241720;clip-path:polygon(20% 0,80% 0,100% 20%,86% 38%,84% 100%,16% 100%,14% 38%,0 20%)}
-.runner-scene .legs{top:57px;left:9px;width:36px;height:35px;background:#252329;border-left:7px solid #17151d;border-right:7px solid #17151d}
-.runner-scene .arm{top:34px;background:#f8dfd1;border-color:#2a1721;height:25px}
-.runner-scene .glasses{left:-4px;top:8px;width:18px;height:12px;border:2px solid #38251e;border-radius:4px;background:#fff5e7aa;box-shadow:17px 0 0 -1px #fff5e7aa,17px 0 0 1px #38251e}
-.runner-scene .glasses:before{left:13px;top:3px;width:4px;border-top:2px solid #38251e}
-.runner-scene .glasses:after{left:4px;top:4px;width:5px;height:2px;background:#20151b;box-shadow:20px 0 #20151b}
-.runner-scene .pixel-avatar:before{content:'';position:absolute;top:-18px;left:12px;width:5px;height:18px;background:#65c932;border:2px solid #1e2418;border-radius:5px;box-shadow:22px 0 0 -2px #65c932,22px 0 0 0 #1e2418}
-.runner-scene .pixel-avatar:after{content:'';position:absolute;top:-25px;left:7px;width:14px;height:14px;border-radius:50%;background:#75db39;border:3px solid #1e2418;box-shadow:27px 0 #75db39,27px 0 0 3px #1e2418}
-.runner-status{grid-column:1;grid-row:4;background:#f5d9f0;color:#553b91;font:17px 'VT323';border:2px solid #b77cc5}
-.world-floor{display:none}
-#home{margin-bottom:24px}
-.quick-links{margin:18px 0 22px;background:#fff0f8;border:3px solid #76509e;border-radius:10px;box-shadow:4px 5px 0 #c57ac7;overflow:hidden}
-.quick-heading{padding:10px 16px;border-bottom:2px solid #e0a4d5;font:18px 'VT323';font-size:24px;color:#35245f;background:#f7d8ed}
-.quick-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;padding:14px}
-.quick-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:13px 8px;background:#fff8fc;border:2px solid #e2a6dc;border-radius:7px;box-shadow:2px 3px 0 #edc1e5;color:#35245f;text-decoration:none;min-height:150px}
-.quick-card:hover{transform:translateY(-3px);background:#ffe5f3}
-.quick-card .qicon{font-size:34px;line-height:1.1}.quick-card b{font:11px 'Press Start 2P';line-height:1.8}.quick-card span:last-child{font-size:18px;line-height:1.15}
-.section{background:#fff4fb;border:2px solid #76509e;border-radius:8px;box-shadow:4px 5px 0 #c57ac7;margin-top:20px;overflow:hidden}
-.section-title{background:#f5d7ef;color:#35245f;border-bottom:2px solid #d9a1d6;font:18px 'VT323';font-size:24px;padding:10px 15px}
-.section-body{padding:18px}
-.card{border:2px solid #e2a6dc;border-radius:6px;box-shadow:3px 3px 0 #edc1e5;background:#fff9fd}
-.card h3{font:11px/1.8 'Press Start 2P';color:#553b91}
-.scrap{background:#fff9fd;border:2px dashed #d99bd3;box-shadow:3px 4px 0 #efc2e7;border-radius:4px}
-.scrap h3{color:#553b91}
-.trophy{border:2px solid #d7a3d5;background:#fff9fd;box-shadow:inset 0 0 0 2px #fff}
-.trophy.unlocked{border-color:#c59bd8;background:#fff1c9;box-shadow:inset 0 0 0 2px #fff,0 0 0 1px #d7a3d5}
-.footer{color:#fff0fa;background:#805ab0;margin-top:20px;border:2px solid #553b91;border-radius:7px;font:16px 'VT323'}
-@media(max-width:900px){.game-world{grid-template-columns:1fr;grid-template-rows:auto}.hero-copy{grid-column:1;grid-row:2;margin:14px 0 0;padding:18px}.runner-scene{grid-column:1;grid-row:1;height:290px}.runner-instructions{grid-column:1;grid-row:1;margin:-65px 0 0 12px;font-size:14px}.runner-status{grid-column:1;grid-row:3}.quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.menu-strip{flex-wrap:wrap}.menu-strip .pixel-btn{flex:1 1 25%}}
-@media(max-width:520px){.screen{padding:8px}.top{font-size:17px}.top span:nth-child(2){display:none}.runner-scene{height:250px}.hero-copy h1{font-size:22px}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:9px;gap:7px}.quick-card{min-height:130px}.menu-strip .pixel-btn{flex:1 1 28%;font-size:19px}.columns{grid-template-columns:1fr}}
+        .browser-window {
+            width: 100%;
+            max-width: 1000px;
+            background: #e6caf2;
+            border: 3px solid #281236;
+            border-radius: 6px;
+            box-shadow: 6px 6px 0px #281236;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
 
+        /* Top Browser Bar */
+        .browser-topbar {
+            background: #281236;
+            color: #fff;
+            padding: 6px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 9px;
+        }
 
-/* Faithful lavender Y2K desktop-window composition */
-:root{--lavender:#d8c8ff;--lavender-deep:#7653a6;--plum:#30204f;--bubblegum:#ffb9dc;--neon:#ffe76b;--window:#fff8ff;--outline:#76509e;--body-ink:#342653}
-body{background-color:#d7c8ff;background-image:radial-gradient(#9277c5 1px,transparent 1.5px),linear-gradient(135deg,#e8ddff 0%,#d8c8ff 48%,#f9c8e4 100%);background-size:14px 14px,100% 100%;color:var(--body-ink)}
-.browser-line{min-height:43px;display:flex;align-items:center;gap:12px;padding:7px 12px;background:#5e438b;color:#fff8ff;border:2px solid #30204f;border-radius:7px 7px 3px 3px;box-shadow:3px 4px 0 #a884d0;font:18px 'VT323';margin-bottom:12px}
-.domain-mark{font-size:23px;color:#ffe76b;white-space:nowrap}.browser-status{margin-left:auto;text-align:right}.window-controls{display:flex;gap:5px}.window-controls i{font:14px 'Press Start 2P';font-style:normal;display:grid;place-items:center;width:24px;height:22px;color:#4b326e;background:#fff2fb;border:1px solid #d2b5ee;border-radius:3px}
-.desktop-dock{display:grid;grid-template-columns:minmax(180px,.85fr) minmax(400px,2.2fr) minmax(190px,.9fr);align-items:center;gap:12px;margin:0 0 18px}
-.folder-widget{position:relative;display:flex;flex-direction:column;gap:5px;align-self:stretch;justify-content:center;padding:14px 14px 10px;background:#fff3fb;border:2px solid #76509e;border-radius:5px 8px 8px 8px;box-shadow:3px 4px 0 #b987d1;text-decoration:none;color:#35245f}
-.folder-widget:before{content:'';position:absolute;top:-9px;left:10px;width:100px;height:10px;background:#ffb9dc;border:2px solid #76509e;border-bottom:0;border-radius:5px 5px 0 0}
-.folder-tab{font:10px/1.8 'Press Start 2P';overflow-wrap:anywhere}.folder-subtitle{font:20px 'VT323';color:#7b579f}
-.top-nav.menu-strip{margin:0;padding:5px;background:#fff4fc;border:2px solid #76509e;border-radius:8px;box-shadow:3px 4px 0 #b987d1;display:flex;flex-wrap:wrap;justify-content:center;gap:2px}
-.top-nav .pixel-btn{flex:1 1 auto;padding:10px 8px;border:0;border-radius:5px;box-shadow:none;font:20px 'VT323';color:#49336c;white-space:nowrap}
-.top-nav .pixel-btn.active,.top-nav .pixel-btn:hover{background:#ffc3e2!important;color:#4a2e72;outline:1px solid #d78dc2}
-.degree-widget{display:flex;flex-direction:column;gap:6px;padding:12px;background:#fff1b9;border:2px solid #76509e;border-radius:6px;box-shadow:3px 4px 0 #b987d1;color:#49336c}
-.degree-widget span{font:8px 'Press Start 2P';line-height:1.8;color:#8b4f91}.degree-widget b{font:20px 'VT323'}.degree-widget small{font:17px 'VT323'}
-.game-world{grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);grid-template-rows:auto auto auto;gap:12px;overflow:visible;background:transparent}
-.runner-scene{grid-column:1;grid-row:1/3;height:360px;border:3px solid #76509e;border-radius:8px;box-shadow:4px 5px 0 #b987d1;background:linear-gradient(#8b78cb 0%,#c89de2 42%,#f8a7ca 76%,#f6c3d9 100%)}
-.runner-scene:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(transparent 0 65%,#fff2 65% 66%,transparent 66%),linear-gradient(90deg,transparent 0 5%,#7356a5 5% 8%,transparent 8% 13%,#7356a5 13% 17%,transparent 17% 24%,#7356a5 24% 28%,transparent 28% 35%,#7356a5 35% 39%,transparent 39% 46%,#7356a5 46% 51%,transparent 51% 58%,#7356a5 58% 62%,transparent 62% 69%,#7356a5 69% 74%,transparent 74% 82%,#7356a5 82% 86%,transparent 86% 93%,#7356a5 93% 97%,transparent 97%);opacity:.22}
-.runner-scene .pixel-avatar{left:21%;z-index:3}.runner-scene .ground{z-index:2}.runner-instructions{grid-column:1;grid-row:1;align-self:start;margin:12px 0 0 12px;z-index:5;width:max-content;max-width:calc(100% - 24px);font:16px 'VT323';background:#fff0fb;color:#4d3274;border:2px solid #76509e;border-radius:4px;box-shadow:2px 3px 0 #b987d1}
-.pixel-lucky-block{position:absolute;z-index:4;top:29%;left:57%;width:36px;height:36px;display:grid;place-items:center;background:#ffe76b;border:3px solid #5a397f;box-shadow:inset -4px -4px #e3a73b,3px 3px 0 #5a397f;color:#5a397f;font:20px 'Press Start 2P';animation:lucky-float 1.4s steps(2,end) infinite}
-@keyframes lucky-float{50%{transform:translateY(-5px)}}
-.hero-skip{grid-column:1;grid-row:3;display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:-2px}
-.hero-skip .pixel-btn{font-size:18px;padding:9px 12px}
-.runner-status{grid-column:1;grid-row:2;align-self:end;z-index:5;margin-bottom:6px;max-width:calc(100% - 18px);justify-self:center;border:1px solid #a77ac6;border-radius:4px;background:#fff0fb;color:#513673;font:16px 'VT323';box-shadow:2px 2px 0 #b987d1}
-.hero-copy{grid-column:2;grid-row:1/4;margin:0;position:relative;padding:30px 27px 24px;background:#fff9fe;border:3px solid #76509e;border-radius:7px;box-shadow:4px 5px 0 #b987d1;align-self:stretch}
-.hero-copy:after{content:'✦  ✧';position:absolute;right:13px;top:8px;color:#e4b62e;font-size:25px;transform:rotate(12deg)}
-.paperclip{position:absolute;left:28px;top:-12px;color:#6d52a0;font-size:35px;transform:rotate(15deg);text-shadow:1px 1px #fff}
-.hero-sticker{position:absolute;right:16px;top:37px;color:#ffcf4a;font-size:34px;text-shadow:2px 2px #a06dc0}
-.hero-copy .eyebrow{display:inline-block;background:#f4e5ff;border:1px solid #c39cdd;border-radius:3px;color:#65438f;padding:7px 9px;font:16px 'VT323';letter-spacing:.5px}
-.hero-copy h1{font:clamp(21px,2.4vw,33px)/1.55 'Press Start 2P';color:#5a3c87;text-shadow:2px 2px #ffd1e9;margin:20px 0 12px;letter-spacing:-1.5px}
-.hero-copy .hero-star{font:inherit;color:#e9b939;text-shadow:1px 2px #9e6ac2}
-.hero-copy .sub{font:23px 'VT323';color:#7d559f;text-shadow:none;line-height:1.2}
-.hero-copy p{font:22px/1.4 'VT323';color:#392a5d}
-.hero-copy .hero-signoff{position:relative;display:flex;align-items:center;justify-content:space-between;color:#7e559c;font-style:italic}
-.mini-chibi{display:inline-grid;place-items:center;width:44px;height:44px;border:2px solid #76509e;border-radius:50%;background:#ffe1f1;color:#583b7f;font:16px 'VT323';font-style:normal;transform:rotate(8deg)}
-.ticker-ribbon{display:flex;align-items:center;gap:12px;min-height:50px;margin:22px 0 20px;padding:7px 12px;background:#503675;color:#fff2fd;border:3px solid #2f204f;border-radius:4px;box-shadow:4px 4px 0 #b987d1;overflow:hidden}
-.ticker-star,.ticker-planet{flex:0 0 auto;color:#ffe76b;font-size:25px}.ticker-planet{font-size:22px}
-.ticker-track{overflow:hidden;white-space:nowrap;flex:1;font:10px 'Press Start 2P';line-height:2;color:#fff4fb}
-.ticker-track span{display:inline-block;min-width:max-content;animation:ticker-slide 24s linear infinite}
-@keyframes ticker-slide{to{transform:translateX(-50%)}}
-.quick-links{background:#fff8ff;border:3px solid #76509e;border-radius:7px;box-shadow:4px 5px 0 #b987d1;margin:0 0 22px}
-.quick-heading{display:flex;align-items:center;justify-content:space-between;background:#f4e1ff;border-bottom:2px solid #c99bdc;font:24px 'VT323';color:#4c3475;padding:9px 15px}
-.window-close{width:25px;height:24px;border:1px solid #76509e;border-radius:3px;background:#fff7fc;color:#553775;font:20px 'VT323';line-height:1}
-.quick-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;padding:14px}
-.quick-card{position:relative;justify-content:flex-start;gap:10px;min-height:175px;padding:14px 9px 25px;background:#fffafd;border:2px solid #d4b1e7;border-radius:5px;box-shadow:2px 3px 0 #edc8e9;transition:transform .15s,background .15s}
-.quick-card .qicon{font-size:35px;filter:drop-shadow(1px 2px #f7c0e0)}
-.quick-card b{font:9px/1.8 'Press Start 2P';color:#503675}
-.quick-card span:last-of-type{font:19px/1.2 'VT323';color:#493465}
-.quick-card i{position:absolute;bottom:7px;right:10px;font:22px 'VT323';font-style:normal;color:#8d55a7}
-.bottom-doodles{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;min-height:72px;padding:0 18px;margin-top:8px;border-bottom:3px solid #76509e}
-.cat-flower{display:flex;align-items:flex-end;gap:12px;font-size:27px}.pixel-cat{display:inline-block;color:#211a2b;font-size:28px;text-shadow:2px 2px #b68bd2;transform:translateY(3px)}
-.sticky-note{position:relative;margin-bottom:-2px;padding:12px 15px 9px;background:#fff0a7;border:2px solid #9874b4;box-shadow:3px 3px 0 #c6a0dc;transform:rotate(3deg);font:16px/1.3 'VT323';color:#49336a;text-align:center}
-.sticky-note:before{content:'•';position:absolute;top:-13px;left:50%;font:23px 'VT323';color:#76509e}
-.sticky-note span{color:#b57bba;font-size:19px}
-.footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#5a3d83;color:#fff4fb;border:2px solid #30204f;border-radius:4px;padding:13px 15px;text-align:left;font:17px 'VT323';box-shadow:3px 4px 0 #b987d1}
-.footer-domain{color:#ffe76b}.footer-motto{margin-left:auto}.footer-icons{display:flex;gap:7px}.footer-icons a{display:grid;place-items:center;width:25px;height:24px;border:1px solid #d7b7eb;border-radius:3px;color:#503675;background:#fff2fb;text-decoration:none}
-@media(max-width:1100px){.desktop-dock{grid-template-columns:1fr 1.7fr}.degree-widget{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between}.game-world{grid-template-columns:minmax(0,1.1fr) minmax(290px,.9fr)}.quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.quick-card{min-height:145px}}
-@media(max-width:800px){.desktop-dock{grid-template-columns:1fr}.folder-widget{min-height:65px}.degree-widget{grid-column:auto;flex-wrap:wrap}.top-nav.menu-strip{justify-content:flex-start}.game-world{grid-template-columns:1fr;grid-template-rows:auto}.runner-scene{grid-column:1;grid-row:1;height:290px}.runner-instructions{grid-column:1;grid-row:1}.hero-copy{grid-column:1;grid-row:2;margin-top:12px}.runner-status{grid-column:1;grid-row:1;align-self:end;margin-bottom:8px}.hero-skip{grid-column:1;grid-row:3}.ticker-ribbon{margin-top:18px}}
-@media(max-width:520px){.browser-status{display:none}.browser-line{font-size:16px}.domain-mark{font-size:20px}.top-nav .pixel-btn{font-size:18px;padding:8px 6px}.degree-widget{gap:8px}.runner-scene{height:250px}.hero-copy{padding:25px 18px}.hero-copy h1{font-size:21px}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:9px}.quick-card{min-height:150px}.ticker-track{font-size:8px}.bottom-doodles{padding:0 4px}.sticky-note{font-size:14px}.footer-motto{margin-left:0}}
+        .browser-address {
+            background: #f8d7f1;
+            color: #281236;
+            padding: 4px 12px;
+            border-radius: 4px;
+            border: 2px solid #281236;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
+        .browser-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-/* Character redesign: closer to Anubhuti's reference, with a proper illustrated silhouette */
-.runner-scene .pixel-avatar{position:absolute;display:block;width:160px;height:240px;left:15%;bottom:26px;z-index:4;overflow:visible;transform:none;transform-origin:bottom center;animation:avatar-idle .7s steps(2,end) infinite alternate;filter:drop-shadow(3px 4px 0 #68477f)}
-.runner-scene .pixel-avatar.jumping{animation:avatar-jump .62s ease-out!important}
-@keyframes avatar-idle{from{translate:0 0}to{translate:0 -3px}}
-@keyframes avatar-jump{0%{translate:0 0}45%{translate:0 -58px}100%{translate:0 0}}
-.runner-scene.running .pixel-avatar{animation:avatar-run .18s steps(2,end) infinite alternate}
-@keyframes avatar-run{from{translate:0 0;rotate:-1deg}to{translate:0 -5px;rotate:1deg}}
-@media(max-width:700px){.runner-scene .pixel-avatar{width:125px;height:188px;left:8%;bottom:28px}}
+        .browser-tab-indicator {
+            background: #ffb8e0;
+            color: #281236;
+            padding: 3px 8px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
 
+        .window-controls {
+            display: flex;
+            gap: 4px;
+        }
 
-/* UI specification pass: arcade HUD, collectible coins, and clearer desktop-window details */
-:root{--spec-pink:#f2a2d4;--spec-lavender:#dfbeee;--spec-plum:#281236;--spec-yellow:#ffe053}
-body{background-color:#f8d7f1;background-image:linear-gradient(rgba(92,55,126,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(92,55,126,.075) 1px,transparent 1px),linear-gradient(135deg,#f8d7f1 0%,#eac8f0 100%);background-size:16px 16px,16px 16px,100% 100%}
-.screen{max-width:1500px;padding:12px}
-.browser-line{border-color:var(--spec-plum);box-shadow:3px 4px 0 #c38bd1}
-.domain-mark{display:inline-flex;align-items:center;gap:7px;padding:3px 10px;border:1px solid #e2c0ee;border-radius:5px;background:#8d6ab6;color:#fff8ff}
-.top-nav .pixel-btn.active{background:var(--spec-pink)!important;color:var(--spec-plum);outline:1px solid #d78dc2}
-.runner-scene{position:relative;isolation:isolate;background:linear-gradient(180deg,#7f70c4 0%,#b29bdf 34%,#e9a9d6 58%,#f9c2d9 78%,#e9b3de 100%)}
-.runner-scene:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(135deg,transparent 0 42%,#8269b6 42% 50%,transparent 50%) 0 100%/52% 42% no-repeat,linear-gradient(225deg,transparent 0 42%,#9a7bc8 42% 50%,transparent 50%) 100% 100%/62% 52% no-repeat,linear-gradient(135deg,transparent 0 42%,#7357a4 42% 50%,transparent 50%) 45% 100%/52% 34% no-repeat}
-.runner-scene:after{z-index:1;opacity:.25}
-.life-hearts{position:absolute;z-index:6;top:13px;left:14px;display:flex;gap:5px;padding:6px 9px;background:#fff3fb;border:2px solid #76509e;box-shadow:2px 3px 0 #b987d1;color:#e94c91;font:23px/1 'VT323';letter-spacing:2px}
-.life-hearts span{text-shadow:1px 1px #7d346f;animation:heart-pulse 1.3s steps(2,end) infinite}
-.life-hearts span:nth-child(2){animation-delay:.2s}.life-hearts span:nth-child(3){animation-delay:.4s}
-@keyframes heart-pulse{50%{transform:scale(.9);color:#f28bb9}}
-.sky-cloud{position:absolute;z-index:1;width:68px;height:15px;background:#f9edff;opacity:.9;box-shadow:12px -9px 0 #f9edff,25px -5px 0 #f9edff,38px 0 0 #f9edff;animation:spec-cloud-drift 22s linear infinite}
-.sky-cloud.cloud-one{top:25%;left:22%}.sky-cloud.cloud-two{top:43%;left:67%;transform:scale(.7);animation-duration:30s;animation-direction:reverse}
-@keyframes spec-cloud-drift{0%{translate:-18px 0}50%{translate:24px 0}100%{translate:-18px 0}}
-.scene-coin{position:absolute;z-index:3;width:24px;height:24px;display:grid;place-items:center;color:#ffe053;font:22px/1 'Press Start 2P';text-shadow:2px 2px #a06c3e;animation:spec-coin-spin 1s steps(4,end) infinite;transform-origin:center}
-.scene-coin:before{content:"";position:absolute;inset:2px;border:3px solid #ffdf54;border-radius:50%;box-shadow:inset 0 0 0 2px #c98c25}
-.scene-coin.coin-a{top:35%;left:40%}.scene-coin.coin-b{top:48%;left:72%;animation-delay:.25s}.scene-coin.coin-c{top:27%;left:84%;animation-delay:.5s}
-@keyframes spec-coin-spin{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.25)}}
-.pixel-lucky-block{z-index:4}
-.runner-scene .pixel-avatar:before,.runner-scene .pixel-avatar:after{content:none!important}
-.runner-scene .pixel-avatar{z-index:4}
-.runner-instructions{z-index:7}
-.runner-status{z-index:7}
-.hero-copy{border-color:var(--spec-plum);box-shadow:4px 5px 0 #c57ac7}
-.hero-copy .hero-signoff{font-family:'Caveat','VT323',cursive;font-size:25px}
-.quick-links{border-color:var(--spec-plum)}
-.quick-card:hover{border-color:#ba70b8;box-shadow:3px 4px 0 #c57ac7}
-.bottom-doodles{border-bottom-color:var(--spec-plum)}
-.sticky-note{background:#fff0a7}
-.footer{border-color:var(--spec-plum)}
-@media(max-width:800px){.scene-coin.coin-a{left:44%}.scene-coin.coin-b{left:70%}.scene-coin.coin-c{left:83%}}
-@media(prefers-reduced-motion:reduce){.life-hearts span,.sky-cloud,.scene-coin{animation:none!important}}
+        .win-btn {
+            background: #f8d7f1;
+            border: 1px solid #281236;
+            color: #281236;
+            width: 14px;
+            height: 14px;
+            font-size: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
+        /* Main Content Layout */
+        .portfolio-content {
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #f2d9fc;
+        }
 
-/* Avatar belongs to the About Me identity, with the profile note on the right */
-.qicon-face{display:grid;place-items:center;width:62px;height:62px;overflow:hidden;background:#ffe2f1;border:2px solid #76509e;border-radius:50%;box-shadow:2px 3px 0 #edc1e5}
-.qicon-face .avatar-face-icon{width:100%;height:100%;display:block;overflow:hidden;image-rendering:pixelated;shape-rendering:crispEdges}
-.about-layout{display:grid;grid-template-columns:minmax(100px,.42fr) minmax(220px,1.25fr) minmax(220px,.9fr);gap:18px;align-items:stretch}
-.about-portrait{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:280px;padding:10px 6px;background:#fce8f7;border:2px solid #d7a5db;border-radius:5px;overflow:hidden}
-.about-portrait .avatar-face-icon{width:min(100%,155px);height:190px;overflow:hidden;image-rendering:pixelated;shape-rendering:crispEdges;filter:drop-shadow(3px 4px 0 #d4a3d7)}
-.portrait-caption{font:8px/1.8 'Press Start 2P';color:#67458b;text-align:center}
-.about-copy h2{font:10px/1.9 'Press Start 2P';color:#67458b;overflow-wrap:anywhere}
-.about-note{position:relative;align-self:stretch;padding:22px 16px 15px;background:#fff0a7;border:2px solid #9874b4;box-shadow:4px 5px 0 #c6a0dc;transform:rotate(1deg);color:#49336a}
-.about-note:before{content:'';position:absolute;top:-8px;left:48%;width:32px;height:11px;background:#e8d4f3;border:1px solid #9874b4;transform:rotate(-7deg)}
-.about-note .note-pin{position:absolute;top:6px;right:9px;color:#9b6cb0;font-size:20px}
-.about-note h3{font:9px/1.8 'Press Start 2P';color:#68458d;margin:5px 0 13px}
-.about-note p{display:flex;justify-content:space-between;gap:10px;margin:8px 0;padding-bottom:5px;border-bottom:1px dashed #d0ac81;font:17px 'VT323'}
-.about-note p b{text-align:right}
-.note-signoff{margin-top:14px;font:italic 19px 'Caveat','VT323',cursive;text-align:right;color:#8554a2}
-@media(max-width:900px){.about-layout{grid-template-columns:120px minmax(0,1fr)}.about-note{grid-column:1/-1;transform:rotate(0)}}
-@media(max-width:520px){.about-layout{grid-template-columns:1fr}.about-portrait{min-height:180px}.about-portrait .avatar-face-icon{height:155px}.about-note{grid-column:auto}.about-note p{font-size:16px}}
+        /* Navigation Header */
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
 
+        .folder-badge {
+            background: #f8d7f1;
+            border: 2px solid #281236;
+            padding: 6px 10px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 0px #281236;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 8px;
+            max-width: 160px;
+        }
 
+        .nav-tabs {
+            display: flex;
+            gap: 4px;
+            background: #d8b4e8;
+            padding: 4px;
+            border: 2px solid #281236;
+            border-radius: 6px;
+        }
 
+        .nav-tab {
+            background: #e6caf2;
+            border: 2px solid #281236;
+            padding: 5px 10px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 8px;
+            color: #281236;
+            cursor: pointer;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: all 0.1s ease;
+        }
 
-/* Hyper-pink cosmic coquette background: decorative, but never blocks the page */
-body{
-  background-color:#fa48c9;
-  background-image:
-    radial-gradient(circle at 12% 18%,rgba(255,255,255,.42) 0 2px,transparent 3px),
-    radial-gradient(circle at 78% 72%,rgba(255,230,255,.38) 0 2px,transparent 3px),
-    radial-gradient(circle at 50% 50%,transparent 0 58%,rgba(113,35,185,.22) 100%),
-    linear-gradient(135deg,#ff62ce 0%,#f34ed8 24%,#a75af4 58%,#d88bff 78%,#ff9edc 100%);
-  background-size:47px 47px,63px 63px,100% 100%,100% 100%;
-  background-attachment:fixed;
-}
-.screen{position:relative;z-index:1}
-.cosmic-doodles{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;font-family:system-ui,sans-serif}
-.cosmic-doodles .doodle{position:absolute;display:block;line-height:1;user-select:none;filter:drop-shadow(2px 3px 0 rgba(93,35,137,.22));animation:doodle-float 5s ease-in-out infinite}
-.cosmic-doodles .bow{font-size:clamp(25px,3vw,43px)}
-.cosmic-doodles .star{font-size:clamp(20px,2.5vw,35px);color:#fff8a8;text-shadow:0 0 9px #fff}
-.cosmic-doodles .flower{font-size:clamp(23px,2.8vw,39px)}
-.cosmic-doodles .planet{font-size:clamp(31px,4vw,55px);filter:drop-shadow(0 0 10px #ffb3fa)}
-.cosmic-doodles .d1{left:1.3%;top:17%;transform:rotate(-13deg)}
-.cosmic-doodles .d2{right:1.5%;top:12%;animation-delay:-1.7s}
-.cosmic-doodles .d3{left:2%;top:52%;animation-delay:-2.2s}
-.cosmic-doodles .d4{right:1.1%;top:43%;animation-delay:-.8s}
-.cosmic-doodles .d5{left:1.5%;bottom:13%;animation-delay:-3s}
-.cosmic-doodles .d6{right:2%;bottom:12%;animation-delay:-1.2s}
-.cosmic-doodles .d7{left:8%;top:5%;font-size:22px}
-.cosmic-doodles .d8{right:8%;bottom:5%;font-size:25px;animation-delay:-2.5s}
-@keyframes doodle-float{0%,100%{translate:0 0;rotate:-4deg}50%{translate:0 -8px;rotate:5deg}}
-/* Keep the runner game controls and moving entities reliably interactive */
-.hero-skip #start-run{display:inline-flex!important;align-items:center;justify-content:center;visibility:visible;position:relative;z-index:8;cursor:pointer}
-.runner-scene{touch-action:manipulation}
-.runner-obstacles{position:absolute;inset:0;z-index:3;pointer-events:none}
-.runner-obstacle{z-index:3}
-.runner-coin{z-index:3}
-.runner-scene .pixel-avatar{z-index:4}
-@media(max-width:700px){
-  .cosmic-doodles .d2,.cosmic-doodles .d4,.cosmic-doodles .d6{display:none}
-  .cosmic-doodles .d1{left:0;top:10%}.cosmic-doodles .d3{left:0;top:62%}.cosmic-doodles .d5{left:0;bottom:8%}
-}
-@media(prefers-reduced-motion:reduce){.cosmic-doodles .doodle{animation:none!important}}
+        .nav-tab.active, .nav-tab:hover {
+            background: #ffb8e0;
+            transform: translateY(-1px);
+        }
 
-</style>
+        .profile-badge-top {
+            background: #f8d7f1;
+            border: 2px solid #281236;
+            padding: 6px 10px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 0px #281236;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 7px;
+            text-align: right;
+            line-height: 1.4;
+        }
+
+        /* Hero Section Container */
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 12px;
+        }
+
+        /* Mini-Game Window */
+        .game-window {
+            background: #fff;
+            border: 2px solid #281236;
+            border-radius: 6px;
+            box-shadow: 3px 3px 0px #281236;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .game-header-bar {
+            background: #f8d7f1;
+            border-bottom: 2px solid #281236;
+            padding: 4px 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hearts {
+            font-size: 11px;
+            color: #ff3366;
+            letter-spacing: 2px;
+        }
+
+        .game-canvas-area {
+            height: 190px;
+            background: linear-gradient(to bottom, #e2a9e8 0%, #fcd6ed 70%, #9bc27c 70%, #759e53 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .city-silhouette {
+            position: absolute;
+            bottom: 30%;
+            width: 100%;
+            height: 80px;
+            background: repeating-linear-gradient(90deg, #d49fdc, #d49fdc 15px, #c38bcd 15px, #c38bcd 30px);
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .sun-circle {
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            width: 45px;
+            height: 45px;
+            background: #ffe053;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #ffeb7b;
+            z-index: 1;
+        }
+
+        .game-ground {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+            background: #5d8c3b;
+            border-top: 3px solid #281236;
+            z-index: 3;
+            display: flex;
+        }
+
+        .ground-tile {
+            width: 30px;
+            height: 100%;
+            border-right: 1px solid #486f2b;
+            background: #62953e;
+        }
+
+        /* Avatar Element */
+        .runner-avatar {
+            position: absolute;
+            bottom: 30px;
+            left: 45px;
+            width: 48px;
+            height: 56px;
+            z-index: 5;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="22" r="14" fill="%23f4ba98"/><path d="M18 16c2-8 12-10 28-2 2 8-2 16-8 18-6 2-16 2-20-16z" fill="%235a3825"/><circle cx="24" cy="8" r="4" fill="%2339d353"/><circle cx="40" cy="8" r="4" fill="%2339d353"/><rect x="22" y="20" width="20" height="8" rx="2" fill="%235a3825"/><path d="M26 36h12v16H26z" fill="%23b83232"/><path d="M24 52h8v12h-8zM32 52h8v12h-8z" fill="%231a1a1a"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: bounce 0.35s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-4px); }
+        }
+
+        .coin-item {
+            position: absolute;
+            bottom: 60px;
+            left: 210px;
+            width: 16px;
+            height: 16px;
+            background: #ffe053;
+            border: 2px solid #281236;
+            border-radius: 50%;
+            animation: floatCoin 1.5s ease-in-out infinite;
+            z-index: 4;
+        }
+        .coin-item:nth-child(2) { left: 245px; animation-delay: 0.2s; }
+        .coin-item:nth-child(3) { left: 280px; animation-delay: 0.4s; }
+
+        @keyframes floatCoin {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .obstacle-block {
+            position: absolute;
+            bottom: 30px;
+            left: 360px;
+            width: 28px;
+            height: 28px;
+            background: #ffe053;
+            border: 2px solid #281236;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 12px;
+            box-shadow: 2px 2px 0px #281236;
+            z-index: 4;
+        }
+
+        .game-signpost {
+            position: absolute;
+            bottom: 30px;
+            left: 95px;
+            background: #f8d7f1;
+            border: 2px solid #281236;
+            padding: 4px 8px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 6px;
+            box-shadow: 2px 2px 0px #281236;
+            z-index: 4;
+        }
+
+        .game-controls-bar {
+            background: #f8d7f1;
+            border-top: 2px solid #281236;
+            padding: 6px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 8px;
+        }
+
+        .arcade-btn {
+            background: #e6caf2;
+            border: 2px solid #281236;
+            padding: 4px 10px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 7px;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px #281236;
+        }
+        .arcade-btn:hover { background: #ffb8e0; }
+
+        /* About Card (Right Column) */
+        .about-card {
+            background: #fff;
+            border: 2px solid #281236;
+            border-radius: 6px;
+            box-shadow: 3px 3px 0px #281236;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+        }
+
+        .paperclip {
+            position: absolute;
+            top: -8px;
+            left: 24px;
+            width: 10px;
+            height: 20px;
+            border: 2px solid #717171;
+            border-radius: 6px;
+            background: #dcdcdc;
+        }
+
+        .about-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .about-title-area h2 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 11px;
+            color: #281236;
+            margin-bottom: 4px;
+        }
+
+        .about-subtitle {
+            font-size: 11px;
+            font-weight: 700;
+            color: #7b4298;
+        }
+
+        .avatar-headshot {
+            width: 65px;
+            height: 65px;
+            background: #f8d7f1;
+            border: 2px solid #281236;
+            border-radius: 50%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="28" r="22" fill="%23f4ba98"/><path d="M10 24c2-12 16-16 44-4 3 12-3 24-12 26-10 3-26 3-32-4z" fill="%235a3825"/><circle cx="20" cy="12" r="5" fill="%2339d353"/><circle cx="44" cy="12" r="5" fill="%2339d353"/><rect x="18" y="24" width="28" height="12" rx="3" fill="%235a3825"/><path d="M28 42h8v6h-8z" fill="%23b83232"/></svg>');
+            background-size: cover;
+            box-shadow: 2px 2px 0px #281236;
+            flex-shrink: 0;
+        }
+
+        .about-bio-text {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #3b1c4c;
+        }
+
+        .about-signoff {
+            font-family: 'Caveat', cursive;
+            font-size: 18px;
+            color: #7b4298;
+            margin-top: 4px;
+        }
+
+        /* Marquee Ticker */
+        .marquee-bar {
+            background: #281236;
+            color: #f8d7f1;
+            border: 2px solid #281236;
+            padding: 6px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 8px;
+            text-align: center;
+            letter-spacing: 1px;
+            box-shadow: 3px 3px 0px rgba(40, 18, 54, 0.3);
+        }
+
+        /* Quick Links Grid Section */
+        .links-window {
+            background: #fff;
+            border: 2px solid #281236;
+            border-radius: 6px;
+            box-shadow: 3px 3px 0px #281236;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+        }
+
+        .links-window-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed #d8b4e8;
+            padding-bottom: 6px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 9px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+        }
+
+        .link-card {
+            background: #fdf5fc;
+            border: 2px solid #281236;
+            border-radius: 6px;
+            padding: 10px 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 6px;
+            text-decoration: none;
+            color: #281236;
+            box-shadow: 2px 2px 0px #281236;
+            transition: all 0.15s ease;
+        }
+
+        .link-card:hover {
+            background: #ffb8e0;
+            transform: translateY(-2px);
+            box-shadow: 3px 4px 0px #281236;
+        }
+
+        .link-card-icon {
+            width: 36px;
+            height: 36px;
+            background: #e6caf2;
+            border: 2px solid #281236;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .link-card-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 7px;
+            line-height: 1.2;
+        }
+
+        .link-card-desc {
+            font-size: 9px;
+            color: #5a3825;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Sticky Note Widget (Bottom Right Overlay concept or side placement) */
+        .main-layout-bottom {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 12px;
+            align-items: stretch;
+        }
+
+        .sticky-note {
+            background: #ffc2e2;
+            border: 2px solid #281236;
+            border-radius: 4px;
+            padding: 12px;
+            box-shadow: 3px 3px 0px #281236;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pin {
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: #ff3366;
+            border-radius: 50%;
+            border: 2px solid #281236;
+        }
+
+        .sticky-text {
+            font-family: 'Caveat', cursive;
+            font-size: 20px;
+            font-weight: 700;
+            color: #281236;
+            line-height: 1.2;
+        }
+
+        /* Footer Bar */
+        .browser-footer {
+            background: #281236;
+            color: #f8d7f1;
+            padding: 6px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .links-grid { grid-template-columns: repeat(3, 1fr); }
+            .main-layout-bottom { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-<div class="cosmic-doodles" aria-hidden="true"><span class="doodle bow d1">🎀</span><span class="doodle planet d2">🪐</span><span class="doodle flower d3">✿</span><span class="doodle star d4">✦</span><span class="doodle bow d5">୨୧</span><span class="doodle flower d6">🌸</span><span class="doodle star d7">✧</span><span class="doodle star d8">✧</span></div>
-<div class="screen">
-<div class="browser-line"><span class="domain-mark">✦ anubhuti.world</span><span class="browser-status">// building a kinder, smarter future</span><span class="window-controls" aria-label="Window controls"><i>_</i><i>□</i><i>×</i></span></div>
-<div class="desktop-dock">
-  <a class="folder-widget" href="#home"><span class="folder-tab">ANUBHUTI WORLD</span><span class="folder-subtitle">Pixel Girl Online! ♡</span></a>
-  <nav class="menu-strip top-nav" aria-label="Main navigation"><a class="pixel-btn active" href="#home">Home</a><a class="pixel-btn" href="#about">About</a><a class="pixel-btn" href="#projects">Projects</a><a class="pixel-btn" href="#achievements">Achievements</a><a class="pixel-btn" href="#skills">Skills</a><a class="pixel-btn" href="#scrapbook">Scrapbook</a><a class="pixel-btn" href="#guestbook">Guestbook</a></nav>
-  <div class="degree-widget"><span>♡ CURRENT QUEST</span><b>B.Tech Biotechnology</b><small>LPU · 2025–2029</small></div>
-</div>
-<main>
-<section class="game-world" id="home">
-<div class="stars"></div><div class="moon"></div><div class="cloud"></div><div class="cloud c2"></div>
-<div class="hero-copy"><span class="paperclip" aria-hidden="true">⌇</span><span class="hero-sticker" aria-hidden="true">✦</span><div class="eyebrow">A LITTLE CORNER OF THE INTERNET</div><h1>Hi, I’m<br>Anubhuti! <span class="hero-star">✰</span></h1><div class="sub">B.Tech Biotechnology @ LPU | 2025–2029</div><p>I’m a biotechnology student who loves the overlap between science, bioinformatics, and the little questions that turn into big ideas. Usually exploring genetics, microbes, data, food, art, or one more thing at 2 a.m.</p><p class="hero-signoff">Thanks for visiting! ♡ <span class="mini-chibi" aria-hidden="true">◕ᴗ◕</span></p><a class="pixel-btn pink" href="#projects">EXPLORE MY WORK →</a></div>
-<div class="runner-instructions">PRESS SPACE TO JUMP ►</div><div class="pixel-lucky-block" aria-hidden="true">?</div><div class="hero-skip"><button class="pixel-btn pink" id="start-run" type="button">START RUN ▶</button><a class="pixel-btn" href="#ticker">SKIP &gt;&gt;</a></div>
-<div class="scene runner-scene" id="runner-scene" aria-label="Short pixel runner introduction"><div class="life-hearts" aria-label="Three lives"><span>♥</span><span>♥</span><span>♥</span></div><div class="sky-cloud cloud-one" aria-hidden="true"></div><div class="sky-cloud cloud-two" aria-hidden="true"></div><div class="scene-coin coin-a" aria-hidden="true">●</div><div class="scene-coin coin-b" aria-hidden="true">●</div><div class="scene-coin coin-c" aria-hidden="true">●</div><div class="runner-obstacles" id="runner-obstacles"></div><svg class="pixel-avatar runner-player" id="runner-player" viewBox="0 0 64 100" role="img" aria-label="Retro pixel kawaii doll girl with chestnut hair, green antennae, square glasses, burgundy shirt, flared trousers and white sneakers" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<!-- antennae -->
-<g stroke="#3d6e35" stroke-width="2"><path d="M20 15V9M44 15V9"/></g>
-<path fill="#78e64b" d="M13 2h10v3h3v5h-3v3H13v-3h-3V5h3zM41 2h10v3h3v5h-3v3H41v-3h-3V5h3z"/>
-<path fill="#c5ff8c" d="M14 4h5v2h-5zM42 4h5v2h-5z"/>
-<!-- long bob hair, layered pixel silhouette -->
-<path fill="#2e2029" d="M12 19V15h5v-4h8V8h14v3h8v4h5v8h3v20h-5v6h-6v-5H20v5h-6v-6H9V25h3z"/>
-<path fill="#70452f" d="M14 21h5v-5h7v-4h11v3h7v4h5v9h-3v12h-4v5H22v-4h-5V28h-3z"/>
-<!-- face shape with stepped cheeks -->
-<path fill="#f6d2bf" d="M18 18h28v4h4v19h-4v5H18v-5h-4V22h4z"/>
-<path fill="#e9b8a7" d="M17 33h3v7h4v4h-5v-4h-2zM44 40h3v-7h2v8h-5z"/>
-<!-- tousled curtain fringe -->
-<path fill="#38232a" d="M15 18v-5h8V9h7v4h5V9h7v4h7v8h-5v4h-5v-5h-4v-3h-4v6h-4v3h-4v-5h-4v4h-4z"/>
-<path fill="#89583d" d="M18 14h5v-3h5v5h-3v4h-4v-3h-3zM34 13h6v-2h4v4h4v4h-6v-3h-4v3h-4z"/>
-<path fill="#b47b53" d="M19 14h4v2h-4zM36 14h4v2h-4z"/>
-<!-- face, side-looking sleepy eyes -->
-<path fill="#51342d" d="M19 25h9v2h-9zM36 25h9v2h-9z"/>
-<path fill="#241923" d="M20 29h8v3h-8zM35 29h8v3h-8z"/>
-<path fill="#fff0db" d="M21 29h2v2h-2zM36 29h2v2h-2z"/>
-<!-- oversized square frames -->
-<g fill="#f7dfd2" fill-opacity=".14" stroke="#49302b" stroke-width="2.5">
-<path d="M16 27h14v2h2v8h-2v2H18v-2h-2z"/>
-<path d="M34 29h2v-2h14v10h-2v2H36v-2h-2z"/>
-</g>
-<path fill="#49302b" d="M30 30h4v2h-4zM12 30h4v2h-4zM50 30h3v2h-3z"/>
-<!-- tiny nose, pout and silver earrings -->
-<path fill="#d69482" d="M30 36h3v2h-3z"/>
-<path fill="#a84a5a" d="M28 40h4v-2h3v2h3v2h-3v2h-4v-2h-3z"/>
-<path fill="#e1e3e9" d="M11 35h3v3h-3zM50 35h3v3h-3z"/>
-<!-- neck -->
-<path fill="#f1bca8" d="M27 45h10v7H27z"/>
-<!-- tee and sleeves -->
-<path fill="#5b2435" d="M23 49h18l7 5v13H16V54z"/>
-<path fill="#7b2b40" d="M24 50h16v17H24zM18 55h5v9h-5zM41 55h5v9h-5z"/>
-<path fill="#c65c70" d="M26 50h12v3H26zM25 56h3v5h-3z"/>
-<!-- arms / hands -->
-<path fill="#f6d2bf" d="M14 56h4v8h4v4h-7v-4h-2zM46 56h4v8h2v4h-6v-4h-2z"/>
-<!-- trousers: tapered at waist, flared cuffs -->
-<path fill="#24212e" d="M21 67h22v13h3v8H30v-5h-1v-3h-2v3h-1v5H16v-8h5z"/>
-<path fill="#393344" d="M19 81h11v4H18zM32 81h12v4H32z"/>
-<path fill="#51445a" d="M23 70h2v9h-2zM38 70h2v9h-2z"/>
-<!-- canvas sneakers -->
-<path fill="#fffaf4" d="M18 86h12v5H17v-3h1zM32 86h12v5H31v-3h1z"/>
-<path fill="#d8d4dc" d="M21 87h6v1h-6zM35 87h6v1h-6z"/>
-<path fill="#29232f" d="M16 91h15v3H15v-2h1zM30 91h17v3H30z"/>
-</svg><div class="ground"></div></div><div class="runner-status" id="runner-status" aria-live="polite">Press START RUN, then jump with Space or ↑. You can skip this at any time.</div><div class="world-floor"></div>
-</section>
-<div class="ticker-ribbon" id="ticker" aria-label="Research code create learn repeat"><span class="ticker-star">✦</span><div class="ticker-track"><span>// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //　// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //</span></div><span class="ticker-planet">🪐</span></div>
-<section class="quick-links" id="quick-links" aria-label="Quick links"><div class="quick-heading"><span>✰ Quick Links ✧</span><button type="button" class="window-close" aria-label="Quick Links window decoration">×</button></div><div class="quick-grid"><a class="quick-card" href="#about"><span class="qicon qicon-face"><svg class="avatar-face-icon" viewBox="0 0 64 50" role="img" aria-label="Retro pixel kawaii doll face with chestnut hair, green antennae and square glasses" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><path fill="#3d6e35" d="M19 15V9h3v6zM43 15V9h3v6z"/><path fill="#78e64b" d="M13 2h10v3h3v5h-3v3H13v-3h-3V5h3zM41 2h10v3h3v5h-3v3H41v-3h-3V5h3z"/>
-<path fill="#2e2029" d="M12 19V15h5v-4h8V8h14v3h8v4h5v8h3v20h-5v6h-6v-5H20v5h-6v-6H9V25h3z"/>
-<path fill="#f6d2bf" d="M18 18h28v4h4v19h-4v5H18v-5h-4V22h4z"/>
-<path fill="#38232a" d="M15 18v-5h8V9h7v4h5V9h7v4h7v8h-5v4h-5v-5h-4v-3h-4v6h-4v3h-4v-5h-4v4h-4z"/>
-<path fill="#89583d" d="M18 14h5v-3h5v5h-3v4h-4v-3h-3zM34 13h6v-2h4v4h4v4h-6v-3h-4v3h-4z"/>
-<path fill="#241923" d="M20 29h8v3h-8zM35 29h8v3h-8z"/>
-<g fill="#f7dfd2" fill-opacity=".14" stroke="#49302b" stroke-width="2.5"><path d="M16 27h14v2h2v8h-2v2H18v-2h-2z"/><path d="M34 29h2v-2h14v10h-2v2H36v-2h-2z"/></g>
-<path fill="#49302b" d="M30 30h4v2h-4z"/><path fill="#d69482" d="M30 36h3v2h-3z"/><path fill="#a84a5a" d="M28 40h4v-2h3v2h3v2h-3v2h-4v-2h-3z"/><path fill="#e1e3e9" d="M11 35h3v3h-3zM50 35h3v3h-3z"/></svg></span><b>About Me</b><span>Who I am &amp; where I’m headed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#projects"><span class="qicon">💻</span><b>Projects</b><span>Things I’ve built, explored &amp; contributed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#achievements"><span class="qicon">🏆</span><b>Achievements</b><span>Awards, scholarships, hackathons &amp; more</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#skills"><span class="qicon">📚</span><b>Skills</b><span>Tools, languages &amp; lab experience</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#scrapbook"><span class="qicon">📒</span><b>Scrapbook</b><span>Interests, hobbies &amp; random thoughts</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#guestbook"><span class="qicon">💌</span><b>Guestbook</b><span>Leave a message (:*o*:)</span><i aria-hidden="true">→</i></a></div></section><section class="section" id="about"><div class="section-title">01 / ABOUT</div><div class="section-body"><div class="about-layout"><div class="about-portrait"><svg class="avatar-face-icon" viewBox="0 0 64 50" role="img" aria-label="Retro pixel kawaii doll face with chestnut hair, green antennae and square glasses" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><path fill="#3d6e35" d="M19 15V9h3v6zM43 15V9h3v6z"/><path fill="#78e64b" d="M13 2h10v3h3v5h-3v3H13v-3h-3V5h3zM41 2h10v3h3v5h-3v3H41v-3h-3V5h3z"/>
-<path fill="#2e2029" d="M12 19V15h5v-4h8V8h14v3h8v4h5v8h3v20h-5v6h-6v-5H20v5h-6v-6H9V25h3z"/>
-<path fill="#f6d2bf" d="M18 18h28v4h4v19h-4v5H18v-5h-4V22h4z"/>
-<path fill="#38232a" d="M15 18v-5h8V9h7v4h5V9h7v4h7v8h-5v4h-5v-5h-4v-3h-4v6h-4v3h-4v-5h-4v4h-4z"/>
-<path fill="#89583d" d="M18 14h5v-3h5v5h-3v4h-4v-3h-3zM34 13h6v-2h4v4h4v4h-6v-3h-4v3h-4z"/>
-<path fill="#241923" d="M20 29h8v3h-8zM35 29h8v3h-8z"/>
-<g fill="#f7dfd2" fill-opacity=".14" stroke="#49302b" stroke-width="2.5"><path d="M16 27h14v2h2v8h-2v2H18v-2h-2z"/><path d="M34 29h2v-2h14v10h-2v2H36v-2h-2z"/></g>
-<path fill="#49302b" d="M30 30h4v2h-4z"/><path fill="#d69482" d="M30 36h3v2h-3z"/><path fill="#a84a5a" d="M28 40h4v-2h3v2h3v2h-3v2h-4v-2h-3z"/><path fill="#e1e3e9" d="M11 35h3v3h-3zM50 35h3v3h-3z"/></svg><span class="portrait-caption">ANUBHUTI.EXE ♡</span></div><div class="about-copy"><h2>ANUBHUTI GOSWAMI</h2><p>I'm a B.Tech Biotechnology student at Lovely Professional University. My current interests sit at the intersection of genetics, microbiology, biological data analysis, and computational tools for life sciences.</p><p>I'm building my foundations in Python and data analysis while looking for opportunities to contribute to research, bioinformatics, and interdisciplinary projects. Outside coursework, I enjoy science, wildlife, history, philosophy, and visual storytelling.</p></div><aside class="about-note"><span class="note-pin">✦</span><h3>ACADEMIC PROFILE</h3><p>CLASS X <b>94.8%</b></p><p>CLASS XII <b>89%</b></p><p>B.TECH BIOTECHNOLOGY <b>2025–2029</b></p><p>CGPA <b>7.58 / 10</b></p><p>LPU SCHOLARSHIP <b>60%</b></p><p>CURRENT FOCUS <b>Python · biological data</b></p><div class="note-signoff">little by little, a little becomes a lot ♡</div></aside></div></div></section>
-<section class="section" id="projects"><div class="section-title">02 / SELECTED PROJECTS</div><div class="section-body"><p>A selection of projects and explorations across biotechnology, data, and science communication.</p><div class="scrapbook"><article class="scrap"><div class="sticker">🧪</div><h3>LABMATEAI</h3><p>A biotechnology lab assistant concept built with Streamlit and Groq, including a PCR calculator and report support.</p><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">open GitHub ↗</a></article><article class="scrap"><div class="sticker">🧬</div><h3>SIMULAB</h3><p>A virtual practical-lab concept for guided experiments, equipment interactions, and simulated results.</p><span class="tag">In development</span></article><article class="scrap"><div class="sticker">🩺</div><h3>PULSE OXIMETER BIAS</h3><p>A research poster examining how skin pigmentation can affect pulse-oximeter accuracy and healthcare equity.</p></article><article class="scrap"><div class="sticker">🌱</div><h3>MODULAR ROADS</h3><p>A student-team concept exploring bamboo–plastic composites for modular road construction.</p></article><article class="scrap"><div class="sticker">🔬</div><h3>ZOONIVERSE</h3><p>Citizen-science annotation contributions to Placenta Profiles and DRIIVE: Clear Skies.</p></article><article class="scrap"><div class="sticker">💾</div><h3>BIOINFORMATICS</h3><p>Current learning focus: Python, biological data analysis, and computational approaches to life science.</p><span class="tag">Currently learning</span></article></div></div></section>
-<section class="section" id="achievements"><div class="section-title">03 / ACHIEVEMENTS & RECOGNITION</div><div class="section-body"><p>Selected academic, leadership, and project milestones.</p><div class="cabinet real-achievements"><article class="trophy unlocked"><div class="icon">🏅</div><strong>ACADEMIC DISTINCTION</strong><small>94.8% in Class X</small></article><article class="trophy unlocked"><div class="icon">🎓</div><strong>ACADEMIC SCHOLARSHIP</strong><small>LPU scholarship recipient</small></article><article class="trophy unlocked"><div class="icon">🌍</div><strong>IEO</strong><small>International Rank 4 · Gold Medal of Distinction</small></article><article class="trophy unlocked"><div class="icon">🧭</div><strong>TEAM LEADERSHIP</strong><small>Hackathon and student team roles</small></article><article class="trophy unlocked"><div class="icon">🔬</div><strong>CITIZEN SCIENCE</strong><small>Zooniverse research annotation</small></article><article class="trophy unlocked"><div class="icon">🧬</div><strong>BIOTECH PROJECTS</strong><small>Healthcare bias poster and lab-focused builds</small></article><article class="trophy unlocked"><div class="icon">🤖</div><strong>AI & DATA LEARNING</strong><small>IBM Intro to AI · data-labeling experience</small></article><article class="trophy unlocked"><div class="icon">✍️</div><strong>SCIENCE COMMUNICATION</strong><small>Writing and project storytelling</small></article></div></div></section>
-<section class="section" id="scrapbook"><div class="section-title">05 / SCRAPBOOK</div><div class="section-body"><div class="scrapbook"><article class="scrap"><div class="sticker">🧠</div><h3>THINGS I LIKE THINKING ABOUT</h3><p>Biology, philosophy, history, politics, wildlife, medicines, and how ideas shape the world.</p></article><article class="scrap"><div class="sticker">🎨</div><h3>OFF THE CLOCK</h3><p>Painting, visual storytelling, building tiny web worlds, and finding new things to learn.</p></article><article class="scrap"><div class="sticker">🌱</div><h3>CURRENT SIDE QUEST</h3><p>Building stronger foundations in Python, biological data analysis, and computational biology.</p></article><article class="scrap"><div class="sticker">✦</div><h3>PERSONAL MOTTO</h3><p>Stay curious. Ask better questions. Make useful things.</p></article></div></div></section><section class="section" id="skills"><div class="section-title">04 / SKILLS & CURRENT LEARNING</div><div class="section-body"><div class="columns"><article class="card"><h3>TOOLS I USE</h3><p><b>Data & productivity:</b> Excel, PowerPoint</p><p><b>Design:</b> Canva</p><p><b>Programming:</b> Python fundamentals</p><p><b>Development:</b> GitHub, VS Code</p></article><article class="card"><h3>BUILDING FOUNDATIONS IN</h3><p>Bioinformatics and sequence analysis</p><p>Biological data analysis and visualization</p><p>C++ object-oriented programming</p><p>Genetics, microbiology, and molecular biology</p></article></div></div></section><section class="section" id="guestbook"><div class="section-title">06 / GUESTBOOK</div><div class="section-body"><p>A small corner for messages, recommendations, and interesting links.</p><div class="guestbook"><form id="guest-form"><label for="guest-name">YOUR PLAYER NAME</label><input id="guest-name" maxlength="35" required placeholder="player_2"><label for="guest-message">YOUR MESSAGE</label><textarea id="guest-message" maxlength="240" required placeholder="Your website is a secret level of the internet..."></textarea><button class="pixel-btn pink" type="submit">✉ SIGN THE GUESTBOOK</button><p style="font-size:16px">Demo mode: messages are saved in this browser only, not shared between visitors.</p></form><div class="messages" id="messages"><div class="message"><b>ANUBHUTI GOSWAMI</b><small>site owner · 15 OCT 2026</small>Thanks for visiting. Leave a note, a resource, or a question.</div></div></div></div></section>
-</main>
-<div class="bottom-doodles" aria-hidden="true"><div class="cat-flower"><span class="flower-pot">🌼🪴</span><span class="pixel-cat"> ฅ^•ﻌ•^ฅ </span></div><aside class="sticky-note">small steps<br>still count &lt;3<br><span>✦ ☆ ✧</span></aside></div><footer class="footer"><span class="footer-domain">anubhutigoswami125.github.io</span><span class="footer-motto">GOOD THINGS TAKE TIME ♡</span><span class="footer-icons"><a href="mailto:anubhutiworkk@gmail.com" aria-label="Email">✉</a><a href="#guestbook" aria-label="Guestbook">♡</a><a href="#home" aria-label="Back to top">▼</a></span><br>ANUBHUTI GOSWAMI © 2026 · BIOTECHNOLOGY · COMPUTATION · RESEARCH<br><a href="mailto:anubhutiworkk@gmail.com" style="color:#ffd416">EMAIL</a> · <a href="https://linkedin.com/in/anubhuti-goswami-b6382137b" target="_blank" rel="noopener" style="color:#ffd416">LINKEDIN</a> · <a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener" style="color:#ffd416">GITHUB</a></footer>
-</div>
-<script>
-(()=> {
-const $=id=>document.getElementById(id), scene=$('runner-scene'), player=$('runner-player'), host=$('runner-obstacles'), status=$('runner-status'), startButton=$('start-run');
-let running=false,jumping=false,spawnTimer=null,endTimer=null,frameTimer=null,jumpTimer=null,collected=0;
-function jump(){if(!running||jumping)return;jumping=true;player.classList.add('jumping');clearTimeout(jumpTimer);jumpTimer=setTimeout(()=>{player.classList.remove('jumping');jumping=false},620)}
-function hit(a,b){const x=a.getBoundingClientRect(),y=b.getBoundingClientRect();return x.left<y.right-5&&x.right>y.left+5&&x.top<y.bottom-4&&x.bottom>y.top+4}
-function endRun(message){running=false;clearInterval(spawnTimer);clearTimeout(endTimer);clearInterval(frameTimer);if(scene)scene.classList.remove('running');if(status)status.textContent=message;if(startButton){startButton.disabled=false;startButton.textContent='↻ PLAY AGAIN'}if(host)host.innerHTML=''}
-function spawn(){if(!running)return;const o=document.createElement('span');o.className='runner-obstacle';o.setAttribute('aria-hidden','true');o.textContent=Math.random()>.5?'▥':'▲';o.style.animationDuration=(2.1+Math.random()*.7)+'s';host.appendChild(o);setTimeout(()=>o.remove(),3200);if(Math.random()>.3){const c=document.createElement('span');c.className='coin runner-coin live-coin';c.textContent='●';c.style.bottom=(65+Math.random()*55)+'px';c.style.animationDuration='2.6s';host.appendChild(c);setTimeout(()=>c.remove(),3000)}}
-function startRun(){if(!scene||!player||!host||!status||!startButton)return;endRun('');collected=0;running=true;jumping=false;player.classList.remove('jumping');scene.classList.add('running');status.textContent='Running… press Space or ↑ to jump and collect coins.';startButton.textContent='RUNNING…';startButton.disabled=true;spawn();spawnTimer=setInterval(spawn,1650);frameTimer=setInterval(()=>{if(!running)return;host.querySelectorAll('.runner-obstacle').forEach(el=>{if(hit(player,el))endRun('Run ended. Try again, or skip straight to the portfolio.')});host.querySelectorAll('.live-coin').forEach(el=>{if(hit(player,el)){el.remove();collected++;status.textContent='Coins collected: '+collected+'. Keep going, or skip to the portfolio.'}})},50);endTimer=setTimeout(()=>endRun('Intro complete. The portfolio is ready below.'),12000)}
-startButton.addEventListener('click',startRun);
-const skipRun=document.querySelector('.hero-skip a');if(skipRun)skipRun.addEventListener('click',()=>{if(running)endRun('Intro skipped. Explore the portfolio below.');});
-document.addEventListener('keydown',e=>{if((e.code==='Space'||e.code==='ArrowUp')&&running){if(e.target&&['INPUT','TEXTAREA','BUTTON'].includes(e.target.tagName)&&e.target.id!=='start-run')return;e.preventDefault();jump()}});
-scene.addEventListener('pointerdown',()=>{if(running)jump()});
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{if(running)endRun('Intro skipped. Explore the portfolio below.')}));
-const form=$('guest-form'),messages=$('messages');let guestMessages=[];try{guestMessages=JSON.parse(localStorage.getItem('anubhutiGuestbook')||'[]')}catch(e){}
-function renderMessages(){messages.innerHTML='<div class="message"><b>ANUBHUTI GOSWAMI</b><small>site owner · 15 OCT 2026</small>Thanks for visiting. Leave a note, a resource, or a question.</div>';guestMessages.forEach(m=>{const el=document.createElement('div'),b=document.createElement('b'),small=document.createElement('small'),p=document.createElement('div');el.className='message';b.textContent=m.name;small.textContent=m.date;p.textContent=m.message;el.append(b,small,p);messages.prepend(el)})}
-form.addEventListener('submit',e=>{e.preventDefault();const name=$('guest-name').value.trim(),message=$('guest-message').value.trim();if(!name||!message)return;guestMessages.unshift({name,message,date:new Date().toLocaleDateString()});guestMessages=guestMessages.slice(0,30);try{localStorage.setItem('anubhutiGuestbook',JSON.stringify(guestMessages))}catch(e){}form.reset();renderMessages()});
-renderMessages();
-})();
-</script>
-</body></html>
+
+    <div class="browser-window">
+        <!-- Top Browser Bar -->
+        <div class="browser-topbar">
+            <div class="browser-address">
+                <span>★</span> anubhuti.world
+            </div>
+            <div class="browser-meta">
+                <span class="browser-tab-indicator">// building a kinder, smarter future ✕</span>
+                <div class="window-controls">
+                    <div class="win-btn">_</div>
+                    <div class="win-btn">□</div>
+                    <div class="win-btn">✕</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Content Container -->
+        <div class="portfolio-content">
+
+            <!-- Navigation Bar Header -->
+            <div class="nav-header">
+                <div class="folder-badge">
+                    📁 ANUBHUTI WORLD<br><span style="font-size:6px; color:#7b4298;">Pixel Girl Online! ♡</span>
+                </div>
+                <div class="nav-tabs">
+                    <a href="#home" class="nav-tab active">Home</a>
+                    <a href="#about" class="nav-tab">About</a>
+                    <a href="#projects" class="nav-tab">Projects</a>
+                    <a href="#achievements" class="nav-tab">Achievements</a>
+                    <a href="#skills" class="nav-tab">Skills</a>
+                    <a href="#scrapbook" class="nav-tab">Scrapbook</a>
+                    <a href="#guestbook" class="nav-tab">Guestbook</a>
+                </div>
+                <div class="profile-badge-top">
+                    B.Tech Biotechnology<br>LPU | 2025–2029 💖
+                </div>
+            </div>
+
+            <!-- Hero Section: Mini Game + About Card -->
+            <div class="hero-container">
+                <!-- Mini Game Window -->
+                <div class="game-window">
+                    <div class="game-header-bar">
+                        <div class="hearts">♥♥♥</div>
+                        <div style="font-family:'Press Start 2P'; font-size:7px;">ARCADE.EXE</div>
+                    </div>
+                    <div class="game-canvas-area">
+                        <div class="sun-circle"></div>
+                        <div class="city-silhouette"></div>
+                        <div class="game-signpost">PRESS SPACE TO JUMP ►</div>
+                        <!-- Coins -->
+                        <div class="coin-item"></div>
+                        <div class="coin-item"></div>
+                        <div class="coin-item"></div>
+                        <!-- Obstacle Block -->
+                        <div class="obstacle-block">?</div>
+                        <!-- Runner Avatar -->
+                        <div class="runner-avatar"></div>
+                        <!-- Ground Platform -->
+                        <div class="game-ground">
+                            <div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div>
+                        </div>
+                    </div>
+                    <div class="game-controls-bar">
+                        <span>SCORE: 030 ◉</span>
+                        <button class="arcade-btn">SKIP &gt;&gt;</button>
+                    </div>
+                </div>
+
+                <!-- About Card -->
+                <div class="about-card">
+                    <div class="paperclip"></div>
+                    <div class="about-header-row">
+                        <div class="about-title-area">
+                            <h2>Hi, I'm Anubhuti! ✰</h2>
+                            <div class="about-subtitle">B.Tech Biotechnology @ LPU | 2025–2029</div>
+                        </div>
+                        <div class="avatar-headshot"></div>
+                    </div>
+                    <p class="about-bio-text">
+                        I'm a curious learner who loves science, technology and the little things that make life interesting — from bioinformatics to good food, art, and late night study sessions. This is my digital space where I share my work, interests and journey.
+                    </p>
+                    <div class="about-signoff">Thanks for visiting! ♡</div>
+                </div>
+            </div>
+
+            <!-- Marquee Ticker -->
+            <div class="marquee-bar">
+                // RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //
+            </div>
+
+            <!-- Bottom Section: Quick Links & Sticky Note -->
+            <div class="main-layout-bottom">
+                <!-- Quick Links Window -->
+                <div class="links-window">
+                    <div class="links-window-header">
+                        <span>✰ Quick Links ✧</span>
+                        <div class="win-btn" style="width:12px; height:12px; font-size:7px;">✕</div>
+                    </div>
+                    <div class="links-grid">
+                        <a href="#about" class="link-card">
+                            <div class="link-card-icon">👩‍💻</div>
+                            <div class="link-card-title">About Me</div>
+                            <div class="link-card-desc">Who I am & where I'm headed</div>
+                        </a>
+                        <a href="#projects" class="link-card">
+                            <div class="link-card-icon">💻</div>
+                            <div class="link-card-title">Projects</div>
+                            <div class="link-card-desc">Things I've built, explored & contributed</div>
+                        </a>
+                        <a href="#achievements" class="link-card">
+                            <div class="link-card-icon">🏆</div>
+                            <div class="link-card-title">Achievements</div>
+                            <div class="link-card-desc">Awards, scholarships, hackathons & more</div>
+                        </a>
+                        <a href="#skills" class="link-card">
+                            <div class="link-card-icon">📚</div>
+                            <div class="link-card-title">Skills</div>
+                            <div class="link-card-desc">Tools, languages, lab experience</div>
+                        </a>
+                        <a href="#scrapbook" class="link-card">
+                            <div class="link-card-icon">📓</div>
+                            <div class="link-card-title">Scrapbook</div>
+                            <div class="link-card-desc">Interests, hobbies, random thoughts</div>
+                        </a>
+                        <a href="#guestbook" class="link-card">
+                            <div class="link-card-icon">💌</div>
+                            <div class="link-card-title">Guestbook</div>
+                            <div class="link-card-desc">Leave a message (:_o_:)</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sticky Note -->
+                <div class="sticky-note">
+                    <div class="pin"></div>
+                    <div class="sticky-text">
+                        small steps<br>still count<br>&lt;3
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Browser Footer -->
+        <div class="browser-footer">
+            <div>🌐 anubhuti.goswami125.github.io</div>
+            <div>GOOD THINGS TAKE TIME ♡</div>
+        </div>
+    </div>
+
+</body>
+</html>
