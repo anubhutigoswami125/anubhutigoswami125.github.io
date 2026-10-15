@@ -256,9 +256,49 @@ body{background-color:#f8d7f1;background-image:linear-gradient(rgba(92,55,126,.0
 @media(max-width:900px){.about-layout{grid-template-columns:120px minmax(0,1fr)}.about-note{grid-column:1/-1;transform:rotate(0)}}
 @media(max-width:520px){.about-layout{grid-template-columns:1fr}.about-portrait{min-height:180px}.about-portrait .avatar-face-icon{height:155px}.about-note{grid-column:auto}.about-note p{font-size:16px}}
 
+
+/* Hyper-pink cosmic wallpaper and a fuller retro platform-game scene */
+:root{--spec-cosmic-pink:#ff42b7;--spec-hot-pink:#ff73cf;--spec-cosmic-purple:#7137a6}
+body{background:#ff63c7}
+.cosmic-wallpaper{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse at 12% 18%,#ff9cde 0 2px,transparent 3px),radial-gradient(ellipse at 81% 63%,#fff1ff 0 2px,transparent 3px),radial-gradient(ellipse at 48% 84%,#ffddfb 0 2px,transparent 3px),linear-gradient(135deg,#ff5bc8 0%,#fa86d8 42%,#f74fbd 100%);background-size:63px 57px,83px 76px,107px 91px,100% 100%}
+.cosmic-wallpaper span{position:absolute;display:block;filter:drop-shadow(2px 3px 0 #ad2797)}
+.cosmic-star{font-size:clamp(20px,3vw,42px);color:#fff7ff;text-shadow:0 0 12px #fff}
+.cosmic-star.star-a{left:4%;top:13%}.cosmic-star.star-b{left:88%;top:25%;font-size:32px}.cosmic-star.star-c{left:8%;top:76%;font-size:28px}.cosmic-star.star-d{left:93%;top:81%;font-size:36px}
+.cosmic-planet{font-size:clamp(32px,5vw,65px);filter:drop-shadow(3px 4px 0 #b22c9e)!important}
+.cosmic-planet.planet-a{left:1.5%;top:42%;transform:rotate(-17deg)}.cosmic-planet.planet-b{right:2%;top:5%;transform:rotate(18deg) scale(.78)}
+.cosmic-bow{font-size:clamp(27px,4vw,46px);filter:drop-shadow(2px 3px 0 #ae288e)!important}
+.cosmic-bow.bow-a{left:2%;top:61%;transform:rotate(-12deg)}.cosmic-bow.bow-b{right:2%;top:44%;transform:rotate(11deg)}.cosmic-bow.bow-c{right:7%;bottom:4%;transform:rotate(-8deg) scale(.8)}
+.screen{position:relative;z-index:0;background:#fff0fbf2;box-shadow:0 0 0 5px #ffb6e8,0 0 0 10px #f72eb0,0 0 40px #d52fa777}
+.game-world{border-color:#fff0fb;background:linear-gradient(135deg,#ffb3e8,#f46cc9 48%,#c68bf4);box-shadow:0 0 0 3px #ff50bd,0 0 0 7px #ffd6f4}
+.runner-scene{isolation:isolate;overflow:hidden;background:linear-gradient(180deg,#ffb8ec 0%,#d9b4fa 45%,#ff9bd9 100%)!important}
+.runner-scene:before{content:none!important}
+.distant-scenery{position:absolute;inset:0 0 38px;z-index:0;overflow:hidden;pointer-events:none}
+.far-skyline{position:absolute;left:-3%;right:-3%;bottom:26px;height:42%;display:flex;align-items:flex-end;gap:5px;filter:blur(3px);opacity:.47}
+.far-skyline i{display:block;flex:1;min-width:18px;background:linear-gradient(90deg,#8066b9,#a17ac7);border:2px solid #9975c2;height:65%;position:relative}
+.far-skyline i:nth-child(2n){height:92%;background:#8e74c2}.far-skyline i:nth-child(3n){height:48%}
+.far-skyline i:before{content:"";position:absolute;inset:8px 4px;background:repeating-linear-gradient(90deg,#fbe0ff 0 4px,transparent 4px 11px),repeating-linear-gradient(0deg,transparent 0 9px,#fbe0ff 9px 13px);opacity:.55}
+.far-trees{position:absolute;left:-3%;right:-3%;bottom:17px;height:70px;display:flex;align-items:flex-end;justify-content:space-around;filter:blur(4px);opacity:.6}
+.far-trees i{position:relative;width:29px;height:38px;background:#79b88a;border-radius:48% 52% 43% 48%;box-shadow:10px -7px 0 #8ecb9b,-9px -4px 0 #6ba980}
+.far-trees i:after{content:"";position:absolute;width:7px;height:22px;left:11px;top:27px;background:#9270a5}
+.far-trees i:nth-child(2n){transform:scale(1.25);background:#9bcf9b}
+.runner-scene .ground{z-index:2;height:44px!important;background:repeating-linear-gradient(90deg,#8c52bd 0 38px,#a66bd0 38px 76px)!important;border-top:7px solid #8fe56c!important;box-shadow:inset 0 7px #b4f18e!important}
+.runner-scene .ground:after{top:36px!important;height:28px!important;background:repeating-linear-gradient(90deg,#8c52bd 0 24px,#7642a8 24px 48px)!important;border-top:4px solid #5e378b!important}
+.platform{position:absolute;z-index:3;height:17px;background:linear-gradient(#b4f58d 0 5px,#a86bdd 5px 100%);border:2px solid #513178;box-shadow:inset 0 -4px #8750bd,3px 4px 0 #7540a1;image-rendering:pixelated}
+.platform:before{content:"";position:absolute;inset:7px 0 auto;height:3px;background:repeating-linear-gradient(90deg,#e4b5ff 0 13px,#8b51bd 13px 16px)}
+.platform-one{left:42%;bottom:133px;width:128px}
+.platform-two{right:7%;bottom:195px;width:104px}
+.platform-three{left:4%;bottom:225px;width:86px}
+.runner-scene .pixel-avatar{z-index:4;width:100px;height:150px;left:17%;bottom:31px;transform-origin:bottom center;filter:drop-shadow(3px 4px 0 #68477f);animation:run-bob .25s steps(2,end) infinite alternate}
+.runner-scene .life-hearts{top:12px;left:12px;z-index:8;background:#fff0fb;border:2px solid #c83ca7;box-shadow:3px 4px 0 #b347b0;border-radius:6px;padding:7px 11px;color:#ff3d9f}
+.runner-scene .life-hearts span{font-size:28px;color:#ff3d9f;text-shadow:1px 2px #b21b78}
+.runner-scene .scene-coin{z-index:4}
+@media(max-width:600px){.cosmic-planet.planet-a{left:0;top:36%}.cosmic-bow.bow-b{right:0;top:49%}.runner-scene .pixel-avatar{width:78px;height:117px;left:14%;bottom:33px}.platform-one{left:46%;width:82px}.platform-two{right:2%;width:70px}.platform-three{left:3%;width:65px}.far-skyline{height:34%}}
+@media(prefers-reduced-motion:reduce){.cosmic-wallpaper span,.runner-scene .pixel-avatar{animation:none!important}}
+
 </style>
 </head>
 <body>
+<div class="cosmic-wallpaper" aria-hidden="true"><span class="cosmic-star star-a">✦</span><span class="cosmic-star star-b">✧</span><span class="cosmic-star star-c">✦</span><span class="cosmic-star star-d">✧</span><span class="cosmic-planet planet-a">🪐</span><span class="cosmic-planet planet-b">🪐</span><span class="cosmic-bow bow-a">🎀</span><span class="cosmic-bow bow-b">🎀</span><span class="cosmic-bow bow-c">🎀</span></div>
 <div class="screen">
 <div class="browser-line"><span class="domain-mark">✦ anubhuti.world</span><span class="browser-status">// building a kinder, smarter future</span><span class="window-controls" aria-label="Window controls"><i>_</i><i>□</i><i>×</i></span></div>
 <div class="desktop-dock">
@@ -271,7 +311,7 @@ body{background-color:#f8d7f1;background-image:linear-gradient(rgba(92,55,126,.0
 <div class="stars"></div><div class="moon"></div><div class="cloud"></div><div class="cloud c2"></div>
 <div class="hero-copy"><span class="paperclip" aria-hidden="true">⌇</span><span class="hero-sticker" aria-hidden="true">✦</span><div class="eyebrow">A LITTLE CORNER OF THE INTERNET</div><h1>Hi, I’m<br>Anubhuti! <span class="hero-star">✰</span></h1><div class="sub">B.Tech Biotechnology @ LPU | 2025–2029</div><p>I’m a biotechnology student who loves the overlap between science, bioinformatics, and the little questions that turn into big ideas. Usually exploring genetics, microbes, data, food, art, or one more thing at 2 a.m.</p><p class="hero-signoff">Thanks for visiting! ♡ <span class="mini-chibi" aria-hidden="true">◕ᴗ◕</span></p><a class="pixel-btn pink" href="#projects">EXPLORE MY WORK →</a></div>
 <div class="runner-instructions">PRESS SPACE TO JUMP ►</div><div class="pixel-lucky-block" aria-hidden="true">?</div><div class="hero-skip"><button class="pixel-btn pink" id="start-run" type="button">START RUN ▶</button><a class="pixel-btn" href="#ticker">SKIP &gt;&gt;</a></div>
-<div class="scene runner-scene" id="runner-scene" aria-label="Short pixel runner introduction"><div class="life-hearts" aria-label="Three lives"><span>♥</span><span>♥</span><span>♥</span></div><div class="sky-cloud cloud-one" aria-hidden="true"></div><div class="sky-cloud cloud-two" aria-hidden="true"></div><div class="scene-coin coin-a" aria-hidden="true">●</div><div class="scene-coin coin-b" aria-hidden="true">●</div><div class="scene-coin coin-c" aria-hidden="true">●</div><div class="runner-obstacles" id="runner-obstacles"></div><svg class="pixel-avatar runner-player" id="runner-player" viewBox="0 0 160 240" role="img" aria-label="Full-body chibi Anubhuti with neon-green alien antennae, wavy brown hair, square brown glasses, a 3-shaped kiss pout, brick-red shirt, cuffed black wide-leg jeans and white sneakers" xmlns="http://www.w3.org/2000/svg">
+<div class="scene runner-scene" id="runner-scene" aria-label="Short pixel runner introduction"><div class="distant-scenery" aria-hidden="true"><div class="far-skyline"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="far-trees"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="platform platform-one" aria-hidden="true"></div><div class="platform platform-two" aria-hidden="true"></div><div class="platform platform-three" aria-hidden="true"></div><div class="life-hearts" aria-label="Three lives"><span>♥</span><span>♥</span><span>♥</span></div><div class="sky-cloud cloud-one" aria-hidden="true"></div><div class="sky-cloud cloud-two" aria-hidden="true"></div><div class="scene-coin coin-a" aria-hidden="true">●</div><div class="scene-coin coin-b" aria-hidden="true">●</div><div class="scene-coin coin-c" aria-hidden="true">●</div><div class="runner-obstacles" id="runner-obstacles"></div><svg class="pixel-avatar runner-player" id="runner-player" viewBox="0 0 160 240" role="img" aria-label="Full-body chibi Anubhuti with neon-green alien antennae, wavy brown hair, square brown glasses, a 3-shaped kiss pout, brick-red shirt, cuffed black wide-leg jeans and white sneakers" xmlns="http://www.w3.org/2000/svg">
 <g stroke="#241923" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
   <!-- antennae -->
   <path d="M61 49L57 20M101 49L106 20" fill="none" stroke="#4d812b" stroke-width="4"/>
