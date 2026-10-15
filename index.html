@@ -228,71 +228,86 @@
             .footer-links a { margin: 0 8px; }
         }
     
-/* Explorer-adventure makeover: sunny jungle colors, map trails, bold storybook UI */
+/* Retro-gaming / hyperpop makeover: candy pink, electric purple, arcade energy */
 :root{
- --bg-color:#ffd84f;--container-bg:#fffdf0;--border-color:#43227a;--text-main:#2c1857;
- --accent-red:#ed3c38;--accent-green:#278b4d;--muted:#655783;--shadow:6px 6px 0 #43227a;
+ --bg-color:#ffb8ec;--container-bg:#fff7ff;--border-color:#32104f;--text-main:#2b1245;
+ --accent-red:#ff2e93;--accent-green:#7a2cff;--muted:#73558b;--shadow:6px 6px 0 #32104f;
 }
 body{
- background-color:#ffd84f;
+ background:#ffb8ec;
  background-image:
-   radial-gradient(circle at 12px 12px,rgba(255,255,255,.75) 0 3px,transparent 3.8px),
-   radial-gradient(circle at 35px 35px,rgba(255,145,40,.24) 0 2px,transparent 3px),
-   linear-gradient(135deg,#ffdf57 0%,#ffb34b 43%,#ffdc62 100%);
- background-size:48px 48px,48px 48px,100% 100%;
+  radial-gradient(circle,#fff5ff 0 2px,transparent 2.8px),
+  linear-gradient(135deg,#ffc7f0 0%,#edb5ff 48%,#b9a5ff 100%);
+ background-size:28px 28px,100% 100%;
  position:relative;
 }
 body:before{
- content:"✿  ★  ➜  ✦  ✿  ★  ➜  ✦  ✿";
+ content:"★  ✦  +  ★  ✧  +  ★  ✦  +  ★";
  position:fixed;inset:auto 0 0;z-index:0;pointer-events:none;
- color:rgba(87,42,139,.2);font-size:clamp(25px,4vw,48px);letter-spacing:18px;
+ color:rgba(108,38,210,.2);font-size:clamp(25px,4vw,48px);letter-spacing:16px;
  white-space:nowrap;overflow:hidden;line-height:1.3;
 }
 .site-wrapper{
- position:relative;z-index:1;max-width:1000px;background:#fffdf0;
- border:4px solid #43227a;border-radius:18px;box-shadow:9px 9px 0 #43227a;
+ position:relative;z-index:1;max-width:1000px;background:#fff7ff;
+ border:4px solid #32104f;border-radius:8px;box-shadow:9px 9px 0 #32104f;
  overflow:hidden;
 }
-.top-bar{background:#542a91!important;color:#fff5a5!important;border-bottom:4px solid #ff8c37;min-height:38px}
-.header{
- background:linear-gradient(115deg,#fff7a8 0%,#fffdf0 55%,#d9f7a2 100%);
- border-bottom:4px solid #43227a;position:relative;
+.top-bar{
+ background:#32104f!important;color:#ffb9ed!important;
+ border-bottom:4px solid #ff2e93;min-height:38px;
 }
-.header:after{content:"✦  ★  ✿";position:absolute;right:24px;top:12px;color:#ef7b28;font-size:20px;letter-spacing:8px}
-.header-titles h1{color:#542a91;font-size:clamp(24px,4vw,34px);text-shadow:2px 2px 0 #ffda4f}
-.header-titles p{color:#e53b3b!important;line-height:1.8}
-.bio-snippet{color:#49376c}
+.header{
+ background:linear-gradient(115deg,#ffd2f3 0%,#fff7ff 52%,#e2d0ff 100%);
+ border-bottom:4px solid #32104f;position:relative;
+}
+.header:after{
+ content:"✦  ★  ✧";position:absolute;right:24px;top:12px;
+ color:#8d32ff;font-size:20px;letter-spacing:8px;
+}
+.header-titles h1{
+ color:#5d1eb2;font-size:clamp(24px,4vw,34px);
+ text-shadow:2px 2px 0 #ff9fe1;
+}
+.header-titles p{color:#f51b91!important;line-height:1.8}
+.bio-snippet{color:#65457b}
 .avatar-box{
- width:158px;height:158px;border:4px solid #43227a!important;border-radius:16px;
- box-shadow:5px 5px 0 #ff8c37!important;background:#d9f5a0!important;
+ width:158px;height:158px;border:4px solid #32104f!important;border-radius:8px;
+ box-shadow:5px 5px 0 #ff2e93!important;background:#d9b7ff!important;
 }
 .avatar-box svg{display:block;width:100%;height:100%}
-.nav-bar{background:#ff9a3e!important;border-bottom:4px solid #43227a!important}
-.nav-btn{color:#43227a!important;border-right:2px solid rgba(67,34,122,.25)!important;padding:14px 16px}
-.nav-btn:hover,.nav-btn.active{background:#542a91!important;color:#fff5a5!important}
-.content-section{background-color:#fffdf0;background-image:radial-gradient(#d8c9ef 1px,transparent 1px);background-size:22px 22px}
-.content-section h2{color:#542a91;border-color:#ff8c37;line-height:1.9}
-.card{
- border:3px solid #43227a!important;border-radius:13px!important;background:#fffef7!important;
- box-shadow:4px 4px 0 #b6df79!important;position:relative;
+.nav-bar{background:#ff76c9!important;border-bottom:4px solid #32104f!important}
+.nav-btn{
+ color:#32104f!important;border-right:2px solid rgba(50,16,79,.25)!important;
+ padding:14px 16px;
 }
-.card:nth-child(3n+1){background:#fff7c7!important}
-.card:nth-child(3n+2){background:#f0e6ff!important}
-.card:nth-child(3n){background:#e6f7c9!important}
-.card h3{color:#542a91}
-.card .meta{color:#d84b31!important;line-height:1.8}
-.skill-tag{background:#dff5ae!important;border:2px solid #43227a!important;border-radius:8px;color:#34215c}
-.footer{background:#542a91!important;color:#fff7bf;border-top:4px solid #ff8c37!important}
-.footer-links a{color:#fff7bf!important}
+.nav-btn:hover,.nav-btn.active{background:#6522b8!important;color:#fff4ff!important}
+.content-section{
+ background-color:#fff7ff;
+ background-image:radial-gradient(#e6c8ff 1px,transparent 1px);
+ background-size:18px 18px;
+}
+.content-section h2{color:#6522b8;border-color:#ff2e93;line-height:1.9}
+.card{
+ border:3px solid #32104f!important;border-radius:5px!important;background:#fffaff!important;
+ box-shadow:4px 4px 0 #d9a3ff!important;position:relative;
+}
+.card:nth-child(3n+1){background:#ffe2f5!important}
+.card:nth-child(3n+2){background:#f0e2ff!important}
+.card:nth-child(3n){background:#e9e2ff!important}
+.card h3{color:#5d1eb2}
+.card .meta{color:#e52491!important;line-height:1.8}
+.card a{color:#6c22c8;font-weight:700;text-decoration-thickness:2px;text-underline-offset:2px}
+.skill-tag{background:#f8d5ff!important;border:2px solid #32104f!important;border-radius:3px;color:#452066}
+.footer{background:#32104f!important;color:#ffe5fb;border-top:4px solid #ff2e93!important}
+.footer-links a{color:#ffb9ed!important}
 @media(max-width:768px){
  body{padding:9px}
- .site-wrapper{border-radius:14px;box-shadow:5px 5px 0 #43227a}
+ .site-wrapper{border-radius:6px;box-shadow:5px 5px 0 #32104f}
  .header:after{right:10px;top:8px;font-size:15px}
  .avatar-box{width:142px;height:142px}
  .nav-btn{flex:1 0 auto;padding:12px 9px}
  .content-section{padding:20px 14px}
 }
-
 </style>
 </head>
 <body>
@@ -316,14 +331,14 @@ body:before{
         <div class="avatar-box" role="img" aria-label="Chibi illustration of a girl with a short brown bob, unimpressed expression, red top and black jeans">
 <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <defs>
- <linearGradient id="avatarSky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9f7a2"/><stop offset="1" stop-color="#a9e7a5"/></linearGradient>
+ <linearGradient id="avatarSky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8c5ff"/><stop offset="1" stop-color="#bba2ff"/></linearGradient>
  <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#85502f"/><stop offset=".55" stop-color="#5b3328"/><stop offset="1" stop-color="#38232c"/></linearGradient>
  <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff5a4c"/><stop offset="1" stop-color="#d92939"/></linearGradient>
  </defs>
  <rect width="180" height="180" fill="url(#avatarSky)"/>
- <circle cx="27" cy="29" r="12" fill="#fff5a4"/><path d="M27 11v-5M27 47v-5M9 29H4M50 29h-5M14 16l-4-4M40 42l-4-4M40 16l4-4M14 42l-4 4" stroke="#ff9b35" stroke-width="3" stroke-linecap="round"/>
- <path d="M15 150Q28 123 46 135L59 149 72 129 91 141 111 126 137 139 164 130 180 153V180H0V164Z" fill="#75c96d"/>
- <ellipse cx="91" cy="165" rx="49" ry="7" fill="#5ca85b" opacity=".35"/>
+ <circle cx="27" cy="29" r="12" fill="#fff0a8"/><path d="M27 11v-5M27 47v-5M9 29H4M50 29h-5M14 16l-4-4M40 42l-4-4M40 16l4-4M14 42l-4 4" stroke="#ff9b35" stroke-width="3" stroke-linecap="round"/>
+ <path d="M15 150Q28 123 46 135L59 149 72 129 91 141 111 126 137 139 164 130 180 153V180H0V164Z" fill="#d47bfa"/>
+ <ellipse cx="91" cy="165" rx="49" ry="7" fill="#a86be0" opacity=".35"/>
  <!-- legs and chunky sneakers -->
  <path d="M66 121L63 148 60 160 78 160 84 132 100 132 105 157 124 157 120 141 121 119Z" fill="#171b2d" stroke="#38245d" stroke-width="3" stroke-linejoin="round"/>
  <path d="M58 155Q68 151 80 157L82 165Q72 171 53 166L52 161Z" fill="#fffdf1" stroke="#38245d" stroke-width="3"/>
