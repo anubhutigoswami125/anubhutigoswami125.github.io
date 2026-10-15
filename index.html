@@ -237,6 +237,25 @@ body{background-color:#f8d7f1;background-image:linear-gradient(rgba(92,55,126,.0
 @media(max-width:800px){.scene-coin.coin-a{left:44%}.scene-coin.coin-b{left:70%}.scene-coin.coin-c{left:83%}}
 @media(prefers-reduced-motion:reduce){.life-hearts span,.sky-cloud,.scene-coin{animation:none!important}}
 
+
+/* Avatar belongs to the About Me identity, with the profile note on the right */
+.qicon-face{display:grid;place-items:center;width:62px;height:62px;overflow:hidden;background:#ffe2f1;border:2px solid #76509e;border-radius:50%;box-shadow:2px 3px 0 #edc1e5}
+.qicon-face .avatar-face-icon{width:100%;height:100%;display:block;overflow:hidden}
+.about-layout{display:grid;grid-template-columns:minmax(100px,.42fr) minmax(220px,1.25fr) minmax(220px,.9fr);gap:18px;align-items:stretch}
+.about-portrait{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:280px;padding:10px 6px;background:#fce8f7;border:2px solid #d7a5db;border-radius:5px;overflow:hidden}
+.about-portrait .avatar-face-icon{width:min(100%,155px);height:190px;overflow:hidden;filter:drop-shadow(3px 4px 0 #d4a3d7)}
+.portrait-caption{font:8px/1.8 'Press Start 2P';color:#67458b;text-align:center}
+.about-copy h2{font:10px/1.9 'Press Start 2P';color:#67458b;overflow-wrap:anywhere}
+.about-note{position:relative;align-self:stretch;padding:22px 16px 15px;background:#fff0a7;border:2px solid #9874b4;box-shadow:4px 5px 0 #c6a0dc;transform:rotate(1deg);color:#49336a}
+.about-note:before{content:'';position:absolute;top:-8px;left:48%;width:32px;height:11px;background:#e8d4f3;border:1px solid #9874b4;transform:rotate(-7deg)}
+.about-note .note-pin{position:absolute;top:6px;right:9px;color:#9b6cb0;font-size:20px}
+.about-note h3{font:9px/1.8 'Press Start 2P';color:#68458d;margin:5px 0 13px}
+.about-note p{display:flex;justify-content:space-between;gap:10px;margin:8px 0;padding-bottom:5px;border-bottom:1px dashed #d0ac81;font:17px 'VT323'}
+.about-note p b{text-align:right}
+.note-signoff{margin-top:14px;font:italic 19px 'Caveat','VT323',cursive;text-align:right;color:#8554a2}
+@media(max-width:900px){.about-layout{grid-template-columns:120px minmax(0,1fr)}.about-note{grid-column:1/-1;transform:rotate(0)}}
+@media(max-width:520px){.about-layout{grid-template-columns:1fr}.about-portrait{min-height:180px}.about-portrait .avatar-face-icon{height:155px}.about-note{grid-column:auto}.about-note p{font-size:16px}}
+
 </style>
 </head>
 <body>
@@ -289,7 +308,75 @@ body{background-color:#f8d7f1;background-image:linear-gradient(rgba(92,55,126,.0
 </svg><div class="ground"></div></div><div class="runner-status" id="runner-status" aria-live="polite">Press START RUN, then jump with Space or ↑. You can skip this at any time.</div><div class="world-floor"></div>
 </section>
 <div class="ticker-ribbon" id="ticker" aria-label="Research code create learn repeat"><span class="ticker-star">✦</span><div class="ticker-track"><span>// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //　// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //</span></div><span class="ticker-planet">🪐</span></div>
-<section class="quick-links" id="quick-links" aria-label="Quick links"><div class="quick-heading"><span>✰ Quick Links ✧</span><button type="button" class="window-close" aria-label="Quick Links window decoration">×</button></div><div class="quick-grid"><a class="quick-card" href="#about"><span class="qicon">👽</span><b>About Me</b><span>Who I am &amp; where I’m headed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#projects"><span class="qicon">💻</span><b>Projects</b><span>Things I’ve built, explored &amp; contributed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#achievements"><span class="qicon">🏆</span><b>Achievements</b><span>Awards, scholarships, hackathons &amp; more</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#skills"><span class="qicon">📚</span><b>Skills</b><span>Tools, languages &amp; lab experience</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#scrapbook"><span class="qicon">📒</span><b>Scrapbook</b><span>Interests, hobbies &amp; random thoughts</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#guestbook"><span class="qicon">💌</span><b>Guestbook</b><span>Leave a message (:*o*:)</span><i aria-hidden="true">→</i></a></div></section><section class="section" id="about"><div class="section-title">01 / ABOUT</div><div class="section-body"><div class="columns"><div><h2 style="font:11px 'Press Start 2P';line-height:1.8;color:#bf183a">ANUBHUTI GOSWAMI</h2><p>I'm a B.Tech Biotechnology student at Lovely Professional University. My current interests sit at the intersection of genetics, microbiology, biological data analysis, and computational tools for life sciences.</p><p>I'm building my foundations in Python and data analysis while looking for opportunities to contribute to research, bioinformatics, and interdisciplinary projects. Outside coursework, I enjoy science, wildlife, history, philosophy, and visual storytelling.</p></div><div class="card"><h3>ACADEMIC PROFILE</h3><p>CLASS X <b>94.8%</b></p><p>CLASS XII <b>89%</b></p><p>B.TECH BIOTECHNOLOGY <b>2025–2029</b></p><p>CGPA <b>7.58 / 10</b></p><p>LPU SCHOLARSHIP <b>60%</b></p><p>CURRENT FOCUS <b>Python · biological data</b></p></div></div></div></section>
+<section class="quick-links" id="quick-links" aria-label="Quick links"><div class="quick-heading"><span>✰ Quick Links ✧</span><button type="button" class="window-close" aria-label="Quick Links window decoration">×</button></div><div class="quick-grid"><a class="quick-card" href="#about"><span class="qicon qicon-face"><svg class="avatar-face-icon" viewBox="35 0 90 125" role="img" aria-label="Anubhuti's avatar face with chestnut hair, green antennae, square glasses and silver earrings" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#241923" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M66 48V19M103 48V19" fill="none" stroke="#4e8f29" stroke-width="7"/>
+  <circle cx="66" cy="16" r="10" fill="#83e34d"/><circle cx="103" cy="16" r="10" fill="#83e34d"/>
+  <path d="M57 145L45 174 36 188 48 196 65 177 72 150Z" fill="#9c2c38"/>
+  <path d="M104 146L117 173 125 188 113 196 96 177 91 151Z" fill="#9c2c38"/>
+  <path d="M67 151L63 184 57 211 74 215 87 183 92 151Z" fill="#292630"/>
+  <path d="M92 151L91 182 100 212 119 213 113 179 111 151Z" fill="#292630"/>
+  <path d="M55 205L76 207 77 221 48 221 38 214 42 208Z" fill="#fff9f2"/>
+  <path d="M98 205L119 205 130 213 127 221 99 221 94 216Z" fill="#fff9f2"/>
+  <path d="M40 218H76M99 218H128" stroke="#a5a0a7" stroke-width="3"/>
+  <path d="M59 111L55 150 68 159 102 159 115 150 109 111Z" fill="#9e2d3b"/>
+  <path d="M70 111L80 124 91 111" fill="#f2b8c1" stroke-width="3"/>
+  <path d="M56 119L44 137 42 153M111 119L123 137 124 153" fill="none" stroke="#f1c5b4" stroke-width="12"/>
+  <path d="M42 148L40 157M124 148L126 157" fill="none" stroke="#f1c5b4" stroke-width="10"/>
+  <path d="M59 58C52 43 61 29 79 28 100 26 112 39 108 59L112 86 104 111 92 120 68 116 55 101 52 77Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
+  <path d="M63 53Q62 42 75 40L95 40Q105 44 103 60L103 92Q101 110 82 113Q63 109 61 92Z" fill="#f4cbb9" stroke="#2a1a22" stroke-width="4"/>
+  <path d="M60 58Q47 47 62 32Q70 21 86 25Q108 24 113 43L107 65 101 54 92 43 79 49 69 63Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
+  <path d="M62 43Q70 35 80 43L78 58 68 66 65 55Z" fill="#57392f" stroke="none"/>
+  <path d="M82 43Q94 37 104 46L101 59 91 63 85 54Z" fill="#57392f" stroke="none"/>
+  <path d="M61 60L56 82 57 98 49 105 47 76Z" fill="#57392f"/>
+  <path d="M104 60L109 81 106 100 114 105 117 75Z" fill="#57392f"/>
+  <path d="M64 72Q70 68 76 72M89 72Q95 68 100 72" fill="none" stroke="#2a1a22" stroke-width="4"/>
+  <path d="M65 80Q70 83 75 80M90 80Q95 83 100 80" fill="none" stroke="#2a1a22" stroke-width="3"/>
+  <path d="M80 83L78 89 83 90" fill="none" stroke="#cf8d81" stroke-width="2.5"/>
+  <path d="M76 98Q82 94 88 98Q83 103 77 99" fill="#9d4a54" stroke="#9d4a54" stroke-width="2"/>
+  <rect x="59" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
+  <rect x="85" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
+  <path d="M82 73H86M55 72L59 73M109 73L114 72" fill="none" stroke="#4a3028" stroke-width="4"/>
+  <circle cx="54" cy="94" r="3" fill="#d8a5a1" stroke="none"/><circle cx="110" cy="94" r="3" fill="#d8a5a1" stroke="none"/>
+  <path d="M63 42Q55 55 61 71L66 66 69 49 79 45 82 52 87 43 99 50 104 64 110 68 111 47Q106 27 84 26Q65 27 63 42Z" fill="#57392f" stroke="#2a1a22" stroke-width="4"/>
+  <path d="M62 45L72 36 79 44 76 55 67 61ZM81 43L91 35 99 44 96 56 87 59Z" fill="#684638" stroke="none"/>
+  <circle cx="53" cy="97" r="4" fill="#d8d4d9"/><circle cx="111" cy="97" r="4" fill="#d8d4d9"/>
+</g>
+</svg></span><b>About Me</b><span>Who I am &amp; where I’m headed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#projects"><span class="qicon">💻</span><b>Projects</b><span>Things I’ve built, explored &amp; contributed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#achievements"><span class="qicon">🏆</span><b>Achievements</b><span>Awards, scholarships, hackathons &amp; more</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#skills"><span class="qicon">📚</span><b>Skills</b><span>Tools, languages &amp; lab experience</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#scrapbook"><span class="qicon">📒</span><b>Scrapbook</b><span>Interests, hobbies &amp; random thoughts</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#guestbook"><span class="qicon">💌</span><b>Guestbook</b><span>Leave a message (:*o*:)</span><i aria-hidden="true">→</i></a></div></section><section class="section" id="about"><div class="section-title">01 / ABOUT</div><div class="section-body"><div class="about-layout"><div class="about-portrait"><svg class="avatar-face-icon" viewBox="35 0 90 125" role="img" aria-label="Anubhuti's avatar face with chestnut hair, green antennae, square glasses and silver earrings" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#241923" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M66 48V19M103 48V19" fill="none" stroke="#4e8f29" stroke-width="7"/>
+  <circle cx="66" cy="16" r="10" fill="#83e34d"/><circle cx="103" cy="16" r="10" fill="#83e34d"/>
+  <path d="M57 145L45 174 36 188 48 196 65 177 72 150Z" fill="#9c2c38"/>
+  <path d="M104 146L117 173 125 188 113 196 96 177 91 151Z" fill="#9c2c38"/>
+  <path d="M67 151L63 184 57 211 74 215 87 183 92 151Z" fill="#292630"/>
+  <path d="M92 151L91 182 100 212 119 213 113 179 111 151Z" fill="#292630"/>
+  <path d="M55 205L76 207 77 221 48 221 38 214 42 208Z" fill="#fff9f2"/>
+  <path d="M98 205L119 205 130 213 127 221 99 221 94 216Z" fill="#fff9f2"/>
+  <path d="M40 218H76M99 218H128" stroke="#a5a0a7" stroke-width="3"/>
+  <path d="M59 111L55 150 68 159 102 159 115 150 109 111Z" fill="#9e2d3b"/>
+  <path d="M70 111L80 124 91 111" fill="#f2b8c1" stroke-width="3"/>
+  <path d="M56 119L44 137 42 153M111 119L123 137 124 153" fill="none" stroke="#f1c5b4" stroke-width="12"/>
+  <path d="M42 148L40 157M124 148L126 157" fill="none" stroke="#f1c5b4" stroke-width="10"/>
+  <path d="M59 58C52 43 61 29 79 28 100 26 112 39 108 59L112 86 104 111 92 120 68 116 55 101 52 77Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
+  <path d="M63 53Q62 42 75 40L95 40Q105 44 103 60L103 92Q101 110 82 113Q63 109 61 92Z" fill="#f4cbb9" stroke="#2a1a22" stroke-width="4"/>
+  <path d="M60 58Q47 47 62 32Q70 21 86 25Q108 24 113 43L107 65 101 54 92 43 79 49 69 63Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
+  <path d="M62 43Q70 35 80 43L78 58 68 66 65 55Z" fill="#57392f" stroke="none"/>
+  <path d="M82 43Q94 37 104 46L101 59 91 63 85 54Z" fill="#57392f" stroke="none"/>
+  <path d="M61 60L56 82 57 98 49 105 47 76Z" fill="#57392f"/>
+  <path d="M104 60L109 81 106 100 114 105 117 75Z" fill="#57392f"/>
+  <path d="M64 72Q70 68 76 72M89 72Q95 68 100 72" fill="none" stroke="#2a1a22" stroke-width="4"/>
+  <path d="M65 80Q70 83 75 80M90 80Q95 83 100 80" fill="none" stroke="#2a1a22" stroke-width="3"/>
+  <path d="M80 83L78 89 83 90" fill="none" stroke="#cf8d81" stroke-width="2.5"/>
+  <path d="M76 98Q82 94 88 98Q83 103 77 99" fill="#9d4a54" stroke="#9d4a54" stroke-width="2"/>
+  <rect x="59" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
+  <rect x="85" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
+  <path d="M82 73H86M55 72L59 73M109 73L114 72" fill="none" stroke="#4a3028" stroke-width="4"/>
+  <circle cx="54" cy="94" r="3" fill="#d8a5a1" stroke="none"/><circle cx="110" cy="94" r="3" fill="#d8a5a1" stroke="none"/>
+  <path d="M63 42Q55 55 61 71L66 66 69 49 79 45 82 52 87 43 99 50 104 64 110 68 111 47Q106 27 84 26Q65 27 63 42Z" fill="#57392f" stroke="#2a1a22" stroke-width="4"/>
+  <path d="M62 45L72 36 79 44 76 55 67 61ZM81 43L91 35 99 44 96 56 87 59Z" fill="#684638" stroke="none"/>
+  <circle cx="53" cy="97" r="4" fill="#d8d4d9"/><circle cx="111" cy="97" r="4" fill="#d8d4d9"/>
+</g>
+</svg><span class="portrait-caption">ANUBHUTI.EXE ♡</span></div><div class="about-copy"><h2>ANUBHUTI GOSWAMI</h2><p>I'm a B.Tech Biotechnology student at Lovely Professional University. My current interests sit at the intersection of genetics, microbiology, biological data analysis, and computational tools for life sciences.</p><p>I'm building my foundations in Python and data analysis while looking for opportunities to contribute to research, bioinformatics, and interdisciplinary projects. Outside coursework, I enjoy science, wildlife, history, philosophy, and visual storytelling.</p></div><aside class="about-note"><span class="note-pin">✦</span><h3>ACADEMIC PROFILE</h3><p>CLASS X <b>94.8%</b></p><p>CLASS XII <b>89%</b></p><p>B.TECH BIOTECHNOLOGY <b>2025–2029</b></p><p>CGPA <b>7.58 / 10</b></p><p>LPU SCHOLARSHIP <b>60%</b></p><p>CURRENT FOCUS <b>Python · biological data</b></p><div class="note-signoff">little by little, a little becomes a lot ♡</div></aside></div></div></section>
 <section class="section" id="projects"><div class="section-title">02 / SELECTED PROJECTS</div><div class="section-body"><p>A selection of projects and explorations across biotechnology, data, and science communication.</p><div class="scrapbook"><article class="scrap"><div class="sticker">🧪</div><h3>LABMATEAI</h3><p>A biotechnology lab assistant concept built with Streamlit and Groq, including a PCR calculator and report support.</p><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">open GitHub ↗</a></article><article class="scrap"><div class="sticker">🧬</div><h3>SIMULAB</h3><p>A virtual practical-lab concept for guided experiments, equipment interactions, and simulated results.</p><span class="tag">In development</span></article><article class="scrap"><div class="sticker">🩺</div><h3>PULSE OXIMETER BIAS</h3><p>A research poster examining how skin pigmentation can affect pulse-oximeter accuracy and healthcare equity.</p></article><article class="scrap"><div class="sticker">🌱</div><h3>MODULAR ROADS</h3><p>A student-team concept exploring bamboo–plastic composites for modular road construction.</p></article><article class="scrap"><div class="sticker">🔬</div><h3>ZOONIVERSE</h3><p>Citizen-science annotation contributions to Placenta Profiles and DRIIVE: Clear Skies.</p></article><article class="scrap"><div class="sticker">💾</div><h3>BIOINFORMATICS</h3><p>Current learning focus: Python, biological data analysis, and computational approaches to life science.</p><span class="tag">Currently learning</span></article></div></div></section>
 <section class="section" id="achievements"><div class="section-title">03 / ACHIEVEMENTS & RECOGNITION</div><div class="section-body"><p>Selected academic, leadership, and project milestones.</p><div class="cabinet real-achievements"><article class="trophy unlocked"><div class="icon">🏅</div><strong>ACADEMIC DISTINCTION</strong><small>94.8% in Class X</small></article><article class="trophy unlocked"><div class="icon">🎓</div><strong>ACADEMIC SCHOLARSHIP</strong><small>LPU scholarship recipient</small></article><article class="trophy unlocked"><div class="icon">🌍</div><strong>IEO</strong><small>International Rank 4 · Gold Medal of Distinction</small></article><article class="trophy unlocked"><div class="icon">🧭</div><strong>TEAM LEADERSHIP</strong><small>Hackathon and student team roles</small></article><article class="trophy unlocked"><div class="icon">🔬</div><strong>CITIZEN SCIENCE</strong><small>Zooniverse research annotation</small></article><article class="trophy unlocked"><div class="icon">🧬</div><strong>BIOTECH PROJECTS</strong><small>Healthcare bias poster and lab-focused builds</small></article><article class="trophy unlocked"><div class="icon">🤖</div><strong>AI & DATA LEARNING</strong><small>IBM Intro to AI · data-labeling experience</small></article><article class="trophy unlocked"><div class="icon">✍️</div><strong>SCIENCE COMMUNICATION</strong><small>Writing and project storytelling</small></article></div></div></section>
 <section class="section" id="scrapbook"><div class="section-title">05 / SCRAPBOOK</div><div class="section-body"><div class="scrapbook"><article class="scrap"><div class="sticker">🧠</div><h3>THINGS I LIKE THINKING ABOUT</h3><p>Biology, philosophy, history, politics, wildlife, medicines, and how ideas shape the world.</p></article><article class="scrap"><div class="sticker">🎨</div><h3>OFF THE CLOCK</h3><p>Painting, visual storytelling, building tiny web worlds, and finding new things to learn.</p></article><article class="scrap"><div class="sticker">🌱</div><h3>CURRENT SIDE QUEST</h3><p>Building stronger foundations in Python, biological data analysis, and computational biology.</p></article><article class="scrap"><div class="sticker">✦</div><h3>PERSONAL MOTTO</h3><p>Stay curious. Ask better questions. Make useful things.</p></article></div></div></section><section class="section" id="skills"><div class="section-title">04 / SKILLS & CURRENT LEARNING</div><div class="section-body"><div class="columns"><article class="card"><h3>TOOLS I USE</h3><p><b>Data & productivity:</b> Excel, PowerPoint</p><p><b>Design:</b> Canva</p><p><b>Programming:</b> Python fundamentals</p><p><b>Development:</b> GitHub, VS Code</p></article><article class="card"><h3>BUILDING FOUNDATIONS IN</h3><p>Bioinformatics and sequence analysis</p><p>Biological data analysis and visualization</p><p>C++ object-oriented programming</p><p>Genetics, microbiology, and molecular biology</p></article></div></div></section><section class="section" id="guestbook"><div class="section-title">06 / GUESTBOOK</div><div class="section-body"><p>A small corner for messages, recommendations, and interesting links.</p><div class="guestbook"><form id="guest-form"><label for="guest-name">YOUR PLAYER NAME</label><input id="guest-name" maxlength="35" required placeholder="player_2"><label for="guest-message">YOUR MESSAGE</label><textarea id="guest-message" maxlength="240" required placeholder="Your website is a secret level of the internet..."></textarea><button class="pixel-btn pink" type="submit">✉ SIGN THE GUESTBOOK</button><p style="font-size:16px">Demo mode: messages are saved in this browser only, not shared between visitors.</p></form><div class="messages" id="messages"><div class="message"><b>ANUBHUTI GOSWAMI</b><small>site owner · 15 OCT 2026</small>Thanks for visiting. Leave a note, a resource, or a question.</div></div></div></div></section>
