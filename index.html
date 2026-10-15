@@ -1,687 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anubhuti Goswami | B.Tech Biotechnology</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #fceeee;
-            --container-bg: #ffffff;
-            --border-color: #1a1a1a;
-            --text-main: #1a1a1a;
-            --accent-red: #d93838;
-            --accent-green: #2e8b57;
-            --muted: #666666;
-            --shadow: 4px 4px 0px #1a1a1a;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .site-wrapper {
-            width: 100%;
-            max-width: 900px;
-            background: var(--container-bg);
-            border: 3px solid var(--border-color);
-            box-shadow: var(--shadow);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        /* Top Bar */
-        .top-bar {
-            background: var(--border-color);
-            color: #fff;
-            padding: 8px 16px;
-            font-family: 'Press Start 2P', monospace;
-            font-size: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Header */
-        .header {
-            padding: 30px 30px 20px 30px;
-            border-bottom: 3px solid var(--border-color);
-            display: grid;
-            grid-template-columns: 1fr 140px;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .header-titles h1 {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 4px;
-        }
-
-        .header-titles p {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 9px;
-            color: var(--accent-red);
-            margin-bottom: 12px;
-        }
-
-        .bio-snippet {
-            font-size: 14px;
-            color: var(--muted);
-        }
-
-        .avatar-box {
-            width: 130px;
-            height: 130px;
-            border: 3px solid var(--border-color);
-            box-shadow: 2px 2px 0px var(--border-color);
-            overflow: hidden;
-            background: #ffb8e0;
-        }
-
-        .avatar-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Nav */
-        .nav-bar {
-            background: #f4f4f4;
-            border-bottom: 3px solid var(--border-color);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0;
-        }
-
-        .nav-btn {
-            background: transparent;
-            border: none;
-            border-right: 2px solid var(--border-color);
-            padding: 12px 18px;
-            font-family: 'Press Start 2P', monospace;
-            font-size: 8px;
-            cursor: pointer;
-            color: var(--text-main);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .nav-btn:hover, .nav-btn.active {
-            background: var(--border-color);
-            color: #fff;
-        }
-
-        /* Main Content Sections */
-        .content-section {
-            padding: 30px;
-            display: none;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
-        h2 {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 12px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-            display: inline-block;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 15px;
-        }
-
-        .card {
-            border: 2px solid var(--border-color);
-            padding: 16px;
-            border-radius: 2px;
-            background: #fff;
-            box-shadow: 2px 2px 0px var(--border-color);
-        }
-
-        .card h3 {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .card .meta {
-            font-size: 11px;
-            color: var(--muted);
-            margin-bottom: 10px;
-            font-family: 'Press Start 2P', monospace;
-            font-size: 7px;
-        }
-
-        .card p {
-            font-size: 13px;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .skill-tag {
-            background: #f4f4f4;
-            border: 2px solid var(--border-color);
-            padding: 4px 10px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        .footer {
-            border-top: 3px solid var(--border-color);
-            padding: 16px 30px;
-            background: #f9f9f9;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-        }
-
-        .footer-links a {
-            color: var(--text-main);
-            text-decoration: underline;
-            margin-left: 15px;
-            font-weight: 600;
-        }
-
-        /* Modal / Static Pages for Privacy & Terms */
-        .legal-page {
-            font-size: 13px;
-            line-height: 1.7;
-        }
-        .legal-page h3 {
-            margin-top: 15px;
-            font-size: 14px;
-        }
-
-        @media(max-width: 768px) {
-            .header { grid-template-columns: 1fr; text-align: center; justify-items: center; }
-            .card-grid { grid-template-columns: 1fr; }
-            .footer { flex-direction: column; gap: 10px; text-align: center; }
-            .footer-links a { margin: 0 8px; }
-        }
-    
-/* Retro-gaming / hyperpop makeover: candy pink, electric purple, arcade energy */
-:root{
- --bg-color:#ffb8ec;--container-bg:#fff7ff;--border-color:#32104f;--text-main:#2b1245;
- --accent-red:#ff2e93;--accent-green:#7a2cff;--muted:#73558b;--shadow:6px 6px 0 #32104f;
-}
-body{
- background:#ffb8ec;
- background-image:
-  radial-gradient(circle,#fff5ff 0 2px,transparent 2.8px),
-  linear-gradient(135deg,#ffc7f0 0%,#edb5ff 48%,#b9a5ff 100%);
- background-size:28px 28px,100% 100%;
- position:relative;
-}
-body:before{
- content:"★  ✦  +  ★  ✧  +  ★  ✦  +  ★";
- position:fixed;inset:auto 0 0;z-index:0;pointer-events:none;
- color:rgba(108,38,210,.2);font-size:clamp(25px,4vw,48px);letter-spacing:16px;
- white-space:nowrap;overflow:hidden;line-height:1.3;
-}
-.site-wrapper{
- position:relative;z-index:1;max-width:1000px;background:#fff7ff;
- border:4px solid #32104f;border-radius:8px;box-shadow:9px 9px 0 #32104f;
- overflow:hidden;
-}
-.top-bar{
- background:#32104f!important;color:#ffb9ed!important;
- border-bottom:4px solid #ff2e93;min-height:38px;
-}
-.header{
- background:linear-gradient(115deg,#ffd2f3 0%,#fff7ff 52%,#e2d0ff 100%);
- border-bottom:4px solid #32104f;position:relative;
-}
-.header:after{
- content:"✦  ★  ✧";position:absolute;right:24px;top:12px;
- color:#8d32ff;font-size:20px;letter-spacing:8px;
-}
-.header-titles h1{
- color:#5d1eb2;font-size:clamp(24px,4vw,34px);
- text-shadow:2px 2px 0 #ff9fe1;
-}
-.header-titles p{color:#f51b91!important;line-height:1.8}
-.bio-snippet{color:#65457b}
-.avatar-box{
- width:158px;height:158px;border:4px solid #32104f!important;border-radius:8px;
- box-shadow:5px 5px 0 #ff2e93!important;background:#d9b7ff!important;
-}
-.avatar-box svg{display:block;width:100%;height:100%}
-.nav-bar{background:#ff76c9!important;border-bottom:4px solid #32104f!important}
-.nav-btn{
- color:#32104f!important;border-right:2px solid rgba(50,16,79,.25)!important;
- padding:14px 16px;
-}
-.nav-btn:hover,.nav-btn.active{background:#6522b8!important;color:#fff4ff!important}
-.content-section{
- background-color:#fff7ff;
- background-image:radial-gradient(#e6c8ff 1px,transparent 1px);
- background-size:18px 18px;
-}
-.content-section h2{color:#6522b8;border-color:#ff2e93;line-height:1.9}
-.card{
- border:3px solid #32104f!important;border-radius:5px!important;background:#fffaff!important;
- box-shadow:4px 4px 0 #d9a3ff!important;position:relative;
-}
-.card:nth-child(3n+1){background:#ffe2f5!important}
-.card:nth-child(3n+2){background:#f0e2ff!important}
-.card:nth-child(3n){background:#e9e2ff!important}
-.card h3{color:#5d1eb2}
-.card .meta{color:#e52491!important;line-height:1.8}
-.card a{color:#6c22c8;font-weight:700;text-decoration-thickness:2px;text-underline-offset:2px}
-.skill-tag{background:#f8d5ff!important;border:2px solid #32104f!important;border-radius:3px;color:#452066}
-.footer{background:#32104f!important;color:#ffe5fb;border-top:4px solid #ff2e93!important}
-.footer-links a{color:#ffb9ed!important}
-@media(max-width:768px){
- body{padding:9px}
- .site-wrapper{border-radius:6px;box-shadow:5px 5px 0 #32104f}
- .header:after{right:10px;top:8px;font-size:15px}
- .avatar-box{width:142px;height:142px}
- .nav-btn{flex:1 0 auto;padding:12px 9px}
- .content-section{padding:20px 14px}
-}
-
-/* HYPERPOP ARCADE MODE — saturated candy pink, electric purple, chunky pixel UI */
-:root{--bg-color:#ff32b8;--container-bg:#fff4ff;--border-color:#26083f;--text-main:#31084f;--accent-red:#ff168b;--accent-green:#8b2cff;--muted:#6b3289;--shadow:7px 7px 0 #26083f}
-body{
- background-color:#ff37bd!important;
- background-image:
- radial-gradient(circle at 13px 13px,#fff6ff 0 2px,transparent 2.8px),
- radial-gradient(circle at 35px 31px,rgba(255,255,255,.42) 0 1px,transparent 2px),
- linear-gradient(125deg,#ff39bd 0%,#ff69d4 23%,#d43bff 57%,#8e42ff 79%,#ff70cf 100%)!important;
- background-size:38px 38px,51px 51px,100% 100%!important;
- background-attachment:fixed;
-}
-body:after{content:"🎀　✦　🪐　✿　☆　🎀　✧　🌸　✦　🪐　☆";position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;display:block;white-space:pre-wrap;word-spacing:4vw;line-height:18vh;font-size:clamp(19px,2.4vw,32px);color:#fff;opacity:.72;text-shadow:2px 3px 0 #a92aff}
-.site-wrapper{z-index:1;background:#fff4ff;border:4px solid #26083f;box-shadow:10px 10px 0 #6c18be,15px 15px 0 rgba(255,31,168,.35);max-width:1080px}
-.top-bar{background:#290644!important;color:#ffb8f1!important;border-bottom:5px solid #ff2ab9!important}
-.header{background:linear-gradient(115deg,#ff8cdb 0%,#ffe4fb 43%,#caa0ff 100%)!important}
-.header-titles h1{color:#7213c5!important;text-shadow:3px 3px 0 #ff54c7,5px 5px 0 #fff!important}
-.header-titles p{color:#ff168b!important}
-.nav-bar{background:linear-gradient(90deg,#ff35b9,#f65aff,#a64aff)!important;border-bottom:4px solid #26083f!important}
-.nav-btn{font-size:8px!important;color:#31084f!important;text-shadow:none}
-.nav-btn:hover,.nav-btn.active{background:#2c0748!important;color:#fff!important;box-shadow:inset 0 -4px #ff42c6}
-.content-section{background-color:#fff5ff!important;background-image:radial-gradient(#e7b8ff 1.2px,transparent 1.5px)!important;background-size:19px 19px!important}
-.content-section h2{color:#7c18ce!important;text-shadow:2px 2px #ffc0f0;border-bottom:3px dashed #ff36b8!important}
-.card{box-shadow:5px 5px 0 #bd69f4!important}
-.arcade-intro{margin:0 0 18px;padding:14px;background:#ffe0f7;border:3px dashed #8d2bd8;color:#4a176b;font-weight:700}
-.arcade-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.arcade-machine{min-width:0;padding:14px;background:linear-gradient(145deg,#ffcaef,#e7c9ff);border:4px solid #2b0845;box-shadow:6px 6px 0 #ff25ae;border-radius:5px}
-.arcade-machine h3{font:11px/1.8 'Press Start 2P',monospace;color:#6711b7;margin-bottom:8px}
-.arcade-sub{font-size:13px;color:#652a84;margin-bottom:10px}
-.arcade-screen{position:relative;overflow:hidden;background:#29104d;border:4px solid #fff0ff;outline:3px solid #2b0845;box-shadow:inset 0 0 0 2px #a43fff;min-height:235px}
-#star-canvas{display:block;width:100%;height:235px;touch-action:none}
-.arcade-hud{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:11px 0;color:#4b126b;font:9px 'Press Start 2P',monospace;line-height:1.8}
-.arcade-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.arcade-btn{border:3px solid #2b0845!important;border-radius:3px!important;background:#ff36b7!important;color:#2b0845!important;box-shadow:3px 3px 0 #7d25c8;padding:10px 12px;font:9px 'Press Start 2P',monospace;cursor:pointer;touch-action:manipulation}
-.arcade-btn:hover{transform:translate(-1px,-1px);background:#fff0a8!important;box-shadow:4px 4px 0 #7d25c8}
-.arcade-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #7d25c8}
-.arcade-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
-.arcade-controls{display:flex;gap:8px;margin-top:10px}
-.arcade-controls .arcade-btn{flex:1}
-.pop-zone{position:relative;height:235px;overflow:hidden;background:radial-gradient(circle at center,#7723a6,#29104d 78%);border:4px solid #fff0ff;outline:3px solid #2b0845}
-.pop-target{position:absolute;display:grid;place-items:center;width:44px;height:44px;border:3px solid #fff;background:#ff35b8;color:#fff;border-radius:4px;box-shadow:3px 3px 0 #a7fffc;font-size:25px;cursor:pointer;animation:target-pop .35s steps(2,end) infinite alternate}
-@keyframes target-pop{to{transform:scale(.88) rotate(8deg)}}
-.arcade-message{min-height:30px;margin-top:8px;color:#5c1a82;font-weight:700;font-size:13px}
-.arcade-sticker{color:#ffeb75;text-shadow:2px 2px #8124bb}
-@media(max-width:700px){.arcade-grid{grid-template-columns:1fr}.arcade-machine{padding:11px}.arcade-machine h3{font-size:9px}.arcade-hud{font-size:8px}body:after{line-height:15vh;word-spacing:2vw}}
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ff35b8">
+<title>Anubhuti Goswami | Pink Pixel Arcade</title>
+<meta name="description" content="Anubhuti Goswami — biotechnology student, aspiring computational life scientist, and builder of interactive projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ff35b8;--hot:#ff078c;--purple:#8b35ff;--deep:#28063f;--lav:#d8b1ff;--cream:#fff4ff;--ink:#35104e;--yellow:#fff17b;--cyan:#9bffff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;padding:22px 14px 35px;font-family:Nunito,system-ui,sans-serif;color:var(--ink);background-color:#f43bc0;background-image:radial-gradient(circle,#fff7ff 0 2px,transparent 2.6px),radial-gradient(circle,rgba(255,255,255,.55) 0 1px,transparent 2px),linear-gradient(130deg,#ff36b8 0%,#ff75d7 25%,#d84aff 57%,#8f3bff 78%,#ff79d5 100%);background-size:37px 37px,59px 59px,100% 100%;background-attachment:fixed;overflow-x:hidden}
+body:before{content:"✦　🎀　☆　🪐　✿　✧　🌸　★";position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;color:#fff;opacity:.58;font-size:clamp(19px,3vw,35px);line-height:18vh;letter-spacing:1.3vw;word-break:break-all;text-shadow:2px 3px #a22ce4}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at center,transparent 42%,rgba(67,0,94,.16) 100%)}
+.site{position:relative;z-index:1;max-width:1080px;margin:auto;border:4px solid var(--deep);background:var(--cream);box-shadow:10px 10px 0 var(--deep),16px 16px 0 rgba(255,31,172,.55);overflow:hidden}
+.topbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 15px;background:var(--deep);color:#ffb9f0;border-bottom:4px solid var(--hot);font:8px/1.8 "Press Start 2P",monospace}
+.hero{display:grid;grid-template-columns:1fr 155px;gap:22px;align-items:center;padding:28px;background:linear-gradient(120deg,#ff9cde,#fff0ff 48%,#c9a0ff);border-bottom:4px solid var(--deep);position:relative}
+.eyebrow{font:8px/1.8 "Press Start 2P",monospace;color:#8b24c8}
+h1{margin:10px 0 8px;font:clamp(20px,4vw,37px)/1.5 "Press Start 2P",monospace;color:#7613c4;text-shadow:3px 3px 0 #ff4ec5,5px 5px 0 #fff}
+.subtitle{font-weight:900;color:#f00691;font-size:clamp(15px,2vw,20px)}
+.intro{max-width:690px;line-height:1.75;margin:10px 0 0}
+.avatar{width:145px;aspect-ratio:1;border:4px solid var(--deep);background:#ffdcf7;box-shadow:6px 6px 0 var(--hot);display:grid;place-items:center;position:relative}
+.avatar svg{width:100%;height:100%}
+.sticker{position:absolute;right:-12px;top:-15px;font-size:27px;filter:drop-shadow(2px 2px 0 #7c28bd);transform:rotate(12deg)}
+.nav{display:flex;flex-wrap:wrap;background:linear-gradient(90deg,#ff40b9,#e34aff,#a244ff);border-bottom:4px solid var(--deep)}
+.nav button{flex:1 0 auto;border:0;border-right:2px solid rgba(40,6,63,.2);padding:14px 12px;background:transparent;color:#33064c;font:8px/1.8 "Press Start 2P",monospace;cursor:pointer}
+.nav button:hover,.nav button[aria-selected="true"]{background:var(--deep);color:#fff;box-shadow:inset 0 -4px var(--pink)}
+.nav button:focus-visible,.btn:focus-visible{outline:3px solid var(--cyan);outline-offset:-4px}
+main{min-height:360px}
+.panel{display:none;padding:28px;background-color:#fff6ff;background-image:radial-gradient(#e5baff 1.2px,transparent 1.6px);background-size:20px 20px;animation:panel-in .18s ease-out}
+.panel.active{display:block}
+@keyframes panel-in{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
+h2{font:clamp(12px,2vw,16px)/2 "Press Start 2P",monospace;color:#7515c4;margin:0 0 20px;padding-bottom:10px;border-bottom:3px dashed var(--pink);text-shadow:2px 2px #ffc2f0}
+h3{font:10px/1.8 "Press Start 2P",monospace;color:#6e15b8;margin:0 0 10px}
+p{line-height:1.7;margin:8px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.card{min-width:0;padding:18px;background:#fff;border:3px solid var(--deep);box-shadow:5px 5px 0 #c46aff;position:relative}
+.card:nth-child(4n+1){background:#ffe1f5}.card:nth-child(4n+2){background:#f1e2ff}.card:nth-child(4n+3){background:#fff9ce}
+.meta{font-weight:900;color:#ed168f;font-size:13px;line-height:1.8;margin-bottom:7px}
+a{color:#7613c4;font-weight:900;text-underline-offset:3px}
+a:hover{color:#f00691}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.tag{padding:6px 9px;border:2px solid var(--deep);background:#ffc9ef;font-weight:900;font-size:12px}
+.callout{padding:14px;background:#ffdef6;border:3px dashed #8d29d7;margin-bottom:18px;font-weight:800;line-height:1.8}
+.btn{border:3px solid var(--deep);background:var(--pink);color:var(--deep);box-shadow:3px 3px 0 #8b35ff;padding:11px 13px;font:9px/1.8 "Press Start 2P",monospace;cursor:pointer}
+.btn:hover{background:var(--yellow);transform:translate(-1px,-1px);box-shadow:4px 4px 0 #8b35ff}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #8b35ff}
+.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:18px;background:var(--deep);color:#ffe1fb;border-top:4px solid var(--hot);font-size:13px}
+.footer a{color:#ffb7ee;margin-left:12px}
+.arcade-intro{margin-bottom:18px;padding:14px;border:3px dashed #8d29d7;background:#ffe0f7;line-height:1.8;font-weight:800}
+.arcade-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.machine{min-width:0;padding:14px;border:4px solid var(--deep);background:linear-gradient(145deg,#ffc5eb,#e0c2ff);box-shadow:6px 6px 0 var(--hot)}
+.machine h3{min-height:36px}
+.machine-desc{font-size:13px;min-height:44px}
+.screen{overflow:hidden;border:4px solid white;outline:3px solid var(--deep);background:#2a0845}
+#catch-canvas{display:block;width:100%;height:235px;touch-action:none}
+.hud{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:12px 0;color:#4d126d;font:8px/1.8 "Press Start 2P",monospace}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.actions .btn{flex:1}
+.move-controls{display:flex;gap:8px;margin-top:9px}
+.move-controls .btn{flex:1}
+.message{min-height:44px;font-size:13px;font-weight:900;line-height:1.6;margin:12px 0 0}
+.pop-zone{position:relative;height:235px;overflow:hidden;border:4px solid white;outline:3px solid var(--deep);background:radial-gradient(circle at center,#7621a4,#290844 78%)}
+.prompt{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#ffe7ff;font:9px/2 "Press Start 2P",monospace;padding:18px}
+.target{position:absolute;width:46px;height:46px;display:grid;place-items:center;border:3px solid #fff;background:#ff35b8;color:white;box-shadow:3px 3px 0 var(--cyan);font-size:25px;cursor:pointer;animation:pop .35s steps(2,end) infinite alternate}
+@keyframes pop{to{transform:scale(.86) rotate(8deg)}}
+.legal{max-width:800px;line-height:1.8}
+@media(max-width:700px){body{padding:9px 7px 22px}.site{box-shadow:5px 5px 0 var(--deep)}.hero{grid-template-columns:1fr 95px;padding:19px 15px;gap:10px}.avatar{width:92px}.panel{padding:20px 14px}.grid,.arcade-grid{grid-template-columns:1fr}.machine{padding:12px}.topbar{font-size:7px}.nav button{padding:11px 8px;font-size:7px}.card{padding:15px}.machine h3{min-height:0}.machine-desc{min-height:0}}
+@media(max-width:390px){.hero{grid-template-columns:1fr}.avatar{width:88px;grid-row:1}.eyebrow{font-size:7px}h1{font-size:18px}.hud{font-size:7px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-
-<div class="site-wrapper">
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <span>ANUBHUTI GOSWAMI // PORTFOLIO</span>
-        <span>FARIDABAD, HARYANA</span>
-    </div>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="header-titles">
-            <h1>Anubhuti Goswami</h1>
-            <p>B.Tech Biotechnology Student @ LPU</p>
-            <div class="bio-snippet">
-                Second-year biotechnology undergraduate exploring genetic engineering, microbiology, scientific communication, and computational applications in life sciences[cite: 17].
-            </div>
-        </div>
-        <div class="avatar-box" role="img" aria-label="Chibi illustration of a girl with a short brown bob, unimpressed expression, red top and black jeans">
-<svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<defs>
- <linearGradient id="avatarSky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8c5ff"/><stop offset="1" stop-color="#bba2ff"/></linearGradient>
- <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#85502f"/><stop offset=".55" stop-color="#5b3328"/><stop offset="1" stop-color="#38232c"/></linearGradient>
- <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff5a4c"/><stop offset="1" stop-color="#d92939"/></linearGradient>
- </defs>
- <rect width="180" height="180" fill="url(#avatarSky)"/>
- <circle cx="27" cy="29" r="12" fill="#fff0a8"/><path d="M27 11v-5M27 47v-5M9 29H4M50 29h-5M14 16l-4-4M40 42l-4-4M40 16l4-4M14 42l-4 4" stroke="#ff9b35" stroke-width="3" stroke-linecap="round"/>
- <path d="M15 150Q28 123 46 135L59 149 72 129 91 141 111 126 137 139 164 130 180 153V180H0V164Z" fill="#d47bfa"/>
- <ellipse cx="91" cy="165" rx="49" ry="7" fill="#a86be0" opacity=".35"/>
- <!-- legs and chunky sneakers -->
- <path d="M66 121L63 148 60 160 78 160 84 132 100 132 105 157 124 157 120 141 121 119Z" fill="#171b2d" stroke="#38245d" stroke-width="3" stroke-linejoin="round"/>
- <path d="M58 155Q68 151 80 157L82 165Q72 171 53 166L52 161Z" fill="#fffdf1" stroke="#38245d" stroke-width="3"/>
- <path d="M104 153Q115 149 126 154L132 162Q126 169 106 165L102 160Z" fill="#fffdf1" stroke="#38245d" stroke-width="3"/>
- <path d="M57 162h22M108 161h20" stroke="#ff5146" stroke-width="3" stroke-linecap="round"/>
- <!-- arms behind torso -->
- <path d="M61 78Q49 81 48 99L44 114Q44 121 51 121Q57 120 58 111L70 94Z" fill="#f2bd9d" stroke="#38245d" stroke-width="3" stroke-linejoin="round"/>
- <path d="M113 78Q126 80 131 98L135 111Q137 119 130 121Q124 121 122 112L108 94Z" fill="#f2bd9d" stroke="#38245d" stroke-width="3" stroke-linejoin="round"/>
- <!-- red tee -->
- <path d="M65 69Q77 63 89 66Q103 63 116 71L124 91 111 98 109 126Q89 133 67 126L67 98 54 92Z" fill="url(#shirt)" stroke="#38245d" stroke-width="3.5" stroke-linejoin="round"/>
- <path d="M79 68Q89 78 100 68" fill="none" stroke="#b82234" stroke-width="4" stroke-linecap="round"/>
- <path d="M73 91l7 5M106 91l-7 5" stroke="#ff8e7c" stroke-width="3" stroke-linecap="round"/>
- <!-- neck -->
- <path d="M80 57h20v17q-10 12-20 0Z" fill="#f2bd9d" stroke="#38245d" stroke-width="3"/>
- <!-- hair silhouette and bob -->
- <path d="M53 37Q53 12 82 11Q114 7 126 34L132 69 122 88 108 93 68 91 50 78 47 54Z" fill="#38232c" stroke="#38245d" stroke-width="3.5" stroke-linejoin="round"/>
- <!-- face -->
- <path d="M63 39Q67 23 89 24Q113 24 117 43L113 67Q108 84 90 87Q70 83 65 68Z" fill="#f5c7a6" stroke="#38245d" stroke-width="3"/>
- <!-- fringe, deliberately bobbed -->
- <path d="M57 43Q58 19 81 16Q106 13 120 35L114 43 103 37 93 43 81 35 68 46Z" fill="url(#hair)" stroke="#38245d" stroke-width="3" stroke-linejoin="round"/>
- <path d="M64 42L62 67Q60 77 69 82L59 79 53 65 54 43Z" fill="#633a2c"/>
- <path d="M116 42L121 63 114 80 106 84Q118 64 108 43Z" fill="#633a2c"/>
- <path d="M69 55l10 1M99 56l10-2" stroke="#38245d" stroke-width="4" stroke-linecap="round"/>
- <path d="M71 62l8 1M99 62l8-1" stroke="#38245d" stroke-width="3" stroke-linecap="round"/>
- <path d="M86 68l4 2" stroke="#c1846f" stroke-width="2.5" stroke-linecap="round"/>
- <path d="M83 77q7-4 14 0" fill="none" stroke="#38245d" stroke-width="3" stroke-linecap="round"/>
- <circle cx="64" cy="68" r="3" fill="#ef8d85" opacity=".65"/><circle cx="113" cy="68" r="3" fill="#ef8d85" opacity=".65"/>
- <!-- little explorer backpack straps -->
- <path d="M62 76L67 91M115 77L110 91" stroke="#ffca45" stroke-width="4" stroke-linecap="round"/>
- <path d="M48 99q-5-6-2-14" stroke="#fff5a4" stroke-width="2" fill="none" stroke-linecap="round"/>
- <path d="M140 111l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1Z" fill="#ffdc4f" stroke="#542a91" stroke-width="2"/>
-</svg></div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="nav-bar">
-        <button class="nav-btn active" onclick="switchTab('home', event)">Home</button>
-        <button class="nav-btn" onclick="switchTab('arcade', event)">✦ ARCADE ✦</button>
-        <button class="nav-btn" onclick="switchTab('experience', event)">Experience</button>
-        <button class="nav-btn" onclick="switchTab('projects', event)">Projects</button>
-        <button class="nav-btn" onclick="switchTab('research', event)">Research</button>
-        <button class="nav-btn" onclick="switchTab('skills', event)">Skills</button>
-        <button class="nav-btn" onclick="switchTab('privacy', event)">Privacy Policy</button>
-        <button class="nav-btn" onclick="switchTab('terms', event)">Terms & Conditions</button>
-    </nav>
-
-    <!-- TAB: HOME -->
-    <section id="tab-home" class="content-section active">
-        <h2>OVERVIEW & ACADEMICS</h2>
-        <div class="card-grid">
-            <div class="card">
-                <h3>Education</h3>
-                <div class="meta">Lovely Professional University | 2025 – 2029</div>
-                <p><strong>Bachelor of Technology (B.Tech), Biotechnology</strong><br>CGPA: 7.58 / 10.0[cite: 17]<br>Recipient of 60% Academic Scholarship[cite: 17].</p>
-            </div>
-            <div class="card">
-                <h3>Contact & Links</h3>
-                <div class="meta">Get in touch</div>
-                <p>
-                    Email: anubhutiworkk@gmail.com[cite: 17]<br>
-                    Phone: +91 93544 11744[cite: 17]<br>
-                    <a href="https://linkedin.com/in/anubhuti-goswami-b6382137b" target="_blank">LinkedIn Profile</a><br>
-                    <a href="https://github.com/anubhutigoswami125" target="_blank">GitHub Profile</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TAB: ARCADE -->
-    <section id="tab-arcade" class="content-section">
-      <h2>✦ PINK PIXEL ARCADE ✦</h2>
-      <div class="arcade-intro">INSERT COIN? NOPE. FREE PLAY FOREVER! <span class="arcade-sticker">★ ☆ 🎀 🪐 ✿</span><br><span style="font-weight:500">Two tiny arcade games for a tiny internet universe. Keyboard and touch controls supported.</span></div>
-      <div class="arcade-grid">
-        <article class="arcade-machine">
-          <h3>01 / STAR CATCHER</h3>
-          <p class="arcade-sub">Move your pixel basket and catch the falling stars. Missed stars are okay—keep playing!</p>
-          <div class="arcade-screen"><canvas id="star-canvas" width="520" height="300" aria-label="Star Catcher game area"></canvas></div>
-          <div class="arcade-hud"><span>SCORE: <b id="star-score">000</b></span><span>TIME: <b id="star-time">30</b>s</span><span>BEST: <b id="star-best">000</b></span></div>
-          <div class="arcade-actions"><button class="arcade-btn" id="star-start" type="button">▶ START GAME</button><button class="arcade-btn" id="star-reset" type="button">↻ RESET</button></div>
-          <div class="arcade-controls"><button class="arcade-btn" id="star-left" type="button" aria-label="Move left">◀ LEFT</button><button class="arcade-btn" id="star-right" type="button" aria-label="Move right">RIGHT ▶</button></div>
-          <p class="arcade-message" id="star-message" aria-live="polite">Press START GAME. Use ← → or A / D. Catch the stars!</p>
-        </article>
-        <article class="arcade-machine">
-          <h3>02 / PIXEL POP</h3>
-          <p class="arcade-sub">Tap the sparkles before they teleport. How many can you pop in 15 seconds?</p>
-          <div class="pop-zone" id="pop-zone" aria-label="Pixel Pop game area"><div id="pop-start-prompt" style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#ffe7ff;font:10px/2 'Press Start 2P',monospace;padding:18px">READY PLAYER ONE?<br>PRESS START!</div></div>
-          <div class="arcade-hud"><span>POPS: <b id="pop-score">000</b></span><span>TIME: <b id="pop-time">15</b>s><span></div>
-          <div class="arcade-actions"><button class="arcade-btn" id="pop-start" type="button">▶ START POP</button><button class="arcade-btn" id="pop-reset" type="button">↻ RESET</button></div>
-          <p class="arcade-message" id="pop-message" aria-live="polite">Click START, then tap the ✦ targets. Go go go!</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- TAB: EXPERIENCE -->
-    <section id="tab-experience" class="content-section">
-        <h2>EXPERIENCE & INTERNSHIPS</h2>
-        <div class="card-grid">
-            <div class="card">
-                <h3>Content Writing Intern</h3>
-                <div class="meta">Henry Harvin | Aug 2026 – Oct 2026[cite: 17]</div>
-                <p>Completed intensive training writing long-form blogs, articles, and content planning strategies for targeted campaigns[cite: 17].</p>
-            </div>
-            <div class="card">
-                <h3>Genetic Engineering Lab Associate</h3>
-                <div class="meta">Biolim.org | Jul 2026 – Present[cite: 17]</div>
-                <p>Virtual training covering genetic engineering principles, molecular workflows, and applications in modern biotechnology[cite: 17].</p>
-            </div>
-            <div class="card">
-                <h3>Data Labeling Analyst</h3>
-                <div class="meta">Forage | Jul 2026 – Present[cite: 17]</div>
-                <p>Conducted batch data labeling, intent and sentiment classification, PII identification, and annotation rationale documentation[cite: 17].</p>
-            </div>
-            <div class="card">
-                <h3>Community Volunteer</h3>
-                <div class="meta">Prayas Welfare School & Society | Faridabad[cite: 17]</div>
-                <p>Taught Mathematics, English, Hindi, and Environmental Studies to primary school students and assisted with lesson planning[cite: 17].</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TAB: PROJECTS -->
-    <section id="tab-projects" class="content-section">
-        <h2>PROJECTS</h2>
-        <div class="card-grid">
-            <div class="card">
-                <h3>MicrobeQuest: The Outbreak Files</h3>
-                <div class="meta">Developer & Project Lead | 2026[cite: 17]</div>
-                <p>Interactive microbiology investigation game featuring syllabus-aligned stages, case-based quizzes, hints, scoring, and analytics dashboard with CSV export[cite: 17].</p>
-                <p style="margin-top:8px;"><a href="https://microbequest-the.hatchable.site/" target="_blank">Live Demo</a> | <a href="https://github.com/anubhutigoswami125/MicrobeQuest" target="_blank">GitHub</a>[cite: 17]</p>
-            </div>
-            <div class="card">
-                <h3>Personal Expense Tracker</h3>
-                <div class="meta">Academic Coursework[cite: 17]</div>
-                <p>Developed a personal finance application applying object-oriented programming principles to expense recording, categorization, and budget management[cite: 17].</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TAB: RESEARCH -->
-    <section id="tab-research" class="content-section">
-        <h2>RESEARCH & SCIENTIFIC ENGAGEMENT</h2>
-        <div class="card-grid">
-            <div class="card">
-                <h3>Poster Presenter - BioInnovate</h3>
-                <div class="meta">Lovely Professional University[cite: 17]</div>
-                <p>Investigated racial bias in pulse oximetry associated with differences in light absorption across skin pigmentation levels[cite: 17].</p>
-            </div>
-            <div class="card">
-                <h3>Poster Presenter - ICBIOSUSTAIN</h3>
-                <div class="meta">Lovely Professional University[cite: 17]</div>
-                <p>Presented research exploring the future of bioelectric networks in anatomical engineering and regenerative medicine[cite: 17].</p>
-            </div>
-            <div class="card">
-                <h3>Research Volunteer</h3>
-                <div class="meta">Zooniverse Citizen Science Projects[cite: 17]</div>
-                <p>Contributed 30+ hours and 207 classifications to international research initiatives including the Placenta Profiles Project and Clear Skies[cite: 17].</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TAB: SKILLS -->
-    <section id="tab-skills" class="content-section">
-        <h2>SKILLS & CERTIFICATIONS</h2>
-        <div class="card" style="margin-bottom: 20px;">
-            <h3>Technical & Laboratory Skills</h3>
-            <div class="skills-list">
-                <span class="skill-tag">Pipetting</span>
-                <span class="skill-tag">Titration</span>
-                <span class="skill-tag">Microbiology Lab</span>
-                <span class="skill-tag">Data Labeling</span>
-                <span class="skill-tag">Data Privacy</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">C / C++</span>
-                <span class="skill-tag">GitHub</span>
-                <span class="skill-tag">Excel / Canva</span>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Selected Certifications</h3>
-            <p style="font-size:13px; line-height:1.8;">
-                • Programming for Everybody (Python) - Univ. of Michigan (Coursera)[cite: 17]<br>
-                • Microbiology for Beginners - EDUCBA (Coursera)[cite: 17]<br>
-                • CS101: Introduction to Programming - Saylor Academy[cite: 17]<br>
-                • Introduction to Artificial Intelligence - IBM[cite: 17]<br>
-                • Resume Writing and Job Interviewing - HP LIFE Foundation[cite: 17]
-            </p>
-        </div>
-    </section>
-
-    <!-- TAB: PRIVACY POLICY -->
-    <section id="tab-privacy" class="content-section">
-        <h2>PRIVACY POLICY</h2>
-        <div class="legal-page">
-            <p>Last updated: October 2026</p>
-            <h3>1. Information Collection</h3>
-            <p>This professional portfolio website does not actively track, collect, or store personal user data, cookies, or analytics identifiers beyond standard hosting logs provided by GitHub Pages.</p>
-            <h3>2. External Links</h3>
-            <p>Links to external platforms such as GitHub or LinkedIn are governed by their respective privacy policies.</p>
-            <h3>3. Contact</h3>
-            <p>For inquiries regarding personal data or professional communication, contact anubhutiworkk@gmail.com[cite: 17].</p>
-        </div>
-    </section>
-
-    <!-- TAB: TERMS & CONDITIONS -->
-    <section id="tab-terms" class="content-section">
-        <h2>TERMS & CONDITIONS</h2>
-        <div class="legal-page">
-            <p>Last updated: October 2026</p>
-            <h3>1. Intellectual Property</h3>
-            <p>All textual content, project descriptions, and personal portfolio layouts associated with Anubhuti Goswami are protected.</p>
-            <h3>2. Use License</h3>
-            <p>Visitors are permitted to view and reference portfolio materials for professional networking and recruitment purposes only.</p>
-            <h3>3. Limitation of Liability</h3>
-            <p>The site owner assumes no liability for external links or third-party platforms referenced herein.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div>© 2026 Anubhuti Goswami</div>
-        <div class="footer-links">
-            <a href="#" onclick="switchTab('privacy', event)">Privacy Policy</a>
-            <a href="#" onclick="switchTab('terms', event)">Terms & Conditions</a>
-        </div>
-    </footer>
+<div class="site">
+<div class="topbar"><span>ANUBHUTI.EXE // PERSONAL PORTFOLIO</span><span>PLAYER 01 · BIOTECH STUDENT</span></div>
+<header class="hero">
+<div><div class="eyebrow">WELCOME TO MY LITTLE INTERNET CORNER ✦</div><h1>Anubhuti Goswami</h1><div class="subtitle">B.Tech Biotechnology Student @ LPU</div><p class="intro">Second-year biotechnology undergraduate exploring genetics, microbiology, computational biology, and AI applications in life sciences. Interested in turning curious questions into research, code, and interactive learning projects.</p><div class="tags"><span class="tag">BIOLOGY × CODE</span><span class="tag">RESEARCH MODE</span><span class="tag">PLAYER 01</span></div></div>
+<div class="avatar" role="img" aria-label="Pixel-inspired character illustration"><span class="sticker">🎀</span><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" shape-rendering="crispEdges"><rect width="120" height="120" fill="#eac4ff"/><path d="M12 24h8v-8h8v-8h8v8h-8v8h-8v8h-8zM92 84h8v-8h8v-8h4v12h-8v8h-8v8h-4z" fill="#fff6a8"/><ellipse cx="61" cy="108" rx="34" ry="5" fill="#b87cdd"/><path d="M42 75h36v17h8v13H35V92h7z" fill="#25143d"/><path d="M37 101h17v8H34v-5zM69 101h17v8H67v-5z" fill="#fff6ff"/><path d="M39 63h42v25H39z" fill="#ff286f" stroke="#32104f" stroke-width="3"/><path d="M51 53h18v14H51z" fill="#eeb894"/><path d="M34 29h52v37H78v10H43V65H34z" fill="#593329" stroke="#32104f" stroke-width="3"/><path d="M42 32h36v35H42z" fill="#f3c6a5"/><path d="M34 34V24h8V16h12V9h20v7h8v8h8v17H77V32H66v8H53V30H42v12H34z" fill="#593329" stroke="#32104f" stroke-width="3"/><path d="M43 42h11v4H43zM67 42h11v4H67z" fill="#32104f"/><path d="M45 50h10v4H45zM67 50h10v4H67z" fill="#fff"/><path d="M47 50h5v5h-5zM69 50h5v5h-5z" fill="#32104f"/><path d="M57 60h9v3h-9z" fill="#9e5b55"/><path d="M56 66h11v3H56z" fill="#32104f"/><path d="M31 44h12v16H31zM77 44h12v16H77z" fill="none" stroke="#32104f" stroke-width="4"/><path d="M43 50h34" stroke="#32104f" stroke-width="3"/><path d="M50 13V5h5v8M72 13V5h5v8" fill="none" stroke="#71ff91" stroke-width="4"/><path d="M17 80h8v8h-8zM94 25h8v8h-8z" fill="#ff35b8"/></svg></div>
+</header>
+<nav class="nav" role="tablist" aria-label="Portfolio sections">
+<button class="nav-btn" data-tab="home" role="tab" aria-selected="true">HOME</button><button class="nav-btn" data-tab="arcade" role="tab" aria-selected="false">✦ ARCADE ✦</button><button class="nav-btn" data-tab="experience" role="tab" aria-selected="false">EXPERIENCE</button><button class="nav-btn" data-tab="projects" role="tab" aria-selected="false">PROJECTS</button><button class="nav-btn" data-tab="research" role="tab" aria-selected="false">RESEARCH</button><button class="nav-btn" data-tab="skills" role="tab" aria-selected="false">SKILLS</button>
+</nav>
+<main>
+<section class="panel active" id="tab-home" role="tabpanel"><h2>✦ PLAYER PROFILE & ACADEMICS ✦</h2><div class="grid"><article class="card"><h3>EDUCATION</h3><div class="meta">Lovely Professional University · 2025–2029</div><p><strong>B.Tech Biotechnology</strong></p><p>CGPA: 7.58 / 10.0</p><p>Recipient of a 60% academic scholarship.</p></article><article class="card"><h3>CONTACT & LINKS</h3><p>Email: <a href="mailto:anubhutiworkk@gmail.com">anubhutiworkk@gmail.com</a></p><p><a href="https://linkedin.com/in/anubhuti-goswami-b6382137b" target="_blank" rel="noopener">LinkedIn profile ↗</a></p><p><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">GitHub profile ↗</a></p></article></div><div class="callout" style="margin-top:18px">CURRENT QUEST: building skills in Python, data analysis, bioinformatics, genetics, and computational life sciences.</div></section>
+<section class="panel" id="tab-arcade" role="tabpanel"><h2>✦ PINK PIXEL ARCADE ✦</h2><div class="arcade-intro">FREE PLAY FOREVER! 🎀 ★ 🪐 ✿<br>Two tiny games. No coins, no downloads, just vibes. Keyboard and touch controls supported.</div><div class="arcade-grid">
+<article class="machine"><h3>01 / STAR CATCHER</h3><p class="machine-desc">Move your basket to catch falling stars. Use ← → or A / D, or the buttons below.</p><div class="screen"><canvas id="catch-canvas" aria-label="Star Catcher game area"></canvas></div><div class="hud"><span>SCORE: <b id="catch-score">000</b></span><span>TIME: <b id="catch-time">30</b>s</span><span>BEST: <b id="catch-best">000</b></span></div><div class="actions"><button class="btn" id="catch-start" type="button">▶ START</button><button class="btn" id="catch-reset" type="button">↻ RESET</button></div><div class="move-controls"><button class="btn" id="catch-left" type="button">◀ LEFT</button><button class="btn" id="catch-right" type="button">RIGHT ▶</button></div><p class="message" id="catch-message" aria-live="polite">Press START and catch the sparkles!</p></article>
+<article class="machine"><h3>02 / PIXEL POP</h3><p class="machine-desc">Tap the sparkles before they teleport. How many can you pop in 15 seconds?</p><div class="pop-zone" id="pop-zone"><div class="prompt" id="pop-prompt">READY PLAYER ONE?<br>PRESS START!</div></div><div class="hud"><span>POPS: <b id="pop-score">000</b></span><span>TIME: <b id="pop-time">15</b>s</span></div><div class="actions"><button class="btn" id="pop-start" type="button">▶ START POP</button><button class="btn" id="pop-reset" type="button">↻ RESET</button></div><p class="message" id="pop-message" aria-live="polite">Click START, then tap the sparkle targets!</p></article>
+</div></section>
+<section class="panel" id="tab-experience" role="tabpanel"><h2>✦ EXPERIENCE & INTERNSHIPS ✦</h2><div class="grid"><article class="card"><h3>CONTENT WRITING INTERN</h3><div class="meta">Henry Harvin · 2026</div><p>Content-writing internship involving long-form blogs, articles, and content planning.</p></article><article class="card"><h3>GENETIC ENGINEERING TRAINING</h3><div class="meta">Biolim.org · 2026</div><p>Virtual training covering genetic engineering principles, molecular workflows, and biotechnology applications.</p></article><article class="card"><h3>DATA LABELING</h3><div class="meta">Forage · 2026</div><p>Practiced batch data labeling, intent and sentiment classification, PII identification, and annotation rationale.</p></article><article class="card"><h3>COMMUNITY VOLUNTEER</h3><div class="meta">Prayas Welfare School & Society · Faridabad</div><p>Supported primary students with Mathematics, English, Hindi, and Environmental Studies.</p></article><article class="card"><h3>NASSCOM CAMPUS COORDINATOR</h3><div class="meta">Campus program · 2026</div><p>Selected for the campus coordinator program.</p></article></div></section>
+<section class="panel" id="tab-projects" role="tabpanel"><h2>✦ PROJECTS & BUILDS ✦</h2><div class="grid"><article class="card"><h3>MICROBEQUEST: THE OUTBREAK FILES</h3><div class="meta">Developer & project lead · 2026</div><p>Interactive microbiology investigation game with syllabus-aligned stages, case-based quizzes, hints, scoring, and analytics.</p><p><a href="https://microbequest-the.hatchable.site/" target="_blank" rel="noopener">Live demo ↗</a> · <a href="https://github.com/anubhutigoswami125/MicrobeQuest" target="_blank" rel="noopener">GitHub ↗</a></p></article><article class="card"><h3>PERSONAL EXPENSE TRACKER</h3><div class="meta">C++ coursework</div><p>Building an object-oriented finance application for expense recording, categorization, and budget management.</p></article><article class="card"><h3>SIMULAB</h3><div class="meta">Interactive learning concept</div><p>A point-and-click virtual laboratory concept for exploring equipment, benches, and experiments.</p></article></div></section>
+<section class="panel" id="tab-research" role="tabpanel"><h2>✦ RESEARCH & SCIENTIFIC ENGAGEMENT ✦</h2><div class="grid"><article class="card"><h3>PULSE OXIMETRY & SKIN PIGMENTATION</h3><div class="meta">Poster · LPU</div><p>Explored racial bias in pulse oximetry and the relationship between skin pigmentation and healthcare equity.</p></article><article class="card"><h3>BIOELECTRIC NETWORKS</h3><div class="meta">Poster · LPU</div><p>Presented a topic on bioelectric networks in anatomical engineering and regenerative medicine.</p></article><article class="card"><h3>ZOONIVERSE CITIZEN SCIENCE</h3><div class="meta">Research volunteering</div><p>Contributed classifications to citizen-science initiatives, including Placenta Profiles and Clear Skies.</p></article><article class="card"><h3>SCIENTIFIC INTERESTS</h3><div class="tags"><span class="tag">GENETICS</span><span class="tag">MICROBIOLOGY</span><span class="tag">BIOINFORMATICS</span><span class="tag">AI IN LIFE SCIENCES</span><span class="tag">DATA ANALYSIS</span></div></article></div></section>
+<section class="panel" id="tab-skills" role="tabpanel"><h2>✦ SKILLS & CERTIFICATIONS ✦</h2><div class="grid"><article class="card"><h3>TECHNICAL SKILLS</h3><div class="tags"><span class="tag">Python · beginner</span><span class="tag">C / C++ · learning</span><span class="tag">Excel</span><span class="tag">PowerPoint</span><span class="tag">Canva</span><span class="tag">GitHub</span><span class="tag">Data labeling</span><span class="tag">Data visualization</span></div></article><article class="card"><h3>LAB & BIOLOGY</h3><div class="tags"><span class="tag">Pipetting</span><span class="tag">Titration</span><span class="tag">Biotechnology</span><span class="tag">Microbiology coursework</span><span class="tag">Genetics coursework</span></div></article><article class="card"><h3>SELECTED CERTIFICATIONS</h3><p>• Programming for Everybody (Python) — University of Michigan / Coursera (in progress)</p><p>• Microbiology — Coursera</p><p>• Introduction to AI — IBM</p><p>• Programming fundamentals — Saylor Academy</p><p>• Resume Writing — HP LIFE</p></article><article class="card"><h3>OTHER ACTIVITIES</h3><p>Hackathons, campus leadership, scientific poster presentations, and citizen-science annotation.</p></article></div></section>
+</main>
+<footer class="footer"><span>© 2026 ANUBHUTI GOSWAMI · MADE OF PIXELS & CURIOSITY</span><span><a href="mailto:anubhutiworkk@gmail.com">CONTACT</a><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">GITHUB ↗</a></span></footer>
 </div>
-
 <script>
-    function switchTab(tabId, event) {
-        if(event) event.preventDefault();
-        
-        // Hide all sections
-        const sections = document.querySelectorAll('.content-section');
-        sections.forEach(sec => sec.classList.remove('active'));
-
-        // Remove active class from all buttons
-        const buttons = document.querySelectorAll('.nav-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
-
-        // Show target section
-        const target = document.getElementById('tab-' + tabId);
-        if(target) {
-            target.classList.add('active');
-        }
-
-        // Highlight button if triggered by click
-        if(event && event.target.classList.contains('nav-btn')) {
-            event.target.classList.add('active');
-        }
-    }
-
-    // Tiny, dependency-free arcade games. Start only after an explicit user action.
-    (() => {
-      const $ = id => document.getElementById(id);
-      const canvas = $('star-canvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      const scoreEl=$('star-score'), timeEl=$('star-time'), bestEl=$('star-best');
-      const startBtn=$('star-start'), resetBtn=$('star-reset'), message=$('star-message');
-      let active=false, score=0, time=30, last=0, spawnClock=0, raf=0, timerInterval=null, stars=[], keys={left:false,right:false};
-      let player={x:260,y:260,w:58,h:17};
-      let best=0; try{best=Number(localStorage.getItem('pinkArcadeBest')||0)}catch(e){}
-      bestEl.textContent=String(best).padStart(3,'0');
-      function resizeCanvas(){const dpr=Math.min(window.devicePixelRatio||1,2),rect=canvas.getBoundingClientRect();canvas.width=Math.round(rect.width*dpr);canvas.height=Math.round(235*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);player.y=canvas.height/dpr-30;player.x=Math.max(player.w/2,Math.min(rect.width-player.w/2,player.x));draw()}
-      function draw(){
-        const w=canvas.clientWidth||520,h=235;ctx.clearRect(0,0,w,h);
-        const g=ctx.createLinearGradient(0,0,w,h);g.addColorStop(0,'#34105b');g.addColorStop(.55,'#57128a');g.addColorStop(1,'#271042');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
-        for(let i=0;i<28;i++){const x=(i*83+19)%w,y=(i*47+13)%h;ctx.fillStyle=i%3===0?'#ff9be8':'#fff0ff';ctx.fillRect(x,y,2,2)}
-        stars.forEach(s=>{ctx.font='23px sans-serif';ctx.textAlign='center';ctx.fillStyle=s.c;ctx.fillText('✦',s.x,s.y)});
-        const x=player.x-29,y=h-34;ctx.fillStyle='#ff39b8';ctx.fillRect(x,y,58,16);ctx.fillStyle='#fff1ff';ctx.fillRect(x+7,y-7,44,8);ctx.fillStyle='#8dfbff';ctx.fillRect(x+14,y+4,7,4);ctx.fillRect(x+37,y+4,7,4);ctx.fillStyle='#ffe879';ctx.fillRect(x+4,y+16,12,5);ctx.fillRect(x+42,y+16,12,5);
-        if(!active){ctx.fillStyle='rgba(20,3,38,.34)';ctx.fillRect(0,0,w,h)}
-      }
-      function finish(){active=false;cancelAnimationFrame(raf);clearInterval(timerInterval);keys.left=keys.right=false;startBtn.textContent='▶ PLAY AGAIN';message.textContent='GAME OVER! You caught '+score+' star'+(score===1?'':'s')+'. Press play again!';draw()}
-      function loop(ts){if(!active)return;const dt=Math.min((ts-last)/1000,.04);last=ts;spawnClock+=dt;if(spawnClock>.48){spawnClock=0;stars.push({x:12+Math.random()*Math.max(1,canvas.clientWidth-24),y:-10,v:75+Math.random()*85,c:['#fff38a','#ff8ee4','#a9ffff','#ffffff'][Math.floor(Math.random()*4)]})}
-        const w=canvas.clientWidth||520;player.x+=((keys.right?1:0)-(keys.left?1:0))*250*dt;player.x=Math.max(30,Math.min(w-30,player.x));
-        stars=stars.filter(s=>{s.y+=s.v*dt;if(s.y>196&&s.y<232&&Math.abs(s.x-player.x)<36){score++;scoreEl.textContent=String(score).padStart(3,'0');return false}return s.y<250});
-        draw();raf=requestAnimationFrame(loop)}
-      function start(){cancelAnimationFrame(raf);clearInterval(timerInterval);score=0;time=30;last=performance.now();spawnClock=0;stars=[];active=true;scoreEl.textContent='000';timeEl.textContent='30';startBtn.textContent='PLAYING…';message.textContent='Catch those sparkles! ← → or A / D';timerInterval=setInterval(()=>{if(!active)return;time=Math.max(0,time-1);timeEl.textContent=String(time);if(time<=0){if(score>best){best=score;bestEl.textContent=String(best).padStart(3,'0');try{localStorage.setItem('pinkArcadeBest',String(best))}catch(e){}}finish()}},1000);raf=requestAnimationFrame(loop)}
-      function reset(){active=false;cancelAnimationFrame(raf);clearInterval(timerInterval);stars=[];score=0;time=30;scoreEl.textContent='000';timeEl.textContent='30';startBtn.textContent='▶ START GAME';message.textContent='Press START GAME. Use ← → or A / D. Catch the stars!';draw()}
-      startBtn.addEventListener('click',start);resetBtn.addEventListener('click',reset);
-      function hold(id,key){const b=$(id);b.addEventListener('pointerdown',e=>{e.preventDefault();keys[key]=true});['pointerup','pointerleave','pointercancel'].forEach(ev=>b.addEventListener(ev,()=>keys[key]=false))}
-      hold('star-left','left');hold('star-right','right');
-      document.addEventListener('keydown',e=>{if(!active)return;if(['ArrowLeft','ArrowRight','KeyA','KeyD'].includes(e.code)){e.preventDefault();if(e.code==='ArrowLeft'||e.code==='KeyA')keys.left=true;else keys.right=true}});
-      document.addEventListener('keyup',e=>{if(e.code==='ArrowLeft'||e.code==='KeyA')keys.left=false;if(e.code==='ArrowRight'||e.code==='KeyD')keys.right=false});
-      window.addEventListener('resize',resizeCanvas);resizeCanvas();reset();
-
-      const zone=$('pop-zone'), popStart=$('pop-start'),popReset=$('pop-reset'),popScore=$('pop-score'),popTime=$('pop-time'),popMsg=$('pop-message');
-      let popActive=false,pops=0,popClock=null,popTimer=null;
-      function moveTarget(target){const maxX=Math.max(0,zone.clientWidth-48),maxY=Math.max(0,zone.clientHeight-48);target.style.left=Math.floor(Math.random()*maxX)+'px';target.style.top=Math.floor(Math.random()*maxY)+'px';target.textContent=['✦','★','♡','✧','✿'][Math.floor(Math.random()*5)]}
-      function stopPop(){popActive=false;clearInterval(popClock);clearTimeout(popTimer);zone.querySelectorAll('.pop-target').forEach(n=>n.remove());popStart.textContent='▶ PLAY AGAIN';popMsg.textContent='TIME UP! You popped '+pops+' sparkles. Try to beat your score!'}
-      function startPop(){clearInterval(popClock);clearTimeout(popTimer);zone.querySelectorAll('.pop-target').forEach(n=>n.remove());const prompt=$('pop-start-prompt');if(prompt)prompt.style.display='none';pops=0;let secs=15;popActive=true;popScore.textContent='000';popTime.textContent='15';popStart.textContent='PLAYING…';popMsg.textContent='POP POP POP!';const target=document.createElement('button');target.type='button';target.className='pop-target';target.setAttribute('aria-label','Pop sparkle');target.addEventListener('click',()=>{if(!popActive)return;pops++;popScore.textContent=String(pops).padStart(3,'0');moveTarget(target)});zone.appendChild(target);moveTarget(target);popClock=setInterval(()=>{secs--;popTime.textContent=String(Math.max(0,secs));if(secs<=0)stopPop()},1000)}
-      function resetPop(){clearInterval(popClock);clearTimeout(popTimer);popActive=false;zone.querySelectorAll('.pop-target').forEach(n=>n.remove());pops=0;popScore.textContent='000';popTime.textContent='15';popStart.textContent='▶ START POP';const prompt=$('pop-start-prompt');if(prompt)prompt.style.display='grid';popMsg.textContent='Click START, then tap the ✦ targets. Go go go!'}
-      popStart.addEventListener('click',startPop);popReset.addEventListener('click',resetPop);
-      window.addEventListener('resize',()=>{const target=zone.querySelector('.pop-target');if(target)moveTarget(target)});
-    })();
-
+(function(){
+'use strict';
+var tabs=Array.prototype.slice.call(document.querySelectorAll('.nav-btn'));
+var panels=Array.prototype.slice.call(document.querySelectorAll('.panel'));
+function switchTab(name){
+ tabs.forEach(function(btn){var chosen=btn.getAttribute('data-tab')===name;btn.setAttribute('aria-selected',chosen?'true':'false');});
+ panels.forEach(function(panel){panel.classList.toggle('active',panel.id==='tab-'+name);});
+ if(name==='arcade'){resizeCatchCanvas();drawCatch();}
+}
+tabs.forEach(function(btn){btn.addEventListener('click',function(){switchTab(btn.getAttribute('data-tab'));});});
+var canvas=document.getElementById('catch-canvas'),ctx=canvas.getContext('2d');
+var catchScore=document.getElementById('catch-score'),catchTime=document.getElementById('catch-time'),catchBest=document.getElementById('catch-best'),catchMessage=document.getElementById('catch-message'),catchStart=document.getElementById('catch-start');
+var running=false,score=0,seconds=30,stars=[],lastTime=0,spawnTime=0,raf=0,timer=null,keys={left:false,right:false};
+var basket={x:200,y:200,w:56,h:18},best=0;
+try{best=Number(localStorage.getItem('anubhutiStarBest')||0)}catch(e){}
+catchBest.textContent=String(best).padStart(3,'0');
+function canvasSize(){var rect=canvas.getBoundingClientRect();var dpr=Math.min(window.devicePixelRatio||1,2);var w=Math.max(240,rect.width||480);canvas.width=Math.round(w*dpr);canvas.height=Math.round(235*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);basket.y=205;basket.x=Math.max(28,Math.min(w-28,basket.x));}
+function drawCatch(){
+ var w=canvas.clientWidth||480,h=235;ctx.clearRect(0,0,w,h);
+ var grad=ctx.createLinearGradient(0,0,w,h);grad.addColorStop(0,'#26063f');grad.addColorStop(.55,'#62138f');grad.addColorStop(1,'#321050');ctx.fillStyle=grad;ctx.fillRect(0,0,w,h);
+ for(var i=0;i<35;i++){var sx=(i*83+19)%w,sy=(i*47+13)%h;ctx.fillStyle=i%3===0?'#fff17b':(i%2===0?'#ff9ce8':'#9bffff');ctx.fillRect(sx,sy,2,2);}
+ stars.forEach(function(s){ctx.font='22px sans-serif';ctx.textAlign='center';ctx.fillStyle=s.color;ctx.fillText('✦',s.x,s.y);});
+ var bx=basket.x-basket.w/2,by=205;ctx.fillStyle='#ff35b8';ctx.fillRect(bx,by,basket.w,basket.h);ctx.fillStyle='#fff4ff';ctx.fillRect(bx+6,by-7,basket.w-12,7);ctx.fillStyle='#9bffff';ctx.fillRect(bx+13,by+5,7,4);ctx.fillRect(bx+36,by+5,7,4);ctx.fillStyle='#fff17b';ctx.fillRect(bx+3,by+18,13,4);ctx.fillRect(bx+40,by+18,13,4);
+ if(!running){ctx.fillStyle='rgba(20,2,35,.28)';ctx.fillRect(0,0,w,h);}
+}
+function endCatch(){
+ if(!running)return;running=false;clearInterval(timer);timer=null;cancelAnimationFrame(raf);keys.left=keys.right=false;catchStart.textContent='▶ PLAY AGAIN';catchMessage.textContent='TIME UP! You caught '+score+' star'+(score===1?'':'s')+'. Play again?';
+ if(score>best){best=score;catchBest.textContent=String(best).padStart(3,'0');try{localStorage.setItem('anubhutiStarBest',String(best))}catch(e){}}
+ drawCatch();
+}
+function frame(ts){
+ if(!running)return;
+ var dt=Math.min((ts-lastTime)/1000,.04);lastTime=ts;spawnTime+=dt;
+ if(spawnTime>.48){spawnTime=0;stars.push({x:12+Math.random()*Math.max(1,(canvas.clientWidth||480)-24),y:-10,v:75+Math.random()*85,color:['#fff17b','#ff8ce4','#9bffff','#ffffff'][Math.floor(Math.random()*4)]});}
+ var w=canvas.clientWidth||480;basket.x+=((keys.right?1:0)-(keys.left?1:0))*250*dt;basket.x=Math.max(28,Math.min(w-28,basket.x));
+ stars=stars.filter(function(s){s.y+=s.v*dt;if(s.y>190&&s.y<231&&Math.abs(s.x-basket.x)<34){score++;catchScore.textContent=String(score).padStart(3,'0');return false;}return s.y<250;});
+ drawCatch();raf=requestAnimationFrame(frame);
+}
+function startCatch(){
+ clearInterval(timer);cancelAnimationFrame(raf);score=0;seconds=30;stars=[];spawnTime=0;lastTime=performance.now();running=true;catchScore.textContent='000';catchTime.textContent='30';catchStart.textContent='PLAYING…';catchMessage.textContent='Catch the sparkles! Use ← → or A / D.';drawCatch();
+ timer=setInterval(function(){if(!running)return;seconds--;catchTime.textContent=String(Math.max(0,seconds));if(seconds<=0)endCatch();},1000);raf=requestAnimationFrame(frame);
+}
+function resetCatch(){running=false;clearInterval(timer);timer=null;cancelAnimationFrame(raf);stars=[];score=0;seconds=30;keys.left=keys.right=false;catchScore.textContent='000';catchTime.textContent='30';catchStart.textContent='▶ START';catchMessage.textContent='Press START and catch the sparkles!';drawCatch();}
+function resizeCatchCanvas(){canvasSize();}
+document.getElementById('catch-start').addEventListener('click',startCatch);
+document.getElementById('catch-reset').addEventListener('click',resetCatch);
+function bindHold(id,key){var el=document.getElementById(id);el.addEventListener('pointerdown',function(e){e.preventDefault();keys[key]=true;if(el.setPointerCapture)try{el.setPointerCapture(e.pointerId)}catch(err){}});['pointerup','pointercancel','lostpointercapture','pointerleave'].forEach(function(type){el.addEventListener(type,function(){keys[key]=false;});});}
+bindHold('catch-left','left');bindHold('catch-right','right');
+document.addEventListener('keydown',function(e){if(!running)return;if(['ArrowLeft','ArrowRight','KeyA','KeyD'].indexOf(e.code)>=0){e.preventDefault();if(e.code==='ArrowLeft'||e.code==='KeyA')keys.left=true;else keys.right=true;}});
+document.addEventListener('keyup',function(e){if(['ArrowLeft','KeyA'].indexOf(e.code)>=0)keys.left=false;if(['ArrowRight','KeyD'].indexOf(e.code)>=0)keys.right=false;});
+window.addEventListener('blur',function(){keys.left=keys.right=false;});
+window.addEventListener('resize',function(){resizeCatchCanvas();drawCatch();});
+resizeCatchCanvas();drawCatch();
+var zone=document.getElementById('pop-zone'),popScore=document.getElementById('pop-score'),popTime=document.getElementById('pop-time'),popMessage=document.getElementById('pop-message'),popStart=document.getElementById('pop-start'),popPrompt=document.getElementById('pop-prompt');
+var popRunning=false,pops=0,popSeconds=15,popTimer=null,target=null;
+function moveTarget(){if(!target)return;var maxX=Math.max(0,zone.clientWidth-52),maxY=Math.max(0,zone.clientHeight-52);target.style.left=Math.floor(Math.random()*maxX)+'px';target.style.top=Math.floor(Math.random()*maxY)+'px';target.textContent=['✦','★','♡','✧','✿'][Math.floor(Math.random()*5)];}
+function stopPop(){if(!popRunning)return;popRunning=false;clearInterval(popTimer);popTimer=null;if(target){target.remove();target=null;}popStart.textContent='▶ PLAY AGAIN';popMessage.textContent='TIME UP! You popped '+pops+' sparkle'+(pops===1?'':'s')+'. Try again!';}
+function startPop(){clearInterval(popTimer);if(target){target.remove();target=null;}pops=0;popSeconds=15;popRunning=true;popScore.textContent='000';popTime.textContent='15';popStart.textContent='PLAYING…';popMessage.textContent='POP POP POP!';popPrompt.style.display='none';target=document.createElement('button');target.type='button';target.className='target';target.setAttribute('aria-label','Pop sparkle target');target.addEventListener('click',function(){if(!popRunning)return;pops++;popScore.textContent=String(pops).padStart(3,'0');moveTarget();});zone.appendChild(target);moveTarget();popTimer=setInterval(function(){popSeconds--;popTime.textContent=String(Math.max(0,popSeconds));if(popSeconds<=0)stopPop();},1000);}
+function resetPop(){popRunning=false;clearInterval(popTimer);popTimer=null;if(target){target.remove();target=null;}pops=0;popSeconds=15;popScore.textContent='000';popTime.textContent='15';popStart.textContent='▶ START POP';popPrompt.style.display='grid';popMessage.textContent='Click START, then tap the sparkle targets!';}
+popStart.addEventListener('click',startPop);document.getElementById('pop-reset').addEventListener('click',resetPop);
+window.addEventListener('resize',function(){if(target)moveTarget();});
+})();
 </script>
-
 </body>
 </html>
