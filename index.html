@@ -644,7 +644,7 @@ body:after{content:"🎀　✦　🪐　✿　☆　🎀　✧　🌸　✦　�
       const ctx = canvas.getContext('2d');
       const scoreEl=$('star-score'), timeEl=$('star-time'), bestEl=$('star-best');
       const startBtn=$('star-start'), resetBtn=$('star-reset'), message=$('star-message');
-      let active=false, score=0, time=30, last=0, spawnClock=0, raf=0, stars=[], keys={left:false,right:false};
+      let active=false, score=0, time=30, last=0, spawnClock=0, raf=0, timerInterval=null, stars=[], keys={left:false,right:false};
       let player={x:260,y:260,w:58,h:17};
       let best=0; try{best=Number(localStorage.getItem('pinkArcadeBest')||0)}catch(e){}
       bestEl.textContent=String(best).padStart(3,'0');
@@ -657,13 +657,13 @@ body:after{content:"🎀　✦　🪐　✿　☆　🎀　✧　🌸　✦　�
         const x=player.x-29,y=h-34;ctx.fillStyle='#ff39b8';ctx.fillRect(x,y,58,16);ctx.fillStyle='#fff1ff';ctx.fillRect(x+7,y-7,44,8);ctx.fillStyle='#8dfbff';ctx.fillRect(x+14,y+4,7,4);ctx.fillRect(x+37,y+4,7,4);ctx.fillStyle='#ffe879';ctx.fillRect(x+4,y+16,12,5);ctx.fillRect(x+42,y+16,12,5);
         if(!active){ctx.fillStyle='rgba(20,3,38,.34)';ctx.fillRect(0,0,w,h)}
       }
-      function finish(){active=false;cancelAnimationFrame(raf);keys.left=keys.right=false;startBtn.textContent='▶ PLAY AGAIN';message.textContent='GAME OVER! You caught '+score+' star'+(score===1?'':'s')+'. Press play again!';draw()}
+      function finish(){active=false;cancelAnimationFrame(raf);clearInterval(timerInterval);keys.left=keys.right=false;startBtn.textContent='▶ PLAY AGAIN';message.textContent='GAME OVER! You caught '+score+' star'+(score===1?'':'s')+'. Press play again!';draw()}
       function loop(ts){if(!active)return;const dt=Math.min((ts-last)/1000,.04);last=ts;spawnClock+=dt;if(spawnClock>.48){spawnClock=0;stars.push({x:12+Math.random()*Math.max(1,canvas.clientWidth-24),y:-10,v:75+Math.random()*85,c:['#fff38a','#ff8ee4','#a9ffff','#ffffff'][Math.floor(Math.random()*4)]})}
         const w=canvas.clientWidth||520;player.x+=((keys.right?1:0)-(keys.left?1:0))*250*dt;player.x=Math.max(30,Math.min(w-30,player.x));
         stars=stars.filter(s=>{s.y+=s.v*dt;if(s.y>196&&s.y<232&&Math.abs(s.x-player.x)<36){score++;scoreEl.textContent=String(score).padStart(3,'0');return false}return s.y<250});
         draw();raf=requestAnimationFrame(loop)}
-      function start(){cancelAnimationFrame(raf);score=0;time=30;last=performance.now();spawnClock=0;stars=[];active=true;scoreEl.textContent='000';timeEl.textContent='30';startBtn.textContent='PLAYING…';message.textContent='Catch those sparkles! ← → or A / D';let began=performance.now();function timer(now){if(!active)return;time=Math.max(0,30-Math.floor((now-began)/1000));timeEl.textContent=String(time);if(time<=0){if(score>best){best=score;bestEl.textContent=String(best).padStart(3,'0');try{localStorage.setItem('pinkArcadeBest',String(best))}catch(e){}}finish();return}requestAnimationFrame(timer)}requestAnimationFrame(timer);raf=requestAnimationFrame(loop)}
-      function reset(){active=false;cancelAnimationFrame(raf);stars=[];score=0;time=30;scoreEl.textContent='000';timeEl.textContent='30';startBtn.textContent='▶ START GAME';message.textContent='Press START GAME. Use ← → or A / D. Catch the stars!';draw()}
+      function start(){cancelAnimationFrame(raf);clearInterval(timerInterval);score=0;time=30;last=performance.now();spawnClock=0;stars=[];active=true;scoreEl.textContent='000';timeEl.textContent='30';startBtn.textContent='PLAYING…';message.textContent='Catch those sparkles! ← → or A / D';timerInterval=setInterval(()=>{if(!active)return;time=Math.max(0,time-1);timeEl.textContent=String(time);if(time<=0){if(score>best){best=score;bestEl.textContent=String(best).padStart(3,'0');try{localStorage.setItem('pinkArcadeBest',String(best))}catch(e){}}finish()}},1000);raf=requestAnimationFrame(loop)}
+      function reset(){active=false;cancelAnimationFrame(raf);clearInterval(timerInterval);stars=[];score=0;time=30;scoreEl.textContent='000';timeEl.textContent='30';startBtn.textContent='▶ START GAME';message.textContent='Press START GAME. Use ← → or A / D. Catch the stars!';draw()}
       startBtn.addEventListener('click',start);resetBtn.addEventListener('click',reset);
       function hold(id,key){const b=$(id);b.addEventListener('pointerdown',e=>{e.preventDefault();keys[key]=true});['pointerup','pointerleave','pointercancel'].forEach(ev=>b.addEventListener(ev,()=>keys[key]=false))}
       hold('star-left','left');hold('star-right','right');
