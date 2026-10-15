@@ -190,6 +190,16 @@ body{background-color:#d7c8ff;background-image:radial-gradient(#9277c5 1px,trans
 @media(max-width:800px){.desktop-dock{grid-template-columns:1fr}.folder-widget{min-height:65px}.degree-widget{grid-column:auto;flex-wrap:wrap}.top-nav.menu-strip{justify-content:flex-start}.game-world{grid-template-columns:1fr;grid-template-rows:auto}.runner-scene{grid-column:1;grid-row:1;height:290px}.runner-instructions{grid-column:1;grid-row:1}.hero-copy{grid-column:1;grid-row:2;margin-top:12px}.runner-status{grid-column:1;grid-row:1;align-self:end;margin-bottom:8px}.hero-skip{grid-column:1;grid-row:3}.ticker-ribbon{margin-top:18px}}
 @media(max-width:520px){.browser-status{display:none}.browser-line{font-size:16px}.domain-mark{font-size:20px}.top-nav .pixel-btn{font-size:18px;padding:8px 6px}.degree-widget{gap:8px}.runner-scene{height:250px}.hero-copy{padding:25px 18px}.hero-copy h1{font-size:21px}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:9px}.quick-card{min-height:150px}.ticker-track{font-size:8px}.bottom-doodles{padding:0 4px}.sticky-note{font-size:14px}.footer-motto{margin-left:0}}
 
+
+/* Character redesign: closer to Anubhuti's reference, with a proper illustrated silhouette */
+.runner-scene .pixel-avatar{position:absolute;display:block;width:160px;height:240px;left:15%;bottom:26px;z-index:4;overflow:visible;transform:none;transform-origin:bottom center;animation:avatar-idle .7s steps(2,end) infinite alternate;filter:drop-shadow(3px 4px 0 #68477f)}
+.runner-scene .pixel-avatar.jumping{animation:avatar-jump .62s ease-out!important}
+@keyframes avatar-idle{from{translate:0 0}to{translate:0 -3px}}
+@keyframes avatar-jump{0%{translate:0 0}45%{translate:0 -58px}100%{translate:0 0}}
+.runner-scene.running .pixel-avatar{animation:avatar-run .18s steps(2,end) infinite alternate}
+@keyframes avatar-run{from{translate:0 0;rotate:-1deg}to{translate:0 -5px;rotate:1deg}}
+@media(max-width:700px){.runner-scene .pixel-avatar{width:125px;height:188px;left:8%;bottom:28px}}
+
 </style>
 </head>
 <body>
@@ -205,7 +215,41 @@ body{background-color:#d7c8ff;background-image:radial-gradient(#9277c5 1px,trans
 <div class="stars"></div><div class="moon"></div><div class="cloud"></div><div class="cloud c2"></div>
 <div class="hero-copy"><span class="paperclip" aria-hidden="true">⌇</span><span class="hero-sticker" aria-hidden="true">✦</span><div class="eyebrow">A LITTLE CORNER OF THE INTERNET</div><h1>Hi, I’m<br>Anubhuti! <span class="hero-star">✰</span></h1><div class="sub">B.Tech Biotechnology @ LPU | 2025–2029</div><p>I’m a biotechnology student who loves the overlap between science, bioinformatics, and the little questions that turn into big ideas. Usually exploring genetics, microbes, data, food, art, or one more thing at 2 a.m.</p><p class="hero-signoff">Thanks for visiting! ♡ <span class="mini-chibi" aria-hidden="true">◕ᴗ◕</span></p><a class="pixel-btn pink" href="#projects">EXPLORE MY WORK →</a></div>
 <div class="runner-instructions">PRESS SPACE TO JUMP ►</div><div class="pixel-lucky-block" aria-hidden="true">?</div><div class="hero-skip"><button class="pixel-btn pink" id="start-run" type="button">START RUN ▶</button><a class="pixel-btn" href="#ticker">SKIP &gt;&gt;</a></div>
-<div class="scene runner-scene" id="runner-scene" aria-label="Short pixel runner introduction"><div class="runner-obstacles" id="runner-obstacles"></div><div class="pixel-avatar runner-player" id="runner-player" role="img" aria-label="Chibi character with chestnut hair, green alien antennae, square glasses, burgundy shirt, dark flared jeans and white sneakers"><div class="avatar-head"><span class="glasses"></span></div><div class="bangs"></div><div class="labcoat"></div><div class="shirt"></div><div class="arm left"></div><div class="arm right"></div><div class="legs"></div></div><div class="ground"></div></div><div class="runner-status" id="runner-status" aria-live="polite">Press START RUN, then jump with Space or ↑. You can skip this at any time.</div><div class="world-floor"></div>
+<div class="scene runner-scene" id="runner-scene" aria-label="Short pixel runner introduction"><div class="runner-obstacles" id="runner-obstacles"></div><svg class="pixel-avatar runner-player" id="runner-player" viewBox="0 0 160 240" role="img" aria-label="Chibi Anubhuti: shoulder-length chestnut hair, green alien antennae, thick square brown glasses, burgundy shirt, flared charcoal jeans and white sneakers" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#241923" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M66 48V19M103 48V19" fill="none" stroke="#4e8f29" stroke-width="7"/>
+  <circle cx="66" cy="16" r="10" fill="#83e34d"/><circle cx="103" cy="16" r="10" fill="#83e34d"/>
+  <path d="M57 145L45 174 36 188 48 196 65 177 72 150Z" fill="#9c2c38"/>
+  <path d="M104 146L117 173 125 188 113 196 96 177 91 151Z" fill="#9c2c38"/>
+  <path d="M67 151L63 184 57 211 74 215 87 183 92 151Z" fill="#292630"/>
+  <path d="M92 151L91 182 100 212 119 213 113 179 111 151Z" fill="#292630"/>
+  <path d="M55 205L76 207 77 221 48 221 38 214 42 208Z" fill="#fff9f2"/>
+  <path d="M98 205L119 205 130 213 127 221 99 221 94 216Z" fill="#fff9f2"/>
+  <path d="M40 218H76M99 218H128" stroke="#a5a0a7" stroke-width="3"/>
+  <path d="M59 111L55 150 68 159 102 159 115 150 109 111Z" fill="#9e2d3b"/>
+  <path d="M70 111L80 124 91 111" fill="#f2b8c1" stroke-width="3"/>
+  <path d="M56 119L44 137 42 153M111 119L123 137 124 153" fill="none" stroke="#f1c5b4" stroke-width="12"/>
+  <path d="M42 148L40 157M124 148L126 157" fill="none" stroke="#f1c5b4" stroke-width="10"/>
+  <path d="M59 58C52 43 61 29 79 28 100 26 112 39 108 59L112 86 104 111 92 120 68 116 55 101 52 77Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
+  <path d="M63 53Q62 42 75 40L95 40Q105 44 103 60L103 92Q101 110 82 113Q63 109 61 92Z" fill="#f4cbb9" stroke="#2a1a22" stroke-width="4"/>
+  <path d="M60 58Q47 47 62 32Q70 21 86 25Q108 24 113 43L107 65 101 54 92 43 79 49 69 63Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
+  <path d="M62 43Q70 35 80 43L78 58 68 66 65 55Z" fill="#57392f" stroke="none"/>
+  <path d="M82 43Q94 37 104 46L101 59 91 63 85 54Z" fill="#57392f" stroke="none"/>
+  <path d="M61 60L56 82 57 98 49 105 47 76Z" fill="#57392f"/>
+  <path d="M104 60L109 81 106 100 114 105 117 75Z" fill="#57392f"/>
+  <path d="M64 72Q70 68 76 72M89 72Q95 68 100 72" fill="none" stroke="#2a1a22" stroke-width="4"/>
+  <path d="M65 80Q70 83 75 80M90 80Q95 83 100 80" fill="none" stroke="#2a1a22" stroke-width="3"/>
+  <path d="M80 83L78 89 83 90" fill="none" stroke="#cf8d81" stroke-width="2.5"/>
+  <path d="M76 98Q82 94 88 98Q83 103 77 99" fill="#9d4a54" stroke="#9d4a54" stroke-width="2"/>
+  <rect x="59" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
+  <rect x="85" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
+  <path d="M82 73H86M55 72L59 73M109 73L114 72" fill="none" stroke="#4a3028" stroke-width="4"/>
+  <circle cx="54" cy="94" r="3" fill="#d8a5a1" stroke="none"/><circle cx="110" cy="94" r="3" fill="#d8a5a1" stroke="none"/>
+  <path d="M63 42Q55 55 61 71L66 66 69 49 79 45 82 52 87 43 99 50 104 64 110 68 111 47Q106 27 84 26Q65 27 63 42Z" fill="#57392f" stroke="#2a1a22" stroke-width="4"/>
+  <path d="M62 45L72 36 79 44 76 55 67 61ZM81 43L91 35 99 44 96 56 87 59Z" fill="#684638" stroke="none"/>
+  <circle cx="53" cy="97" r="4" fill="#d8d4d9"/><circle cx="111" cy="97" r="4" fill="#d8d4d9"/>
+</g>
+</svg><div class="ground"></div></div><div class="runner-status" id="runner-status" aria-live="polite">Press START RUN, then jump with Space or ↑. You can skip this at any time.</div><div class="world-floor"></div>
 </section>
 <div class="ticker-ribbon" id="ticker" aria-label="Research code create learn repeat"><span class="ticker-star">✦</span><div class="ticker-track"><span>// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //　// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //</span></div><span class="ticker-planet">🪐</span></div>
 <section class="quick-links" id="quick-links" aria-label="Quick links"><div class="quick-heading"><span>✰ Quick Links ✧</span><button type="button" class="window-close" aria-label="Quick Links window decoration">×</button></div><div class="quick-grid"><a class="quick-card" href="#about"><span class="qicon">👽</span><b>About Me</b><span>Who I am &amp; where I’m headed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#projects"><span class="qicon">💻</span><b>Projects</b><span>Things I’ve built, explored &amp; contributed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#achievements"><span class="qicon">🏆</span><b>Achievements</b><span>Awards, scholarships, hackathons &amp; more</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#skills"><span class="qicon">📚</span><b>Skills</b><span>Tools, languages &amp; lab experience</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#scrapbook"><span class="qicon">📒</span><b>Scrapbook</b><span>Interests, hobbies &amp; random thoughts</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#guestbook"><span class="qicon">💌</span><b>Guestbook</b><span>Leave a message (:*o*:)</span><i aria-hidden="true">→</i></a></div></section><section class="section" id="about"><div class="section-title">01 / ABOUT</div><div class="section-body"><div class="columns"><div><h2 style="font:11px 'Press Start 2P';line-height:1.8;color:#bf183a">ANUBHUTI GOSWAMI</h2><p>I'm a B.Tech Biotechnology student at Lovely Professional University. My current interests sit at the intersection of genetics, microbiology, biological data analysis, and computational tools for life sciences.</p><p>I'm building my foundations in Python and data analysis while looking for opportunities to contribute to research, bioinformatics, and interdisciplinary projects. Outside coursework, I enjoy science, wildlife, history, philosophy, and visual storytelling.</p></div><div class="card"><h3>ACADEMIC PROFILE</h3><p>CLASS X <b>94.8%</b></p><p>CLASS XII <b>89%</b></p><p>B.TECH BIOTECHNOLOGY <b>2025–2029</b></p><p>CGPA <b>7.58 / 10</b></p><p>LPU SCHOLARSHIP <b>60%</b></p><p>CURRENT FOCUS <b>Python · biological data</b></p></div></div></div></section>
