@@ -271,110 +271,99 @@ body{background-color:#f8d7f1;background-image:linear-gradient(rgba(92,55,126,.0
 <div class="stars"></div><div class="moon"></div><div class="cloud"></div><div class="cloud c2"></div>
 <div class="hero-copy"><span class="paperclip" aria-hidden="true">⌇</span><span class="hero-sticker" aria-hidden="true">✦</span><div class="eyebrow">A LITTLE CORNER OF THE INTERNET</div><h1>Hi, I’m<br>Anubhuti! <span class="hero-star">✰</span></h1><div class="sub">B.Tech Biotechnology @ LPU | 2025–2029</div><p>I’m a biotechnology student who loves the overlap between science, bioinformatics, and the little questions that turn into big ideas. Usually exploring genetics, microbes, data, food, art, or one more thing at 2 a.m.</p><p class="hero-signoff">Thanks for visiting! ♡ <span class="mini-chibi" aria-hidden="true">◕ᴗ◕</span></p><a class="pixel-btn pink" href="#projects">EXPLORE MY WORK →</a></div>
 <div class="runner-instructions">PRESS SPACE TO JUMP ►</div><div class="pixel-lucky-block" aria-hidden="true">?</div><div class="hero-skip"><button class="pixel-btn pink" id="start-run" type="button">START RUN ▶</button><a class="pixel-btn" href="#ticker">SKIP &gt;&gt;</a></div>
-<div class="scene runner-scene" id="runner-scene" aria-label="Short pixel runner introduction"><div class="life-hearts" aria-label="Three lives"><span>♥</span><span>♥</span><span>♥</span></div><div class="sky-cloud cloud-one" aria-hidden="true"></div><div class="sky-cloud cloud-two" aria-hidden="true"></div><div class="scene-coin coin-a" aria-hidden="true">●</div><div class="scene-coin coin-b" aria-hidden="true">●</div><div class="scene-coin coin-c" aria-hidden="true">●</div><div class="runner-obstacles" id="runner-obstacles"></div><svg class="pixel-avatar runner-player" id="runner-player" viewBox="0 0 160 240" role="img" aria-label="Chibi Anubhuti: shoulder-length chestnut hair, green alien antennae, thick square brown glasses, burgundy shirt, flared charcoal jeans and white sneakers" xmlns="http://www.w3.org/2000/svg">
-<g stroke="#241923" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-  <path d="M66 48V19M103 48V19" fill="none" stroke="#4e8f29" stroke-width="7"/>
-  <circle cx="66" cy="16" r="10" fill="#83e34d"/><circle cx="103" cy="16" r="10" fill="#83e34d"/>
-  <path d="M57 145L45 174 36 188 48 196 65 177 72 150Z" fill="#9c2c38"/>
-  <path d="M104 146L117 173 125 188 113 196 96 177 91 151Z" fill="#9c2c38"/>
-  <path d="M67 151L63 184 57 211 74 215 87 183 92 151Z" fill="#292630"/>
-  <path d="M92 151L91 182 100 212 119 213 113 179 111 151Z" fill="#292630"/>
-  <path d="M55 205L76 207 77 221 48 221 38 214 42 208Z" fill="#fff9f2"/>
-  <path d="M98 205L119 205 130 213 127 221 99 221 94 216Z" fill="#fff9f2"/>
-  <path d="M40 218H76M99 218H128" stroke="#a5a0a7" stroke-width="3"/>
-  <path d="M59 111L55 150 68 159 102 159 115 150 109 111Z" fill="#9e2d3b"/>
-  <path d="M70 111L80 124 91 111" fill="#f2b8c1" stroke-width="3"/>
-  <path d="M56 119L44 137 42 153M111 119L123 137 124 153" fill="none" stroke="#f1c5b4" stroke-width="12"/>
-  <path d="M42 148L40 157M124 148L126 157" fill="none" stroke="#f1c5b4" stroke-width="10"/>
-  <path d="M59 58C52 43 61 29 79 28 100 26 112 39 108 59L112 86 104 111 92 120 68 116 55 101 52 77Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
-  <path d="M63 53Q62 42 75 40L95 40Q105 44 103 60L103 92Q101 110 82 113Q63 109 61 92Z" fill="#f4cbb9" stroke="#2a1a22" stroke-width="4"/>
-  <path d="M60 58Q47 47 62 32Q70 21 86 25Q108 24 113 43L107 65 101 54 92 43 79 49 69 63Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
-  <path d="M62 43Q70 35 80 43L78 58 68 66 65 55Z" fill="#57392f" stroke="none"/>
-  <path d="M82 43Q94 37 104 46L101 59 91 63 85 54Z" fill="#57392f" stroke="none"/>
-  <path d="M61 60L56 82 57 98 49 105 47 76Z" fill="#57392f"/>
-  <path d="M104 60L109 81 106 100 114 105 117 75Z" fill="#57392f"/>
-  <path d="M64 72Q70 68 76 72M89 72Q95 68 100 72" fill="none" stroke="#2a1a22" stroke-width="4"/>
-  <path d="M65 80Q70 83 75 80M90 80Q95 83 100 80" fill="none" stroke="#2a1a22" stroke-width="3"/>
-  <path d="M80 83L78 89 83 90" fill="none" stroke="#cf8d81" stroke-width="2.5"/>
-  <path d="M76 98Q82 94 88 98Q83 103 77 99" fill="#9d4a54" stroke="#9d4a54" stroke-width="2"/>
-  <rect x="59" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
-  <rect x="85" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
-  <path d="M82 73H86M55 72L59 73M109 73L114 72" fill="none" stroke="#4a3028" stroke-width="4"/>
-  <circle cx="54" cy="94" r="3" fill="#d8a5a1" stroke="none"/><circle cx="110" cy="94" r="3" fill="#d8a5a1" stroke="none"/>
-  <path d="M63 42Q55 55 61 71L66 66 69 49 79 45 82 52 87 43 99 50 104 64 110 68 111 47Q106 27 84 26Q65 27 63 42Z" fill="#57392f" stroke="#2a1a22" stroke-width="4"/>
-  <path d="M62 45L72 36 79 44 76 55 67 61ZM81 43L91 35 99 44 96 56 87 59Z" fill="#684638" stroke="none"/>
-  <circle cx="53" cy="97" r="4" fill="#d8d4d9"/><circle cx="111" cy="97" r="4" fill="#d8d4d9"/>
+<div class="scene runner-scene" id="runner-scene" aria-label="Short pixel runner introduction"><div class="life-hearts" aria-label="Three lives"><span>♥</span><span>♥</span><span>♥</span></div><div class="sky-cloud cloud-one" aria-hidden="true"></div><div class="sky-cloud cloud-two" aria-hidden="true"></div><div class="scene-coin coin-a" aria-hidden="true">●</div><div class="scene-coin coin-b" aria-hidden="true">●</div><div class="scene-coin coin-c" aria-hidden="true">●</div><div class="runner-obstacles" id="runner-obstacles"></div><svg class="pixel-avatar runner-player" id="runner-player" viewBox="0 0 160 240" role="img" aria-label="Full-body chibi Anubhuti with neon-green alien antennae, wavy brown hair, square brown glasses, a 3-shaped kiss pout, brick-red shirt, cuffed black wide-leg jeans and white sneakers" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#241923" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+  <!-- antennae -->
+  <path d="M61 49L57 20M101 49L106 20" fill="none" stroke="#4d812b" stroke-width="4"/>
+  <circle cx="56" cy="16" r="7" fill="#78e52f" stroke="#241923" stroke-width="2"/>
+  <circle cx="107" cy="16" r="7" fill="#78e52f" stroke="#241923" stroke-width="2"/>
+  <!-- hair silhouette and shoulder-length waves -->
+  <path d="M48 64C38 49 47 31 63 29C75 20 96 24 108 34C121 43 120 58 114 73L119 104L110 130L99 139L60 138L49 124L42 103Z" fill="#80513a"/>
+  <path d="M48 70C42 88 46 110 39 124C48 131 56 122 59 110L61 83Z" fill="#80513a"/>
+  <path d="M110 68C119 86 114 111 123 122C116 132 106 123 103 110L101 82Z" fill="#80513a"/>
+  <!-- ears and face -->
+  <ellipse cx="46" cy="86" rx="6" ry="10" fill="#e9bba5"/>
+  <ellipse cx="113" cy="86" rx="6" ry="10" fill="#e9bba5"/>
+  <path d="M49 61C50 43 63 35 80 36C99 35 111 47 111 65L108 97C105 116 94 128 80 128C65 127 54 115 51 97Z" fill="#f4c9b5"/>
+  <!-- hair cap and curtain bangs -->
+  <path d="M47 69C43 49 55 32 73 31C93 27 111 42 114 60L109 76L101 59L91 48L81 59L76 48L64 61L56 78Z" fill="#80513a"/>
+  <path d="M79 39C71 47 69 57 68 68L80 60L87 48Z" fill="#966448" stroke="none"/>
+  <path d="M91 42C98 50 101 59 102 70L91 60L85 51Z" fill="#966448" stroke="none"/>
+  <path d="M51 76L48 96L53 111L59 105L59 81M108 76L112 96L107 111L101 105L101 81" fill="#80513a"/>
+  <!-- brows, deadpan forward eyes, single upper lash line -->
+  <path d="M59 77L73 74M88 74L101 77" fill="none" stroke="#4b3028" stroke-width="2"/>
+  <path d="M59 84Q66 80 74 84M87 84Q95 80 102 84" fill="none" stroke="#241923" stroke-width="2.7"/>
+  <ellipse cx="67" cy="86" rx="3.2" ry="3.8" fill="#251b20" stroke="none"/>
+  <ellipse cx="95" cy="86" rx="3.2" ry="3.8" fill="#251b20" stroke="none"/>
+  <!-- oversized square brown frames -->
+  <rect x="52" y="75" width="30" height="25" rx="4" fill="#ffffff" fill-opacity=".12" stroke="#593a2d" stroke-width="3.5"/>
+  <rect x="83" y="75" width="30" height="25" rx="4" fill="#ffffff" fill-opacity=".12" stroke="#593a2d" stroke-width="3.5"/>
+  <path d="M81 82L84 82M47 81L52 82M113 82L118 81" fill="none" stroke="#593a2d" stroke-width="3"/>
+  <!-- exact 3-kiss pout, tiny nose and silver earrings -->
+  <path d="M80 91L78 96L82 97" fill="none" stroke="#ce8e7c" stroke-width="1.8"/>
+  <path d="M78 105C73 101 75 98 79 100C82 97 86 100 83 103C87 106 83 110 80 107C77 111 73 107 78 105Z" fill="#a84f59" stroke="#8d3b49" stroke-width="1.3"/>
+  <circle cx="46" cy="96" r="3" fill="#d9dce2"/><circle cx="114" cy="96" r="3" fill="#d9dce2"/>
+  <!-- cord necklace and loop knot -->
+  <path d="M68 133Q80 143 92 133" fill="none" stroke="#6d4535" stroke-width="1.4"/>
+  <path d="M80 138C75 134 76 132 80 134C84 132 85 136 80 138Z" fill="none" stroke="#6d4535" stroke-width="1.3"/>
+  <!-- brick-red tee, short sleeves and simplified hands -->
+  <path d="M65 132L53 137L44 154L52 161L62 150L62 168L98 168L98 150L108 161L116 154L107 137L95 132L88 140L72 140Z" fill="#a8323b"/>
+  <path d="M72 139L80 146L88 139" fill="#c95a60" stroke-width="1.8"/>
+  <path d="M44 154L41 165Q42 170 47 168L53 161Z M116 154L119 165Q118 170 113 168L107 161Z" fill="#f4c9b5"/>
+  <!-- wide-leg black denim jeans with visible cuff folds -->
+  <path d="M62 166L98 166L102 201L105 216L84 216L80 184L75 216L54 216L58 200Z" fill="#25232a"/>
+  <path d="M61 174L77 176M84 176L99 174" fill="none" stroke="#49434b" stroke-width="1.4"/>
+  <path d="M54 208L76 208L75 218L52 218Z M84 208L105 208L107 218L84 218Z" fill="#45404a"/>
+  <path d="M54 211L75 211M85 211L105 211" fill="none" stroke="#17161b" stroke-width="1.6"/>
+  <!-- white low-top canvas sneakers, toe caps and black soles -->
+  <path d="M52 216L74 216L77 224L73 231L42 231Q39 229 42 224Z" fill="#fffdf8"/>
+  <path d="M84 216L105 216L116 224L118 231L86 231L82 225Z" fill="#fffdf8"/>
+  <path d="M41 229Q56 232 75 229M85 229Q102 232 118 229" fill="none" stroke="#17161b" stroke-width="3"/>
+  <path d="M47 223L59 223M91 223L103 223" fill="none" stroke="#c9c5c8" stroke-width="1.4"/>
+  <path d="M59 219L61 225M64 219L66 225M94 219L96 225M99 219L101 225" fill="none" stroke="#b6b1b7" stroke-width="1.2"/>
 </g>
 </svg><div class="ground"></div></div><div class="runner-status" id="runner-status" aria-live="polite">Press START RUN, then jump with Space or ↑. You can skip this at any time.</div><div class="world-floor"></div>
 </section>
 <div class="ticker-ribbon" id="ticker" aria-label="Research code create learn repeat"><span class="ticker-star">✦</span><div class="ticker-track"><span>// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //　// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //</span></div><span class="ticker-planet">🪐</span></div>
-<section class="quick-links" id="quick-links" aria-label="Quick links"><div class="quick-heading"><span>✰ Quick Links ✧</span><button type="button" class="window-close" aria-label="Quick Links window decoration">×</button></div><div class="quick-grid"><a class="quick-card" href="#about"><span class="qicon qicon-face"><svg class="avatar-face-icon" viewBox="35 0 90 125" role="img" aria-label="Anubhuti's avatar face with chestnut hair, green antennae, square glasses and silver earrings" xmlns="http://www.w3.org/2000/svg">
-<g stroke="#241923" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-  <path d="M66 48V19M103 48V19" fill="none" stroke="#4e8f29" stroke-width="7"/>
-  <circle cx="66" cy="16" r="10" fill="#83e34d"/><circle cx="103" cy="16" r="10" fill="#83e34d"/>
-  <path d="M57 145L45 174 36 188 48 196 65 177 72 150Z" fill="#9c2c38"/>
-  <path d="M104 146L117 173 125 188 113 196 96 177 91 151Z" fill="#9c2c38"/>
-  <path d="M67 151L63 184 57 211 74 215 87 183 92 151Z" fill="#292630"/>
-  <path d="M92 151L91 182 100 212 119 213 113 179 111 151Z" fill="#292630"/>
-  <path d="M55 205L76 207 77 221 48 221 38 214 42 208Z" fill="#fff9f2"/>
-  <path d="M98 205L119 205 130 213 127 221 99 221 94 216Z" fill="#fff9f2"/>
-  <path d="M40 218H76M99 218H128" stroke="#a5a0a7" stroke-width="3"/>
-  <path d="M59 111L55 150 68 159 102 159 115 150 109 111Z" fill="#9e2d3b"/>
-  <path d="M70 111L80 124 91 111" fill="#f2b8c1" stroke-width="3"/>
-  <path d="M56 119L44 137 42 153M111 119L123 137 124 153" fill="none" stroke="#f1c5b4" stroke-width="12"/>
-  <path d="M42 148L40 157M124 148L126 157" fill="none" stroke="#f1c5b4" stroke-width="10"/>
-  <path d="M59 58C52 43 61 29 79 28 100 26 112 39 108 59L112 86 104 111 92 120 68 116 55 101 52 77Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
-  <path d="M63 53Q62 42 75 40L95 40Q105 44 103 60L103 92Q101 110 82 113Q63 109 61 92Z" fill="#f4cbb9" stroke="#2a1a22" stroke-width="4"/>
-  <path d="M60 58Q47 47 62 32Q70 21 86 25Q108 24 113 43L107 65 101 54 92 43 79 49 69 63Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
-  <path d="M62 43Q70 35 80 43L78 58 68 66 65 55Z" fill="#57392f" stroke="none"/>
-  <path d="M82 43Q94 37 104 46L101 59 91 63 85 54Z" fill="#57392f" stroke="none"/>
-  <path d="M61 60L56 82 57 98 49 105 47 76Z" fill="#57392f"/>
-  <path d="M104 60L109 81 106 100 114 105 117 75Z" fill="#57392f"/>
-  <path d="M64 72Q70 68 76 72M89 72Q95 68 100 72" fill="none" stroke="#2a1a22" stroke-width="4"/>
-  <path d="M65 80Q70 83 75 80M90 80Q95 83 100 80" fill="none" stroke="#2a1a22" stroke-width="3"/>
-  <path d="M80 83L78 89 83 90" fill="none" stroke="#cf8d81" stroke-width="2.5"/>
-  <path d="M76 98Q82 94 88 98Q83 103 77 99" fill="#9d4a54" stroke="#9d4a54" stroke-width="2"/>
-  <rect x="59" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
-  <rect x="85" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
-  <path d="M82 73H86M55 72L59 73M109 73L114 72" fill="none" stroke="#4a3028" stroke-width="4"/>
-  <circle cx="54" cy="94" r="3" fill="#d8a5a1" stroke="none"/><circle cx="110" cy="94" r="3" fill="#d8a5a1" stroke="none"/>
-  <path d="M63 42Q55 55 61 71L66 66 69 49 79 45 82 52 87 43 99 50 104 64 110 68 111 47Q106 27 84 26Q65 27 63 42Z" fill="#57392f" stroke="#2a1a22" stroke-width="4"/>
-  <path d="M62 45L72 36 79 44 76 55 67 61ZM81 43L91 35 99 44 96 56 87 59Z" fill="#684638" stroke="none"/>
-  <circle cx="53" cy="97" r="4" fill="#d8d4d9"/><circle cx="111" cy="97" r="4" fill="#d8d4d9"/>
+<section class="quick-links" id="quick-links" aria-label="Quick links"><div class="quick-heading"><span>✰ Quick Links ✧</span><button type="button" class="window-close" aria-label="Quick Links window decoration">×</button></div><div class="quick-grid"><a class="quick-card" href="#about"><span class="qicon qicon-face"><svg class="avatar-face-icon" viewBox="35 8 90 125" role="img" aria-label="Anubhuti's chibi face with neon-green antennae, wavy brown hair, oversized square glasses, silver earrings and a 3-shaped kiss pout" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#241923" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M61 49L57 20M101 49L106 20" fill="none" stroke="#4d812b" stroke-width="4"/>
+  <circle cx="56" cy="16" r="7" fill="#78e52f" stroke="#241923" stroke-width="2"/><circle cx="107" cy="16" r="7" fill="#78e52f" stroke="#241923" stroke-width="2"/>
+  <path d="M48 64C38 49 47 31 63 29C75 20 96 24 108 34C121 43 120 58 114 73L119 104L110 130L99 139L60 138L49 124L42 103Z" fill="#80513a"/>
+  <path d="M48 70C42 88 46 110 39 124C48 131 56 122 59 110L61 83Z M110 68C119 86 114 111 123 122C116 132 106 123 103 110L101 82Z" fill="#80513a"/>
+  <ellipse cx="46" cy="86" rx="6" ry="10" fill="#e9bba5"/><ellipse cx="113" cy="86" rx="6" ry="10" fill="#e9bba5"/>
+  <path d="M49 61C50 43 63 35 80 36C99 35 111 47 111 65L108 97C105 116 94 128 80 128C65 127 54 115 51 97Z" fill="#f4c9b5"/>
+  <path d="M47 69C43 49 55 32 73 31C93 27 111 42 114 60L109 76L101 59L91 48L81 59L76 48L64 61L56 78Z" fill="#80513a"/>
+  <path d="M79 39C71 47 69 57 68 68L80 60L87 48Z M91 42C98 50 101 59 102 70L91 60L85 51Z" fill="#966448" stroke="none"/>
+  <path d="M51 76L48 96L53 111L59 105L59 81M108 76L112 96L107 111L101 105L101 81" fill="#80513a"/>
+  <path d="M59 77L73 74M88 74L101 77" fill="none" stroke="#4b3028" stroke-width="2"/>
+  <path d="M59 84Q66 80 74 84M87 84Q95 80 102 84" fill="none" stroke="#241923" stroke-width="2.7"/>
+  <ellipse cx="67" cy="86" rx="3.2" ry="3.8" fill="#251b20" stroke="none"/><ellipse cx="95" cy="86" rx="3.2" ry="3.8" fill="#251b20" stroke="none"/>
+  <rect x="52" y="75" width="30" height="25" rx="4" fill="#ffffff" fill-opacity=".12" stroke="#593a2d" stroke-width="3.5"/><rect x="83" y="75" width="30" height="25" rx="4" fill="#ffffff" fill-opacity=".12" stroke="#593a2d" stroke-width="3.5"/>
+  <path d="M81 82L84 82M47 81L52 82M113 82L118 81" fill="none" stroke="#593a2d" stroke-width="3"/>
+  <path d="M80 91L78 96L82 97" fill="none" stroke="#ce8e7c" stroke-width="1.8"/>
+  <path d="M78 105C73 101 75 98 79 100C82 97 86 100 83 103C87 106 83 110 80 107C77 111 73 107 78 105Z" fill="#a84f59" stroke="#8d3b49" stroke-width="1.3"/>
+  <circle cx="46" cy="96" r="3" fill="#d9dce2"/><circle cx="114" cy="96" r="3" fill="#d9dce2"/>
 </g>
-</svg></span><b>About Me</b><span>Who I am &amp; where I’m headed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#projects"><span class="qicon">💻</span><b>Projects</b><span>Things I’ve built, explored &amp; contributed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#achievements"><span class="qicon">🏆</span><b>Achievements</b><span>Awards, scholarships, hackathons &amp; more</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#skills"><span class="qicon">📚</span><b>Skills</b><span>Tools, languages &amp; lab experience</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#scrapbook"><span class="qicon">📒</span><b>Scrapbook</b><span>Interests, hobbies &amp; random thoughts</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#guestbook"><span class="qicon">💌</span><b>Guestbook</b><span>Leave a message (:*o*:)</span><i aria-hidden="true">→</i></a></div></section><section class="section" id="about"><div class="section-title">01 / ABOUT</div><div class="section-body"><div class="about-layout"><div class="about-portrait"><svg class="avatar-face-icon" viewBox="35 0 90 125" role="img" aria-label="Anubhuti's avatar face with chestnut hair, green antennae, square glasses and silver earrings" xmlns="http://www.w3.org/2000/svg">
-<g stroke="#241923" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-  <path d="M66 48V19M103 48V19" fill="none" stroke="#4e8f29" stroke-width="7"/>
-  <circle cx="66" cy="16" r="10" fill="#83e34d"/><circle cx="103" cy="16" r="10" fill="#83e34d"/>
-  <path d="M57 145L45 174 36 188 48 196 65 177 72 150Z" fill="#9c2c38"/>
-  <path d="M104 146L117 173 125 188 113 196 96 177 91 151Z" fill="#9c2c38"/>
-  <path d="M67 151L63 184 57 211 74 215 87 183 92 151Z" fill="#292630"/>
-  <path d="M92 151L91 182 100 212 119 213 113 179 111 151Z" fill="#292630"/>
-  <path d="M55 205L76 207 77 221 48 221 38 214 42 208Z" fill="#fff9f2"/>
-  <path d="M98 205L119 205 130 213 127 221 99 221 94 216Z" fill="#fff9f2"/>
-  <path d="M40 218H76M99 218H128" stroke="#a5a0a7" stroke-width="3"/>
-  <path d="M59 111L55 150 68 159 102 159 115 150 109 111Z" fill="#9e2d3b"/>
-  <path d="M70 111L80 124 91 111" fill="#f2b8c1" stroke-width="3"/>
-  <path d="M56 119L44 137 42 153M111 119L123 137 124 153" fill="none" stroke="#f1c5b4" stroke-width="12"/>
-  <path d="M42 148L40 157M124 148L126 157" fill="none" stroke="#f1c5b4" stroke-width="10"/>
-  <path d="M59 58C52 43 61 29 79 28 100 26 112 39 108 59L112 86 104 111 92 120 68 116 55 101 52 77Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
-  <path d="M63 53Q62 42 75 40L95 40Q105 44 103 60L103 92Q101 110 82 113Q63 109 61 92Z" fill="#f4cbb9" stroke="#2a1a22" stroke-width="4"/>
-  <path d="M60 58Q47 47 62 32Q70 21 86 25Q108 24 113 43L107 65 101 54 92 43 79 49 69 63Z" fill="#57392f" stroke="#2a1a22" stroke-width="5"/>
-  <path d="M62 43Q70 35 80 43L78 58 68 66 65 55Z" fill="#57392f" stroke="none"/>
-  <path d="M82 43Q94 37 104 46L101 59 91 63 85 54Z" fill="#57392f" stroke="none"/>
-  <path d="M61 60L56 82 57 98 49 105 47 76Z" fill="#57392f"/>
-  <path d="M104 60L109 81 106 100 114 105 117 75Z" fill="#57392f"/>
-  <path d="M64 72Q70 68 76 72M89 72Q95 68 100 72" fill="none" stroke="#2a1a22" stroke-width="4"/>
-  <path d="M65 80Q70 83 75 80M90 80Q95 83 100 80" fill="none" stroke="#2a1a22" stroke-width="3"/>
-  <path d="M80 83L78 89 83 90" fill="none" stroke="#cf8d81" stroke-width="2.5"/>
-  <path d="M76 98Q82 94 88 98Q83 103 77 99" fill="#9d4a54" stroke="#9d4a54" stroke-width="2"/>
-  <rect x="59" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
-  <rect x="85" y="66" width="24" height="20" rx="4" fill="#ffffff" fill-opacity=".15" stroke="#4a3028" stroke-width="5"/>
-  <path d="M82 73H86M55 72L59 73M109 73L114 72" fill="none" stroke="#4a3028" stroke-width="4"/>
-  <circle cx="54" cy="94" r="3" fill="#d8a5a1" stroke="none"/><circle cx="110" cy="94" r="3" fill="#d8a5a1" stroke="none"/>
-  <path d="M63 42Q55 55 61 71L66 66 69 49 79 45 82 52 87 43 99 50 104 64 110 68 111 47Q106 27 84 26Q65 27 63 42Z" fill="#57392f" stroke="#2a1a22" stroke-width="4"/>
-  <path d="M62 45L72 36 79 44 76 55 67 61ZM81 43L91 35 99 44 96 56 87 59Z" fill="#684638" stroke="none"/>
-  <circle cx="53" cy="97" r="4" fill="#d8d4d9"/><circle cx="111" cy="97" r="4" fill="#d8d4d9"/>
+</svg></span><b>About Me</b><span>Who I am &amp; where I’m headed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#projects"><span class="qicon">💻</span><b>Projects</b><span>Things I’ve built, explored &amp; contributed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#achievements"><span class="qicon">🏆</span><b>Achievements</b><span>Awards, scholarships, hackathons &amp; more</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#skills"><span class="qicon">📚</span><b>Skills</b><span>Tools, languages &amp; lab experience</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#scrapbook"><span class="qicon">📒</span><b>Scrapbook</b><span>Interests, hobbies &amp; random thoughts</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#guestbook"><span class="qicon">💌</span><b>Guestbook</b><span>Leave a message (:*o*:)</span><i aria-hidden="true">→</i></a></div></section><section class="section" id="about"><div class="section-title">01 / ABOUT</div><div class="section-body"><div class="about-layout"><div class="about-portrait"><svg class="avatar-face-icon" viewBox="35 8 90 125" role="img" aria-label="Anubhuti's chibi face with neon-green antennae, wavy brown hair, oversized square glasses, silver earrings and a 3-shaped kiss pout" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#241923" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M61 49L57 20M101 49L106 20" fill="none" stroke="#4d812b" stroke-width="4"/>
+  <circle cx="56" cy="16" r="7" fill="#78e52f" stroke="#241923" stroke-width="2"/><circle cx="107" cy="16" r="7" fill="#78e52f" stroke="#241923" stroke-width="2"/>
+  <path d="M48 64C38 49 47 31 63 29C75 20 96 24 108 34C121 43 120 58 114 73L119 104L110 130L99 139L60 138L49 124L42 103Z" fill="#80513a"/>
+  <path d="M48 70C42 88 46 110 39 124C48 131 56 122 59 110L61 83Z M110 68C119 86 114 111 123 122C116 132 106 123 103 110L101 82Z" fill="#80513a"/>
+  <ellipse cx="46" cy="86" rx="6" ry="10" fill="#e9bba5"/><ellipse cx="113" cy="86" rx="6" ry="10" fill="#e9bba5"/>
+  <path d="M49 61C50 43 63 35 80 36C99 35 111 47 111 65L108 97C105 116 94 128 80 128C65 127 54 115 51 97Z" fill="#f4c9b5"/>
+  <path d="M47 69C43 49 55 32 73 31C93 27 111 42 114 60L109 76L101 59L91 48L81 59L76 48L64 61L56 78Z" fill="#80513a"/>
+  <path d="M79 39C71 47 69 57 68 68L80 60L87 48Z M91 42C98 50 101 59 102 70L91 60L85 51Z" fill="#966448" stroke="none"/>
+  <path d="M51 76L48 96L53 111L59 105L59 81M108 76L112 96L107 111L101 105L101 81" fill="#80513a"/>
+  <path d="M59 77L73 74M88 74L101 77" fill="none" stroke="#4b3028" stroke-width="2"/>
+  <path d="M59 84Q66 80 74 84M87 84Q95 80 102 84" fill="none" stroke="#241923" stroke-width="2.7"/>
+  <ellipse cx="67" cy="86" rx="3.2" ry="3.8" fill="#251b20" stroke="none"/><ellipse cx="95" cy="86" rx="3.2" ry="3.8" fill="#251b20" stroke="none"/>
+  <rect x="52" y="75" width="30" height="25" rx="4" fill="#ffffff" fill-opacity=".12" stroke="#593a2d" stroke-width="3.5"/><rect x="83" y="75" width="30" height="25" rx="4" fill="#ffffff" fill-opacity=".12" stroke="#593a2d" stroke-width="3.5"/>
+  <path d="M81 82L84 82M47 81L52 82M113 82L118 81" fill="none" stroke="#593a2d" stroke-width="3"/>
+  <path d="M80 91L78 96L82 97" fill="none" stroke="#ce8e7c" stroke-width="1.8"/>
+  <path d="M78 105C73 101 75 98 79 100C82 97 86 100 83 103C87 106 83 110 80 107C77 111 73 107 78 105Z" fill="#a84f59" stroke="#8d3b49" stroke-width="1.3"/>
+  <circle cx="46" cy="96" r="3" fill="#d9dce2"/><circle cx="114" cy="96" r="3" fill="#d9dce2"/>
 </g>
 </svg><span class="portrait-caption">ANUBHUTI.EXE ♡</span></div><div class="about-copy"><h2>ANUBHUTI GOSWAMI</h2><p>I'm a B.Tech Biotechnology student at Lovely Professional University. My current interests sit at the intersection of genetics, microbiology, biological data analysis, and computational tools for life sciences.</p><p>I'm building my foundations in Python and data analysis while looking for opportunities to contribute to research, bioinformatics, and interdisciplinary projects. Outside coursework, I enjoy science, wildlife, history, philosophy, and visual storytelling.</p></div><aside class="about-note"><span class="note-pin">✦</span><h3>ACADEMIC PROFILE</h3><p>CLASS X <b>94.8%</b></p><p>CLASS XII <b>89%</b></p><p>B.TECH BIOTECHNOLOGY <b>2025–2029</b></p><p>CGPA <b>7.58 / 10</b></p><p>LPU SCHOLARSHIP <b>60%</b></p><p>CURRENT FOCUS <b>Python · biological data</b></p><div class="note-signoff">little by little, a little becomes a lot ♡</div></aside></div></div></section>
 <section class="section" id="projects"><div class="section-title">02 / SELECTED PROJECTS</div><div class="section-body"><p>A selection of projects and explorations across biotechnology, data, and science communication.</p><div class="scrapbook"><article class="scrap"><div class="sticker">🧪</div><h3>LABMATEAI</h3><p>A biotechnology lab assistant concept built with Streamlit and Groq, including a PCR calculator and report support.</p><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">open GitHub ↗</a></article><article class="scrap"><div class="sticker">🧬</div><h3>SIMULAB</h3><p>A virtual practical-lab concept for guided experiments, equipment interactions, and simulated results.</p><span class="tag">In development</span></article><article class="scrap"><div class="sticker">🩺</div><h3>PULSE OXIMETER BIAS</h3><p>A research poster examining how skin pigmentation can affect pulse-oximeter accuracy and healthcare equity.</p></article><article class="scrap"><div class="sticker">🌱</div><h3>MODULAR ROADS</h3><p>A student-team concept exploring bamboo–plastic composites for modular road construction.</p></article><article class="scrap"><div class="sticker">🔬</div><h3>ZOONIVERSE</h3><p>Citizen-science annotation contributions to Placenta Profiles and DRIIVE: Clear Skies.</p></article><article class="scrap"><div class="sticker">💾</div><h3>BIOINFORMATICS</h3><p>Current learning focus: Python, biological data analysis, and computational approaches to life science.</p><span class="tag">Currently learning</span></article></div></div></section>
