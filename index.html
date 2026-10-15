@@ -45,7 +45,7 @@ a,button,input,textarea,select{cursor:pointer}button,a{ -webkit-tap-highlight-co
 .runner-instructions span{color:#ffd416;padding:0 5px}
 .runner-scene{height:190px;margin-top:0;background:linear-gradient(#f4b5d5 0%,#d8c6ff 55%,#f49a9b 100%);overflow:hidden}
 .runner-scene .ground{height:43px}
-.runner-scene .pixel-avatar{width:64px;height:96px;left:11%;bottom:35px;animation:run-bob .22s steps(2,end) infinite alternate}
+.runner-scene .pixel-avatar{width:64px;height:100px;left:11%;bottom:35px;animation:run-bob .22s steps(2,end) infinite alternate}
 .runner-scene .avatar-head{width:31px;height:30px;left:10px;border-radius:1px}
 .runner-scene .bangs{top:-5px;left:7px;width:37px;height:19px;clip-path:polygon(0 0,100% 0,100% 65%,84% 65%,84% 100%,68% 100%,68% 62%,48% 62%,48% 100%,29% 100%,29% 68%,12% 68%,12% 100%,0 100%)}
 .runner-scene .glasses{position:absolute;z-index:3;left:-3px;top:8px;width:34px;height:10px;border:2px solid #301c38;background:transparent;box-shadow:15px 0 0 -2px transparent}
@@ -273,69 +273,69 @@ body{background-color:#f8d7f1;background-image:linear-gradient(rgba(92,55,126,.0
 <div class="stars"></div><div class="moon"></div><div class="cloud"></div><div class="cloud c2"></div>
 <div class="hero-copy"><span class="paperclip" aria-hidden="true">⌇</span><span class="hero-sticker" aria-hidden="true">✦</span><div class="eyebrow">A LITTLE CORNER OF THE INTERNET</div><h1>Hi, I’m<br>Anubhuti! <span class="hero-star">✰</span></h1><div class="sub">B.Tech Biotechnology @ LPU | 2025–2029</div><p>I’m a biotechnology student who loves the overlap between science, bioinformatics, and the little questions that turn into big ideas. Usually exploring genetics, microbes, data, food, art, or one more thing at 2 a.m.</p><p class="hero-signoff">Thanks for visiting! ♡ <span class="mini-chibi" aria-hidden="true">◕ᴗ◕</span></p><a class="pixel-btn pink" href="#projects">EXPLORE MY WORK →</a></div>
 <div class="runner-instructions">PRESS SPACE TO JUMP ►</div><div class="pixel-lucky-block" aria-hidden="true">?</div><div class="hero-skip"><button class="pixel-btn pink" id="start-run" type="button">START RUN ▶</button><a class="pixel-btn" href="#ticker">SKIP &gt;&gt;</a></div>
-<div class="scene runner-scene" id="runner-scene" aria-label="Short pixel runner introduction"><div class="life-hearts" aria-label="Three lives"><span>♥</span><span>♥</span><span>♥</span></div><div class="sky-cloud cloud-one" aria-hidden="true"></div><div class="sky-cloud cloud-two" aria-hidden="true"></div><div class="scene-coin coin-a" aria-hidden="true">●</div><div class="scene-coin coin-b" aria-hidden="true">●</div><div class="scene-coin coin-c" aria-hidden="true">●</div><div class="runner-obstacles" id="runner-obstacles"></div><svg class="pixel-avatar runner-player" id="runner-player" viewBox="0 0 64 96" role="img" aria-label="Retro pixel kawaii doll girl with chestnut hair, green antennae, oversized square glasses, burgundy shirt, flared black jeans and white sneakers" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<!-- tiny green antennae -->
-<rect x="18" y="5" width="3" height="12" fill="#3f792d"/><rect x="43" y="5" width="3" height="12" fill="#3f792d"/>
-<rect x="13" y="1" width="12" height="8" fill="#78e64b"/><rect x="39" y="1" width="12" height="8" fill="#78e64b"/>
-<rect x="15" y="2" width="5" height="3" fill="#c5ff8c"/><rect x="41" y="2" width="5" height="3" fill="#c5ff8c"/>
-<!-- hair silhouette, intentionally chunky like an old dress-up game sprite -->
-<rect x="11" y="15" width="42" height="31" fill="#38222a"/>
-<rect x="8" y="22" width="6" height="22" fill="#38222a"/><rect x="50" y="22" width="6" height="22" fill="#38222a"/>
-<rect x="10" y="36" width="6" height="11" fill="#52302d"/><rect x="48" y="36" width="6" height="11" fill="#52302d"/>
-<!-- face -->
-<rect x="15" y="17" width="34" height="29" fill="#f7d4c1"/>
-<rect x="12" y="23" width="4" height="15" fill="#f7d4c1"/><rect x="48" y="23" width="4" height="15" fill="#f7d4c1"/>
-<rect x="17" y="14" width="30" height="5" fill="#38222a"/>
-<!-- soft chestnut curtain bangs -->
-<rect x="17" y="15" width="11" height="7" fill="#80513a"/><rect x="21" y="19" width="8" height="7" fill="#80513a"/>
-<rect x="28" y="15" width="8" height="7" fill="#80513a"/><rect x="34" y="18" width="12" height="6" fill="#80513a"/>
-<rect x="15" y="23" width="4" height="13" fill="#68402f"/><rect x="45" y="23" width="4" height="13" fill="#68402f"/>
-<rect x="19" y="18" width="5" height="2" fill="#b47a52"/><rect x="36" y="19" width="6" height="2" fill="#b47a52"/>
-<!-- calm, slightly sleepy eyes and brows -->
-<rect x="20" y="26" width="8" height="2" fill="#52352d"/><rect x="36" y="26" width="8" height="2" fill="#52352d"/>
-<rect x="21" y="30" width="7" height="3" fill="#241923"/><rect x="36" y="30" width="7" height="3" fill="#241923"/>
-<rect x="23" y="30" width="2" height="2" fill="#fff0d9"/><rect x="38" y="30" width="2" height="2" fill="#fff0d9"/>
-<!-- big square glasses -->
-<rect x="16" y="27" width="15" height="11" fill="#f5d9c8" fill-opacity=".22" stroke="#4a302b" stroke-width="2"/>
-<rect x="33" y="27" width="15" height="11" fill="#f5d9c8" fill-opacity=".22" stroke="#4a302b" stroke-width="2"/>
-<rect x="30" y="30" width="5" height="2" fill="#4a302b"/><rect x="12" y="30" width="4" height="2" fill="#4a302b"/><rect x="48" y="30" width="4" height="2" fill="#4a302b"/>
-<!-- nose, tiny 3-shaped pout, silver studs -->
-<rect x="30" y="36" width="2" height="2" fill="#d79583"/>
-<rect x="28" y="40" width="4" height="2" fill="#a84958"/><rect x="31" y="39" width="4" height="3" fill="#a84958"/><rect x="34" y="41" width="3" height="2" fill="#a84958"/>
-<rect x="10" y="35" width="3" height="3" fill="#d9dce2"/><rect x="51" y="35" width="3" height="3" fill="#d9dce2"/>
-<!-- neck and tiny burgundy tee -->
-<rect x="27" y="45" width="10" height="6" fill="#f0bda8"/>
-<rect x="20" y="49" width="24" height="21" fill="#742b3b"/>
-<rect x="15" y="51" width="7" height="12" fill="#742b3b"/><rect x="42" y="51" width="7" height="12" fill="#742b3b"/>
-<rect x="24" y="49" width="16" height="3" fill="#b64c62"/><rect x="25" y="55" width="3" height="5" fill="#b64c62"/>
-<!-- relaxed arms and hands -->
-<rect x="14" y="59" width="7" height="7" fill="#f7d4c1"/><rect x="43" y="59" width="7" height="7" fill="#f7d4c1"/>
-<!-- wide flared trousers and cuffs -->
-<rect x="21" y="69" width="10" height="16" fill="#24212e"/><rect x="33" y="69" width="10" height="16" fill="#24212e"/>
-<rect x="18" y="81" width="15" height="5" fill="#393344"/><rect x="31" y="81" width="15" height="5" fill="#393344"/>
-<rect x="23" y="72" width="2" height="8" fill="#51445a"/><rect x="37" y="72" width="2" height="8" fill="#51445a"/>
-<!-- white canvas sneakers -->
-<rect x="17" y="86" width="16" height="6" fill="#fffaf5"/><rect x="31" y="86" width="16" height="6" fill="#fffaf5"/>
-<rect x="16" y="91" width="18" height="3" fill="#28232f"/><rect x="30" y="91" width="18" height="3" fill="#28232f"/>
-<rect x="20" y="87" width="7" height="1" fill="#d5d0d8"/><rect x="35" y="87" width="7" height="1" fill="#d5d0d8"/>
+<div class="scene runner-scene" id="runner-scene" aria-label="Short pixel runner introduction"><div class="life-hearts" aria-label="Three lives"><span>♥</span><span>♥</span><span>♥</span></div><div class="sky-cloud cloud-one" aria-hidden="true"></div><div class="sky-cloud cloud-two" aria-hidden="true"></div><div class="scene-coin coin-a" aria-hidden="true">●</div><div class="scene-coin coin-b" aria-hidden="true">●</div><div class="scene-coin coin-c" aria-hidden="true">●</div><div class="runner-obstacles" id="runner-obstacles"></div><svg class="pixel-avatar runner-player" id="runner-player" viewBox="0 0 64 100" role="img" aria-label="Retro pixel kawaii doll girl with chestnut hair, green antennae, square glasses, burgundy shirt, flared trousers and white sneakers" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<!-- antennae -->
+<g stroke="#3d6e35" stroke-width="2"><path d="M20 15V9M44 15V9"/></g>
+<path fill="#78e64b" d="M13 2h10v3h3v5h-3v3H13v-3h-3V5h3zM41 2h10v3h3v5h-3v3H41v-3h-3V5h3z"/>
+<path fill="#c5ff8c" d="M14 4h5v2h-5zM42 4h5v2h-5z"/>
+<!-- long bob hair, layered pixel silhouette -->
+<path fill="#2e2029" d="M12 19V15h5v-4h8V8h14v3h8v4h5v8h3v20h-5v6h-6v-5H20v5h-6v-6H9V25h3z"/>
+<path fill="#70452f" d="M14 21h5v-5h7v-4h11v3h7v4h5v9h-3v12h-4v5H22v-4h-5V28h-3z"/>
+<!-- face shape with stepped cheeks -->
+<path fill="#f6d2bf" d="M18 18h28v4h4v19h-4v5H18v-5h-4V22h4z"/>
+<path fill="#e9b8a7" d="M17 33h3v7h4v4h-5v-4h-2zM44 40h3v-7h2v8h-5z"/>
+<!-- tousled curtain fringe -->
+<path fill="#38232a" d="M15 18v-5h8V9h7v4h5V9h7v4h7v8h-5v4h-5v-5h-4v-3h-4v6h-4v3h-4v-5h-4v4h-4z"/>
+<path fill="#89583d" d="M18 14h5v-3h5v5h-3v4h-4v-3h-3zM34 13h6v-2h4v4h4v4h-6v-3h-4v3h-4z"/>
+<path fill="#b47b53" d="M19 14h4v2h-4zM36 14h4v2h-4z"/>
+<!-- face, side-looking sleepy eyes -->
+<path fill="#51342d" d="M19 25h9v2h-9zM36 25h9v2h-9z"/>
+<path fill="#241923" d="M20 29h8v3h-8zM35 29h8v3h-8z"/>
+<path fill="#fff0db" d="M21 29h2v2h-2zM36 29h2v2h-2z"/>
+<!-- oversized square frames -->
+<g fill="#f7dfd2" fill-opacity=".14" stroke="#49302b" stroke-width="2.5">
+<path d="M16 27h14v2h2v8h-2v2H18v-2h-2z"/>
+<path d="M34 29h2v-2h14v10h-2v2H36v-2h-2z"/>
+</g>
+<path fill="#49302b" d="M30 30h4v2h-4zM12 30h4v2h-4zM50 30h3v2h-3z"/>
+<!-- tiny nose, pout and silver earrings -->
+<path fill="#d69482" d="M30 36h3v2h-3z"/>
+<path fill="#a84a5a" d="M28 40h4v-2h3v2h3v2h-3v2h-4v-2h-3z"/>
+<path fill="#e1e3e9" d="M11 35h3v3h-3zM50 35h3v3h-3z"/>
+<!-- neck -->
+<path fill="#f1bca8" d="M27 45h10v7H27z"/>
+<!-- tee and sleeves -->
+<path fill="#5b2435" d="M23 49h18l7 5v13H16V54z"/>
+<path fill="#7b2b40" d="M24 50h16v17H24zM18 55h5v9h-5zM41 55h5v9h-5z"/>
+<path fill="#c65c70" d="M26 50h12v3H26zM25 56h3v5h-3z"/>
+<!-- arms / hands -->
+<path fill="#f6d2bf" d="M14 56h4v8h4v4h-7v-4h-2zM46 56h4v8h2v4h-6v-4h-2z"/>
+<!-- trousers: tapered at waist, flared cuffs -->
+<path fill="#24212e" d="M21 67h22v13h3v8H30v-5h-1v-3h-2v3h-1v5H16v-8h5z"/>
+<path fill="#393344" d="M19 81h11v4H18zM32 81h12v4H32z"/>
+<path fill="#51445a" d="M23 70h2v9h-2zM38 70h2v9h-2z"/>
+<!-- canvas sneakers -->
+<path fill="#fffaf4" d="M18 86h12v5H17v-3h1zM32 86h12v5H31v-3h1z"/>
+<path fill="#d8d4dc" d="M21 87h6v1h-6zM35 87h6v1h-6z"/>
+<path fill="#29232f" d="M16 91h15v3H15v-2h1zM30 91h17v3H30z"/>
 </svg><div class="ground"></div></div><div class="runner-status" id="runner-status" aria-live="polite">Press START RUN, then jump with Space or ↑. You can skip this at any time.</div><div class="world-floor"></div>
 </section>
 <div class="ticker-ribbon" id="ticker" aria-label="Research code create learn repeat"><span class="ticker-star">✦</span><div class="ticker-track"><span>// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //　// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //</span></div><span class="ticker-planet">🪐</span></div>
-<section class="quick-links" id="quick-links" aria-label="Quick links"><div class="quick-heading"><span>✰ Quick Links ✧</span><button type="button" class="window-close" aria-label="Quick Links window decoration">×</button></div><div class="quick-grid"><a class="quick-card" href="#about"><span class="qicon qicon-face"><svg class="avatar-face-icon" viewBox="0 0 64 50" role="img" aria-label="Pixel kawaii doll face with chestnut hair, green antennae and square glasses" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><rect x="18" y="5" width="3" height="12" fill="#3f792d"/><rect x="43" y="5" width="3" height="12" fill="#3f792d"/>
-<rect x="13" y="1" width="12" height="8" fill="#78e64b"/><rect x="39" y="1" width="12" height="8" fill="#78e64b"/>
-<rect x="11" y="15" width="42" height="31" fill="#38222a"/><rect x="8" y="22" width="6" height="22" fill="#38222a"/><rect x="50" y="22" width="6" height="22" fill="#38222a"/>
-<rect x="15" y="17" width="34" height="29" fill="#f7d4c1"/><rect x="12" y="23" width="4" height="15" fill="#f7d4c1"/><rect x="48" y="23" width="4" height="15" fill="#f7d4c1"/>
-<rect x="17" y="14" width="30" height="5" fill="#38222a"/><rect x="17" y="15" width="11" height="7" fill="#80513a"/><rect x="21" y="19" width="8" height="7" fill="#80513a"/><rect x="28" y="15" width="8" height="7" fill="#80513a"/><rect x="34" y="18" width="12" height="6" fill="#80513a"/><rect x="15" y="23" width="4" height="13" fill="#68402f"/><rect x="45" y="23" width="4" height="13" fill="#68402f"/>
-<rect x="20" y="26" width="8" height="2" fill="#52352d"/><rect x="36" y="26" width="8" height="2" fill="#52352d"/><rect x="21" y="30" width="7" height="3" fill="#241923"/><rect x="36" y="30" width="7" height="3" fill="#241923"/>
-<rect x="16" y="27" width="15" height="11" fill="#f5d9c8" fill-opacity=".22" stroke="#4a302b" stroke-width="2"/><rect x="33" y="27" width="15" height="11" fill="#f5d9c8" fill-opacity=".22" stroke="#4a302b" stroke-width="2"/><rect x="30" y="30" width="5" height="2" fill="#4a302b"/>
-<rect x="30" y="36" width="2" height="2" fill="#d79583"/><rect x="28" y="40" width="4" height="2" fill="#a84958"/><rect x="31" y="39" width="4" height="3" fill="#a84958"/><rect x="34" y="41" width="3" height="2" fill="#a84958"/><rect x="10" y="35" width="3" height="3" fill="#d9dce2"/><rect x="51" y="35" width="3" height="3" fill="#d9dce2"/></svg></span><b>About Me</b><span>Who I am &amp; where I’m headed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#projects"><span class="qicon">💻</span><b>Projects</b><span>Things I’ve built, explored &amp; contributed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#achievements"><span class="qicon">🏆</span><b>Achievements</b><span>Awards, scholarships, hackathons &amp; more</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#skills"><span class="qicon">📚</span><b>Skills</b><span>Tools, languages &amp; lab experience</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#scrapbook"><span class="qicon">📒</span><b>Scrapbook</b><span>Interests, hobbies &amp; random thoughts</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#guestbook"><span class="qicon">💌</span><b>Guestbook</b><span>Leave a message (:*o*:)</span><i aria-hidden="true">→</i></a></div></section><section class="section" id="about"><div class="section-title">01 / ABOUT</div><div class="section-body"><div class="about-layout"><div class="about-portrait"><svg class="avatar-face-icon" viewBox="0 0 64 50" role="img" aria-label="Pixel kawaii doll face with chestnut hair, green antennae and square glasses" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><rect x="18" y="5" width="3" height="12" fill="#3f792d"/><rect x="43" y="5" width="3" height="12" fill="#3f792d"/>
-<rect x="13" y="1" width="12" height="8" fill="#78e64b"/><rect x="39" y="1" width="12" height="8" fill="#78e64b"/>
-<rect x="11" y="15" width="42" height="31" fill="#38222a"/><rect x="8" y="22" width="6" height="22" fill="#38222a"/><rect x="50" y="22" width="6" height="22" fill="#38222a"/>
-<rect x="15" y="17" width="34" height="29" fill="#f7d4c1"/><rect x="12" y="23" width="4" height="15" fill="#f7d4c1"/><rect x="48" y="23" width="4" height="15" fill="#f7d4c1"/>
-<rect x="17" y="14" width="30" height="5" fill="#38222a"/><rect x="17" y="15" width="11" height="7" fill="#80513a"/><rect x="21" y="19" width="8" height="7" fill="#80513a"/><rect x="28" y="15" width="8" height="7" fill="#80513a"/><rect x="34" y="18" width="12" height="6" fill="#80513a"/><rect x="15" y="23" width="4" height="13" fill="#68402f"/><rect x="45" y="23" width="4" height="13" fill="#68402f"/>
-<rect x="20" y="26" width="8" height="2" fill="#52352d"/><rect x="36" y="26" width="8" height="2" fill="#52352d"/><rect x="21" y="30" width="7" height="3" fill="#241923"/><rect x="36" y="30" width="7" height="3" fill="#241923"/>
-<rect x="16" y="27" width="15" height="11" fill="#f5d9c8" fill-opacity=".22" stroke="#4a302b" stroke-width="2"/><rect x="33" y="27" width="15" height="11" fill="#f5d9c8" fill-opacity=".22" stroke="#4a302b" stroke-width="2"/><rect x="30" y="30" width="5" height="2" fill="#4a302b"/>
-<rect x="30" y="36" width="2" height="2" fill="#d79583"/><rect x="28" y="40" width="4" height="2" fill="#a84958"/><rect x="31" y="39" width="4" height="3" fill="#a84958"/><rect x="34" y="41" width="3" height="2" fill="#a84958"/><rect x="10" y="35" width="3" height="3" fill="#d9dce2"/><rect x="51" y="35" width="3" height="3" fill="#d9dce2"/></svg><span class="portrait-caption">ANUBHUTI.EXE ♡</span></div><div class="about-copy"><h2>ANUBHUTI GOSWAMI</h2><p>I'm a B.Tech Biotechnology student at Lovely Professional University. My current interests sit at the intersection of genetics, microbiology, biological data analysis, and computational tools for life sciences.</p><p>I'm building my foundations in Python and data analysis while looking for opportunities to contribute to research, bioinformatics, and interdisciplinary projects. Outside coursework, I enjoy science, wildlife, history, philosophy, and visual storytelling.</p></div><aside class="about-note"><span class="note-pin">✦</span><h3>ACADEMIC PROFILE</h3><p>CLASS X <b>94.8%</b></p><p>CLASS XII <b>89%</b></p><p>B.TECH BIOTECHNOLOGY <b>2025–2029</b></p><p>CGPA <b>7.58 / 10</b></p><p>LPU SCHOLARSHIP <b>60%</b></p><p>CURRENT FOCUS <b>Python · biological data</b></p><div class="note-signoff">little by little, a little becomes a lot ♡</div></aside></div></div></section>
+<section class="quick-links" id="quick-links" aria-label="Quick links"><div class="quick-heading"><span>✰ Quick Links ✧</span><button type="button" class="window-close" aria-label="Quick Links window decoration">×</button></div><div class="quick-grid"><a class="quick-card" href="#about"><span class="qicon qicon-face"><svg class="avatar-face-icon" viewBox="0 0 64 50" role="img" aria-label="Retro pixel kawaii doll face with chestnut hair, green antennae and square glasses" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><path fill="#3d6e35" d="M19 15V9h3v6zM43 15V9h3v6z"/><path fill="#78e64b" d="M13 2h10v3h3v5h-3v3H13v-3h-3V5h3zM41 2h10v3h3v5h-3v3H41v-3h-3V5h3z"/>
+<path fill="#2e2029" d="M12 19V15h5v-4h8V8h14v3h8v4h5v8h3v20h-5v6h-6v-5H20v5h-6v-6H9V25h3z"/>
+<path fill="#f6d2bf" d="M18 18h28v4h4v19h-4v5H18v-5h-4V22h4z"/>
+<path fill="#38232a" d="M15 18v-5h8V9h7v4h5V9h7v4h7v8h-5v4h-5v-5h-4v-3h-4v6h-4v3h-4v-5h-4v4h-4z"/>
+<path fill="#89583d" d="M18 14h5v-3h5v5h-3v4h-4v-3h-3zM34 13h6v-2h4v4h4v4h-6v-3h-4v3h-4z"/>
+<path fill="#241923" d="M20 29h8v3h-8zM35 29h8v3h-8z"/>
+<g fill="#f7dfd2" fill-opacity=".14" stroke="#49302b" stroke-width="2.5"><path d="M16 27h14v2h2v8h-2v2H18v-2h-2z"/><path d="M34 29h2v-2h14v10h-2v2H36v-2h-2z"/></g>
+<path fill="#49302b" d="M30 30h4v2h-4z"/><path fill="#d69482" d="M30 36h3v2h-3z"/><path fill="#a84a5a" d="M28 40h4v-2h3v2h3v2h-3v2h-4v-2h-3z"/><path fill="#e1e3e9" d="M11 35h3v3h-3zM50 35h3v3h-3z"/></svg></span><b>About Me</b><span>Who I am &amp; where I’m headed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#projects"><span class="qicon">💻</span><b>Projects</b><span>Things I’ve built, explored &amp; contributed</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#achievements"><span class="qicon">🏆</span><b>Achievements</b><span>Awards, scholarships, hackathons &amp; more</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#skills"><span class="qicon">📚</span><b>Skills</b><span>Tools, languages &amp; lab experience</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#scrapbook"><span class="qicon">📒</span><b>Scrapbook</b><span>Interests, hobbies &amp; random thoughts</span><i aria-hidden="true">→</i></a><a class="quick-card" href="#guestbook"><span class="qicon">💌</span><b>Guestbook</b><span>Leave a message (:*o*:)</span><i aria-hidden="true">→</i></a></div></section><section class="section" id="about"><div class="section-title">01 / ABOUT</div><div class="section-body"><div class="about-layout"><div class="about-portrait"><svg class="avatar-face-icon" viewBox="0 0 64 50" role="img" aria-label="Retro pixel kawaii doll face with chestnut hair, green antennae and square glasses" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><path fill="#3d6e35" d="M19 15V9h3v6zM43 15V9h3v6z"/><path fill="#78e64b" d="M13 2h10v3h3v5h-3v3H13v-3h-3V5h3zM41 2h10v3h3v5h-3v3H41v-3h-3V5h3z"/>
+<path fill="#2e2029" d="M12 19V15h5v-4h8V8h14v3h8v4h5v8h3v20h-5v6h-6v-5H20v5h-6v-6H9V25h3z"/>
+<path fill="#f6d2bf" d="M18 18h28v4h4v19h-4v5H18v-5h-4V22h4z"/>
+<path fill="#38232a" d="M15 18v-5h8V9h7v4h5V9h7v4h7v8h-5v4h-5v-5h-4v-3h-4v6h-4v3h-4v-5h-4v4h-4z"/>
+<path fill="#89583d" d="M18 14h5v-3h5v5h-3v4h-4v-3h-3zM34 13h6v-2h4v4h4v4h-6v-3h-4v3h-4z"/>
+<path fill="#241923" d="M20 29h8v3h-8zM35 29h8v3h-8z"/>
+<g fill="#f7dfd2" fill-opacity=".14" stroke="#49302b" stroke-width="2.5"><path d="M16 27h14v2h2v8h-2v2H18v-2h-2z"/><path d="M34 29h2v-2h14v10h-2v2H36v-2h-2z"/></g>
+<path fill="#49302b" d="M30 30h4v2h-4z"/><path fill="#d69482" d="M30 36h3v2h-3z"/><path fill="#a84a5a" d="M28 40h4v-2h3v2h3v2h-3v2h-4v-2h-3z"/><path fill="#e1e3e9" d="M11 35h3v3h-3zM50 35h3v3h-3z"/></svg><span class="portrait-caption">ANUBHUTI.EXE ♡</span></div><div class="about-copy"><h2>ANUBHUTI GOSWAMI</h2><p>I'm a B.Tech Biotechnology student at Lovely Professional University. My current interests sit at the intersection of genetics, microbiology, biological data analysis, and computational tools for life sciences.</p><p>I'm building my foundations in Python and data analysis while looking for opportunities to contribute to research, bioinformatics, and interdisciplinary projects. Outside coursework, I enjoy science, wildlife, history, philosophy, and visual storytelling.</p></div><aside class="about-note"><span class="note-pin">✦</span><h3>ACADEMIC PROFILE</h3><p>CLASS X <b>94.8%</b></p><p>CLASS XII <b>89%</b></p><p>B.TECH BIOTECHNOLOGY <b>2025–2029</b></p><p>CGPA <b>7.58 / 10</b></p><p>LPU SCHOLARSHIP <b>60%</b></p><p>CURRENT FOCUS <b>Python · biological data</b></p><div class="note-signoff">little by little, a little becomes a lot ♡</div></aside></div></div></section>
 <section class="section" id="projects"><div class="section-title">02 / SELECTED PROJECTS</div><div class="section-body"><p>A selection of projects and explorations across biotechnology, data, and science communication.</p><div class="scrapbook"><article class="scrap"><div class="sticker">🧪</div><h3>LABMATEAI</h3><p>A biotechnology lab assistant concept built with Streamlit and Groq, including a PCR calculator and report support.</p><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">open GitHub ↗</a></article><article class="scrap"><div class="sticker">🧬</div><h3>SIMULAB</h3><p>A virtual practical-lab concept for guided experiments, equipment interactions, and simulated results.</p><span class="tag">In development</span></article><article class="scrap"><div class="sticker">🩺</div><h3>PULSE OXIMETER BIAS</h3><p>A research poster examining how skin pigmentation can affect pulse-oximeter accuracy and healthcare equity.</p></article><article class="scrap"><div class="sticker">🌱</div><h3>MODULAR ROADS</h3><p>A student-team concept exploring bamboo–plastic composites for modular road construction.</p></article><article class="scrap"><div class="sticker">🔬</div><h3>ZOONIVERSE</h3><p>Citizen-science annotation contributions to Placenta Profiles and DRIIVE: Clear Skies.</p></article><article class="scrap"><div class="sticker">💾</div><h3>BIOINFORMATICS</h3><p>Current learning focus: Python, biological data analysis, and computational approaches to life science.</p><span class="tag">Currently learning</span></article></div></div></section>
 <section class="section" id="achievements"><div class="section-title">03 / ACHIEVEMENTS & RECOGNITION</div><div class="section-body"><p>Selected academic, leadership, and project milestones.</p><div class="cabinet real-achievements"><article class="trophy unlocked"><div class="icon">🏅</div><strong>ACADEMIC DISTINCTION</strong><small>94.8% in Class X</small></article><article class="trophy unlocked"><div class="icon">🎓</div><strong>ACADEMIC SCHOLARSHIP</strong><small>LPU scholarship recipient</small></article><article class="trophy unlocked"><div class="icon">🌍</div><strong>IEO</strong><small>International Rank 4 · Gold Medal of Distinction</small></article><article class="trophy unlocked"><div class="icon">🧭</div><strong>TEAM LEADERSHIP</strong><small>Hackathon and student team roles</small></article><article class="trophy unlocked"><div class="icon">🔬</div><strong>CITIZEN SCIENCE</strong><small>Zooniverse research annotation</small></article><article class="trophy unlocked"><div class="icon">🧬</div><strong>BIOTECH PROJECTS</strong><small>Healthcare bias poster and lab-focused builds</small></article><article class="trophy unlocked"><div class="icon">🤖</div><strong>AI & DATA LEARNING</strong><small>IBM Intro to AI · data-labeling experience</small></article><article class="trophy unlocked"><div class="icon">✍️</div><strong>SCIENCE COMMUNICATION</strong><small>Writing and project storytelling</small></article></div></div></section>
 <section class="section" id="scrapbook"><div class="section-title">05 / SCRAPBOOK</div><div class="section-body"><div class="scrapbook"><article class="scrap"><div class="sticker">🧠</div><h3>THINGS I LIKE THINKING ABOUT</h3><p>Biology, philosophy, history, politics, wildlife, medicines, and how ideas shape the world.</p></article><article class="scrap"><div class="sticker">🎨</div><h3>OFF THE CLOCK</h3><p>Painting, visual storytelling, building tiny web worlds, and finding new things to learn.</p></article><article class="scrap"><div class="sticker">🌱</div><h3>CURRENT SIDE QUEST</h3><p>Building stronger foundations in Python, biological data analysis, and computational biology.</p></article><article class="scrap"><div class="sticker">✦</div><h3>PERSONAL MOTTO</h3><p>Stay curious. Ask better questions. Make useful things.</p></article></div></div></section><section class="section" id="skills"><div class="section-title">04 / SKILLS & CURRENT LEARNING</div><div class="section-body"><div class="columns"><article class="card"><h3>TOOLS I USE</h3><p><b>Data & productivity:</b> Excel, PowerPoint</p><p><b>Design:</b> Canva</p><p><b>Programming:</b> Python fundamentals</p><p><b>Development:</b> GitHub, VS Code</p></article><article class="card"><h3>BUILDING FOUNDATIONS IN</h3><p>Bioinformatics and sequence analysis</p><p>Biological data analysis and visualization</p><p>C++ object-oriented programming</p><p>Genetics, microbiology, and molecular biology</p></article></div></div></section><section class="section" id="guestbook"><div class="section-title">06 / GUESTBOOK</div><div class="section-body"><p>A small corner for messages, recommendations, and interesting links.</p><div class="guestbook"><form id="guest-form"><label for="guest-name">YOUR PLAYER NAME</label><input id="guest-name" maxlength="35" required placeholder="player_2"><label for="guest-message">YOUR MESSAGE</label><textarea id="guest-message" maxlength="240" required placeholder="Your website is a secret level of the internet..."></textarea><button class="pixel-btn pink" type="submit">✉ SIGN THE GUESTBOOK</button><p style="font-size:16px">Demo mode: messages are saved in this browser only, not shared between visitors.</p></form><div class="messages" id="messages"><div class="message"><b>ANUBHUTI GOSWAMI</b><small>site owner · 15 OCT 2026</small>Thanks for visiting. Leave a note, a resource, or a question.</div></div></div></div></section>
