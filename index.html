@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anubhuti World v.2006</title>
+    <title>anubhuti.world</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,12 +14,15 @@
 
         body {
             background-color: #d1b3e8;
-            background-image: radial-gradient(#e5ccf5 1px, transparent 1px);
-            background-size: 16px 16px;
+            background-image: 
+                radial-gradient(#ecdbf7 1px, transparent 1px),
+                radial-gradient(#ecdbf7 1px, #d1b3e8 1px);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
             font-family: 'Nunito', sans-serif;
             color: #281236;
             min-height: 100vh;
-            padding: 12px;
+            padding: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,32 +30,33 @@
 
         .browser-window {
             width: 100%;
-            max-width: 1000px;
-            background: #e6caf2;
+            max-width: 1040px;
+            background: #d4a9ec;
             border: 3px solid #281236;
-            border-radius: 6px;
+            border-radius: 8px;
             box-shadow: 6px 6px 0px #281236;
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         /* Top Browser Bar */
         .browser-topbar {
             background: #281236;
             color: #fff;
-            padding: 6px 10px;
+            padding: 6px 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             font-family: 'Press Start 2P', monospace;
-            font-size: 9px;
+            font-size: 8px;
         }
 
         .browser-address {
             background: #f8d7f1;
             color: #281236;
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 4px;
             border: 2px solid #281236;
             display: flex;
@@ -87,7 +91,7 @@
             color: #281236;
             width: 14px;
             height: 14px;
-            font-size: 8px;
+            font-size: 7px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -95,13 +99,34 @@
             font-weight: bold;
         }
 
-        /* Main Content Layout */
+        /* Main Content Container */
         .portfolio-content {
             padding: 14px;
             display: flex;
             flex-direction: column;
             gap: 12px;
-            background: #f2d9fc;
+            background: #eac8f0;
+            position: relative;
+        }
+
+        /* Floating background decorative stars */
+        .bg-star-left {
+            position: absolute;
+            top: 140px;
+            left: 10px;
+            font-size: 24px;
+            filter: drop-shadow(2px 2px 0px #281236);
+            pointer-events: none;
+            z-index: 10;
+        }
+        .bg-star-left-lower {
+            position: absolute;
+            top: 380px;
+            left: 5px;
+            font-size: 20px;
+            filter: drop-shadow(2px 2px 0px #281236);
+            pointer-events: none;
+            z-index: 10;
         }
 
         /* Navigation Header */
@@ -113,31 +138,32 @@
         }
 
         .folder-badge {
-            background: #f8d7f1;
+            background: #fdf5fc;
             border: 2px solid #281236;
             padding: 6px 10px;
             border-radius: 4px;
             box-shadow: 2px 2px 0px #281236;
             font-family: 'Press Start 2P', monospace;
             font-size: 8px;
-            max-width: 160px;
+            width: 150px;
+            transform: rotate(-1deg);
         }
 
         .nav-tabs {
             display: flex;
-            gap: 4px;
-            background: #d8b4e8;
+            gap: 3px;
+            background: #cbb2df;
             padding: 4px;
             border: 2px solid #281236;
             border-radius: 6px;
         }
 
         .nav-tab {
-            background: #e6caf2;
+            background: #f8d7f1;
             border: 2px solid #281236;
-            padding: 5px 10px;
+            padding: 6px 12px;
             font-family: 'Press Start 2P', monospace;
-            font-size: 8px;
+            font-size: 7.5px;
             color: #281236;
             cursor: pointer;
             border-radius: 3px;
@@ -148,10 +174,11 @@
         .nav-tab.active, .nav-tab:hover {
             background: #ffb8e0;
             transform: translateY(-1px);
+            box-shadow: 1px 1px 0px #281236;
         }
 
         .profile-badge-top {
-            background: #f8d7f1;
+            background: #fdf5fc;
             border: 2px solid #281236;
             padding: 6px 10px;
             border-radius: 4px;
@@ -160,6 +187,19 @@
             font-size: 7px;
             text-align: right;
             line-height: 1.4;
+        }
+
+        /* Top Right Floating Avatar Header Sticker */
+        .top-right-avatar-container {
+            position: absolute;
+            top: 52px;
+            right: 28px;
+            z-index: 20;
+            pointer-events: none;
+        }
+        .top-right-avatar-img {
+            width: 95px;
+            filter: drop-shadow(3px 3px 0px #281236);
         }
 
         /* Hero Section Container */
@@ -197,8 +237,8 @@
         }
 
         .game-canvas-area {
-            height: 190px;
-            background: linear-gradient(to bottom, #e2a9e8 0%, #fcd6ed 70%, #9bc27c 70%, #759e53 100%);
+            height: 185px;
+            background: linear-gradient(to bottom, #dfb8e2 0%, #fbd5ec 65%, #9bc27c 65%, #759e53 100%);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -207,9 +247,9 @@
 
         .city-silhouette {
             position: absolute;
-            bottom: 30%;
+            bottom: 35%;
             width: 100%;
-            height: 80px;
+            height: 75px;
             background: repeating-linear-gradient(90deg, #d49fdc, #d49fdc 15px, #c38bcd 15px, #c38bcd 30px);
             opacity: 0.5;
             z-index: 1;
@@ -219,11 +259,11 @@
             position: absolute;
             top: 20px;
             right: 50px;
-            width: 45px;
-            height: 45px;
+            width: 42px;
+            height: 42px;
             background: #ffe053;
             border-radius: 50%;
-            box-shadow: 0 0 15px #ffeb7b;
+            box-shadow: 0 0 12px #ffeb7b;
             z-index: 1;
         }
 
@@ -231,7 +271,7 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 30px;
+            height: 28px;
             background: #5d8c3b;
             border-top: 3px solid #281236;
             z-index: 3;
@@ -245,71 +285,75 @@
             background: #62953e;
         }
 
-        /* Exact Chibi Avatar (Retro Codedex SVG style) */
+        /* Runner Avatar inside Mini-Game */
         .runner-avatar {
             position: absolute;
-            bottom: 30px;
+            bottom: 28px;
             left: 45px;
-            width: 52px;
-            height: 60px;
+            width: 50px;
+            height: 58px;
             z-index: 5;
-            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' fill='none'/><path d='M44 26 C40 22 42 12 52 12 C56 12 58 16 58 20 Z' fill='%2339d353' stroke='%23000' stroke-width='3'/><circle cx='52' cy='14' r='7' fill='%2339d353' stroke='%23000' stroke-width='3'/><path d='M76 26 C80 22 78 12 68 12 C64 12 62 16 62 20 Z' fill='%2339d353' stroke='%23000' stroke-width='3'/><circle cx='68' cy='14' r='7' fill='%2339d353' stroke='%23000' stroke-width='3'/><path d='M32 24 C30 18 40 16 60 16 C80 16 90 18 88 24 C90 40 88 56 78 64 C72 68 48 68 42 64 C32 56 30 40 32 24 Z' fill='%235a3825' stroke='%23000' stroke-width='3'/><path d='M35 34 C45 32 60 32 85 34 C82 52 74 62 60 64 C46 62 38 52 35 34 Z' fill='%23f4ba98' stroke='%23000' stroke-width='3'/><path d='M32 24 C36 24 50 30 60 30 C70 30 84 24 88 24 C82 20 70 18 60 18 C50 18 38 20 32 24 Z' fill='%235a3825' stroke='%23000' stroke-width='3'/><circle cx='41' cy='43' r='5' fill='%fff' stroke='%23000' stroke-width='2'/><circle cx='79' cy='43' r='5' fill='%fff' stroke='%23000' stroke-width='2'/><path d='M38 41 Q 42 41 43 45' fill='none' stroke='%23000' stroke-width='3'/><path d='M82 41 Q 78 41 77 45' fill='none' stroke='%23000' stroke-width='3'/><path d='M25 44 C25 36 33 34 38 38 C35 44 35 48 38 52 C33 52 25 50 25 44 Z' fill='%23f4ba98' stroke='%23000' stroke-width='3'/><path d='M95 44 C95 36 87 34 82 38 C85 44 85 48 82 52 C87 52 95 50 95 44 Z' fill='%23f4ba98' stroke='%23000' stroke-width='3'/><rect x='34' y='36' width='52' height='20' rx='4' fill='none' stroke='%235a3825' stroke-width='4'/><path d='M56 50 Q 60 55 64 50' fill='none' stroke='%23000' stroke-width='3'/><path d='M46 56 C46 54 74 54 74 56 L72 80 C72 82 68 84 60 84 C52 84 48 82 48 80 Z' fill='%23b83232' stroke='%23000' stroke-width='3'/><path d='M47 58 L32 78 C30 82 34 88 42 86 L50 78 Z' fill='%23f4ba98' stroke='%23000' stroke-width='3'/><path d='M73 58 L88 78 C90 82 86 88 78 86 L70 78 Z' fill='%23f4ba98' stroke='%23000' stroke-width='3'/><path d='M48 80 L48 106 C48 108 52 110 58 110 L62 110 C68 110 72 108 72 106 L72 80 Z' fill='%23171426' stroke='%23000' stroke-width='3'/><rect x='44' y='98' width='28' height='12' fill='%23414d01' stroke='%23000' stroke-width='2'/><path d='M42 106 L42 114 C42 116 46 118 52 118 L58 118 C64 118 68 116 68 114 L68 106 Z' fill='%23fff' stroke='%23000' stroke-width='3'/></svg>");
-            background-size: contain;
-            background-repeat: no-repeat;
+            background: url('avatar.png') no-repeat center/contain;
             animation: bounce 0.35s infinite alternate;
+        }
+
+        /* Walking black cat sprite */
+        .running-cat {
+            position: absolute;
+            bottom: 28px;
+            left: 200px;
+            width: 32px;
+            height: 20px;
+            background: url('cat.png') no-repeat center/contain;
+            z-index: 4;
         }
 
         @keyframes bounce {
             0% { transform: translateY(0); }
-            100% { transform: translateY(-4px); }
+            100% { transform: translateY(-3px); }
         }
 
         .coin-item {
             position: absolute;
-            bottom: 60px;
-            left: 210px;
-            width: 16px;
-            height: 16px;
+            bottom: 58px;
+            left: 220px;
+            width: 15px;
+            height: 15px;
             background: #ffe053;
             border: 2px solid #281236;
             border-radius: 50%;
-            animation: floatCoin 1.5s ease-in-out infinite;
+            box-shadow: 1px 1px 0px #281236;
             z-index: 4;
         }
-        .coin-item:nth-child(2) { left: 245px; animation-delay: 0.2s; }
-        .coin-item:nth-child(3) { left: 280px; animation-delay: 0.4s; }
-
-        @keyframes floatCoin {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
+        .coin-item:nth-child(2) { left: 250px; }
+        .coin-item:nth-child(3) { left: 280px; }
 
         .obstacle-block {
             position: absolute;
-            bottom: 30px;
+            bottom: 28px;
             left: 360px;
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             background: #ffe053;
             border: 2px solid #281236;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Press Start 2P', monospace;
-            font-size: 12px;
+            font-size: 11px;
             box-shadow: 2px 2px 0px #281236;
             z-index: 4;
         }
 
         .game-signpost {
             position: absolute;
-            bottom: 30px;
+            bottom: 28px;
             left: 95px;
             background: #f8d7f1;
             border: 2px solid #281236;
-            padding: 4px 8px;
+            padding: 3px 6px;
             font-family: 'Press Start 2P', monospace;
-            font-size: 6px;
+            font-size: 5.5px;
             box-shadow: 2px 2px 0px #281236;
             z-index: 4;
         }
@@ -342,10 +386,10 @@
             border: 2px solid #281236;
             border-radius: 6px;
             box-shadow: 3px 3px 0px #281236;
-            padding: 14px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             position: relative;
         }
 
@@ -353,8 +397,8 @@
             position: absolute;
             top: -8px;
             left: 24px;
-            width: 10px;
-            height: 20px;
+            width: 8px;
+            height: 18px;
             border: 2px solid #717171;
             border-radius: 6px;
             background: #dcdcdc;
@@ -368,66 +412,78 @@
 
         .about-title-area h2 {
             font-family: 'Press Start 2P', monospace;
-            font-size: 11px;
+            font-size: 10.5px;
             color: #281236;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .about-subtitle {
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 700;
             color: #7b4298;
         }
 
+        /* Avatar thumbnail inside About Card */
         .avatar-headshot {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             background: #f8d7f1;
             border: 2px solid #281236;
             border-radius: 50%;
-            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' fill='%23f8d7f1'/><path d='M44 26 C40 22 42 12 52 12 C56 12 58 16 58 20 Z' fill='%2339d353' stroke='%23000' stroke-width='3'/><circle cx='52' cy='14' r='7' fill='%2339d353' stroke='%23000' stroke-width='3'/><path d='M76 26 C80 22 78 12 68 12 C64 12 62 16 62 20 Z' fill='%2339d353' stroke='%23000' stroke-width='3'/><circle cx='68' cy='14' r='7' fill='%2339d353' stroke='%23000' stroke-width='3'/><path d='M32 24 C30 18 40 16 60 16 C80 16 90 18 88 24 C90 40 88 56 78 64 C72 68 48 68 42 64 C32 56 30 40 32 24 Z' fill='%235a3825' stroke='%23000' stroke-width='3'/><path d='M35 34 C45 32 60 32 85 34 C82 52 74 62 60 64 C46 62 38 52 35 34 Z' fill='%23f4ba98' stroke='%23000' stroke-width='3'/><path d='M32 24 C36 24 50 30 60 30 C70 30 84 24 88 24 C82 20 70 18 60 18 C50 18 38 20 32 24 Z' fill='%235a3825' stroke='%23000' stroke-width='3'/><circle cx='41' cy='43' r='5' fill='%fff' stroke='%23000' stroke-width='2'/><circle cx='79' cy='43' r='5' fill='%fff' stroke='%23000' stroke-width='2'/><path d='M38 41 Q 42 41 43 45' fill='none' stroke='%23000' stroke-width='3'/><path d='M82 41 Q 78 41 77 45' fill='none' stroke='%23000' stroke-width='3'/><path d='M25 44 C25 36 33 34 38 38 C35 44 35 48 38 52 C33 52 25 50 25 44 Z' fill='%23f4ba98' stroke='%23000' stroke-width='3'/><path d='M95 44 C95 36 87 34 82 38 C85 44 85 48 82 52 C87 52 95 50 95 44 Z' fill='%23f4ba98' stroke='%23000' stroke-width='3'/><rect x='34' y='36' width='52' height='20' rx='4' fill='none' stroke='%235a3825' stroke-width='4'/><path d='M56 50 Q 60 55 64 50' fill='none' stroke='%23000' stroke-width='3'/></svg>");
-            background-size: cover;
+            background-image: url('avatar.png');
+            background-size: 190%;
+            background-position: center 20%;
             box-shadow: 2px 2px 0px #281236;
             flex-shrink: 0;
         }
 
         .about-bio-text {
-            font-size: 12px;
-            line-height: 1.5;
+            font-size: 11.5px;
+            line-height: 1.45;
             color: #3b1c4c;
         }
 
         .about-signoff {
             font-family: 'Caveat', cursive;
-            font-size: 18px;
+            font-size: 17px;
             color: #7b4298;
-            margin-top: 4px;
-        }
-
-        /* Marquee Ticker with BIGGER retro stars & planets */
-        .marquee-bar {
-            background: #281236;
-            color: #f8d7f1;
-            border: 2px solid #281236;
-            padding: 8px;
-            font-family: 'Press Start 2P', monospace;
-            font-size: 9px;
-            text-align: center;
-            letter-spacing: 1px;
-            box-shadow: 3px 3px 0px rgba(40, 18, 54, 0.3);
+            margin-top: 2px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
+        /* Small avatar icon next to signature in mockup */
+        .mini-avatar-stamp {
+            width: 32px;
+            height: 32px;
+            background: url('avatar.png') no-repeat center/cover;
+            border: 1.5px solid #281236;
+            border-radius: 50%;
+        }
+
+        /* Marquee Ticker with BIG Retro Star & Planet */
+        .marquee-bar {
+            background: #281236;
+            color: #f8d7f1;
+            border: 2px solid #281236;
+            padding: 6px 14px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 8.5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 3px 3px 0px rgba(40, 18, 54, 0.3);
+        }
+
         .retro-star {
-            font-size: 16px;
-            filter: drop-shadow(1px 1px 0px #ffb8e0);
+            font-size: 20px;
+            filter: drop-shadow(2px 2px 0px #ffb8e0);
         }
 
         .retro-planet {
-            font-size: 18px;
-            filter: drop-shadow(1px 1px 0px #ffb8e0);
+            font-size: 22px;
+            filter: drop-shadow(2px 2px 0px #ffb8e0);
         }
 
         /* Quick Links Grid Section */
@@ -440,7 +496,6 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            position: relative;
         }
 
         .links-window-header {
@@ -463,7 +518,7 @@
             background: #fdf5fc;
             border: 2px solid #281236;
             border-radius: 6px;
-            padding: 10px 6px;
+            padding: 10px 4px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -472,25 +527,31 @@
             text-decoration: none;
             color: #281236;
             box-shadow: 2px 2px 0px #281236;
+            cursor: pointer;
             transition: all 0.15s ease;
         }
 
         .link-card:hover {
             background: #ffb8e0;
             transform: translateY(-2px);
-            box-shadow: 3px 4px 0px #281236;
+            box-shadow: 3px 3px 0px #281236;
         }
 
         .link-card-icon {
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             background: #e6caf2;
             border: 2px solid #281236;
             border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            overflow: hidden;
+        }
+        .link-card-icon img {
+            width: 130%;
+            object-fit: cover;
+            margin-top: 4px;
         }
 
         .link-card-title {
@@ -500,7 +561,7 @@
         }
 
         .link-card-desc {
-            font-size: 9px;
+            font-size: 8.5px;
             color: #5a3825;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -508,7 +569,7 @@
             overflow: hidden;
         }
 
-        /* Main layout bottom section */
+        /* Main layout bottom */
         .main-layout-bottom {
             display: grid;
             grid-template-columns: 1fr 200px;
@@ -544,13 +605,22 @@
 
         .sticky-text {
             font-family: 'Caveat', cursive;
-            font-size: 20px;
+            font-size: 21px;
             font-weight: 700;
             color: #281236;
             line-height: 1.2;
         }
 
-        /* Footer Bar */
+        .sticky-avatar-doodle {
+            width: 38px;
+            height: 38px;
+            background: url('avatar.png') no-repeat center/cover;
+            border: 1.5px solid #281236;
+            border-radius: 50%;
+            margin-top: 6px;
+        }
+
+        /* Bottom Footer Bar */
         .browser-footer {
             background: #281236;
             color: #f8d7f1;
@@ -562,7 +632,25 @@
             font-size: 8px;
         }
 
-        /* Responsive */
+        /* Functional Section Modal / View Overlay */
+        .content-section {
+            display: none;
+            background: #fff;
+            border: 2px solid #281236;
+            border-radius: 6px;
+            box-shadow: 3px 3px 0px #281236;
+            padding: 16px;
+            margin-top: 10px;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+        .content-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         @media (max-width: 850px) {
             .hero-container { grid-template-columns: 1fr; }
             .links-grid { grid-template-columns: repeat(3, 1fr); }
@@ -581,9 +669,9 @@
             <div class="browser-meta">
                 <span class="browser-tab-indicator">// building a kinder, smarter future ✕</span>
                 <div class="window-controls">
-                    <div class="win-btn">_</div>
-                    <div class="win-btn">□</div>
-                    <div class="win-btn">✕</div>
+                    <div class="win-btn" onclick="alert('Minimized!')">_</div>
+                    <div class="win-btn" onclick="alert('Maximized!')">□</div>
+                    <div class="win-btn" onclick="alert('Closed!')">✕</div>
                 </div>
             </div>
         </div>
@@ -591,129 +679,201 @@
         <!-- Portfolio Content Container -->
         <div class="portfolio-content">
 
+            <!-- Floating background star -->
+            <div class="bg-star-left">⭐</div>
+            <div class="bg-star-left-lower">✨</div>
+
+            <!-- Top Right Avatar Sticker -->
+            <div class="top-right-avatar-container">
+                <img src="avatar.png" alt="Anubhuti Avatar" class="top-right-avatar-img">
+            </div>
+
             <!-- Navigation Bar Header -->
             <div class="nav-header">
                 <div class="folder-badge">
-                    📁 ANUBHUTI WORLD<br><span style="font-size:6px; color:#7b4298;">Pixel Girl Online! ♡</span>
+                    📁 ANUBHUTI WORLD<br><span style="font-size:5.5px; color:#7b4298;">Pixel Girl Online! ♡</span>
                 </div>
                 <div class="nav-tabs">
-                    <a href="#home" class="nav-tab active">Home</a>
-                    <a href="#about" class="nav-tab">About</a>
-                    <a href="#projects" class="nav-tab">Projects</a>
-                    <a href="#achievements" class="nav-tab">Achievements</a>
-                    <a href="#skills" class="nav-tab">Skills</a>
-                    <a href="#scrapbook" class="nav-tab">Scrapbook</a>
-                    <a href="#guestbook" class="nav-tab">Guestbook</a>
+                    <a href="#" class="nav-tab active" onclick="switchTab('home', event)">Home</a>
+                    <a href="#" class="nav-tab" onclick="switchTab('about', event)">About</a>
+                    <a href="#" class="nav-tab" onclick="switchTab('projects', event)">Projects</a>
+                    <a href="#" class="nav-tab" onclick="switchTab('achievements', event)">Achievements</a>
+                    <a href="#" class="nav-tab" onclick="switchTab('skills', event)">Skills</a>
+                    <a href="#" class="nav-tab" onclick="switchTab('scrapbook', event)">Scrapbook</a>
+                    <a href="#" class="nav-tab" onclick="switchTab('guestbook', event)">Guestbook</a>
                 </div>
                 <div class="profile-badge-top">
                     B.Tech Biotechnology<br>LPU | 2025–2029 💖
                 </div>
             </div>
 
-            <!-- Hero Section: Mini Game + About Card -->
-            <div class="hero-container">
-                <!-- Mini Game Window -->
-                <div class="game-window">
-                    <div class="game-header-bar">
-                        <div class="hearts">♥♥♥</div>
-                        <div style="font-family:'Press Start 2P'; font-size:7px;">ARCADE.EXE</div>
-                    </div>
-                    <div class="game-canvas-area">
-                        <div class="sun-circle"></div>
-                        <div class="city-silhouette"></div>
-                        <div class="game-signpost">PRESS SPACE TO JUMP ►</div>
-                        <!-- Coins -->
-                        <div class="coin-item"></div>
-                        <div class="coin-item"></div>
-                        <div class="coin-item"></div>
-                        <!-- Obstacle Block -->
-                        <div class="obstacle-block">?</div>
-                        <!-- Runner Avatar -->
-                        <div class="runner-avatar"></div>
-                        <!-- Ground Platform -->
-                        <div class="game-ground">
-                            <div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div>
+            <!-- HOME VIEW (Default Dashboard View) -->
+            <div id="view-home" class="content-section active">
+                <!-- Hero Section: Mini Game + About Card -->
+                <div class="hero-container" style="border:none; padding:0; box-shadow:none;">
+                    <!-- Mini Game Window -->
+                    <div class="game-window">
+                        <div class="game-header-bar">
+                            <div class="hearts">♥♥♥</div>
+                            <div style="font-family:'Press Start 2P'; font-size:7px;">ARCADE.EXE</div>
+                        </div>
+                        <div class="game-canvas-area">
+                            <div class="sun-circle"></div>
+                            <div class="city-silhouette"></div>
+                            <div class="game-signpost">PRESS SPACE TO JUMP ►</div>
+                            <!-- Coins -->
+                            <div class="coin-item"></div>
+                            <div class="coin-item"></div>
+                            <div class="coin-item"></div>
+                            <!-- Obstacle Block -->
+                            <div class="obstacle-block">?</div>
+                            <!-- Running Cat -->
+                            <div class="running-cat"></div>
+                            <!-- Runner Avatar -->
+                            <div class="runner-avatar"></div>
+                            <!-- Ground Platform -->
+                            <div class="game-ground">
+                                <div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div><div class="ground-tile"></div>
+                            </div>
+                        </div>
+                        <div class="game-controls-bar">
+                            <span>SCORE: 030 ◉</span>
+                            <button class="arcade-btn" onclick="alert('Jumping simulation active!')">SKIP &gt;&gt;</button>
                         </div>
                     </div>
-                    <div class="game-controls-bar">
-                        <span>SCORE: 030 ◉</span>
-                        <button class="arcade-btn">SKIP &gt;&gt;</button>
+
+                    <!-- About Card -->
+                    <div class="about-card">
+                        <div class="paperclip"></div>
+                        <div class="about-header-row">
+                            <div class="about-title-area">
+                                <h2>Hi, I'm Anubhuti! ✰</h2>
+                                <div class="about-subtitle">B.Tech Biotechnology @ LPU | 2025–2029</div>
+                            </div>
+                            <div class="avatar-headshot"></div>
+                        </div>
+                        <p class="about-bio-text">
+                            I'm a curious learner who loves science, technology and the little things that make life interesting — from bioinformatics to good food, art, and late night study sessions. This is my digital space where I share my work, interests and journey.
+                        </p>
+                        <div class="about-signoff">
+                            <span>Thanks for visiting! ♡</span>
+                            <div class="mini-avatar-stamp"></div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- About Card -->
-                <div class="about-card">
-                    <div class="paperclip"></div>
-                    <div class="about-header-row">
-                        <div class="about-title-area">
-                            <h2>Hi, I'm Anubhuti! ✰</h2>
-                            <div class="about-subtitle">B.Tech Biotechnology @ LPU | 2025–2029</div>
+                <!-- Marquee Ticker with BIG Retro Star & Planet -->
+                <div class="marquee-bar" style="margin-top:12px;">
+                    <span class="retro-star">⭐</span>
+                    <span>// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //</span>
+                    <span class="retro-planet">🪐</span>
+                </div>
+
+                <!-- Bottom Section: Quick Links & Sticky Note -->
+                <div class="main-layout-bottom" style="margin-top:12px;">
+                    <!-- Quick Links Window -->
+                    <div class="links-window">
+                        <div class="links-window-header">
+                            <span>✰ Quick Links ✧</span>
+                            <div class="win-btn" style="width:12px; height:12px; font-size:7px;" onclick="this.closest('.links-window').style.display='none'">✕</div>
                         </div>
-                        <div class="avatar-headshot"></div>
+                        <div class="links-grid">
+                            <div class="link-card" onclick="switchTab('about')">
+                                <div class="link-card-icon"><img src="avatar.png" alt="About"></div>
+                                <div class="link-card-title">About Me</div>
+                                <div class="link-card-desc">Who I am & where I'm headed</div>
+                            </div>
+                            <div class="link-card" onclick="switchTab('projects')">
+                                <div class="link-card-icon">💻</div>
+                                <div class="link-card-title">Projects</div>
+                                <div class="link-card-desc">Things I've built & explored</div>
+                            </div>
+                            <div class="link-card" onclick="switchTab('achievements')">
+                                <div class="link-card-icon">🏆</div>
+                                <div class="link-card-title">Achievements</div>
+                                <div class="link-card-desc">Awards & hackathons</div>
+                            </div>
+                            <div class="link-card" onclick="switchTab('skills')">
+                                <div class="link-card-icon">📚</div>
+                                <div class="link-card-title">Skills</div>
+                                <div class="link-card-desc">Tools, python & lab experience</div>
+                            </div>
+                            <div class="link-card" onclick="switchTab('scrapbook')">
+                                <div class="link-card-icon">📓</div>
+                                <div class="link-card-title">Scrapbook</div>
+                                <div class="link-card-desc">Interests & random thoughts</div>
+                            </div>
+                            <div class="link-card" onclick="switchTab('guestbook')">
+                                <div class="link-card-icon">💌</div>
+                                <div class="link-card-title">Guestbook</div>
+                                <div class="link-card-desc">Leave a message!</div>
+                            </div>
+                        </div>
                     </div>
-                    <p class="about-bio-text">
-                        I'm a curious learner who loves science, technology and the little things that make life interesting — from bioinformatics to good food, art, and late night study sessions. This is my digital space where I share my work, interests and journey.
-                    </p>
-                    <div class="about-signoff">Thanks for visiting! ♡</div>
+
+                    <!-- Sticky Note -->
+                    <div class="sticky-note">
+                        <div class="pin"></div>
+                        <div class="sticky-text">
+                            small steps<br>still count<br>&lt;3
+                        </div>
+                        <div class="sticky-avatar-doodle"></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Marquee Ticker with BIGGER retro stars & planets -->
-            <div class="marquee-bar">
-                <span class="retro-star">⭐</span>
-                <span>// RESEARCH ★ CODE ★ CREATE ★ LEARN ★ REPEAT //</span>
-                <span class="retro-planet">🪐</span>
+            <!-- ABOUT SECTION VIEW -->
+            <div id="view-about" class="content-section">
+                <h2 style="font-family:'Press Start 2P'; font-size:12px; margin-bottom:10px;">👩‍💻 ABOUT ANUBHUTI</h2>
+                <p style="font-size:13px; line-height:1.6; margin-bottom:10px;">I am an undergraduate student pursuing a Bachelor of Technology in Biotechnology at Lovely Professional University, Phagwara, Punjab. My academic focus combines core wet-lab life sciences with computational biology, Python programming, and AI tools.</p>
+                <button class="arcade-btn" onclick="switchTab('home')">← BACK TO HOME</button>
             </div>
 
-            <!-- Bottom Section: Quick Links & Sticky Note -->
-            <div class="main-layout-bottom">
-                <!-- Quick Links Window -->
-                <div class="links-window">
-                    <div class="links-window-header">
-                        <span>✰ Quick Links ✧</span>
-                        <div class="win-btn" style="width:12px; height:12px; font-size:7px;">✕</div>
-                    </div>
-                    <div class="links-grid">
-                        <a href="#about" class="link-card">
-                            <div class="link-card-icon">👩‍💻</div>
-                            <div class="link-card-title">About Me</div>
-                            <div class="link-card-desc">Who I am & where I'm headed</div>
-                        </a>
-                        <a href="#projects" class="link-card">
-                            <div class="link-card-icon">💻</div>
-                            <div class="link-card-title">Projects</div>
-                            <div class="link-card-desc">Things I've built, explored & contributed</div>
-                        </a>
-                        <a href="#achievements" class="link-card">
-                            <div class="link-card-icon">🏆</div>
-                            <div class="link-card-title">Achievements</div>
-                            <div class="link-card-desc">Awards, scholarships, hackathons & more</div>
-                        </a>
-                        <a href="#skills" class="link-card">
-                            <div class="link-card-icon">📚</div>
-                            <div class="link-card-title">Skills</div>
-                            <div class="link-card-desc">Tools, languages, lab experience</div>
-                        </a>
-                        <a href="#scrapbook" class="link-card">
-                            <div class="link-card-icon">📓</div>
-                            <div class="link-card-title">Scrapbook</div>
-                            <div class="link-card-desc">Interests, hobbies, random thoughts</div>
-                        </a>
-                        <a href="#guestbook" class="link-card">
-                            <div class="link-card-icon">💌</div>
-                            <div class="link-card-title">Guestbook</div>
-                            <div class="link-card-desc">Leave a message (:_o_:)</div>
-                        </a>
-                    </div>
-                </div>
+            <!-- PROJECTS SECTION VIEW -->
+            <div id="view-projects" class="content-section">
+                <h2 style="font-family:'Press Start 2P'; font-size:12px; margin-bottom:10px;">💻 FEATURED PROJECTS</h2>
+                <ul style="list-style-type:square; padding-left:20px; font-size:12px; line-height:1.6;">
+                    <li><strong>LabMateAI:</strong> Biotech lab assistant built with Streamlit and Groq featuring a PCR calculator.</li>
+                    <li><strong>SimuLab:</strong> Virtual practical-lab concept for guided experiments and simulated results.</li>
+                    <li><strong>Healthcare Bias Poster:</strong> Analyzed racial disparities in pulse-oximeter readings.</li>
+                </ul>
+                <br>
+                <button class="arcade-btn" onclick="switchTab('home')">← BACK TO HOME</button>
+            </div>
 
-                <!-- Sticky Note -->
-                <div class="sticky-note">
-                    <div class="pin"></div>
-                    <div class="sticky-text">
-                        small steps<br>still count<br>&lt;3
-                    </div>
-                </div>
+            <!-- ACHIEVEMENTS SECTION VIEW -->
+            <div id="view-achievements" class="content-section">
+                <h2 style="font-family:'Press Start 2P'; font-size:12px; margin-bottom:10px;">🏆 ACHIEVEMENTS & STATS</h2>
+                <p style="font-size:12px; line-height:1.6;">♥ CLASS X: <strong>94.8%</strong></p>
+                <p style="font-size:12px; line-height:1.6;">♥ CLASS XII: <strong>89%</strong></p>
+                <p style="font-size:12px; line-height:1.6;">♥ LPU Scholarship: <strong>60%</strong></p>
+                <br>
+                <button class="arcade-btn" onclick="switchTab('home')">← BACK TO HOME</button>
+            </div>
+
+            <!-- SKILLS SECTION VIEW -->
+            <div id="view-skills" class="content-section">
+                <h2 style="font-family:'Press Start 2P'; font-size:12px; margin-bottom:10px;">📚 SKILL TREE</h2>
+                <p style="font-size:12px; line-height:1.6;">Python, C, C++, Streamlit, Bioinformatics tools, Molecular Biology lab fundamentals, Data Analysis, Excel, PowerPoint, Canva.</p>
+                <br>
+                <button class="arcade-btn" onclick="switchTab('home')">← BACK TO HOME</button>
+            </div>
+
+            <!-- SCRAPBOOK SECTION VIEW -->
+            <div id="view-scrapbook" class="content-section">
+                <h2 style="font-family:'Press Start 2P'; font-size:12px; margin-bottom:10px;">📓 SCRAPBOOK.EXE</h2>
+                <p style="font-size:12px; line-height:1.6;">Model United Nations (MUN) delegate experience, Zooniverse citizen science projects, and personal research interests in bioelectricity and genetics.</p>
+                <br>
+                <button class="arcade-btn" onclick="switchTab('home')">← BACK TO HOME</button>
+            </div>
+
+            <!-- GUESTBOOK SECTION VIEW -->
+            <div id="view-guestbook" class="content-section">
+                <h2 style="font-family:'Press Start 2P'; font-size:12px; margin-bottom:10px;">💌 LEAVE A GUESTBOOK MESSAGE</h2>
+                <textarea placeholder="Say hi or leave your feedback here..." style="width:100%; height:80px; padding:8px; border:2px solid #281236; border-radius:4px; font-family:'Nunito'; margin-bottom:8px;"></textarea>
+                <br>
+                <button class="arcade-btn" onclick="alert('Thanks for your message! ♡')">SUBMIT NOTE</button>
+                <button class="arcade-btn" onclick="switchTab('home')">BACK TO HOME</button>
             </div>
 
         </div>
@@ -725,5 +885,26 @@
         </div>
     </div>
 
+    <script>
+        function switchTab(tabId, event) {
+            if (event) event.preventDefault();
+            
+            // Hide all views
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Show selected view
+            const target = document.getElementById('view-' + tabId);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            // Update active state on nav tabs if clicked from header
+            if (event && event.target.classList.contains('nav-tab')) {
+                document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
+                event.target.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
