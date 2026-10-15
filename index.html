@@ -73,10 +73,61 @@ a:hover{color:#f00691}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 
 .avatar{position:relative}.avatar-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;image-rendering:auto;z-index:2;background:#eac4ff}.avatar:has(.avatar-photo:not([hidden])) svg{display:none}.hero-meta{margin-top:9px;font-size:12px}.legal-panel .legal-copy{max-width:850px}.legal-copy h3{margin-top:22px}.legal-copy h3:first-child{margin-top:0}.legal-copy p{margin:8px 0 14px}.footer a{margin-left:12px}.nav button{min-width:95px}
+
+/* === DESKTOP-IN-DESKTOP / PIXEL OS UPGRADE === */
+:root{--desk-ink:#fce7ff;--desk-violet:#261044;--desk-pink:#ff4fca;--desk-blue:#8cf4ff}
+body{padding:36px 18px 78px;background:#241039;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),radial-gradient(ellipse at 18% 16%,#7435a0 0,transparent 35%),radial-gradient(ellipse at 85% 75%,#4b1f85 0,transparent 35%),linear-gradient(145deg,#180c2c,#35205c 60%,#190c2b);background-size:8px 8px,8px 8px,auto,auto,auto;background-attachment:fixed}
+body:before{content:"";opacity:.2;background-image:radial-gradient(#ffb9f1 1px,transparent 1.5px);background-size:19px 19px}
+body:after{content:"";inset:0;background:linear-gradient(transparent 96%,rgba(255,255,255,.025) 100%);background-size:100% 4px;opacity:.5}
+.site{width:min(1050px,calc(100vw - 270px));max-width:none;margin:24px auto 30px;position:relative;z-index:4;border:3px solid #10081e;border-radius:0;box-shadow:7px 7px 0 #10081e,0 0 0 2px #ff6cd5,0 0 35px #e33cff55;overflow:hidden;background:#fff4ff;transition:width .2s,margin .2s}
+.windowbar{height:34px;display:flex;align-items:center;gap:10px;padding:0 10px;background:linear-gradient(90deg,#ff59ca,#c77aff 58%,#8e8cff);border-bottom:3px solid #241039;color:#230a3d;font:8px/1.5 "Press Start 2P",monospace;cursor:grab;user-select:none;touch-action:none}
+.windowbar:active{cursor:grabbing}.window-title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.window-icon{font-size:16px}.window-controls{display:flex;gap:5px}.window-control{width:20px;height:18px;border:2px solid #241039;background:#fff0fc;box-shadow:2px 2px 0 #241039;color:#241039;font:bold 12px/1 Arial;cursor:pointer;padding:0}.window-control.close{background:#ff76a9}.window-control.max{background:#b9ffbd}.window-control:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.site .topbar{border-bottom:2px solid var(--hot)}
+.site.window-minimized{display:none}
+.site.window-maximized{position:relative;width:calc(100vw - 42px);max-width:none;margin:8px auto 70px;left:auto!important;top:auto!important}
+.desktop-icons{position:absolute;z-index:2;top:88px;left:18px;display:flex;flex-direction:column;gap:18px;width:90px}
+.desktop-icon{width:86px;min-height:77px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;padding:6px 3px;border:1px solid transparent;background:transparent;color:#fff4ff;font:7px/1.8 "Press Start 2P",monospace;text-align:center;text-shadow:1px 2px #17051f;cursor:pointer}
+.desktop-icon .desktop-glyph{font:29px/1.2 "Nunito",sans-serif;filter:drop-shadow(2px 2px 0 #17051f);image-rendering:pixelated}
+.desktop-icon:hover,.desktop-icon:focus-visible{background:#dca7ff32;border:1px dotted #ffe3ff;outline:0}
+.desktop-right{left:auto;right:18px;align-items:center}
+.desktop-widget{position:absolute;z-index:2;right:20px;top:390px;width:178px;padding:10px;border:2px solid #f6d3ff;background:#281342d9;color:#ffe9ff;box-shadow:4px 4px 0 #10081e;font:7px/2 "Press Start 2P",monospace}
+.widget-head{padding-bottom:6px;margin-bottom:6px;border-bottom:1px dashed #ff8de1;color:#ffb9ef}
+.widget-line{display:flex;justify-content:space-between;gap:8px}.widget-line b{color:#9bffff;font-weight:400}
+.taskbar{position:fixed;z-index:20;bottom:0;left:0;right:0;min-height:47px;display:flex;align-items:center;gap:8px;padding:6px 12px;border-top:3px solid #10081e;background:linear-gradient(90deg,#ff65cb,#c78cff 45%,#8d8cff);box-shadow:0 -4px 0 #ffffff25;color:#210834}
+.start-button{display:flex;align-items:center;gap:7px;padding:7px 11px;border:2px solid #241039;background:#fff0fc;box-shadow:3px 3px 0 #241039;color:#241039;font:8px/1.6 "Press Start 2P",monospace;cursor:pointer;white-space:nowrap}
+.start-button:hover{background:#fff17b}.start-star{font-size:17px}
+.task-app{display:flex;align-items:center;gap:7px;max-width:260px;min-width:130px;padding:7px 10px;border:2px solid #241039;background:#e7baff;color:#241039;font:7px/1.5 "Press Start 2P",monospace;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.task-app.active{background:#fff0fc;box-shadow:inset 2px 2px 0 #b56ee5}.task-spacer{flex:1}
+.task-status{font:8px/1.6 "Press Start 2P",monospace;white-space:nowrap}
+.start-menu{position:fixed;z-index:30;left:12px;bottom:55px;width:min(285px,calc(100vw - 24px));padding:12px;border:3px solid #241039;background:#fff0fc;box-shadow:6px 6px 0 #10081e;display:none}
+.start-menu.open{display:block;animation:menu-in .12s steps(2,end)}
+@keyframes menu-in{from{transform:translateY(8px);opacity:.5}to{transform:none;opacity:1}}
+.start-menu-head{padding:12px;margin-bottom:10px;background:#2b1048;color:#ffdafa;font:8px/2 "Press Start 2P",monospace}
+.start-menu button{width:100%;display:flex;align-items:center;gap:10px;padding:10px;border:0;border-bottom:1px dashed #d69be8;background:transparent;text-align:left;color:#38134e;font:8px/1.7 "Press Start 2P",monospace;cursor:pointer}
+.start-menu button:hover{background:#ffd9f3}
+.desktop-tooltip{position:fixed;z-index:50;left:50%;top:12px;transform:translateX(-50%);padding:8px 12px;background:#fff0fc;border:2px solid #241039;box-shadow:3px 3px 0 #10081e;color:#321044;font:8px/1.7 "Press Start 2P",monospace;display:none}
+@media(max-width:900px){.site{width:calc(100vw - 36px);margin:8px auto 24px}.desktop-icons{top:58px;left:4px;width:auto;flex-direction:row;gap:2px}.desktop-icon{width:60px;min-height:53px;font-size:6px;padding:3px 1px}.desktop-icon .desktop-glyph{font-size:21px}.desktop-right{display:none}.desktop-widget{display:none}.windowbar{height:31px}.site.window-maximized{width:calc(100vw - 20px);margin:4px auto 65px}body{padding:100px 8px 65px}}
+@media(max-width:520px){body{padding:87px 5px 63px}.site{width:calc(100vw - 16px);margin:8px auto 18px}.desktop-icons{top:8px;left:3px;right:3px;justify-content:center}.desktop-icon{width:63px;min-height:50px;font-size:5px}.windowbar{font-size:6px;padding:0 6px}.window-control{width:17px;height:16px}.taskbar{padding:5px 6px;gap:5px;min-height:43px}.start-button{padding:6px 7px;font-size:7px}.start-button .start-label{display:none}.task-app{min-width:0;max-width:155px;padding:6px;font-size:6px}.task-status{font-size:6px}.site.window-maximized{width:calc(100vw - 12px)}}
+@media(prefers-reduced-motion:reduce){.start-menu.open{animation:none}}
+
 </style>
 </head>
 <body>
-<div class="site">
+
+<div class="desktop-icons" aria-label="Desktop shortcuts">
+<button class="desktop-icon" data-open-tab="home"><span class="desktop-glyph">🖥️</span><span>MY PROFILE</span></button>
+<button class="desktop-icon" data-open-tab="projects"><span class="desktop-glyph">📁</span><span>PROJECTS</span></button>
+<button class="desktop-icon" data-open-tab="research"><span class="desktop-glyph">🧬</span><span>RESEARCH</span></button>
+<button class="desktop-icon" data-open-tab="skills"><span class="desktop-glyph">💾</span><span>SKILLS.DAT</span></button>
+</div>
+<div class="desktop-icons desktop-right" aria-label="Game shortcuts">
+<button class="desktop-icon" data-open-tab="arcade"><span class="desktop-glyph">🕹️</span><span>ARCADE.EXE</span></button>
+<button class="desktop-icon" data-open-tab="experience"><span class="desktop-glyph">📼</span><span>EXPERIENCE</span></button>
+<button class="desktop-icon" data-open-tab="privacy"><span class="desktop-glyph">🔒</span><span>PRIVACY.TXT</span></button>
+</div>
+<div class="desktop-widget" aria-label="Desktop system widget"><div class="widget-head">SYSTEM MONITOR</div><div class="widget-line"><span>STATUS</span><b>ONLINE</b></div><div class="widget-line"><span>MODE</span><b>PIXEL OS</b></div><div class="widget-line"><span>PLAYER</span><b>01</b></div><div class="widget-line"><span>MISSION</span><b>BUILD</b></div><div style="margin-top:8px;color:#ffb8ef">✦ BIOLOGY × CODE ✦</div></div>
+<div class="site" id="portfolio-window">
+<div class="windowbar" id="windowbar"><span class="window-icon">🪟</span><span class="window-title">ANUBHUTI.EXE — PORTFOLIO NAVIGATOR</span><span class="window-controls"><button class="window-control" id="window-min" aria-label="Minimize window" title="Minimize">_</button><button class="window-control max" id="window-max" aria-label="Maximize window" title="Maximize">□</button><button class="window-control close" id="window-close" aria-label="Minimize window" title="Hide window">×</button></span></div>
 <div class="topbar"><span>ANUBHUTI.EXE // PERSONAL PORTFOLIO</span><span>PLAYER 01 · BIOTECH STUDENT</span></div>
 <header class="hero">
 <div><div class="eyebrow">WELCOME TO MY LITTLE INTERNET CORNER ✦</div><h1>Anubhuti Goswami</h1><div class="subtitle">B.TECH BIOTECHNOLOGY STUDENT @ LPU</div><div class="meta hero-meta">FARIDABAD, HARYANA · CGPA 7.58/10 · 60% SCHOLARSHIP</div><p class="intro">Second-year biotechnology undergraduate exploring genetics, microbiology, computational biology, and AI applications in life sciences. Interested in turning curious questions into research, code, and interactive learning projects.</p><div class="tags"><span class="tag">BIOLOGY × CODE</span><span class="tag">RESEARCH MODE</span><span class="tag">PLAYER 01</span></div></div>
@@ -101,9 +152,39 @@ a:hover{color:#f00691}
 </main>
 <footer class="footer"><span>© 2026 ANUBHUTI GOSWAMI · MADE OF PIXELS & CURIOSITY</span><span><a href="mailto:anubhutiworkk@gmail.com">CONTACT</a><a href="#" data-legal-tab="privacy">PRIVACY</a><a href="#" data-legal-tab="terms">TERMS</a><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">GITHUB ↗</a></span></footer>
 </div>
+
+<div class="start-menu" id="start-menu" role="menu" aria-label="Start menu"><div class="start-menu-head">✦ ANUBHUTI OS<br>PLAYER 01 ONLINE</div><button data-open-tab="home">🖥️ &nbsp; PROFILE.EXE</button><button data-open-tab="projects">📁 &nbsp; PROJECT FILES</button><button data-open-tab="research">🧬 &nbsp; RESEARCH LOG</button><button data-open-tab="arcade">🕹️ &nbsp; LAUNCH ARCADE</button><button data-open-tab="experience">📼 &nbsp; EXPERIENCE</button><button data-open-tab="skills">💾 &nbsp; SKILLS DATABASE</button></div>
+<div class="taskbar"><button class="start-button" id="start-button" aria-expanded="false"><span class="start-star">✿</span><span class="start-label">START</span></button><button class="task-app active" id="task-app"><span>🪟</span><span>ANUBHUTI.EXE — PORTFOLIO</span></button><span class="task-spacer"></span><span class="task-status">WI-FI ▰ ▰</span><span class="task-status" id="desktop-clock">00:00</span></div>
+<div class="desktop-tooltip" id="desktop-tooltip" role="status"></div>
+
 <script>
 (function(){
 'use strict';
+
+/* Desktop shell interactions */
+var appWindow=document.getElementById('portfolio-window');
+var windowBar=document.getElementById('windowbar');
+var startButton=document.getElementById('start-button');
+var startMenu=document.getElementById('start-menu');
+var taskApp=document.getElementById('task-app');
+var maxButton=document.getElementById('window-max');
+var dragState=null;
+function openWindow(){appWindow.classList.remove('window-minimized');taskApp.classList.add('active');}
+function minimizeWindow(){appWindow.classList.add('window-minimized');taskApp.classList.remove('active');}
+taskApp.addEventListener('click',function(){if(appWindow.classList.contains('window-minimized'))openWindow();else{appWindow.classList.remove('window-minimized');appWindow.scrollIntoView({behavior:'smooth',block:'start'});}});
+document.getElementById('window-min').addEventListener('click',function(e){e.stopPropagation();minimizeWindow();});
+document.getElementById('window-close').addEventListener('click',function(e){e.stopPropagation();minimizeWindow();});
+maxButton.addEventListener('click',function(e){e.stopPropagation();appWindow.classList.toggle('window-maximized');if(appWindow.classList.contains('window-maximized')){appWindow.style.left='';appWindow.style.top='';appWindow.style.transform='';maxButton.textContent='❐';}else{appWindow.style.left='';appWindow.style.top='';appWindow.style.transform='';maxButton.textContent='□';}});
+windowBar.addEventListener('pointerdown',function(e){if(e.target.closest('button')||appWindow.classList.contains('window-maximized')||window.innerWidth<=900)return;var rect=appWindow.getBoundingClientRect();dragState={x:e.clientX,y:e.clientY,left:rect.left,top:rect.top};appWindow.style.position='fixed';appWindow.style.margin='0';appWindow.style.width=rect.width+'px';appWindow.style.left=rect.left+'px';appWindow.style.top=rect.top+'px';appWindow.style.zIndex='10';windowBar.setPointerCapture(e.pointerId);});
+windowBar.addEventListener('pointermove',function(e){if(!dragState)return;var dx=e.clientX-dragState.x,dy=e.clientY-dragState.y;var x=Math.max(0,Math.min(window.innerWidth-appWindow.offsetWidth,dragState.left+dx));var y=Math.max(0,Math.min(window.innerHeight-90,dragState.top+dy));appWindow.style.left=x+'px';appWindow.style.top=y+'px';});
+function stopDrag(){dragState=null;}
+windowBar.addEventListener('pointerup',stopDrag);windowBar.addEventListener('pointercancel',stopDrag);
+startButton.addEventListener('click',function(){var open=startMenu.classList.toggle('open');startButton.setAttribute('aria-expanded',open?'true':'false');});
+document.addEventListener('click',function(e){if(!e.target.closest('#start-menu')&&!e.target.closest('#start-button')){startMenu.classList.remove('open');startButton.setAttribute('aria-expanded','false');}});
+document.querySelectorAll('[data-open-tab]').forEach(function(button){button.addEventListener('click',function(){openWindow();var tab=button.getAttribute('data-open-tab');switchTab(tab);startMenu.classList.remove('open');startButton.setAttribute('aria-expanded','false');if(window.innerWidth<=900)appWindow.scrollIntoView({behavior:'smooth',block:'start'});});});
+function tickClock(){var now=new Date();document.getElementById('desktop-clock').textContent=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');}
+tickClock();setInterval(tickClock,15000);
+
 var tabs=Array.prototype.slice.call(document.querySelectorAll('.nav-btn'));
 var panels=Array.prototype.slice.call(document.querySelectorAll('.panel'));
 function switchTab(name){
