@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ff35b8">
-<title>Anubhuti Goswami | Pink Pixel Arcade</title>
+<title>Anubhuti Goswami | Pink Cybercore Portfolio</title>
 <meta name="description" content="Anubhuti Goswami — B.Tech Biotechnology student at LPU exploring genetics, microbiology, bioinformatics, and computational life sciences.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -344,6 +344,47 @@ a{color:#a00087}a:hover{color:#f0008c;text-shadow:0 0 7px #ffb2e8}
 a,button{cursor:pointer}
 @media(max-width:700px){h1{font-size:clamp(17px,5vw,27px);line-height:1.8}.card:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){.card{transition:none}}
+
+
+/* === NO COMPUTER SHELL: full-page pink cybercore / maximalist indie web === */
+:root{--pink:#ff35b8;--hot:#ff078c;--purple:#8b35ff;--deep:#351044;--lav:#d8b1ff;--cream:#fff4ff;--ink:#35104e;--yellow:#fff17b;--cyan:#9bffff}
+html{scroll-padding-top:18px}
+body{padding:clamp(12px,2.2vw,30px);background-color:#ff35b8;background-image:radial-gradient(circle,#fff8ff 0 1.5px,transparent 2.4px),radial-gradient(circle,rgba(255,255,255,.48) 0 1px,transparent 2px),linear-gradient(135deg,#ff35b8 0%,#ff9be4 32%,#c47aff 66%,#7d43ff 100%);background-size:29px 29px,53px 53px,100% 100%;cursor:crosshair}
+body:before{content:"✦  ☆  ♡  ✧  🎀  ✿  ★  ✦";line-height:16vh;letter-spacing:1.4vw;opacity:.38}
+body:after{background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.08) 3px 4px);opacity:.5}
+.computer-shell{display:contents!important}
+.computer-shell:before,.computer-shell:after{display:none!important;content:none!important}
+.desktop-notes,.desktop-icons,.desktop-widget,.start-menu,.taskbar,.desktop-tooltip,.computer-controls,.computer-keyboard{display:none!important}
+.site{width:min(1240px,100%);max-width:1240px;margin:0 auto 36px;border:4px solid #351044;box-shadow:10px 10px 0 #351044,16px 16px 0 rgba(255,31,172,.45);overflow:visible;background:#fff4ff;position:relative}
+.windowbar{display:none!important}
+.site .topbar{min-height:38px;padding:12px 18px;background:linear-gradient(90deg,#ff078c,#d83fff,#7847ff);color:#fff7ff;border-bottom:4px solid #351044;font-size:8px;letter-spacing:.04em}
+.hero{grid-template-columns:minmax(0,1fr) 155px;padding:clamp(22px,4vw,52px);background:linear-gradient(125deg,#ff9cde 0%,#fff0ff 44%,#d5aaff 100%);border-bottom:4px solid #351044}
+.hero:after{content:"✦ INTERNET GIRL ✦";position:absolute;right:20px;bottom:13px;font:7px/1.8 "Press Start 2P",monospace;color:#8b24c8;transform:rotate(-3deg)}
+h1{max-width:900px}
+.nav{position:sticky;top:0;z-index:20;border-bottom:4px solid #351044;box-shadow:0 4px 0 rgba(255,7,140,.25)}
+.nav button{padding:13px 10px}
+.panel{padding:clamp(20px,3.6vw,42px);background-color:#fff6ff;background-image:radial-gradient(#e5baff 1.2px,transparent 1.6px),linear-gradient(135deg,rgba(255,53,184,.04),rgba(139,53,255,.06));background-size:20px 20px,100% 100%}
+.grid{gap:20px}
+.card{border-width:3px;box-shadow:6px 6px 0 #c46aff,10px 10px 0 rgba(255,53,184,.12);transition:transform .18s ease,box-shadow .18s ease}
+.card:nth-child(3n+1){transform:rotate(-.5deg)}
+.card:nth-child(3n+2){transform:rotate(.6deg)}
+.card:hover{transform:translateY(-4px) rotate(0deg);box-shadow:8px 8px 0 #ff35b8,12px 12px 0 #c46aff}
+h2{position:relative;text-wrap:balance}
+h2:after{content:" ✧";color:#ff078c}
+.tag{box-shadow:2px 2px 0 #351044;transform:rotate(-1deg)}
+.tag:nth-child(even){transform:rotate(1.5deg);background:#e8d2ff}
+.btn{box-shadow:4px 4px 0 #8b35ff}
+.footer{background:linear-gradient(100deg,#351044,#642078,#351044);border-top:4px solid #ff078c}
+.avatar{transform:rotate(2deg);box-shadow:7px 7px 0 #ff078c,12px 12px 0 #8b35ff}
+.avatar:before{content:"♡";position:absolute;z-index:2;left:-17px;bottom:-17px;font-size:35px;color:#ff078c;text-shadow:2px 2px #fff}
+.arcade-grid{gap:22px}
+.machine{border-color:#351044;box-shadow:7px 7px 0 #ff35b8,11px 11px 0 #8b35ff}
+a,button{cursor:crosshair}
+a:focus-visible,button:focus-visible{outline:3px dashed #ff078c;outline-offset:4px}
+@keyframes sticker-wiggle{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-5px)}}
+.hero .sticker{animation:sticker-wiggle 3s ease-in-out infinite}
+@media(max-width:650px){body{padding:8px}.site{border-width:3px;box-shadow:5px 5px 0 #351044,8px 8px 0 rgba(255,31,172,.45)}.hero{grid-template-columns:1fr;gap:22px}.avatar{grid-row:1;width:110px}.hero:after{display:none}.nav{position:relative}.nav button{flex:1 0 33%;font-size:7px;padding:10px 5px}.grid,.arcade-grid{grid-template-columns:1fr}.card:nth-child(n){transform:none}.panel{padding:18px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
 </style>
 </head>
