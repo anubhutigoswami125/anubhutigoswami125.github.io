@@ -168,9 +168,74 @@ h3{font:600 17px/1.35 "Fredoka","Nunito",sans-serif;color:#6322a9;letter-spacing
 .start-button{background:#fff8ff}.task-app{background:#d7c4ff}
 a{color:#6725c7}a:hover{color:#e21c81}
 @media(max-width:700px){h1{font-size:clamp(28px,8vw,40px)}h2{font-size:22px}.cv-section>h3{font-size:20px}.cv-entry{padding:14px}.cv-entry h3{font-size:18px}.cv-prose p{font-size:14px}}
+
+/* === TABLETOP PIXEL COMPUTER HOUSING === */
+body{padding:26px 10px 110px;background:#e6b4d0;background-image:linear-gradient(90deg,rgba(71,31,85,.07) 1px,transparent 1px),linear-gradient(rgba(71,31,85,.07) 1px,transparent 1px),radial-gradient(ellipse at 50% 20%,#fff0cb 0%,#e9b8d1 45%,#b98bc9 100%);background-size:12px 12px,12px 12px,100% 100%;background-attachment:fixed}
+body:before{content:"";background-image:radial-gradient(#fff 1px,transparent 1.6px),radial-gradient(#8b4b9d 1px,transparent 1.6px);background-size:19px 19px,31px 31px;opacity:.16}
+body:after{background:linear-gradient(transparent 50%,rgba(54,20,65,.035) 50%);background-size:100% 4px;opacity:.6}
+.computer-shell{position:relative;isolation:isolate;width:min(1480px,98vw);margin:18px auto 0;padding:32px 28px 70px;background:linear-gradient(135deg,#fff1dc 0%,#e9d5ce 16%,#cbb8c4 48%,#f4e5d6 76%,#c9b6c9 100%);border:5px solid #4c3a58;box-shadow:inset 0 0 0 3px #fff7e9,inset 0 0 0 7px #aa91ad,8px 9px 0 #47324e,12px 14px 0 rgba(47,24,57,.35);overflow:visible}
+.computer-shell:before{content:"";position:absolute;z-index:-1;inset:13px 13px 60px;background:#241239;border:4px solid #483550;box-shadow:inset 0 0 0 3px #8f7896,inset 0 0 0 6px #160b23;pointer-events:none}
+.computer-shell:after{content:"";position:absolute;left:18px;right:18px;bottom:40px;height:7px;background:repeating-linear-gradient(90deg,#6b586f 0 3px,#c8b4c7 3px 6px);opacity:.75;pointer-events:none}
+.computer-shell .site{width:min(1050px,calc(100% - 250px));max-width:none;margin:24px auto 30px;border:4px solid #27103e;box-shadow:5px 5px 0 #13091d,0 0 0 2px #ffe94f,0 0 0 5px #ff3fbf;background:#fff8ff}
+.computer-shell .site.window-maximized{width:calc(100% - 12px);margin:8px auto 30px}
+.computer-shell .desktop-icons{top:92px;left:21px}
+.computer-shell .desktop-right{left:auto;right:21px}
+.computer-shell .desktop-widget{right:22px;top:400px}
+.computer-shell .desktop-notes{z-index:3}
+.computer-controls{position:absolute;left:24px;right:24px;bottom:12px;height:24px;display:flex;align-items:center;gap:13px;color:#68536e;font:7px/1.5 "Press Start 2P",monospace}
+.speaker-grille{display:block;width:115px;height:12px;background:repeating-linear-gradient(90deg,#84718a 0 2px,#d8c8d4 2px 5px);border:1px solid #9d899f;box-shadow:inset 0 1px 1px #fff}
+.computer-badge{margin-left:auto;padding:4px 7px;border:1px solid #a996a8;background:linear-gradient(#f9ede4,#d7c5d4);box-shadow:1px 1px 0 #9a879e;letter-spacing:.3px}
+.power-led{width:9px;height:9px;border:2px solid #65506d;border-radius:50%;background:#7df58b;box-shadow:0 0 7px #6bf58d}
+.computer-keyboard{position:relative;width:min(980px,88vw);height:105px;margin:-1px auto 0;padding:15px 24px 12px;background:linear-gradient(180deg,#f4e6d8 0%,#d0becd 60%,#b7a4bb 100%);border:4px solid #62506a;border-top:2px solid #f9e9e0;box-shadow:inset 0 0 0 2px #fff4e6,5px 8px 0 #47324e,9px 12px 0 rgba(47,24,57,.28);clip-path:polygon(3% 0,97% 0,100% 100%,0 100%)}
+.keyboard-topline{height:5px;margin:0 4% 8px;background:repeating-linear-gradient(90deg,#99849e 0 4px,#d7c5d5 4px 8px);opacity:.8}
+.key-row{height:19px;margin:0 2% 6px;background:repeating-linear-gradient(90deg,#fdf1e5 0 28px,#a995ad 28px 31px,#e0cedb 31px 34px);border:1px solid #9b879e;box-shadow:0 2px 0 #88758e}
+.key-row.short-row{width:78%;margin-left:11%;height:16px;background:repeating-linear-gradient(90deg,#fdf1e5 0 25px,#a995ad 25px 28px,#e0cedb 28px 31px)}
+.keyboard-trackpad{position:absolute;right:8%;bottom:10px;width:100px;height:12px;border:2px solid #b09cb3;background:#d8c7d8;box-shadow:inset 0 1px 2px #9e8aa5}
+.computer-shell .taskbar{left:calc((100vw - min(1480px,98vw))/2 + 33px);right:calc((100vw - min(1480px,98vw))/2 + 33px);bottom:calc(105px + 20px);border:2px solid #27103e;box-shadow:3px 3px 0 #160b23}
+.computer-shell .start-menu{position:fixed}
+@media(max-width:900px){
+ body{padding:18px 8px 85px}
+ .computer-shell{width:calc(100vw - 18px);padding:20px 10px 65px;margin-top:12px;border-width:4px;box-shadow:inset 0 0 0 2px #fff7e9,5px 6px 0 #47324e}
+ .computer-shell:before{inset:8px 8px 54px;border-width:3px}
+ .computer-shell:after{left:12px;right:12px;bottom:35px}
+ .computer-shell .site{width:calc(100% - 8px);margin:15px auto 20px}
+ .computer-shell .site.window-maximized{width:calc(100% - 8px);margin:6px auto 20px}
+ .computer-shell .desktop-icons{top:42px;left:3px}
+ .computer-shell .desktop-right{left:auto;right:3px}
+ .computer-shell .desktop-widget{display:none}
+ .computer-controls{left:14px;right:14px;bottom:7px;height:20px}
+ .speaker-grille{width:60px;height:8px}
+ .computer-badge{font-size:5px}
+ .computer-keyboard{width:86vw;height:82px;padding:10px 15px 8px}
+ .key-row{height:13px;margin-bottom:5px}
+ .key-row.short-row{height:11px}
+ .keyboard-trackpad{width:65px;height:8px;bottom:7px}
+ .computer-shell .taskbar{left:12px;right:12px;bottom:calc(82px + 16px)}
+}
+@media(max-width:520px){
+ body{padding:12px 4px 75px}
+ .computer-shell{width:calc(100vw - 10px);padding:13px 4px 58px;margin-top:8px;border-width:3px;box-shadow:inset 0 0 0 2px #fff7e9,3px 4px 0 #47324e}
+ .computer-shell:before{inset:6px 5px 48px;border-width:2px}
+ .computer-shell:after{left:8px;right:8px;bottom:31px;height:5px}
+ .computer-shell .site{width:calc(100% - 4px);margin:12px auto 15px}
+ .computer-shell .desktop-icons{top:37px;left:0}
+ .computer-shell .desktop-right{right:0}
+ .computer-controls{left:9px;right:9px;bottom:5px;gap:6px}
+ .speaker-grille{width:36px}
+ .computer-badge{font-size:4px;padding:3px}
+ .computer-keyboard{width:88vw;height:64px;padding:8px 10px 6px;border-width:3px}
+ .keyboard-topline{margin-bottom:5px;height:3px}
+ .key-row{height:10px;margin-bottom:4px}
+ .key-row.short-row{height:8px}
+ .keyboard-trackpad{width:45px;height:6px;bottom:5px}
+ .computer-shell .taskbar{left:6px;right:6px;bottom:calc(64px + 12px);min-height:40px}
+}
+@media(prefers-reduced-motion:reduce){.computer-shell,.computer-keyboard{scroll-behavior:auto}}
+
 </style>
 </head>
 <body>
+<div class="computer-shell" id="computer-shell" aria-label="Retro tabletop computer display">
 
 
 <div class="desktop-notes" aria-label="Random motivational sticky notes">
@@ -268,6 +333,9 @@ a{color:#6725c7}a:hover{color:#e21c81}
 <div class="start-menu" id="start-menu" role="menu" aria-label="Start menu"><div class="start-menu-head">✦ ANUBHUTI OS<br>PLAYER 01 ONLINE</div><button data-open-tab="home">🖥️ &nbsp; PROFILE.EXE</button><button data-open-tab="projects">📁 &nbsp; PROJECT FILES</button><button data-open-tab="research">🧬 &nbsp; RESEARCH LOG</button><button data-open-tab="arcade">🕹️ &nbsp; LAUNCH ARCADE</button><button data-open-tab="cv">📄 &nbsp; FULL CV / RESUME</button><button data-open-tab="experience">📼 &nbsp; EXPERIENCE</button><button data-open-tab="skills">💾 &nbsp; SKILLS DATABASE</button></div>
 <div class="taskbar"><button class="start-button" id="start-button" aria-expanded="false"><span class="start-star">✿</span><span class="start-label">START</span></button><button class="task-app active" id="task-app"><span>🪟</span><span>ANUBHUTI.EXE — PORTFOLIO</span></button><span class="task-spacer"></span><span class="task-status">WI-FI ▰ ▰</span><span class="task-status" id="desktop-clock">00:00</span></div>
 <div class="desktop-tooltip" id="desktop-tooltip" role="status"></div>
+<div class="computer-controls" aria-hidden="true"><span class="speaker-grille"></span><span class="computer-badge">AG · PIXEL STATION 98</span><span class="power-led"></span></div>
+</div>
+<div class="computer-keyboard" aria-hidden="true"><div class="keyboard-topline"></div><div class="key-row"></div><div class="key-row short-row"></div><div class="keyboard-trackpad"></div></div>
 
 <script>
 (function(){
