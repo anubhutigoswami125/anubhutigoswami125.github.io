@@ -236,6 +236,65 @@ body:after{background:linear-gradient(transparent 50%,rgba(54,20,65,.035) 50%);b
 }
 @media(prefers-reduced-motion:reduce){.computer-shell,.computer-keyboard{scroll-behavior:auto}}
 
+
+/* === MAGENTA PINK CRT + IN-SCREEN CV SCROLLING + RAINBOW KEYBOARD === */
+body{padding:16px 10px 16px;background-color:#ff00a8;background-image:radial-gradient(circle,#ffb7ee 0 1.6px,transparent 2px),linear-gradient(135deg,#ff00a8 0%,#ff168d 38%,#ff42ca 67%,#c900ff 100%);background-size:19px 19px,100% 100%;background-attachment:fixed}
+body:before{background-image:radial-gradient(#fff 1px,transparent 1.8px),radial-gradient(#ff8ddd 1px,transparent 1.8px);background-size:17px 17px,31px 31px;opacity:.38}
+body:after{background:linear-gradient(transparent 50%,rgba(110,0,65,.055) 50%);background-size:100% 4px;opacity:.7}
+.computer-shell{height:calc(100vh - 32px);min-height:610px;max-height:1200px;display:flex;flex-direction:column;gap:0;padding:18px 28px 12px;background:linear-gradient(135deg,#ff91df 0%,#ff00a8 20%,#ff43c9 48%,#ff168f 75%,#c900ff 100%);border:5px solid #6d003f;box-shadow:inset 0 0 0 3px #ffc7f0,inset 0 0 0 7px #e40091,8px 9px 0 #5b003e,12px 14px 0 rgba(72,0,55,.42)}
+.computer-shell:before{inset:10px 13px 142px;background:#210b35;border:4px solid #78005b;box-shadow:inset 0 0 0 3px #ff73d4,inset 0 0 0 7px #12061e}
+.computer-shell:after{left:18px;right:18px;bottom:126px;height:6px;background:repeating-linear-gradient(90deg,#a90076 0 3px,#ff9ae1 3px 6px);opacity:.95}
+.computer-shell .site{flex:1 1 auto;height:auto;min-height:0;max-height:none;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-color:#ff35b8 #3a1454;scrollbar-width:thin;margin:10px auto 8px;border-color:#4b0647;box-shadow:5px 5px 0 #25001d,0 0 0 2px #ffe94f,0 0 0 5px #ff3fbf}
+.computer-shell .site::-webkit-scrollbar{width:13px}
+.computer-shell .site::-webkit-scrollbar-track{background:#351047;border-left:2px solid #ff8cde}
+.computer-shell .site::-webkit-scrollbar-thumb{background:linear-gradient(#ff3fbf,#ff9d27,#ffe94f,#6bf58d,#48e8ff,#853dff);border:2px solid #351047}
+.computer-shell .site.window-maximized{flex:1 1 auto;height:auto;min-height:0}
+.computer-controls{position:relative;left:auto;right:auto;bottom:auto;flex:0 0 20px;height:20px;margin:0 18px 5px;color:#680047}
+.speaker-grille{background:repeating-linear-gradient(90deg,#ff28b9 0 2px,#ffb4e8 2px 5px);border-color:#a0006f;box-shadow:inset 0 1px 1px #fff}
+.computer-badge{border-color:#a90076;background:linear-gradient(#fff0fa,#ff85d9);color:#680047;box-shadow:1px 1px 0 #a0006f}
+.power-led{border-color:#680047;background:#6bf58d;box-shadow:0 0 8px #6bf58d}
+.computer-keyboard{flex:0 0 105px;height:105px;width:min(980px,88vw);margin:0 auto 0;padding:12px 24px 10px;background:linear-gradient(180deg,#ff6bd2 0%,#f000a6 55%,#ad007f 100%);border:4px solid #680047;border-top:3px solid #ffc3ec;box-shadow:inset 0 0 0 2px #ffb4e8,5px 6px 0 #5b003e,9px 9px 0 rgba(72,0,55,.28);clip-path:polygon(3% 0,97% 0,100% 100%,0 100%)}
+.keyboard-topline{height:5px;margin:0 4% 7px;background:linear-gradient(90deg,#ff3fbf,#ff765f,#ff9d27,#ffe94f,#6bf58d,#48e8ff,#853dff);border:1px solid #690047;opacity:1}
+.key-row,.key-row.short-row{height:18px;margin:0 2% 6px;border:2px solid #4c0749;box-shadow:0 3px 0 #690047;background:repeating-linear-gradient(90deg,#ff3fbf 0 23px,#4c0749 23px 26px,#ff765f 26px 49px,#4c0749 49px 52px,#ff9d27 52px 75px,#4c0749 75px 78px,#ffe94f 78px 101px,#4c0749 101px 104px,#6bf58d 104px 127px,#4c0749 127px 130px,#48e8ff 130px 153px,#4c0749 153px 156px,#853dff 156px 179px,#4c0749 179px 182px)}
+.key-row.short-row{width:78%;margin-left:11%;height:15px}
+.keyboard-trackpad{right:8%;bottom:8px;width:100px;height:10px;border:2px solid #680047;background:linear-gradient(90deg,#ff3fbf,#ff9d27,#ffe94f,#6bf58d,#48e8ff,#853dff);box-shadow:inset 0 1px 2px #a0006f}
+.computer-shell .taskbar{left:calc((100vw - min(1480px,98vw))/2 + 33px);right:calc((100vw - min(1480px,98vw))/2 + 33px);bottom:calc(105px + 20px);border:2px solid #4b0647;box-shadow:3px 3px 0 #26001d}
+@media(max-width:900px){
+ body{padding:8px}
+ .computer-shell{width:calc(100vw - 16px);height:calc(100svh - 16px);min-height:570px;padding:13px 10px 9px;margin:0 auto;border-width:4px;box-shadow:inset 0 0 0 2px #ffc7f0,5px 6px 0 #5b003e}
+ .computer-shell:before{inset:7px 8px 119px;border-width:3px}
+ .computer-shell:after{left:12px;right:12px;bottom:106px}
+ .computer-shell .site{width:calc(100% - 8px);margin:8px auto 5px}
+ .computer-shell .site.window-maximized{width:calc(100% - 8px);margin:5px auto}
+ .computer-shell .desktop-icons{top:42px;left:3px}
+ .computer-shell .desktop-right{left:auto;right:3px}
+ .computer-controls{margin:0 8px 4px;height:17px;flex-basis:17px}
+ .computer-keyboard{width:86vw;flex-basis:82px;height:82px;padding:9px 15px 7px}
+ .key-row{height:13px;margin-bottom:5px}
+ .key-row.short-row{height:11px}
+ .keyboard-trackpad{width:65px;height:8px;bottom:6px}
+ .computer-shell .taskbar{left:12px;right:12px;bottom:calc(82px + 16px)}
+}
+@media(max-width:520px){
+ body{padding:5px}
+ .computer-shell{width:calc(100vw - 10px);height:calc(100svh - 10px);min-height:540px;padding:9px 4px 7px;border-width:3px;box-shadow:inset 0 0 0 2px #ffc7f0,3px 4px 0 #5b003e}
+ .computer-shell:before{inset:5px 5px 96px;border-width:2px}
+ .computer-shell:after{left:8px;right:8px;bottom:85px;height:5px}
+ .computer-shell .site{width:calc(100% - 4px);margin:6px auto 3px}
+ .computer-shell .desktop-icons{top:37px;left:0}
+ .computer-shell .desktop-right{right:0}
+ .computer-controls{left:auto;right:auto;margin:0 4px 3px;gap:6px;height:15px;flex-basis:15px}
+ .speaker-grille{width:36px;height:8px}
+ .computer-badge{font-size:4px;padding:3px}
+ .computer-keyboard{width:88vw;flex-basis:64px;height:64px;padding:7px 10px 5px;border-width:3px}
+ .keyboard-topline{margin-bottom:4px;height:3px}
+ .key-row{height:10px;margin-bottom:4px}
+ .key-row.short-row{height:8px}
+ .keyboard-trackpad{width:45px;height:6px;bottom:4px}
+ .computer-shell .taskbar{left:6px;right:6px;bottom:calc(64px + 12px);min-height:40px}
+}
+@media(prefers-reduced-motion:reduce){.computer-shell,.computer-keyboard{scroll-behavior:auto}}
+
 </style>
 </head>
 <body>
@@ -338,8 +397,8 @@ body:after{background:linear-gradient(transparent 50%,rgba(54,20,65,.035) 50%);b
 <div class="taskbar"><button class="start-button" id="start-button" aria-expanded="false"><span class="start-star">✿</span><span class="start-label">START</span></button><button class="task-app active" id="task-app"><span>🪟</span><span>ANUBHUTI.EXE — PORTFOLIO</span></button><span class="task-spacer"></span><span class="task-status">WI-FI ▰ ▰</span><span class="task-status" id="desktop-clock">00:00</span></div>
 <div class="desktop-tooltip" id="desktop-tooltip" role="status"></div>
 <div class="computer-controls" aria-hidden="true"><span class="speaker-grille"></span><span class="computer-badge">AG · PIXEL STATION 98</span><span class="power-led"></span></div>
-</div>
 <div class="computer-keyboard" aria-hidden="true"><div class="keyboard-topline"></div><div class="key-row"></div><div class="key-row short-row"></div><div class="keyboard-trackpad"></div></div>
+</div>
 
 <script>
 (function(){
