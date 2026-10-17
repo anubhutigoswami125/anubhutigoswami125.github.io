@@ -682,6 +682,34 @@ input,textarea,select{background:#8e4be8!important;color:#ffe85b!important;borde
 .cabinet-photo-stickers img:last-child{transform:rotate(6deg)}
 @media(max-width:520px){.inspo-strip{gap:9px;padding:15px 8px 27px;min-height:118px}.inspo-card{width:26vw;height:29vw;padding:3px}.inspo-note{font-size:10px}.cabinet-photo-stickers{float:none;justify-content:flex-end;margin:0 0 12px}}
 
+
+/* === PROFESSIONAL PROFILE / CREDENTIALS PANEL === */
+.credentials-panel{margin:26px 0 0;padding:clamp(18px,3vw,32px);border-top:5px solid #321443;background:linear-gradient(125deg,#ff4fca 0%,#bca0ff 48%,#74f1ff 100%);color:#321443;position:relative;isolation:isolate}
+.credentials-panel:before{content:"";position:absolute;inset:8px;border:2px dashed #321443;pointer-events:none;z-index:-1}
+.credentials-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.credentials-kicker{font:8px/1.8 "Press Start 2P",monospace;letter-spacing:.2px}
+.credentials-head h2{margin:8px 0 0;padding:0;border:0;color:#321443;text-shadow:2px 2px #ffe85b}
+.credentials-layout{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr);gap:22px;align-items:stretch}
+.credentials-portrait{margin:0;padding:10px;background:#ffe85b;border:3px solid #321443;box-shadow:6px 6px 0 #321443;align-self:start;transform:rotate(-1deg)}
+.credentials-portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border:2px solid #321443}
+.credentials-portrait figcaption{font:7px/1.8 "Press Start 2P",monospace;margin-top:9px}
+.credentials-main{min-width:0}
+.credentials-name{font:clamp(14px,2vw,20px)/1.6 "Press Start 2P",monospace;margin:0 0 5px;color:#321443}
+.credentials-role{font-weight:900;font-size:15px;margin-bottom:13px}
+.credentials-links{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.credentials-links a{display:inline-block;padding:8px 10px;border:2px solid #321443;background:#321443;color:#ffe85b!important;text-decoration:none;font:8px/1.7 "Press Start 2P",monospace;overflow-wrap:anywhere}
+.credentials-links a:hover{background:#ffe85b;color:#321443!important}
+.credentials-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.credentials-item{padding:13px;background:#9cff7c;border:2px solid #321443;box-shadow:3px 3px 0 #321443;min-width:0}
+.credentials-item:nth-child(4n+2){background:#ffe85b}
+.credentials-item:nth-child(4n+3){background:#74f1ff}
+.credentials-item:nth-child(4n){background:#ff9fd7}
+.credentials-item h3{color:#321443;font-size:8px;margin-bottom:8px}
+.credentials-item p,.credentials-item li{font-size:13px;line-height:1.65;margin:5px 0}
+.credentials-item ul{padding-left:17px;margin:5px 0}
+.credentials-stamp{display:inline-block;margin-top:16px;padding:6px 9px;border:2px solid #321443;background:#321443;color:#ffe85b;font:7px/1.8 "Press Start 2P",monospace}
+@media(max-width:620px){.credentials-layout{grid-template-columns:1fr}.credentials-portrait{width:min(220px,75%);margin:0 auto 8px}.credentials-grid{grid-template-columns:1fr}.credentials-head h2{font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -797,6 +825,38 @@ input,textarea,select{background:#8e4be8!important;color:#ffe85b!important;borde
 <section class="panel" id="tab-projects" role="tabpanel"><h2>✦ PROJECTS & BUILDS ✦</h2><div class="grid"><article class="card"><h3>MICROBEQUEST: THE OUTBREAK FILES</h3><div class="meta">Developer & project lead · 2026</div><p>Interactive microbiology investigation game with syllabus-aligned stages, case-based quizzes, hints, scoring, and analytics.</p><p><a href="https://anubhutigoswami125.github.io/MicrobeQuest/" target="_blank" rel="noopener">Live demo ↗</a> · <a href="https://github.com/anubhutigoswami125/MicrobeQuest" target="_blank" rel="noopener">GitHub ↗</a></p></article><article class="card"><h3>PERSONAL EXPENSE TRACKER</h3><div class="meta">C++ coursework</div><p>Building an object-oriented finance application for expense recording, categorization, and budget management.</p></article><article class="card"><h3>SIMULAB</h3><div class="meta">Interactive learning concept</div><p>A point-and-click virtual laboratory concept for exploring equipment, benches, and experiments.</p></article></div></section>
 <section class="panel" id="tab-research" role="tabpanel"><h2>✦ RESEARCH & SCIENTIFIC ENGAGEMENT ✦</h2><div class="grid"><article class="card"><h3>PULSE OXIMETRY & SKIN PIGMENTATION</h3><div class="meta">Poster · LPU</div><p>Explored racial bias in pulse oximetry and the relationship between skin pigmentation and healthcare equity.</p></article><article class="card"><h3>IC-BIOSUSTAIN</h3><div class="meta">Student poster presentation · LPU</div><p>Scheduled for 18–19 November 2026.</p></article><article class="card"><h3>ZOONIVERSE CITIZEN SCIENCE</h3><div class="meta">Research volunteering</div><p>Contributed 207 classifications across Placenta Profiles and Clear Skies – Kiruna.</p></article><article class="card"><h3>SCIENTIFIC INTERESTS</h3><div class="tags"><span class="tag">GENETICS</span><span class="tag">MICROBIOLOGY</span><span class="tag">BIOINFORMATICS</span><span class="tag">AI IN LIFE SCIENCES</span><span class="tag">DATA ANALYSIS</span></div></article></div></section>
 <section class="panel" id="tab-skills" role="tabpanel"><h2>✦ SKILLS & CERTIFICATIONS ✦</h2><div class="grid"><article class="card"><h3>TECHNICAL SKILLS</h3><div class="tags"><span class="tag">Python · beginner</span><span class="tag">C / C++ · learning</span><span class="tag">Excel</span><span class="tag">PowerPoint</span><span class="tag">Canva</span><span class="tag">GitHub</span><span class="tag">Data labeling</span><span class="tag">PII privacy</span><span class="tag">Data visualization</span><span class="tag">AI productivity tools</span></div></article><article class="card"><h3>LAB & BIOLOGY</h3><div class="tags"><span class="tag">Pipetting</span><span class="tag">Titration</span><span class="tag">Biotechnology</span><span class="tag">Microbiology coursework</span><span class="tag">Genetics coursework</span></div></article><article class="card"><h3>SELECTED CERTIFICATIONS</h3><p>• Python — University of Michigan / Coursera (in progress)</p><p>• Microbiology — Coursera</p><p>• Introduction to AI — IBM</p><p>• CS101 / Programming Fundamentals — Saylor Academy</p><p>• ESL 1, 2 & 3; Presentations — Saylor Academy</p><p>• Resume Writing — HP LIFE</p></article><article class="card"><h3>OTHER ACTIVITIES</h3><p>Hackathons, campus leadership, scientific poster presentations, and citizen-science annotation.</p></article></div></section>
+
+
+<section class="credentials-panel" aria-labelledby="credentials-title">
+  <div class="credentials-head">
+    <div><div class="credentials-kicker">PROFILE ARCHIVE / VERIFIED DETAILS</div><h2 id="credentials-title">PROFESSIONAL PROFILE & CREDENTIALS</h2></div>
+    <div class="credentials-kicker">ANUBHUTI GOSWAMI · 2026</div>
+  </div>
+  <div class="credentials-layout">
+    <figure class="credentials-portrait">
+      <img src="https://i.pinimg.com/736x/ee/dd/cd/eeddcdb46f9b87b65ce4bc10934b0d46.jpg" alt="Anubhuti's selected portfolio portrait" loading="lazy">
+      <figcaption>BIOTECH · DATA · RESEARCH</figcaption>
+    </figure>
+    <div class="credentials-main">
+      <h3 class="credentials-name">ANUBHUTI GOSWAMI</h3>
+      <div class="credentials-role">B.Tech Biotechnology student · Lovely Professional University</div>
+      <p>Interested in genetics, microbiology, biological data analysis, bioinformatics, and AI applications in life sciences. Building practical experience through science education projects, virtual training, research volunteering, and interdisciplinary hackathons.</p>
+      <div class="credentials-links">
+        <a href="mailto:anubhutiworkk@gmail.com">EMAIL ↗</a>
+        <a href="https://www.linkedin.com/in/anubhuti-goswami-b6382137b/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a>
+        <a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+        <a href="https://anubhutigoswami125.github.io/" target="_blank" rel="noopener noreferrer">PORTFOLIO ↗</a>
+      </div>
+      <div class="credentials-grid">
+        <article class="credentials-item"><h3>01 / ACADEMIC RECORD</h3><p><strong>B.Tech Biotechnology</strong><br>LPU · 2025–2029</p><p>CGPA: 7.58/10<br>Academic scholarship: 60%</p><p>Class XII: 89% · 2025<br>Class X: 94.8% · 2023</p></article>
+        <article class="credentials-item"><h3>02 / HONOURS</h3><p><strong>International English Olympiad</strong></p><p>International Rank 4 · Gold Medal of Distinction</p><p>100% academic scholarship in Classes XI–XII.</p></article>
+        <article class="credentials-item"><h3>03 / SELECTED TRAINING</h3><ul><li>Introduction to AI — IBM</li><li>Microbiology — Coursera (completed)</li><li>Genetic Engineering — BioLim virtual training</li><li>Data Labeling — Forage job simulation</li><li>Python — University of Michigan / Coursera (in progress)</li><li>HP LIFE and Saylor Academy coursework</li></ul></article>
+        <article class="credentials-item"><h3>04 / EXPERIENCE & PROJECTS</h3><ul><li>Content Writing Intern — Henry Harvin</li><li>Research Volunteer — Zooniverse (207 classifications)</li><li>Community Development Volunteer — Prayas Welfare School</li><li>Developer & Project Lead — MicrobeQuest: The Outbreak Files</li><li>Scientific poster presentations and interdisciplinary hackathons</li></ul></article>
+      </div>
+      <div class="credentials-stamp">COURSEWORK · TRAINING · PROJECTS CLEARLY LABELED</div>
+    </div>
+  </div>
+</section>
 
 </main>
 <footer class="footer"><span>© 2026 ANUBHUTI GOSWAMI · PORTFOLIO</span><span><a href="mailto:anubhutiworkk@gmail.com">CONTACT</a><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">GITHUB ↗</a></span></footer>
