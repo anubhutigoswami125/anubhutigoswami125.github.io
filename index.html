@@ -583,9 +583,62 @@ main{display:block!important;height:auto!important;min-height:0!important;overfl
 @media(max-width:480px){.hero{grid-template-columns:1fr!important}.avatar{grid-row:1;width:145px!important;justify-self:center;margin:12px auto}.hero:before{right:12px;top:8px}.hero:after{right:8px;bottom:4px}h1{font-size:clamp(36px,11vw,54px)!important}.nav button{flex:1 0 45%!important}.exhibit-grid{grid-template-columns:1fr!important}.exhibit{min-height:0!important}.cabinet{padding:14px!important}}
 @media(prefers-reduced-motion:reduce){.exhibit,.card,.cabinet{transform:none!important}}
 
+
+/* JADE / VERMILION / ARCADE STICKER OVERLAY — NO WHITE OR CREAM SURFACES */
+:root{--cream:#ff55c8!important;--paper:#ff55c8!important;--ink:#271044!important}
+body{background-color:#7c39f2!important;background-image:radial-gradient(circle,#ffe85b 0 2px,transparent 2.8px),repeating-linear-gradient(135deg,#ff42b8 0 34px,#b84dff 34px 68px,#49e6df 68px 102px,#ffe85b 102px 136px,#ff805e 136px 170px)!important;background-size:31px 31px,170px 170px!important;background-attachment:fixed!important}
+body:before{content:"✦ GOOD THINGS TAKE TIME ✦  🐈‍⬛  ✿ KEEP MAKING THINGS ✿  🐇  ★ STAY CURIOUS ★  🐉";color:#ffe85b!important;opacity:.65!important;text-shadow:2px 2px #321443,-1px -1px #321443!important;line-height:17vh!important;letter-spacing:1.1vw!important}
+body:after{background:repeating-radial-gradient(ellipse at 0 0,transparent 0 16px,rgba(255,232,91,.19) 17px 19px,transparent 20px 33px),radial-gradient(ellipse at center,transparent 32%,rgba(39,16,68,.28) 100%)!important}
+.site{background:#ff67c9!important;box-shadow:10px 10px 0 #321443,0 0 0 5px #ff4bbd,0 0 0 10px #ffe85b,0 0 0 14px #4ce7ff!important}
+.hero{background-color:#a8f3ff!important;background-image:repeating-linear-gradient(45deg,transparent 0 19px,rgba(255,65,184,.25) 20px 22px,transparent 23px 42px),radial-gradient(circle at 15% 75%,#ff4bbd 0 11px,transparent 12px),linear-gradient(125deg,#ffe85b,#ff86cb 28%,#b59aff 57%,#62eee2)!important}
+.intro{background:#9dff9b!important;color:#321443!important}
+main{background:#ff5bc8!important}
+.panel,.panel.active{background-color:#ff72c9!important;background-image:radial-gradient(#6e27ba 1.4px,transparent 1.8px),repeating-linear-gradient(135deg,transparent 0 68px,rgba(255,232,91,.20) 69px 72px,transparent 73px 118px)!important;background-size:18px 18px,auto!important}
+.panel:nth-child(even){background-color:#70e9dd!important;background-image:repeating-linear-gradient(45deg,transparent 0 31px,rgba(255,65,184,.24) 32px 35px,transparent 36px 65px),radial-gradient(#7334c8 1.2px,transparent 1.7px)!important;background-size:auto,18px 18px!important}
+.card,.cv-entry{color:#321443!important}
+.card:nth-child(6n+1){background:#ff9fd7!important}.card:nth-child(6n+2){background:#74f1ff!important}.card:nth-child(6n+3){background:#ffe85b!important}.card:nth-child(6n+4){background:#9cff7c!important}.card:nth-child(6n+5){background:#bca0ff!important}.card:nth-child(6n){background:#ff9566!important}
+.exhibit:nth-child(6n+1){background:#ff9fd7!important}.exhibit:nth-child(6n+2){background:#74f1ff!important}.exhibit:nth-child(6n+3){background:#ffe85b!important}.exhibit:nth-child(6n+4){background:#9cff7c!important}.exhibit:nth-child(6n+5){background:#bca0ff!important}.exhibit:nth-child(6n){background:#ff9566!important}
+.exhibit-art{background:#b8ff83!important;color:#321443!important}
+.cabinet{background:repeating-linear-gradient(135deg,#ff66c9 0 26px,#ffe85b 26px 52px,#62eee2 52px 78px,#bba0ff 78px 104px)!important}
+.cabinet-heading h2{background:#ffe85b!important;color:#321443!important}
+.cabinet-heading p{background:#9dff9b!important;color:#321443!important}
+.exhibit-dialog{background:#ffe85b!important;color:#321443!important}
+.exhibit-dialog .dialog-art,.exhibit-dialog .exhibit-dialog-art{background:#74f1ff!important}
+.exhibit-dialog button{background:#ff4bbd!important;color:#321443!important}
+.exhibit-dialog p,.exhibit-dialog div{color:#321443}
+.callout{background:#9dff9b!important;color:#321443!important}
+.tag{color:#321443!important}
+.tag:nth-child(3n){background:#ff9566!important}
+.nav button{border-right:2px dashed #fff!important}
+.site .topbar{color:#ffe85b!important}
+.footer{color:#ffe85b!important}
+.footer a{color:#74f1ff!important}
+.machine{background:#7a3be8!important;color:#ffe85b!important}
+.arcade-grid,.machine *{color:inherit}
+.btn{background:#ffe85b!important;color:#321443!important}
+.btn:nth-child(even){background:#ff4bbd!important;color:#321443!important}
+input,textarea,select{background:#8e4be8!important;color:#ffe85b!important;border:2px solid #321443!important}
+::placeholder{color:#c5fffc!important;opacity:1}
+.exhibit-open{background:#321443!important;color:#ffe85b!important}
+.archive-stamp{background:#321443!important;color:#ffe85b!important}
+.sticky-note{display:block!important;position:fixed!important;z-index:15!important;width:140px!important;padding:10px 12px!important;background:#ffe85b!important;color:#321443!important;border:3px solid #321443!important;box-shadow:5px 5px 0 #ff4bbd!important;font-family:"Caveat",cursive!important;font-size:19px!important;transform:rotate(-8deg)!important;pointer-events:none!important}
+.note-one{left:10px!important;top:28%!important}.note-two{right:10px!important;top:58%!important;transform:rotate(7deg)!important;background:#9dff9b!important}
+.note-label{display:block!important;font:900 8px/1.5 "Nunito",sans-serif!important;letter-spacing:1px!important}.note-text{font-size:21px!important;font-weight:700!important}
+.scrapbook-doodles{position:fixed;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.scrapbook-doodles span{position:absolute;display:block;max-width:180px;text-shadow:2px 2px #321443;font-weight:900}
+.scrapbook-doodles .scribble{font:900 15px/1.25 "Caveat",cursive;color:#ffe85b;background:#321443;padding:8px 11px;border:2px dashed #ff4bbd;box-shadow:4px 4px 0 #ffe85b;transform:rotate(-7deg)}
+.scrapbook-doodles .seal{display:grid;place-items:center;width:56px;height:56px;border:4px double #ffe85b;border-radius:50%;background:#c8203b;color:#ffe85b;font:900 19px/1 "Cormorant Garamond",serif;box-shadow:3px 3px 0 #321443;transform:rotate(8deg)}
+.scrapbook-doodles .animal{font-size:32px;filter:drop-shadow(2px 3px 0 #321443);animation:float-sticker 5s ease-in-out infinite alternate}
+.scrapbook-doodles .stripe{width:78px;height:15px;background:repeating-linear-gradient(90deg,#ff4bbd 0 8px,#ffe85b 8px 16px,#62eee2 16px 24px,#321443 24px 32px);border:2px solid #321443;transform:rotate(-25deg)}
+.scrapbook-doodles .dot{width:17px;height:17px;border-radius:50%;background:#ffe85b;border:3px solid #321443;box-shadow:18px 12px 0 #ff4bbd,34px -2px 0 #62eee2,50px 14px 0 #9dff9b}
+@keyframes float-sticker{from{translate:0 -5px;rotate:-7deg}to{translate:0 9px;rotate:8deg}}
+@media(max-width:760px){.sticky-note{width:108px!important;padding:7px!important;font-size:15px!important}.note-one{left:2px!important;top:18%!important}.note-two{right:2px!important;top:69%!important}.note-text{font-size:17px!important}.scrapbook-doodles .scribble{font-size:12px;padding:5px 7px}.scrapbook-doodles .animal{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.scrapbook-doodles .animal{animation:none!important}}
+
 </style>
 </head>
 <body>
+<div class="scrapbook-doodles" aria-hidden="true"><span class="scribble" style="left:2%;top:10%">good things take time ✦</span><span class="animal" style="left:4%;top:46%">🐈‍⬛</span><span class="seal" style="right:3%;top:17%">福</span><span class="animal" style="right:5%;top:39%;animation-delay:-2s">🐇</span><span class="scribble" style="right:2%;top:83%;transform:rotate(5deg)">keep going, little by little</span><span class="animal" style="left:15%;top:87%;animation-delay:-1s">🐉</span><span class="stripe" style="left:47%;top:7%"></span><span class="dot" style="right:15%;top:51%"></span><span class="scribble" style="left:3%;top:70%;transform:rotate(5deg)">stay curious ★</span><span class="seal" style="left:1%;top:34%">夢</span><span class="animal" style="right:14%;top:91%;animation-delay:-3s">🐟</span></div>
 <div class="computer-shell" id="computer-shell" aria-label="Retro tabletop computer display">
 
 
