@@ -453,6 +453,76 @@ a:focus-visible,button:focus-visible{outline:3px dashed #a94770;outline-offset:4
 @media(max-width:650px){body{padding:8px}.site{box-shadow:5px 5px 0 #49334e,8px 8px 0 rgba(73,51,78,.22)}.site:before{right:14px;font-size:10px}.hero{grid-template-columns:1fr;gap:20px}.avatar{grid-row:1;width:108px}.hero:after{display:none}.nav{position:relative}.nav button{flex:1 0 33%;font-size:7px;padding:10px 5px}.grid,.arcade-grid{grid-template-columns:1fr}.card:nth-child(n){transform:none}.panel{padding:18px}.panel:after{font-size:17px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
+
+/* === INTERACTIVE INTERNET SCRAPBOOK + CURIOSITY CABINET === */
+:root{--paper:#fbf3e4;--paper-deep:#f0e0ce;--plum:#3b233d;--burgundy:#742f4b;--dusty:#d99aaf;--rose:#f0cbd4;--sage:#bfc8ac;--moss:#59694f;--ink:#382b3b;--lilac:#d8c7e0}
+html{scroll-behavior:smooth;scroll-padding-top:82px;overflow-y:auto}
+body{overflow-x:hidden;overflow-y:auto;min-height:100%;background-color:#c3cbb3;background-image:radial-gradient(circle at 15% 12%,rgba(255,255,255,.42) 0 1px,transparent 2px),radial-gradient(circle at 80% 68%,rgba(65,48,63,.12) 0 1px,transparent 2px),linear-gradient(135deg,#c5ceb8 0%,#f0d9d8 42%,#d4b8ca 73%,#9ba98a 100%);background-size:31px 31px,47px 47px,100% 100%;background-attachment:fixed}
+.computer-shell{display:contents!important;position:static!important;width:auto!important;height:auto!important;min-height:0!important;overflow:visible!important;padding:0!important;margin:0!important;border:0!important;background:none!important;box-shadow:none!important}
+.computer-shell:before,.computer-shell:after{display:none!important;content:none!important}
+.desktop-notes,.desktop-icons,.desktop-widget,.start-menu,.taskbar,.desktop-tooltip,.computer-controls,.computer-keyboard,.windowbar{display:none!important}
+.site{width:min(1280px,100%);max-width:1280px;margin:0 auto 42px;overflow:visible!important;position:relative!important;inset:auto!important;background:var(--paper);border:2px solid var(--plum);box-shadow:8px 8px 0 var(--plum),14px 14px 0 rgba(59,35,61,.2)}
+.site:before{content:"✿ PERSONAL MUSEUM · FIELD ARCHIVE ✿";position:absolute;z-index:4;top:-13px;right:28px;padding:5px 12px;background:#e7c5d0;border:1px solid var(--plum);color:var(--plum);font:12px/1.2 "Caveat",cursive;letter-spacing:.1em;transform:rotate(2deg);box-shadow:2px 2px 0 var(--plum)}
+.site .topbar{padding:12px 18px;background:var(--plum);color:#f7e8e7;border-bottom:3px solid var(--dusty);font:8px/1.8 "Press Start 2P",monospace}
+.hero{position:relative;grid-template-columns:minmax(0,1fr) 155px;gap:26px;padding:clamp(24px,4vw,54px);background-color:#f3e4d7;background-image:radial-gradient(#d3b9c5 1px,transparent 1.5px),linear-gradient(115deg,#f5e6d5 0%,#fbf3e4 48%,#dfcbdc 100%);background-size:18px 18px,100% 100%;border-bottom:2px dashed var(--moss)}
+.hero:before{content:"LAB JOURNAL  /  VOL. 01";position:absolute;left:24px;top:10px;color:#68765d;font:12px/1.3 "Caveat",cursive;letter-spacing:.12em;transform:rotate(-2deg)}
+.hero:after{content:"keep looking closer ♡";position:absolute;right:24px;bottom:13px;color:var(--burgundy);font:20px/1 "Caveat",cursive;transform:rotate(-4deg)}
+h1{font:700 clamp(38px,6vw,74px)/.98 "Cormorant Garamond",Georgia,serif;color:var(--plum);letter-spacing:-.045em;text-shadow:2px 2px 0 #e9c6d2,4px 4px 0 rgba(105,81,111,.18)}
+.subtitle{font:700 clamp(14px,2vw,19px)/1.5 Fredoka,sans-serif;color:var(--burgundy)}
+.nav{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;background:#e3d4df;border-bottom:2px solid var(--plum);box-shadow:0 4px 0 rgba(73,51,78,.14)}
+.nav button{padding:13px 10px;background:transparent;color:var(--plum);border-right:1px dashed #b48b9d;font:8px/1.8 "Press Start 2P",monospace}
+.nav button:hover,.nav button[aria-selected="true"]{background:var(--plum);color:#f9eddf;box-shadow:inset 0 -4px var(--dusty)}
+/* Critical scroll fix: every portfolio section stays in the document flow. */
+main{display:block!important;min-height:0!important;height:auto!important;overflow:visible!important}
+.panel,.panel.active{display:block!important;position:relative;visibility:visible!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;padding:clamp(22px,3.5vw,42px);scroll-margin-top:84px;background-color:var(--paper);background-image:radial-gradient(rgba(134,111,92,.15) .7px,transparent 1px),linear-gradient(90deg,rgba(217,139,168,.055),transparent 45%,rgba(102,118,91,.05));background-size:11px 11px,100% 100%;border-bottom:1px dashed #b69aa7;animation:none!important}
+.panel:after{content:"✧ annotated with curiosity ✧";display:block;margin:30px 0 0;text-align:right;color:var(--burgundy);font:20px/1 "Caveat",cursive;transform:rotate(-1deg)}
+.panel h2{font:700 clamp(25px,3vw,36px)/1.1 "Cormorant Garamond",Georgia,serif;color:var(--plum);border-bottom:2px dashed #b48b9d;padding-bottom:13px;text-shadow:1px 1px #e7c5d0}
+.panel h2:after{content:" ✿";color:var(--burgundy);font:20px Georgia,serif}
+.panel h3{font:700 21px/1.15 "Cormorant Garamond",Georgia,serif;color:var(--plum)}
+.card{background:#fff9ed;border:1px solid #65526b;box-shadow:4px 4px 0 #d7b6c3,8px 8px 0 rgba(102,118,91,.14);transition:transform .2s ease,box-shadow .2s ease}
+.card:nth-child(4n+1){background:#fff8ed;transform:rotate(-.45deg)}
+.card:nth-child(4n+2){background:#f3e4e8;transform:rotate(.4deg)}
+.card:nth-child(4n+3){background:#edf0e3}
+.card:nth-child(4n):not(.legal-copy){background:#eee5f0;transform:rotate(.25deg)}
+.card:hover{transform:translateY(-3px) rotate(0);box-shadow:6px 6px 0 var(--dusty),10px 10px 0 rgba(73,51,78,.16)}
+.meta{color:var(--burgundy)}
+.tag{background:#e7c5d0;border:1px solid var(--plum);box-shadow:2px 2px 0 var(--plum);color:var(--plum)}
+.tag:nth-child(even){background:#dce2cf}
+a{color:#79506f;text-underline-offset:3px}a:hover{color:var(--burgundy)}
+.callout{background:#f0e2d0;border:1px dashed var(--moss);box-shadow:4px 4px 0 #d7b6c3}
+.btn{border:2px solid var(--plum);background:var(--dusty);color:var(--plum);box-shadow:3px 3px 0 var(--moss)}
+.btn:hover{background:var(--sage);box-shadow:4px 4px 0 var(--plum)}
+.footer{background:var(--plum);color:#f9eddf;border-top:3px solid var(--dusty)}.footer a{color:#f0c8d6}
+.cabinet{margin-top:38px;padding:clamp(16px,3vw,30px);border:2px solid var(--plum);background:#efe4d5;box-shadow:7px 7px 0 #d6b3c1,12px 12px 0 rgba(59,35,61,.14);position:relative}
+.cabinet:before{content:"COLLECTION No. 01";position:absolute;right:14px;top:-13px;padding:5px 9px;background:#bfc8ac;border:1px solid var(--moss);font:10px/1.2 "Press Start 2P",monospace;color:#394632;transform:rotate(2deg)}
+.cabinet-heading{position:relative;padding:8px 6px 20px;border-bottom:1px dashed #aa8999;margin-bottom:22px}
+.archive-stamp{display:inline-block;padding:5px 8px;background:#f1d1d8;border:1px solid var(--burgundy);color:var(--burgundy);font:10px/1.2 "Press Start 2P",monospace;transform:rotate(-2deg)}
+.cabinet-heading h2{margin:16px 0 8px;font:700 clamp(30px,4vw,47px)/1 "Cormorant Garamond",Georgia,serif;color:var(--plum)}
+.cabinet-heading p{max-width:700px;line-height:1.8}
+.hand-note{position:absolute;right:8px;bottom:12px;color:var(--burgundy);font:21px "Caveat",cursive;transform:rotate(-5deg)}
+.exhibit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.exhibit{position:relative;min-width:0;min-height:230px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:10px;padding:17px 17px 15px;border:1px solid var(--plum);background:#fff8ed;color:var(--plum);box-shadow:4px 4px 0 #cda8b9;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease;overflow:hidden}
+.exhibit:after{content:"";position:absolute;top:0;right:0;width:36px;height:36px;background:linear-gradient(135deg,transparent 49%,#d7c6ad 50%);opacity:.9}
+.exhibit:hover,.exhibit:focus-visible{transform:translateY(-5px) rotate(-.5deg);box-shadow:7px 7px 0 var(--burgundy),11px 11px 0 rgba(89,105,79,.22)}
+.exhibit-rose{background:#f3dce2}.exhibit-sage{background:#e4e9d9}.exhibit-parchment{background:#f4e7c9}.exhibit-lilac{background:#e9ddeb}.exhibit-ink{background:#d9d1df}
+.exhibit-art{display:grid;place-items:center;width:72px;height:72px;align-self:center;margin:1px auto 2px;border:1px solid rgba(59,35,61,.6);border-radius:50%;background:rgba(255,255,255,.42);font-size:38px;filter:saturate(.8);box-shadow:inset 0 0 0 5px rgba(255,255,255,.2)}
+.exhibit-id{font:9px/1.7 "Press Start 2P",monospace;color:var(--burgundy);letter-spacing:-.04em}
+.exhibit strong{font:700 25px/1 "Cormorant Garamond",Georgia,serif}
+.exhibit small{font:13px/1.65 Nunito,sans-serif}
+.exhibit-open{margin-top:auto;padding-top:8px;border-top:1px dashed currentColor;width:100%;font:9px/1.7 "Press Start 2P",monospace}
+.cabinet-footnote{margin:20px 0 0;color:#6b5a61;font:18px/1.3 "Caveat",cursive}
+.exhibit-dialog{width:min(560px,calc(100vw - 28px));max-height:85vh;overflow:auto;padding:0;border:2px solid var(--plum);background:var(--paper);color:var(--ink);box-shadow:9px 9px 0 var(--plum)}
+.exhibit-dialog::backdrop{background:rgba(39,22,42,.68);backdrop-filter:blur(3px)}
+.dialog-topline{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;background:var(--plum);color:#f9eddf;font:8px/1.7 "Press Start 2P",monospace}
+.dialog-x{width:30px;height:30px;border:1px solid #f9eddf;background:var(--dusty);color:var(--plum);font-size:23px;cursor:pointer}
+.dialog-specimen{display:grid;place-items:center;width:100px;height:100px;margin:24px auto 14px;border:1px solid var(--moss);border-radius:50%;background:#e5e7d7;font-size:50px}
+.exhibit-dialog .exhibit-id{text-align:center}.exhibit-dialog h3{margin:12px 22px;font:700 34px/1 "Cormorant Garamond",Georgia,serif;text-align:center}.exhibit-dialog p{margin:12px 26px 20px;line-height:1.9}
+.dialog-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:15px 22px 22px}.dialog-links a{display:inline-block;padding:9px 11px;border:1px solid var(--plum);background:#e8d6df;color:var(--plum);font-weight:900}
+.exhibit-dialog #exhibit-dialog-jump{display:block;margin:0 auto 24px}
+@media(max-width:760px){.exhibit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:minmax(0,1fr) 115px;gap:18px}.hero .avatar{width:108px}}
+@media(max-width:520px){body{padding:8px}.site{box-shadow:5px 5px 0 var(--plum),8px 8px 0 rgba(59,35,61,.2)}.site:before{right:10px;font-size:10px}.hero{grid-template-columns:1fr;gap:20px}.avatar{grid-row:1;width:108px}.hero:after{display:none}.nav{position:sticky;top:0}.nav button{flex:1 0 33%;font-size:7px;padding:10px 5px}.grid,.arcade-grid{grid-template-columns:1fr}.card:nth-child(n){transform:none}.panel{padding:20px 14px}.exhibit-grid{grid-template-columns:1fr 1fr;gap:10px}.exhibit{padding:12px;min-height:205px}.exhibit-art{width:58px;height:58px;font-size:31px}.exhibit strong{font-size:21px}.exhibit small{font-size:12px}.hand-note{position:static;display:block;margin-top:8px}.cabinet{padding:16px 12px}.exhibit-dialog .exhibit-id{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
 </style>
 </head>
 <body>
@@ -488,7 +558,29 @@ a:focus-visible,button:focus-visible{outline:3px dashed #a94770;outline-offset:4
 <button class="nav-btn" data-tab="home" role="tab" aria-selected="true">HOME</button><button class="nav-btn" data-tab="arcade" role="tab" aria-selected="false">✦ ARCADE ✦</button><button class="nav-btn" data-tab="cv" role="tab" aria-selected="false">CV / RESUME</button><button class="nav-btn" data-tab="experience" role="tab" aria-selected="false">EXPERIENCE</button><button class="nav-btn" data-tab="projects" role="tab" aria-selected="false">PROJECTS</button><button class="nav-btn" data-tab="research" role="tab" aria-selected="false">RESEARCH</button><button class="nav-btn" data-tab="skills" role="tab" aria-selected="false">SKILLS</button><button class="nav-btn" data-tab="privacy" role="tab" aria-selected="false">PRIVACY</button><button class="nav-btn" data-tab="terms" role="tab" aria-selected="false">TERMS</button>
 </nav>
 <main>
-<section class="panel active" id="tab-home" role="tabpanel"><h2>✦ PLAYER PROFILE & ACADEMICS ✦</h2><div class="grid"><article class="card"><h3>EDUCATION</h3><div class="meta">Lovely Professional University · 2025–2029</div><p><strong>B.Tech Biotechnology</strong></p><p>CGPA: 7.58 / 10.0</p><p>Recipient of a 60% academic scholarship.</p><p>Based in Faridabad, Haryana, India.</p></article><article class="card"><h3>CONTACT & LINKS</h3><p>Email: <a href="mailto:anubhutiworkk@gmail.com">anubhutiworkk@gmail.com</a></p><p><a href="https://linkedin.com/in/anubhuti-goswami-b6382137b" target="_blank" rel="noopener">LinkedIn profile ↗</a></p><p><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">GitHub profile ↗</a></p></article></div><div class="callout" style="margin-top:18px">CURRENT QUEST: building skills in Python, data analysis, bioinformatics, genetics, and computational life sciences.</div></section>
+<section class="panel active" id="tab-home" role="tabpanel"><h2>✦ PLAYER PROFILE & ACADEMICS ✦</h2><div class="grid"><article class="card"><h3>EDUCATION</h3><div class="meta">Lovely Professional University · 2025–2029</div><p><strong>B.Tech Biotechnology</strong></p><p>CGPA: 7.58 / 10.0</p><p>Recipient of a 60% academic scholarship.</p><p>Based in Faridabad, Haryana, India.</p></article><article class="card"><h3>CONTACT & LINKS</h3><p>Email: <a href="mailto:anubhutiworkk@gmail.com">anubhutiworkk@gmail.com</a></p><p><a href="https://linkedin.com/in/anubhuti-goswami-b6382137b" target="_blank" rel="noopener">LinkedIn profile ↗</a></p><p><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">GitHub profile ↗</a></p></article></div><div class="callout" style="margin-top:18px">CURRENT QUEST: building skills in Python, data analysis, bioinformatics, genetics, and computational life sciences.</div>
+<section class="cabinet" aria-labelledby="cabinet-heading">
+  <div class="cabinet-heading"><span class="archive-stamp">PERSONAL MUSEUM · OPEN COLLECTION</span><h2 id="cabinet-heading">The Curious Biologist’s Cabinet</h2><p>A little cabinet of things I’ve investigated, built, annotated, or can’t stop thinking about. Click an exhibit to open its field note.</p><span class="hand-note">please touch the exhibits ↗</span></div>
+  <div class="exhibit-grid">
+    <button class="exhibit exhibit-rose" type="button" data-exhibit="microbequest"><span class="exhibit-art" aria-hidden="true">🦠</span><span class="exhibit-id">EXHIBIT 01 · CASE FILE</span><strong>MicrobeQuest</strong><small>An outbreak mystery built from microbiology</small><span class="exhibit-open">OPEN SPECIMEN ↗</span></button>
+    <button class="exhibit exhibit-sage" type="button" data-exhibit="pulse"><span class="exhibit-art" aria-hidden="true">🫀</span><span class="exhibit-id">EXHIBIT 02 · HEALTH EQUITY</span><strong>Signal & Skin</strong><small>Pulse oximetry, pigmentation, and bias</small><span class="exhibit-open">READ FIELD NOTE ↗</span></button>
+    <button class="exhibit exhibit-parchment" type="button" data-exhibit="bioelectric"><span class="exhibit-art" aria-hidden="true">⚡</span><span class="exhibit-id">EXHIBIT 03 · RESEARCH</span><strong>Bioelectric Futures</strong><small>Regenerative medicine and anatomical engineering</small><span class="exhibit-open">VIEW RESEARCH ↗</span></button>
+    <button class="exhibit exhibit-lilac" type="button" data-exhibit="citizenscience"><span class="exhibit-art" aria-hidden="true">🔬</span><span class="exhibit-id">EXHIBIT 04 · CITIZEN SCIENCE</span><strong>Small Data, Real Science</strong><small>Classifying images for research projects</small><span class="exhibit-open">INSPECT NOTES ↗</span></button>
+    <button class="exhibit exhibit-ink" type="button" data-exhibit="simulab"><span class="exhibit-art" aria-hidden="true">🧪</span><span class="exhibit-id">EXHIBIT 05 · EXPERIMENT</span><strong>SimuLab</strong><small>A point-and-click virtual laboratory concept</small><span class="exhibit-open">EXPLORE IDEA ↗</span></button>
+    <button class="exhibit exhibit-rose" type="button" data-exhibit="code"><span class="exhibit-art" aria-hidden="true">⌘</span><span class="exhibit-id">EXHIBIT 06 · CODE & CURIOSITY</span><strong>Biology × Code</strong><small>Python, data, AI, and learning in public</small><span class="exhibit-open">OPEN NOTEBOOK ↗</span></button>
+  </div>
+  <p class="cabinet-footnote">Collection status: always growing · Some exhibits are coursework or concepts in progress, labelled as such.</p>
+</section>
+<dialog class="exhibit-dialog" id="exhibit-dialog" aria-labelledby="exhibit-dialog-title">
+  <div class="dialog-topline"><span>FIELD NOTE / COLLECTION CARD</span><button class="dialog-x" id="exhibit-close" type="button" aria-label="Close exhibit">×</button></div>
+  <div class="dialog-specimen" aria-hidden="true" id="exhibit-dialog-art">🦠</div>
+  <div class="exhibit-id" id="exhibit-dialog-id">EXHIBIT 01</div>
+  <h3 id="exhibit-dialog-title">Exhibit title</h3>
+  <p id="exhibit-dialog-description">Exhibit notes.</p>
+  <div class="dialog-links" id="exhibit-dialog-links"></div>
+  <button class="btn" id="exhibit-dialog-jump" type="button">OPEN RELATED SECTION ↗</button>
+</dialog>
+</section>
 <section class="panel" id="tab-arcade" role="tabpanel"><h2>✦ PINK PIXEL ARCADE ✦</h2><div class="arcade-intro">FREE PLAY FOREVER! 🎀 ★ 🪐 ✿<br>Two tiny games. No coins, no downloads, just vibes. Keyboard and touch controls supported.</div><div class="arcade-grid">
 <article class="machine"><h3>01 / STAR CATCHER</h3><p class="machine-desc">Move your basket to catch falling stars. Use ← → or A / D, or the buttons below.</p><div class="screen"><canvas id="catch-canvas" aria-label="Star Catcher game area"></canvas></div><div class="hud"><span>SCORE: <b id="catch-score">000</b></span><span>TIME: <b id="catch-time">30</b>s</span><span>BEST: <b id="catch-best">000</b></span></div><div class="actions"><button class="btn" id="catch-start" type="button">▶ START</button><button class="btn" id="catch-reset" type="button">↻ RESET</button></div><div class="move-controls"><button class="btn" id="catch-left" type="button">◀ LEFT</button><button class="btn" id="catch-right" type="button">RIGHT ▶</button></div><p class="message" id="catch-message" aria-live="polite">Press START and catch the sparkles!</p></article>
 <article class="machine"><h3>02 / PIXEL POP</h3><p class="machine-desc">Tap the sparkles before they teleport. How many can you pop in 15 seconds?</p><div class="pop-zone" id="pop-zone"><div class="prompt" id="pop-prompt">READY PLAYER ONE?<br>PRESS START!</div></div><div class="hud"><span>POPS: <b id="pop-score">000</b></span><span>TIME: <b id="pop-time">15</b>s</span></div><div class="actions"><button class="btn" id="pop-start" type="button">▶ START POP</button><button class="btn" id="pop-reset" type="button">↻ RESET</button></div><p class="message" id="pop-message" aria-live="polite">Click START, then tap the sparkle targets!</p></article>
@@ -602,6 +694,8 @@ function switchTab(name){
  tabs.forEach(function(btn){var chosen=btn.getAttribute('data-tab')===name;btn.setAttribute('aria-selected',chosen?'true':'false');});
  panels.forEach(function(panel){panel.classList.toggle('active',panel.id==='tab-'+name);});
  if(name==='arcade'){resizeCatchCanvas();drawCatch();}
+ var targetPanel=document.getElementById('tab-'+name);
+ if(targetPanel){targetPanel.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}
 }
 tabs.forEach(function(btn){btn.addEventListener('click',function(){switchTab(btn.getAttribute('data-tab'));});});
 document.querySelectorAll('[data-legal-tab]').forEach(function(link){link.addEventListener('click',function(e){e.preventDefault();switchTab(link.getAttribute('data-legal-tab'));var navButton=document.querySelector('.nav-btn[data-tab="'+link.getAttribute('data-legal-tab')+'"]');if(navButton)navButton.focus();});});
@@ -656,6 +750,46 @@ function startPop(){clearInterval(popTimer);if(target){target.remove();target=nu
 function resetPop(){popRunning=false;clearInterval(popTimer);popTimer=null;if(target){target.remove();target=null;}pops=0;popSeconds=15;popScore.textContent='000';popTime.textContent='15';popStart.textContent='▶ START POP';popPrompt.style.display='grid';popMessage.textContent='Click START, then tap the sparkle targets!';}
 popStart.addEventListener('click',startPop);document.getElementById('pop-reset').addEventListener('click',resetPop);
 window.addEventListener('resize',function(){if(target)moveTarget();});
+
+/* Cabinet of curiosities: accessible exhibit details and working navigation. */
+var exhibitNotes={
+ microbequest:{id:'EXHIBIT 01 · CASE FILE',title:'MicrobeQuest: The Outbreak Files',art:'🦠',description:'An interactive microbiology investigation game I developed and led. It turns course topics into outbreak cases with six learning stages, case-based quizzes, hints, scoring, explanations, progress tracking, and analytics.',jump:'projects',links:[['Open live project','https://microbequest-the.hatchable.site/'],['View source on GitHub','https://github.com/anubhutigoswami125/MicrobeQuest']]},
+ pulse:{id:'EXHIBIT 02 · HEALTH EQUITY',title:'Signal & Skin',art:'🫀',description:'A scientific poster exploring racial bias in pulse oximetry and how skin pigmentation can affect measurement accuracy and healthcare equity. This exhibit belongs to my research and scientific communication work.',jump:'research',links:[]},
+ bioelectric:{id:'EXHIBIT 03 · RESEARCH',title:'Bioelectric Futures',art:'⚡',description:'A poster topic on the future of bioelectric networks in anatomical engineering and regenerative medicine, scheduled for 18–19 November 2026. A developing research interest—not a completed publication.',jump:'research',links:[]},
+ citizenscience:{id:'EXHIBIT 04 · CITIZEN SCIENCE',title:'Small Data, Real Science',art:'🔬',description:'I have contributed 207+ classifications to citizen-science projects including Placenta Profiles and Clear Skies – Kiruna. This exhibit highlights careful observation, structured annotation, and participation in research workflows.',jump:'research',links:[]},
+ simulab:{id:'EXHIBIT 05 · EXPERIMENT',title:'SimuLab',art:'🧪',description:'A concept for a point-and-click virtual laboratory where learners can inspect equipment, explore benches, and discover how experiments fit together. This is a learning concept, not a finished deployed product.',jump:'projects',links:[]},
+ code:{id:'EXHIBIT 06 · CODE & CURIOSITY',title:'Biology × Code',art:'⌘',description:'My computational life-sciences learning log: Python foundations, data analysis, introductory C/C++, AI tools, and experiments in making scientific topics interactive. The skills section records what I am learning and what I have practised.',jump:'skills',links:[]}
+};
+var exhibitDialog=document.getElementById('exhibit-dialog');
+var exhibitDialogTitle=document.getElementById('exhibit-dialog-title');
+var exhibitDialogDescription=document.getElementById('exhibit-dialog-description');
+var exhibitDialogId=document.getElementById('exhibit-dialog-id');
+var exhibitDialogArt=document.getElementById('exhibit-dialog-art');
+var exhibitDialogLinks=document.getElementById('exhibit-dialog-links');
+var exhibitDialogJump=document.getElementById('exhibit-dialog-jump');
+var activeExhibit=null;
+document.querySelectorAll('[data-exhibit]').forEach(function(button){
+ button.addEventListener('click',function(){
+  activeExhibit=exhibitNotes[button.getAttribute('data-exhibit')];
+  if(!activeExhibit)return;
+  exhibitDialogTitle.textContent=activeExhibit.title;
+  exhibitDialogDescription.textContent=activeExhibit.description;
+  exhibitDialogId.textContent=activeExhibit.id;
+  exhibitDialogArt.textContent=activeExhibit.art;
+  exhibitDialogLinks.replaceChildren();
+  activeExhibit.links.forEach(function(item){
+   var link=document.createElement('a');link.href=item[1];link.textContent=item[0];link.target='_blank';link.rel='noopener noreferrer';exhibitDialogLinks.appendChild(link);
+  });
+  exhibitDialogJump.textContent='OPEN '+activeExhibit.jump.toUpperCase()+' SECTION ↗';
+  if(typeof exhibitDialog.showModal==='function')exhibitDialog.showModal();else exhibitDialog.setAttribute('open','');
+ });
+});
+function closeExhibit(){if(typeof exhibitDialog.close==='function'&&exhibitDialog.open)exhibitDialog.close();else exhibitDialog.removeAttribute('open');}
+document.getElementById('exhibit-close').addEventListener('click',closeExhibit);
+exhibitDialogJump.addEventListener('click',function(){if(!activeExhibit)return;var jump=activeExhibit.jump;closeExhibit();switchTab(jump);});
+exhibitDialog.addEventListener('click',function(event){if(event.target===exhibitDialog)closeExhibit();});
+document.addEventListener('keydown',function(event){if(event.key==='Escape'&&exhibitDialog.open)closeExhibit();});
+
 })();
 </script>
 </body>
