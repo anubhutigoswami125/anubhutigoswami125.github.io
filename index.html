@@ -716,6 +716,21 @@ html,body,body *{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2
 a,button,[role="button"],input,select,textarea,label{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20shape-rendering%3D%22crispEdges%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22c%22%3E%3Cpath%20d%3D%22M3%202%20L3%2025%20L9%2019%20L14%2029%20L19%2026%20L14%2016%20L23%2016%20Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M3%202%20L3%2025%20L9%2019%20L14%2029%20L19%2026%20L14%2016%20L23%2016%20Z%22%20fill%3D%22%23ff35b8%22%20stroke%3D%22%2316091f%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22miter%22%2F%3E%3Cg%20clip-path%3D%22url(%23c)%22%20fill%3D%22%2316091f%22%3E%3Crect%20x%3D%223%22%20y%3D%222%22%20width%3D%2220%22%20height%3D%2228%22%20fill%3D%22%23ff35b8%22%2F%3E%3Ccircle%20cx%3D%228%22%20cy%3D%227%22%20r%3D%222.1%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%227%22%20r%3D%222.1%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2213%22%20r%3D%222.1%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2213%22%20r%3D%222.1%22%2F%3E%3Ccircle%20cx%3D%227%22%20cy%3D%2219%22%20r%3D%222.1%22%2F%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%2222%22%20r%3D%222.1%22%2F%3E%3Ccircle%20cx%3D%2217%22%20cy%3D%2228%22%20r%3D%222.1%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M3%202%20L3%2025%20L9%2019%20L14%2029%20L19%2026%20L14%2016%20L23%2016%20Z%22%20fill%3D%22none%22%20stroke%3D%22%2316091f%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22miter%22%2F%3E%3C%2Fsvg%3E") 3 2,pointer}
 @media(pointer:coarse){html,body,body *{cursor:auto!important}}
 
+
+/* Footer-only sticker: small, in normal flow, never overlapping content */
+.footer{align-items:center}
+.footer-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.footer-links a{margin-left:0!important}
+.end-sticker{display:block;width:42px;height:42px;max-width:12vw;object-fit:contain;flex:0 0 auto;align-self:center}
+.legal-dialog{width:min(700px,calc(100vw - 28px));max-height:82vh;overflow:auto;padding:0;border:5px solid #321443;background:#ffdcf5;color:#321443;box-shadow:9px 9px 0 #ff4bbd}
+.legal-dialog::backdrop{background:#321443b8;backdrop-filter:blur(3px)}
+.legal-dialog .dialog-topline{position:sticky;top:0;z-index:2}
+.legal-copy{padding:20px 24px;line-height:1.75}
+.legal-copy h3{margin:18px 0 6px;font-size:18px}
+.legal-copy p,.legal-copy li{margin:7px 0}
+.legal-copy ul{padding-left:22px}
+@media(max-width:520px){.footer{align-items:flex-start}.footer-links{max-width:100%;gap:10px}.end-sticker{width:34px;height:34px;max-width:34px;margin-left:auto}.legal-copy{padding:16px}.legal-dialog h2{font-size:20px}}
+
 </style>
 </head>
 <body>
@@ -748,14 +763,14 @@ a,button,[role="button"],input,select,textarea,label{cursor:url("data:image/svg+
 <div><div class="eyebrow">BIOTECHNOLOGY · COMPUTATIONAL BIOLOGY · PROJECTS</div><h1>Anubhuti Goswami</h1><div class="subtitle">B.TECH BIOTECHNOLOGY STUDENT @ LPU</div><div class="meta hero-meta">FARIDABAD, HARYANA · CGPA 7.58/10 · 60% SCHOLARSHIP</div><p class="intro">Second-year biotechnology undergraduate exploring genetics, microbiology, computational biology, and AI applications in life sciences. Interested in turning curious questions into research, code, and interactive learning projects.</p><div class="tags"><span class="tag">GENETICS</span><span class="tag">MICROBIOLOGY</span><span class="tag">BIOINFORMATICS</span><span class="tag">AI × LIFE SCIENCES</span></div></div>
 <div class="avatar" role="img" aria-label="Portfolio avatar portrait"><span class="portrait-sticker" aria-hidden="true">✿</span><img class="avatar-photo" src="https://i.pinimg.com/736x/ee/dd/cd/eeddcdb46f9b87b65ce4bc10934b0d46.jpg" alt="Anubhuti’s chosen portfolio avatar" loading="eager"><svg viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="220" height="240" fill="#ffe45b"/><path d="M0 25L28 0h31L0 58zM220 168l-40 72h-35l75-120z" fill="#ff4bbd"/><circle cx="30" cy="175" r="14" fill="#50e7ff"/><path d="M177 21l8 17 19 3-14 13 3 19-16-9-17 9 4-19-14-13 19-3z" fill="#9b65ff"/><path d="M43 240c4-39 24-61 67-64 46 1 66 26 70 64z" fill="#7d3be8" stroke="#321443" stroke-width="5"/><path d="M81 171h58v35H81z" fill="#e9a47f"/><path d="M57 95c0-48 22-72 57-72s57 25 57 72v56c-9 24-29 38-57 38s-49-15-57-39z" fill="#68402c" stroke="#321443" stroke-width="5"/><path d="M72 91c0-30 15-49 42-49s42 19 42 49v58c-8 20-24 30-42 30s-34-10-42-30z" fill="#f2bd97"/><path d="M58 94c-1-36 14-65 42-72 22-6 45 2 59 22 8 12 12 30 10 53l-18-18-5-22c-13 12-35 18-63 15l-7 25z" fill="#68402c" stroke="#321443" stroke-width="5" stroke-linejoin="round"/><path d="M63 102l-2 43 13 11 4-47zM157 100l3 47-13 11-4-47z" fill="#68402c"/><path d="M76 113h25M119 113h25" stroke="#321443" stroke-width="4" stroke-linecap="round"/><rect x="72" y="103" width="35" height="29" rx="9" fill="#fff7ef" fill-opacity=".22" stroke="#321443" stroke-width="5"/><rect x="113" y="103" width="35" height="29" rx="9" fill="#fff7ef" fill-opacity=".22" stroke="#321443" stroke-width="5"/><path d="M107 115h6M65 115h7M148 115h8" stroke="#321443" stroke-width="5" stroke-linecap="round"/><circle cx="91" cy="117" r="4" fill="#321443"/><circle cx="130" cy="117" r="4" fill="#321443"/><path d="M105 138l-3 9 9 2" fill="none" stroke="#b76f5b" stroke-width="3" stroke-linecap="round"/><path d="M96 157q14 11 28 0" fill="none" stroke="#9d4252" stroke-width="4" stroke-linecap="round"/><path d="M79 146l-9 4M141 146l9 4" stroke="#ee8b86" stroke-width="5" stroke-linecap="round"/><path d="M79 204l-18 36h98l-18-36-21 13z" fill="#ff73bd" stroke="#321443" stroke-width="4"/><path d="M97 206l13 11 13-11" fill="#fff3a3" stroke="#321443" stroke-width="3"/><path d="M20 86l7 13 15 2-11 10 3 15-14-7-13 7 3-15L0 101l15-2z" fill="#fff4a5" stroke="#321443" stroke-width="2"/><text x="171" y="218" font-family="sans-serif" font-size="17" font-weight="900" fill="#321443" transform="rotate(-9 171 218)">AG!</text></svg></div>
 </header>
-<div class="inspo-strip" aria-label="Decorative scrapbook image collage"><figure class="inspo-card inspo-one"><img src="https://i.pinimg.com/736x/64/3e/af/643eafff3dcc214718773f6915828dd5.jpg" alt="Scrapbook inspiration" loading="lazy"></figure><figure class="inspo-card inspo-two"><img src="https://i.pinimg.com/1200x/6e/8a/d3/6e8ad3eed6631d0a16b6d2f6077c618a.jpg" alt="Decorative collage image" loading="lazy"></figure><figure class="inspo-card inspo-three"><img src="https://i.pinimg.com/1200x/94/44/24/944424eb86eb8d97367b2cb15843a2f8.jpg" alt="Decorative scrapbook image" loading="lazy"></figure><span class="inspo-note">little things make a world ✦</span><img class="deco-sticker sticker-strip" src="https://i.pinimg.com/736x/e8/73/fb/e873fba4fd8e053e0868336a3390f868.jpg" alt="" aria-hidden="true" loading="lazy"></div>
+<div class="inspo-strip" aria-label="Decorative scrapbook image collage"><figure class="inspo-card inspo-one"><img src="https://i.pinimg.com/736x/64/3e/af/643eafff3dcc214718773f6915828dd5.jpg" alt="Scrapbook inspiration" loading="lazy"></figure><figure class="inspo-card inspo-two"><img src="https://i.pinimg.com/1200x/6e/8a/d3/6e8ad3eed6631d0a16b6d2f6077c618a.jpg" alt="Decorative collage image" loading="lazy"></figure><figure class="inspo-card inspo-three"><img src="https://i.pinimg.com/1200x/94/44/24/944424eb86eb8d97367b2cb15843a2f8.jpg" alt="Decorative scrapbook image" loading="lazy"></figure><span class="inspo-note">little things make a world ✦</span></div>
 <nav class="nav" role="tablist" aria-label="Portfolio sections">
 <button class="nav-btn" data-tab="home" role="tab" aria-selected="true">HOME</button><button class="nav-btn" data-tab="arcade" role="tab" aria-selected="false">✦ ARCADE ✦</button><button class="nav-btn" data-tab="cv" role="tab" aria-selected="false">CV / RESUME</button><button class="nav-btn" data-tab="experience" role="tab" aria-selected="false">EXPERIENCE</button><button class="nav-btn" data-tab="projects" role="tab" aria-selected="false">PROJECTS</button><button class="nav-btn" data-tab="research" role="tab" aria-selected="false">RESEARCH</button><button class="nav-btn" data-tab="skills" role="tab" aria-selected="false">SKILLS</button>
 </nav>
 <main>
 <section class="panel active" id="tab-home" role="tabpanel"><h2>✦ PLAYER PROFILE & ACADEMICS ✦</h2><div class="grid"><article class="card"><h3>EDUCATION</h3><div class="meta">Lovely Professional University · 2025–2029</div><p><strong>B.Tech Biotechnology</strong></p><p>CGPA: 7.58 / 10.0</p><p>Recipient of a 60% academic scholarship.</p><p>Based in Faridabad, Haryana, India.</p></article><article class="card"><h3>CONTACT & LINKS</h3><p>Email: <a href="mailto:anubhutiworkk@gmail.com">anubhutiworkk@gmail.com</a></p><p><a href="https://linkedin.com/in/anubhuti-goswami-b6382137b" target="_blank" rel="noopener">LinkedIn profile ↗</a></p><p><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">GitHub profile ↗</a></p></article></div><div class="callout" style="margin-top:18px">CURRENT QUEST: building skills in Python, data analysis, bioinformatics, genetics, and computational life sciences.</div>
 <section class="cabinet" aria-labelledby="cabinet-heading">
-  <div class="cabinet-heading"><div class="cabinet-photo-stickers"><img src="https://i.pinimg.com/736x/64/3e/af/643eafff3dcc214718773f6915828dd5.jpg" alt="" loading="lazy"><img src="https://i.pinimg.com/1200x/6e/8a/d3/6e8ad3eed6631d0a16b6d2f6077c618a.jpg" alt="" loading="lazy"></div><span class="archive-stamp">PERSONAL MUSEUM · OPEN COLLECTION</span><h2 id="cabinet-heading">PROJECT SCRAPBOOK</h2><p>Selected projects, research work, and experiments. Open an item for details.</p><span class="hand-note">CLICK TO OPEN ↗</span><img class="deco-sticker sticker-cabinet" src="https://i.pinimg.com/736x/72/51/90/725190e09172836fb4823bc2d2862d3f.jpg" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="cabinet-heading"><div class="cabinet-photo-stickers"><img src="https://i.pinimg.com/736x/64/3e/af/643eafff3dcc214718773f6915828dd5.jpg" alt="" loading="lazy"><img src="https://i.pinimg.com/1200x/6e/8a/d3/6e8ad3eed6631d0a16b6d2f6077c618a.jpg" alt="" loading="lazy"></div><span class="archive-stamp">PERSONAL MUSEUM · OPEN COLLECTION</span><h2 id="cabinet-heading">PROJECT SCRAPBOOK</h2><p>Selected projects, research work, and experiments. Open an item for details.</p><span class="hand-note">CLICK TO OPEN ↗</span></div>
   <div class="exhibit-grid">
     <button class="exhibit exhibit-rose" type="button" data-exhibit="microbequest"><span class="exhibit-art" aria-hidden="true">🦠</span><span class="exhibit-id">EXHIBIT 01 · CASE FILE</span><strong>MicrobeQuest</strong><small>An outbreak mystery built from microbiology</small><span class="exhibit-open">OPEN SPECIMEN ↗</span></button>
     <button class="exhibit exhibit-sage" type="button" data-exhibit="pulse"><span class="exhibit-art" aria-hidden="true">🫀</span><span class="exhibit-id">EXHIBIT 02 · HEALTH EQUITY</span><strong>BIOINNOVATE</strong><small>Poster · pulse oximetry and measurement bias</small><span class="exhibit-open">READ FIELD NOTE ↗</span></button>
@@ -774,6 +789,34 @@ a,button,[role="button"],input,select,textarea,label{cursor:url("data:image/svg+
   <p id="exhibit-dialog-description">Exhibit notes.</p>
   <div class="dialog-links" id="exhibit-dialog-links"></div>
   <button class="btn" id="exhibit-dialog-jump" type="button">OPEN RELATED SECTION ↗</button>
+</dialog>
+
+<dialog class="legal-dialog" id="legal-dialog" aria-labelledby="legal-dialog-title">
+  <div class="dialog-topline"><span>PORTFOLIO INFORMATION</span><button class="dialog-x" id="legal-close" type="button" aria-label="Close legal information">×</button></div>
+  <div class="legal-copy">
+    <h2 id="legal-dialog-title">TERMS OF SERVICE</h2>
+    <div id="legal-terms">
+      <p>This website is a personal academic and professional portfolio maintained by Anubhuti Goswami. By using the site, you agree to use its content lawfully and respectfully.</p>
+      <h3>Portfolio content</h3>
+      <p>Project descriptions, educational material, and personal achievements are provided for general information. They may be updated or corrected over time. Do not copy, republish, or present my work as your own without permission and appropriate attribution.</p>
+      <h3>External links and resources</h3>
+      <p>This site may link to third-party websites, projects, services, or media. Those destinations are operated by others and are subject to their own terms and policies. I do not control or guarantee their availability or content.</p>
+      <h3>Availability and contact</h3>
+      <p>The site is provided as-is, without a guarantee of uninterrupted availability or error-free content. For questions about portfolio material or permission to reuse it, contact <a href="mailto:anubhutiworkk@gmail.com">anubhutiworkk@gmail.com</a>.</p>
+      <p><strong>Last updated:</strong> 17 October 2026.</p>
+    </div>
+    <div id="legal-privacy" hidden>
+      <p>This is a personal portfolio hosted on GitHub Pages. It is not designed to ask visitors to create accounts or submit personal details through a contact form.</p>
+      <h3>Information and browser storage</h3>
+      <p>The Star Catcher mini-game may save your best score in your own browser using local storage. That score is used to display your personal best on this device and is not sent to me by the game code.</p>
+      <p>GitHub Pages and third-party providers used to deliver site resources may process standard technical data, such as request logs or connection information, under their own policies.</p>
+      <h3>Third-party resources</h3>
+      <p>The site may load fonts, images, or links from external providers. When your browser requests those resources, the providers may receive technical information such as your IP address. Their own privacy policies apply.</p>
+      <h3>Your choices</h3>
+      <p>You can clear the site's local storage through your browser settings and choose not to follow external links. For questions about this policy, contact <a href="mailto:anubhutiworkk@gmail.com">anubhutiworkk@gmail.com</a>.</p>
+      <p><strong>Last updated:</strong> 17 October 2026.</p>
+    </div>
+  </div>
 </dialog>
 </section>
 <section class="panel" id="tab-arcade" role="tabpanel"><h2>✦ PINK PIXEL ARCADE ✦</h2><div class="arcade-intro">FREE PLAY FOREVER! 🎀 ★ 🪐 ✿<br>Two tiny games. No coins, no downloads, just vibes. Keyboard and touch controls supported.</div><div class="arcade-grid">
@@ -829,14 +872,14 @@ a,button,[role="button"],input,select,textarea,label{cursor:url("data:image/svg+
 
 <section class="panel" id="tab-experience" role="tabpanel"><h2>✦ EXPERIENCE & INTERNSHIPS ✦</h2><div class="grid"><article class="card"><h3>CONTENT WRITING INTERN</h3><div class="meta">Henry Harvin · Aug–Oct 2026</div><p>Six-week content-writing internship involving long-form article writing, content planning, and research-based communication.</p></article><article class="card"><h3>VIRTUAL INTERN — GENETIC ENGINEERING</h3><div class="meta">BioLim.org · Jul 2026</div><p>Virtual training in genetic engineering principles, molecular workflows, and biotechnology applications.</p></article><article class="card"><h3>DATA LABELING ANALYST</h3><div class="meta">Forage · Jul 2026</div><p>Virtual job simulation involving intent and sentiment classification, PII privacy labeling, ambiguous cases, and annotation rationale.</p></article><article class="card"><h3>COMMUNITY DEVELOPMENT VOLUNTEER</h3><div class="meta">Prayas Welfare School · Faridabad · Jul 2026</div><p>Supported primary students and supported learning in Mathematics, English, Hindi, and Environmental Studies.</p></article></div></section>
 <section class="panel" id="tab-projects" role="tabpanel"><h2>✦ PROJECTS & BUILDS ✦</h2><div class="grid"><article class="card"><h3>MICROBEQUEST: THE OUTBREAK FILES</h3><div class="meta">Developer & project lead · 2026</div><p>Interactive microbiology investigation game with syllabus-aligned stages, case-based quizzes, hints, scoring, and analytics.</p><p><a href="https://anubhutigoswami125.github.io/MicrobeQuest/" target="_blank" rel="noopener">Live demo ↗</a> · <a href="https://github.com/anubhutigoswami125/MicrobeQuest" target="_blank" rel="noopener">GitHub ↗</a></p></article><article class="card"><h3>PERSONAL EXPENSE TRACKER</h3><div class="meta">C++ coursework</div><p>Building an object-oriented finance application for expense recording, categorization, and budget management.</p></article><article class="card"><h3>SIMULAB</h3><div class="meta">Interactive learning concept</div><p>A point-and-click virtual laboratory concept for exploring equipment, benches, and experiments.</p></article></div></section>
-<section class="panel" id="tab-research" role="tabpanel"><h2>✦ RESEARCH & SCIENTIFIC ENGAGEMENT ✦</h2><div class="grid"><article class="card"><img class="deco-sticker sticker-research" src="https://i.pinimg.com/736x/a5/7d/a2/a57da29f0872c2946b2876270d38a887.jpg" alt="" aria-hidden="true" loading="lazy"><h3>PULSE OXIMETRY & SKIN PIGMENTATION</h3><div class="meta">Poster · LPU</div><p>Explored racial bias in pulse oximetry and the relationship between skin pigmentation and healthcare equity.</p></article><article class="card"><h3>IC-BIOSUSTAIN</h3><div class="meta">Student poster presentation · LPU</div><p>Scheduled for 18–19 November 2026.</p></article><article class="card"><h3>ZOONIVERSE CITIZEN SCIENCE</h3><div class="meta">Research volunteering</div><p>Contributed 207 classifications across Placenta Profiles and Clear Skies – Kiruna.</p></article><article class="card"><h3>SCIENTIFIC INTERESTS</h3><div class="tags"><span class="tag">GENETICS</span><span class="tag">MICROBIOLOGY</span><span class="tag">BIOINFORMATICS</span><span class="tag">AI IN LIFE SCIENCES</span><span class="tag">DATA ANALYSIS</span></div></article></div></section>
+<section class="panel" id="tab-research" role="tabpanel"><h2>✦ RESEARCH & SCIENTIFIC ENGAGEMENT ✦</h2><div class="grid"><article class="card"><h3>PULSE OXIMETRY & SKIN PIGMENTATION</h3><div class="meta">Poster · LPU</div><p>Explored racial bias in pulse oximetry and the relationship between skin pigmentation and healthcare equity.</p></article><article class="card"><h3>IC-BIOSUSTAIN</h3><div class="meta">Student poster presentation · LPU</div><p>Scheduled for 18–19 November 2026.</p></article><article class="card"><h3>ZOONIVERSE CITIZEN SCIENCE</h3><div class="meta">Research volunteering</div><p>Contributed 207 classifications across Placenta Profiles and Clear Skies – Kiruna.</p></article><article class="card"><h3>SCIENTIFIC INTERESTS</h3><div class="tags"><span class="tag">GENETICS</span><span class="tag">MICROBIOLOGY</span><span class="tag">BIOINFORMATICS</span><span class="tag">AI IN LIFE SCIENCES</span><span class="tag">DATA ANALYSIS</span></div></article></div></section>
 <section class="panel" id="tab-skills" role="tabpanel"><h2>✦ SKILLS & CERTIFICATIONS ✦</h2><div class="grid"><article class="card"><h3>TECHNICAL SKILLS</h3><div class="tags"><span class="tag">Python · beginner</span><span class="tag">C / C++ · learning</span><span class="tag">Excel</span><span class="tag">PowerPoint</span><span class="tag">Canva</span><span class="tag">GitHub</span><span class="tag">Data labeling</span><span class="tag">PII privacy</span><span class="tag">Data visualization</span><span class="tag">AI productivity tools</span></div></article><article class="card"><h3>LAB & BIOLOGY</h3><div class="tags"><span class="tag">Pipetting</span><span class="tag">Titration</span><span class="tag">Biotechnology</span><span class="tag">Microbiology coursework</span><span class="tag">Genetics coursework</span></div></article><article class="card"><h3>SELECTED CERTIFICATIONS</h3><p>• Python — University of Michigan / Coursera (in progress)</p><p>• Microbiology — Coursera</p><p>• Introduction to AI — IBM</p><p>• CS101 / Programming Fundamentals — Saylor Academy</p><p>• ESL 1, 2 & 3; Presentations — Saylor Academy</p><p>• Resume Writing — HP LIFE</p></article><article class="card"><h3>OTHER ACTIVITIES</h3><p>Hackathons, campus leadership, scientific poster presentations, and citizen-science annotation.</p></article></div></section>
 
 
 <section class="credentials-panel" aria-labelledby="credentials-title">
   <div class="credentials-head">
     <div><div class="credentials-kicker">PROFILE ARCHIVE / VERIFIED DETAILS</div><h2 id="credentials-title">PROFESSIONAL PROFILE & CREDENTIALS</h2></div>
-    <div class="credentials-kicker">ANUBHUTI GOSWAMI · 2026</div><img class="deco-sticker sticker-credentials" src="https://i.pinimg.com/1200x/33/90/95/339095fb930a079c723e77d2ce414e00.jpg" alt="" aria-hidden="true" loading="lazy">
+    <div class="credentials-kicker">ANUBHUTI GOSWAMI · 2026</div>
   </div>
   <div class="credentials-layout">
     <figure class="credentials-portrait">
@@ -865,7 +908,7 @@ a,button,[role="button"],input,select,textarea,label{cursor:url("data:image/svg+
 </section>
 
 </main>
-<footer class="footer"><span>© 2026 ANUBHUTI GOSWAMI · PORTFOLIO</span><span><a href="mailto:anubhutiworkk@gmail.com">CONTACT</a><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">GITHUB ↗</a></span></footer>
+<footer class="footer"><span>© 2026 ANUBHUTI GOSWAMI · PORTFOLIO</span><span class="footer-links"><a href="mailto:anubhutiworkk@gmail.com">CONTACT</a><a href="https://github.com/anubhutigoswami125" target="_blank" rel="noopener">GITHUB ↗</a><a href="#" data-legal="terms">TERMS OF SERVICE</a><a href="#" data-legal="privacy">PRIVACY POLICY</a></span><img class="end-sticker" src="https://imgs.search.brave.com/EJWPbWBgOBBzrTXlIoF-_yKu_yX5Rto9wkhlHA8DmQU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zMy5n/ZXRzdGlja2VycGFjay5jb20vc3RvcmFnZS91cGxvYWRzL3N0aWNrZXItcGFjay9jaGltbXktYnQyMS9zdGlja2VyXzEud2VicD81YzdjYjBkYjA0M2NmODlkZWUyYWRlNWFmMjg5OWY2ZiZkPTIwMHgyMDA" alt="Chimmy sticker" loading="lazy"></footer>
 </div>
 
 <div class="start-menu" id="start-menu" role="menu" aria-label="Start menu"><div class="start-menu-head">✦ ANUBHUTI OS<br>PLAYER 01 ONLINE</div><button data-open-tab="home">🖥️ &nbsp; PROFILE.EXE</button><button data-open-tab="projects">📁 &nbsp; PROJECT FILES</button><button data-open-tab="research">🧬 &nbsp; RESEARCH LOG</button><button data-open-tab="arcade">🕹️ &nbsp; LAUNCH ARCADE</button><button data-open-tab="cv">📄 &nbsp; FULL CV / RESUME</button><button data-open-tab="experience">📼 &nbsp; EXPERIENCE</button><button data-open-tab="skills">💾 &nbsp; SKILLS DATABASE</button></div>
@@ -975,6 +1018,26 @@ var exhibitNotes={
  simulab:{id:'EXHIBIT 05 · EXPERIMENT',title:'SimuLab',art:'🧪',description:'A concept for a point-and-click virtual laboratory where learners can inspect equipment, explore benches, and discover how experiments fit together. This is a learning concept, not a finished deployed product.',jump:'projects',links:[]},
  code:{id:'EXHIBIT 06 · CODE & CURIOSITY',title:'Biology × Code',art:'⌘',description:'My computational life-sciences learning log: Python foundations, data analysis, introductory C/C++, AI tools, and experiments in making scientific topics interactive. The skills section records what I am learning and what I have practised.',jump:'skills',links:[]}
 };
+
+var legalDialog=document.getElementById('legal-dialog');
+var legalTitle=document.getElementById('legal-dialog-title');
+var legalTerms=document.getElementById('legal-terms');
+var legalPrivacy=document.getElementById('legal-privacy');
+document.querySelectorAll('[data-legal]').forEach(function(link){
+ link.addEventListener('click',function(event){
+  event.preventDefault();
+  var privacy=link.getAttribute('data-legal')==='privacy';
+  legalTitle.textContent=privacy?'PRIVACY POLICY':'TERMS OF SERVICE';
+  legalTerms.hidden=privacy;
+  legalPrivacy.hidden=!privacy;
+  if(typeof legalDialog.showModal==='function')legalDialog.showModal();else legalDialog.setAttribute('open','');
+ });
+});
+function closeLegal(){if(typeof legalDialog.close==='function'&&legalDialog.open)legalDialog.close();else legalDialog.removeAttribute('open');}
+document.getElementById('legal-close').addEventListener('click',closeLegal);
+legalDialog.addEventListener('click',function(event){if(event.target===legalDialog)closeLegal();});
+document.addEventListener('keydown',function(event){if(event.key==='Escape'&&legalDialog.open)closeLegal();});
+
 var exhibitDialog=document.getElementById('exhibit-dialog');
 var exhibitDialogTitle=document.getElementById('exhibit-dialog-title');
 var exhibitDialogDescription=document.getElementById('exhibit-dialog-description');
