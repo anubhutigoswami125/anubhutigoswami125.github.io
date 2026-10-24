@@ -1,39 +1,28 @@
 # Mossberry Island 🍓
+*A cozy storybook world, lorebook, and world-building browser game.*
 
-*A cozy lore-and-world-building browser game.*
+Mossberry Island is designed as a small, standalone world of its own — with a public-facing world homepage, an in-world lorebook, and a playable cozy exploration prototype.
 
-Mossberry Island is a tiny, storybook world about arriving somewhere new, exploring at your own pace, collecting keepsakes, recovering the island's memories, and helping its spirit wake up.
+## Website
+- **World homepage:** https://anubhutigoswami125.github.io/Mossberry-Island/
+- **Play the game:** https://anubhutigoswami125.github.io/Mossberry-Island/play/
+- **Read the lorebook:** https://anubhutigoswami125.github.io/Mossberry-Island/lore.html
 
-## Play
-
-Once GitHub Pages has published the folder, open:
-
-https://anubhutigoswami125.github.io/Mossberry-Island/
-
-## Current prototype
-
-- Clickable island locations: your cottage, Whispergrove, Moonpond, the Old Stones, Shell Beach, and Berry Meadow
-- An opening story scene and place-specific discovery interactions
-- Five pieces of island lore to recover
-- Keepsake collection and a satchel
-- World-tending/building system with resource costs
-- Island spirit progression and gentle goals
-- Browser-local saving with `localStorage`
-- Weather switching, seasonal day counter, responsive layout, and a cozy illustrated island scene
+## Project areas
+- **World homepage** introduces the setting, atmosphere, premise, and ways to explore.
+- **Lorebook** shares the island's myths, history, and central mystery.
+- **Playable prototype** includes six clickable locations, keepsake collection, five recoverable memories, island-tending/building, gentle goals, weather switching, seasonal day labels, and browser-local saves.
 
 ## Technology
-
-Plain HTML, CSS, and JavaScript. No framework, API key, backend, or build step is required. The game is designed to run on GitHub Pages.
+Plain HTML, CSS, and JavaScript. No framework, backend, or API key required. Designed for GitHub Pages.
 
 ## Save data
+The playable prototype stores progress in `localStorage` for the current browser. It does not sync across devices. The in-game **New beginning** control resets the local save.
 
-Progress is stored locally in the current browser. It does not sync between devices or browsers. Use **New beginning** in-game to reset the local save.
-
-## Roadmap ideas
-
-- Expand the map with unlockable island regions
-- Add resident characters with dialogue and relationship arcs
-- Add more craftable structures and decorations
-- Introduce seasonal festivals and discoveries
-- Replace emoji scenery with a custom illustrated/isometric map
-- Expand the lore into an interconnected mystery about the island's origin
+## Development direction
+1. Replace emoji-based map elements with custom illustrated scenery and sprites.
+2. Add named residents with dialogue, routines, and character arcs.
+3. Expand the island into connected, unlockable regions.
+4. Make building placement and decoration visibly alter the map.
+5. Develop a branching central mystery and more lore discoveries.
+6. Add seasonal activities, crafting, and richer save data.
