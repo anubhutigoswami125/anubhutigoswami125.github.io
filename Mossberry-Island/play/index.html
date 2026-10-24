@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#dce8ce">
+<title>Mossberry Island — A little world of your own</title>
+<style>
+:root{--ink:#304a3c;--moss:#6c8d62;--leaf:#a9c68c;--cream:#fff8e8;--paper:#f7efd9;--berry:#a94f66;--sky:#c7e4df;--line:#d5dfc4;--shadow:0 8px 24px #40543b18}
+*{box-sizing:border-box}body{margin:0;background:#e7eedb;color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;min-height:100vh}button{font:inherit;cursor:pointer;color:inherit}button:focus-visible{outline:3px solid #d17d8f;outline-offset:3px}.shell{max-width:1440px;margin:auto;padding:18px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:8px 4px 18px}.brand{display:flex;align-items:center;gap:12px}.brandmark{width:52px;height:52px;display:grid;place-items:center;background:#f9f1d8;border:2px solid #d5dfc4;border-radius:18px;font-size:29px;box-shadow:var(--shadow)}h1,h2,h3,p{margin-top:0}.brand h1{font-family:Georgia,serif;font-size:clamp(24px,3vw,35px);letter-spacing:-1.2px;margin:0}.subtitle{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#728a6c;margin-top:4px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.pill{border:1px solid #d1ddc3;background:#fff8e8;border-radius:999px;padding:9px 14px;font-size:13px;box-shadow:0 3px 0 #d2dcc5}.pill:hover,.navbtn:hover,.action:hover{transform:translateY(-1px);filter:brightness(1.02)}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px}.stat{background:#f9f3e2;border:1px solid var(--line);border-radius:15px;padding:10px 14px;display:flex;gap:9px;align-items:center;min-width:125px}.stat .emoji{font-size:21px}.stat small{display:block;color:#7c8e72;font-size:11px}.stat strong{font-size:14px}.layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(290px,.8fr);gap:16px;align-items:start}.world-card,.panel{background:var(--cream);border:1px solid #d4dfc4;border-radius:23px;box-shadow:var(--shadow);overflow:hidden}.world-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 19px 12px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#849675;font-weight:800}.world-head h2{font:25px Georgia,serif;margin:3px 0 0}.weather{font-size:12px;background:#e6efd9;padding:8px 11px;border-radius:99px;white-space:nowrap}.scene{position:relative;min-height:440px;aspect-ratio:1.25;background:linear-gradient(#c6e4df 0 47%,#d6e5bc 47% 100%);overflow:hidden;isolation:isolate}.sun{position:absolute;width:72px;height:72px;border-radius:50%;background:#fff0b6;top:9%;right:14%;box-shadow:0 0 0 12px #fff0b633,0 0 48px #fff1b655}.cloud{position:absolute;font-size:clamp(26px,4vw,46px);opacity:.78;animation:drift 18s ease-in-out infinite alternate}.cloud.one{left:12%;top:11%}.cloud.two{right:28%;top:22%;animation-delay:-8s}@keyframes drift{to{transform:translateX(22px)}}.farhill{position:absolute;bottom:34%;width:90%;height:37%;left:-10%;background:#a8c9a0;border-radius:50% 50% 0 0;transform:rotate(-5deg);z-index:-1}.farhill.two{left:38%;bottom:32%;background:#96bd91;transform:rotate(8deg)}.sea{position:absolute;bottom:-12%;left:-8%;width:116%;height:34%;border-radius:50% 50% 0 0;background:#83c6c1;border-top:5px solid #b4ded1}.sea:before,.sea:after{content:"";position:absolute;height:8px;width:25%;border-top:2px dashed #d9f0db;border-radius:50%;top:32%;left:8%;transform:rotate(-5deg)}.sea:after{left:65%;top:53%;width:20%}.island{position:absolute;left:8%;right:8%;bottom:13%;height:52%;background:#83ad72;border-radius:46% 50% 38% 42%/40% 44% 56% 50%;transform:rotate(-2deg);box-shadow:inset 0 -18px #709e69,inset 0 9px #b2cb88,0 15px 0 #6caeaa;z-index:0}.island:before{content:"";position:absolute;inset:10% 8% 17%;border-radius:48%;background:#b6cf8c;opacity:.55}.path{position:absolute;left:31%;top:30%;width:42%;height:46%;border:17px solid #e9d9a8;border-left-color:transparent;border-top-color:transparent;border-radius:50%;transform:rotate(12deg);opacity:.95}.pond{position:absolute;left:45%;top:33%;width:18%;height:13%;border-radius:50%;background:#80c6c2;border:5px solid #d4e3a8;box-shadow:inset 0 3px #b7e4d9}.tree{position:absolute;font-size:clamp(27px,4vw,47px);filter:drop-shadow(0 4px 0 #5e9465);z-index:2}.tree.t1{left:17%;top:24%}.tree.t2{left:72%;top:36%}.tree.t3{left:26%;top:53%}.tree.t4{left:64%;top:13%}.tree.t5{left:79%;top:61%;font-size:34px}.flower{position:absolute;font-size:20px;z-index:3}.f1{left:38%;top:59%}.f2{left:58%;top:68%}.f3{left:72%;top:53%}.f4{left:18%;top:62%}.hotspot{position:absolute;z-index:5;border:2px solid #fff8e8;background:#fff7dc;border-radius:16px;min-width:49px;min-height:48px;padding:4px 8px;box-shadow:0 5px 0 #4e765c44;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;transition:.15s}.hotspot:hover{transform:translateY(-4px) scale(1.04)}.hotspot span{font-size:24px;line-height:1.1}.hotspot small{font-size:9px;font-weight:800;white-space:nowrap}.hotspot.visited{border-color:#d99aa9}.h-cottage{left:34%;top:36%}.h-grove{left:13%;top:41%}.h-pond{left:48%;top:31%}.h-ruins{left:70%;top:47%}.h-beach{left:48%;top:70%}.h-meadow{left:25%;top:63%}.scene-hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:#fff8e8eF;padding:8px 13px;border-radius:999px;font-size:11px;z-index:7;white-space:nowrap;box-shadow:0 3px 12px #304a3c16}.scene-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 17px;background:#f8f1dc;border-top:1px solid var(--line);font-size:12px;color:#73856c}.panel{padding:19px}.panel h2{font:24px Georgia,serif;margin:4px 0 8px}.panel p{font-size:13px;line-height:1.6;color:#61765b}.divider{height:1px;background:#e3e6d1;margin:15px 0}.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 15px}.navbtn{border:1px solid #d6dfc7;background:#f4f0dc;padding:8px 12px;border-radius:11px;font-size:12px}.navbtn.active{background:#527a58;color:#fff8e8;border-color:#527a58}.panel-section{display:none}.panel-section.active{display:block}.quest{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed #dbe2cf}.quest:last-child{border:0}.quest-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:12px;background:#e8efd9;flex-shrink:0;font-size:18px}.quest strong{font-size:13px;display:block;margin:1px 0 4px}.quest small{font-size:11px;line-height:1.4;color:#78896e;display:block}.action{border:0;background:#527a58;color:white;border-radius:12px;padding:10px 13px;font-size:12px;font-weight:750;box-shadow:0 4px 0 #365c42;transition:.15s}.action.secondary{background:#e6edda;color:#3e6448;box-shadow:0 4px 0 #cbd9bd}.action.berry{background:#a94f66;box-shadow:0 4px 0 #843c52}.row-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.progress{height:8px;background:#e4e9d5;border-radius:20px;overflow:hidden;margin:8px 0 5px}.progress span{display:block;height:100%;width:0;background:#8ab178;border-radius:20px;transition:width .3s}.lore-note{background:#f3e9ce;border:1px solid #e4d8b7;border-radius:15px;padding:13px;margin:9px 0}.lore-note strong{font:16px Georgia,serif;display:block;margin-bottom:5px}.lore-note p{margin:0;font-size:12px}.locked{opacity:.55;filter:grayscale(.3)}.inventory{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.item{background:#f4f0dc;border:1px solid #e0e3cf;border-radius:12px;padding:10px 4px;text-align:center;min-height:73px}.item span{display:block;font-size:23px}.item small{font-size:10px;color:#6e8165}.build-option{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px dashed #dbe2cf}.build-option strong{font-size:12px}.build-option small{display:block;font-size:10px;color:#71836b;margin-top:3px}.build-option button{font-size:11px;padding:7px 9px;white-space:nowrap}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:30;background:#304a3c;color:#fff8e8;border-radius:14px;padding:12px 17px;box-shadow:var(--shadow);font-size:13px;transition:.25s;max-width:calc(100% - 30px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}.modal-backdrop{position:fixed;inset:0;background:#24392f70;z-index:20;display:none;align-items:center;justify-content:center;padding:18px}.modal-backdrop.open{display:flex}.modal{background:#fff8e8;border:2px solid #d7e0c7;border-radius:24px;width:min(510px,100%);padding:23px;box-shadow:0 20px 60px #213b2c44;position:relative}.modal-close{position:absolute;right:14px;top:14px;border:0;background:#e8eedc;border-radius:50%;width:34px;height:34px}.modal-art{font-size:44px;margin:7px 0}.modal h2{font:29px Georgia,serif;margin:0 38px 10px 0}.modal p{font-size:14px;line-height:1.75;color:#61765b}.modal .lore-note{margin-top:14px}.bottom-note{text-align:center;padding:22px 8px 8px;font-size:11px;color:#7a8e71}.bottom-note b{color:#4f7657}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.scene{min-height:390px}.panel{order:2}}@media(max-width:520px){.shell{padding:10px}.topbar{align-items:flex-start}.brandmark{width:43px;height:43px;font-size:24px}.subtitle{font-size:9px;letter-spacing:1px}.top-actions{max-width:115px}.pill{font-size:11px;padding:8px 10px}.stats{gap:6px}.stat{flex:1;min-width:calc(50% - 6px);padding:8px 10px}.scene{min-height:350px}.world-head{padding:14px}.world-head h2{font-size:22px}.hotspot{min-width:43px;min-height:43px}.hotspot span{font-size:21px}.hotspot small{font-size:8px}.scene-hint{font-size:9px;max-width:92%;text-align:center}.inventory{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+ <div class="brand"><div class="brandmark">🍓</div><div><h1>Mossberry Island</h1><div class="subtitle">A little world, waiting for you</div></div></div>
+ <div class="top-actions"><button class="pill" id="saveBtn">☁ Save journal</button><button class="pill" id="resetBtn">↻ New beginning</button></div>
+</header>
+<div class="stats">
+ <div class="stat"><span class="emoji">🌱</span><div><small>Island spirit</small><strong id="spiritStat">Just waking</strong></div></div>
+ <div class="stat"><span class="emoji">🧺</span><div><small>Collected</small><strong id="collectStat">0 keepsakes</strong></div></div>
+ <div class="stat"><span class="emoji">📖</span><div><small>Story fragments</small><strong id="loreStat">0 / 5 found</strong></div></div>
+ <div class="stat"><span class="emoji">🏡</span><div><small>Island level</small><strong id="levelStat">Little seedling</strong></div></div>
+</div>
+<main class="layout">
+ <section class="world-card">
+  <div class="world-head"><div><div class="eyebrow">Your living map</div><h2 id="placeTitle">The Heart of Mossberry</h2></div><div class="weather" id="weather">☀️ Soft sunshine</div></div>
+  <div class="scene" id="scene" aria-label="Illustrated interactive island">
+   <div class="sun"></div><div class="cloud one">☁️</div><div class="cloud two">☁️</div><div class="farhill"></div><div class="farhill two"></div><div class="sea"></div>
+   <div class="island"><div class="path"></div><div class="pond"></div></div>
+   <span class="tree t1">🌳</span><span class="tree t2">🌲</span><span class="tree t3">🌳</span><span class="tree t4">🌲</span><span class="tree t5">🌳</span>
+   <span class="flower f1">🌼</span><span class="flower f2">🌷</span><span class="flower f3">🍄</span><span class="flower f4">🌸</span>
+   <button class="hotspot h-cottage" data-place="cottage"><span>🏡</span><small>Home</small></button>
+   <button class="hotspot h-grove" data-place="grove"><span>🌳</span><small>Whispergrove</small></button>
+   <button class="hotspot h-pond" data-place="pond"><span>💧</span><small>Moonpond</small></button>
+   <button class="hotspot h-ruins" data-place="ruins"><span>🪨</span><small>Old stones</small></button>
+   <button class="hotspot h-beach" data-place="beach"><span>🐚</span><small>Shell beach</small></button>
+   <button class="hotspot h-meadow" data-place="meadow"><span>🌷</span><small>Berry meadow</small></button>
+   <div class="scene-hint" id="sceneHint">Choose a place to explore · little discoveries await</div>
+  </div>
+  <div class="scene-foot"><span>✿ A quiet corner of the Bramble Sea</span><span id="dayLabel">Day 1 · Spring</span></div>
+ </section>
+ <aside class="panel">
+  <div class="tabs" role="tablist">
+   <button class="navbtn active" data-tab="today">Today</button><button class="navbtn" data-tab="lore">Lorebook</button><button class="navbtn" data-tab="build">Build</button><button class="navbtn" data-tab="bag">Satchel</button>
+  </div>
+  <section class="panel-section active" id="tab-today">
+   <div class="eyebrow">A note from the island</div><h2 id="greeting">Welcome home, little wanderer.</h2>
+   <p id="dailyText">Mossberry Island has been quiet for a long, long time. The grass remembers footsteps. The sea remembers songs. And somewhere beneath the old roots, something has begun to glow.</p>
+   <div class="divider"></div><div class="eyebrow">Gentle little goals</div>
+   <div id="quests"></div>
+   <div class="row-actions"><button class="action" id="exploreBtn">Explore a place ↗</button><button class="action secondary" id="journalBtn">Open lorebook</button></div>
+  </section>
+  <section class="panel-section" id="tab-lore">
+   <div class="eyebrow">A history written in petals</div><h2>The Island's Memory</h2>
+   <p>Old stories are scattered across Mossberry. Find them slowly; the island has waited this long.</p>
+   <div class="progress"><span id="loreProgress"></span></div><small id="loreProgressText" style="color:#7a8d70;font-size:11px">0 of 5 memories recovered</small>
+   <div id="loreEntries"></div>
+  </section>
+  <section class="panel-section" id="tab-build">
+   <div class="eyebrow">Make this place yours</div><h2>Island tending</h2>
+   <p>Use the keepsakes you find to add little comforts to the island. Each addition helps its spirit wake.</p>
+   <div id="buildOptions"></div>
+   <div class="divider"></div><div class="eyebrow">Island spirit</div><div class="progress"><span id="spiritProgress"></span></div><small id="spiritText" style="font-size:11px;color:#7a8d70">The island is listening.</small>
+  </section>
+  <section class="panel-section" id="tab-bag">
+   <div class="eyebrow">Things that found their way to you</div><h2>Your Satchel</h2>
+   <p>Not everything precious is useful. Some things are meant to be kept.</p>
+   <div class="inventory" id="inventory"></div>
+   <div class="divider"></div><p id="bagNote">A small satchel, with room for all sorts of little wonders.</p>
+  </section>
+ </aside>
+</main>
+<div class="bottom-note">Made of moss, memory & <b>a little bit of magic</b> · Your progress stays in this browser.</div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><button class="modal-close" id="modalClose" aria-label="Close">✕</button><div class="eyebrow" id="modalEyebrow">A place to discover</div><div class="modal-art" id="modalArt">🌿</div><h2 id="modalTitle">A little discovery</h2><p id="modalBody"></p><div class="lore-note" id="modalNote" style="display:none"></div><div class="row-actions" id="modalActions"></div></div></div>
+<script>
+(()=> {
+const KEY='mossberry-island-save-v1';
+const fresh=()=>({day:1,visited:[],items:[],lore:[],built:[],spirit:0,current:'heart',weather:'☀️ Soft sunshine',questsDone:[],introSeen:false});
+let state;
+try{state={...fresh(),...(JSON.parse(localStorage.getItem(KEY)||'{}'))}}catch(e){state=fresh()}
+const places={
+ cottage:{name:'Your Little Cottage',art:'🏡',desc:'A small cottage tucked beneath a mossy roof. Someone left a knitted blanket on the window seat and a teacup on the sill. The key was waiting for you in the grass, as if it had always belonged to you.',find:'button',item:'Knitted Button',itemArt:'🧵',lore:'home',note:'There is a name scratched into the underside of the windowsill. The letters have softened with age: “For whoever comes back.”'},
+ grove:{name:'Whispergrove',art:'🌳',desc:'The trees grow close together here, their branches leaning as if sharing a secret. Tiny lights blink between the leaves. When the breeze passes, the whole grove sounds almost like someone humming.',find:'acorn',item:'Silver Acorn',itemArt:'🌰',lore:'grove',note:'The oldest tree has a hollow shaped like a heart. Something inside it pulses, faintly warm.'},
+ pond:{name:'Moonpond',art:'💧',desc:'A round, glass-clear pond rests in a ring of soft green stones. Even in daylight, the water holds a little reflection of the moon. Lily pads drift without a current.',find:'pearl',item:'Moon Pearl',itemArt:'🫧',lore:'pond',note:'A voice from beneath the water whispers: “We did not leave. We went quiet.”'},
+ ruins:{name:'The Old Stones',art:'🪨',desc:'Three weather-worn stones rise from a carpet of clover. Their carvings are nearly gone, but the shapes resemble roots reaching toward the sky. Wild strawberries grow between them.',find:'rune',item:'Carved Pebble',itemArt:'🪨',lore:'ruins',note:'The stones are not a monument to a lost kingdom. They mark the place where the island first learned to dream.'},
+ beach:{name:'Shell Beach',art:'🐚',desc:'The shore curves around the island like a smile. Tiny shells glimmer in the sand and the Bramble Sea carries little gifts to the waterline. A bottle bobs in a tide pool.',find:'shell',item:'Spiral Shell',itemArt:'🐚',lore:'beach',note:'The bottle holds a map, but its ink has run into the shape of an island that is not on any map.'},
+ meadow:{name:'Berry Meadow',art:'🌷',desc:'A sunny clearing where wild strawberries grow beneath clover. Butterflies drift lazily from bloom to bloom. The ground feels warmer here, as if the island is keeping a secret under its green blanket.',find:'berry',item:'Mossberry',itemArt:'🍓',lore:'meadow',note:'The berries glow only when someone tells the truth nearby. This one glows in your hand.'}
+};
+const loreData={
+ home:{title:'The Key That Waited',art:'🗝️',text:'Long ago, the island kept a cottage for every person who needed somewhere to begin again. When the last boats left, the cottages were not locked. The island simply kept their keys safe.'},
+ grove:{title:'The Humming Trees',art:'🌳',text:'The trees of Mossberry were planted by the first islanders. They learned each other’s names through their roots, and passed stories from leaf to leaf. That is why the grove still hums when the wind is gentle.'},
+ pond:{title:'The Moon Beneath the Water',art:'🌙',text:'The Moonpond was once a mirror for the night sky. When the island grew lonely, the moon stayed in its water so that Mossberry would never have to look up at an empty sky.'},
+ ruins:{title:'The First Dream',art:'🪨',text:'Before there were houses or paths, Mossberry was a seed carried across the sea. The old stones mark the place where it opened. The island was never discovered; it was dreamed into being by many small acts of care.'},
+ beach:{title:'A Map of Elsewhere',art:'🗺️',text:'The bottle’s map shows no coastline. Instead it marks the places where someone was kind: a shared meal, a repaired roof, a light left on. The island grows wherever those things happen.'}
+};
+const itemInfo={
+ 'Knitted Button':{art:'🧵',desc:'A tiny button, carefully wrapped in wool. It feels like a reminder that someone expected you.'},
+ 'Silver Acorn':{art:'🌰',desc:'A silver-flecked acorn from a tree that should be far too old to bear fruit.'},
+ 'Moon Pearl':{art:'🫧',desc:'A pearl with a small crescent of light trapped inside.'},
+ 'Carved Pebble':{art:'🪨',desc:'A smooth pebble marked with a spiral, warm despite the cool air.'},
+ 'Spiral Shell':{art:'🐚',desc:'A shell that makes the sea sound like a distant lullaby.'},
+ 'Mossberry':{art:'🍓',desc:'A little berry with a moss-green crown and a faint rosy glow.'},
+ 'Feather':{art:'🪶',desc:'A soft feather, lighter than a breath.'},
+ 'Wildflower':{art:'🌼',desc:'A tiny yellow flower that refuses to wilt.'},
+ 'Glass Marble':{art:'🔮',desc:'A sea-polished marble with a whole tiny sky inside.'}
+};
+const builds=[
+ {id:'lantern',name:'Mushroom lantern',art:'🏮',cost:1,costName:'Mossberry',desc:'A warm little light for the winding path.',spirit:1},
+ {id:'bench',name:'Mossy reading bench',art:'🪑',cost:1,costName:'Wildflower',desc:'A quiet place to sit and listen.',spirit:1},
+ {id:'garden',name:'Pocket garden',art:'🪴',cost:1,costName:'Silver Acorn',desc:'A small patch for the island to grow into.',spirit:2},
+ {id:'windchime',name:'Shell wind chime',art:'🎐',cost:1,costName:'Spiral Shell',desc:'A soft song for the sea breeze.',spirit:2},
+ {id:'arch',name:'Wildflower arch',art:'🌸',cost:1,costName:'Moon Pearl',desc:'A little doorway made of living flowers.',spirit:3}
+];
+const $=id=>document.getElementById(id);
+let toastTimer;
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2600)}
+function save(silent=false){try{localStorage.setItem(KEY,JSON.stringify(state));if(!silent)toast('Your island journal has been saved.')}catch(e){toast('This browser could not save your journal.')}}
+function hasLore(id){return state.lore.includes(id)}
+function hasItem(name){return state.items.includes(name)}
+function addItem(name,art){if(!hasItem(name)){state.items.push(name);toast(name+' tucked safely into your satchel.')} }
+function updateStats(){
+ $('collectStat').textContent=state.items.length+' keepsake'+(state.items.length===1?'':'s');
+ $('loreStat').textContent=state.lore.length+' / 5 found';
+ const s=state.spirit;
+ $('spiritStat').textContent=s>=7?'Blooming':s>=4?'Stirring':s>=1?'Listening':'Just waking';
+ $('levelStat').textContent=s>=7?'Island keeper':s>=4?'Green thumb':s>=1?'New arrival':'Little seedling';
+ $('loreProgress').style.width=(state.lore.length/5*100)+'%';
+ $('loreProgressText').textContent=state.lore.length+' of 5 memories recovered';
+ $('spiritProgress').style.width=Math.min(100,s/9*100)+'%';
+ $('spiritText').textContent=s>=7?'Mossberry is awake. The island feels like home.':s>=4?'Little lights are returning to the paths.':'Every gentle act helps the island remember itself.';
+ $('dayLabel').textContent='Day '+state.day+' · '+(['Spring','Summer','Autumn','Winter'][Math.floor((state.day-1)/7)%4]);
+ document.querySelectorAll('.hotspot').forEach(b=>b.classList.toggle('visited',state.visited.includes(b.dataset.place)));
+ const all=state.visited.length>=6&&state.lore.length>=5;
+ if(all){$('greeting').textContent='The island remembers you.';$('dailyText').textContent='The paths are warm with lamplight, the grove hums again, and the Moonpond holds a bright moon. Mossberry is no longer waiting for someone to return. You have made a home.'}
+ renderQuests();renderLore();renderBuilds();renderInventory();save(true);
+}
+function renderQuests(){
+ const q=[
+ {id:'first',art:'👣',title:'Take your first little walk',desc:'Visit any place on the island.',done:state.visited.length>0},
+ {id:'keepsake',art:'🧺',title:'Keep a tiny treasure',desc:'Find your first keepsake.',done:state.items.length>0},
+ {id:'memory',art:'📖',title:'Listen to the old stories',desc:'Recover a memory of Mossberry.',done:state.lore.length>0},
+ {id:'tend',art:'🌱',title:'Help the island bloom',desc:'Build or restore one little thing.',done:state.built.length>0}
+ ];
+ $('quests').innerHTML=q.map(x=>'<div class="quest"><div class="quest-icon">'+(x.done?'✓':x.art)+'</div><div><strong>'+x.title+(x.done?' · Done':'')+'</strong><small>'+x.desc+'</small></div></div>').join('');
+}
+function renderLore(){
+ $('loreEntries').innerHTML=Object.keys(loreData).map(id=>{const l=loreData[id],found=hasLore(id);return '<div class="lore-note '+(!found?'locked':'')+'"><strong>'+ (found?l.art:'🔒')+' '+(found?l.title:'A memory not yet found')+'</strong><p>'+(found?l.text:'Explore the island and listen closely to uncover this story.')+'</p></div>'}).join('');
+}
+function renderBuilds(){
+ $('buildOptions').innerHTML=builds.map(b=>{const built=state.built.includes(b.id),owned=hasItem(b.costName);return '<div class="build-option"><div><strong>'+b.art+' '+b.name+'</strong><small>'+b.desc+' · Need '+itemInfo[b.costName]?.art+' '+b.costName+'</small></div><button class="action '+(built?'secondary':'')+'" data-build="'+b.id+'" '+(built?'disabled':'')+'>'+(built?'Built ✓':owned?'Place it':'Find item')+'</button></div>'}).join('');
+ $('buildOptions').querySelectorAll('[data-build]').forEach(btn=>btn.addEventListener('click',()=>buildItem(btn.dataset.build)));
+}
+function renderInventory(){
+ const all=Object.keys(itemInfo);$('inventory').innerHTML=all.map(name=>'<div class="item '+(!hasItem(name)?'locked':'')+'"><span>'+(hasItem(name)?itemInfo[name].art:'❔')+'</span><small>'+(hasItem(name)?name:'Unknown')+'</small></div>').join('');
+ $('bagNote').textContent=state.items.length?'You have '+state.items.length+' keepsake'+(state.items.length===1?'':'s')+'. Every one has a story.':'Your satchel is empty, but the island is full of little things.';
+}
+function buildItem(id){
+ const b=builds.find(x=>x.id===id);if(!b||state.built.includes(id))return;
+ if(!hasItem(b.costName)){toast('The island needs '+b.costName+'. Try exploring a new place.');return}
+ state.items=state.items.filter(x=>x!==b.costName);state.built.push(id);state.spirit+=b.spirit;
+ toast(b.name+' is now part of your island.');updateStats();
+}
+function switchTab(tab){document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));document.querySelectorAll('.panel-section').forEach(s=>s.classList.toggle('active',s.id==='tab-'+tab))}
+function openModal(placeId){
+ const p=places[placeId];if(!p)return;state.current=placeId;
+ const first=!state.visited.includes(placeId);if(first){state.visited.push(placeId);state.day+=1;state.spirit+=1}
+ $('placeTitle').textContent=p.name;$('modalEyebrow').textContent=first?'A new place, a new memory':'Back for another visit';
+ $('modalArt').textContent=p.art;$('modalTitle').textContent=p.name;
+ $('modalBody').textContent=first?p.desc:'You know this place now. The island feels a little less quiet when you return. Take a moment; there may still be something new to notice.';
+ const note=$('modalNote');note.style.display='none';note.innerHTML='';
+ const actions=$('modalActions');actions.innerHTML='';
+ if(p.item&&!hasItem(p.item)){
+  const findBtn=document.createElement('button');findBtn.className='action';findBtn.textContent='Look a little closer ✦';findBtn.onclick=()=>discover(placeId);actions.appendChild(findBtn);
+ }
+ if(p.lore&&loreData[p.lore]&&!hasLore(p.lore)){const loreBtn=document.createElement('button');loreBtn.className='action secondary';loreBtn.textContent='Listen to the memory';loreBtn.onclick=()=>discoverLore(placeId);actions.appendChild(loreBtn)}
+ const closeBtn=document.createElement('button');closeBtn.className='action secondary';closeBtn.textContent=first?'Maybe later':'Stay a little longer';closeBtn.onclick=closeModal;actions.appendChild(closeBtn);
+ $('modalBackdrop').classList.add('open');updateStats();
+}
+function discover(placeId){
+ const p=places[placeId];if(p.item&&!hasItem(p.item))addItem(p.item,p.itemArt);
+ if(!hasItem('Wildflower')&&placeId==='meadow')addItem('Wildflower','🌼');
+ if(!hasItem('Feather')&&placeId==='grove')addItem('Feather','🪶');
+ if(!hasItem('Glass Marble')&&placeId==='pond')addItem('Glass Marble','🔮');
+ $('modalBody').textContent='You found '+p.item+'. '+itemInfo[p.item].desc;
+ $('modalNote').style.display='block';$('modalNote').innerHTML='<strong>✦ A little detail</strong><p>'+p.note+'</p>';
+ $('modalActions').innerHTML='';
+ if(p.lore&&loreData[p.lore]){const loreBtn=document.createElement('button');loreBtn.className='action';loreBtn.textContent=hasLore(p.lore)?'Memory already kept ✓':'Keep this memory';loreBtn.onclick=()=>discoverLore(placeId);$('modalActions').appendChild(loreBtn)}
+ const closeBtn=document.createElement('button');closeBtn.className='action secondary';closeBtn.textContent='Put it in my satchel';closeBtn.onclick=closeModal;$('modalActions').appendChild(closeBtn);
+ updateStats();
+}
+function discoverLore(placeId){
+ const p=places[placeId],l=loreData[p.lore];if(!l)return;
+ if(!hasLore(p.lore)){state.lore.push(p.lore);state.spirit+=1;toast('A piece of Mossberry’s story remembered.')}
+ $('modalEyebrow').textContent='Memory recovered · '+state.lore.length+' of 5';
+ $('modalArt').textContent=l.art;$('modalTitle').textContent=l.title;$('modalBody').textContent=l.text;
+ $('modalNote').style.display='block';$('modalNote').innerHTML='<strong>📖 Added to your lorebook</strong><p>You can revisit this story whenever you like.</p>';
+ $('modalActions').innerHTML='<button class="action" id="loreDone">Keep the story</button>';$('loreDone').onclick=closeModal;
+ updateStats();
+}
+function closeModal(){$('modalBackdrop').classList.remove('open')}
+document.querySelectorAll('.hotspot').forEach(b=>b.addEventListener('click',()=>openModal(b.dataset.place)));
+document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+$('modalClose').addEventListener('click',closeModal);$('modalBackdrop').addEventListener('click',e=>{if(e.target===$('modalBackdrop'))closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+$('saveBtn').addEventListener('click',()=>save());
+$('journalBtn').addEventListener('click',()=>switchTab('lore'));
+$('exploreBtn').addEventListener('click',()=>{const unvisited=Object.keys(places).filter(id=>!state.visited.includes(id));if(unvisited.length)openModal(unvisited[Math.floor(Math.random()*unvisited.length)]);else{const id=Object.keys(places)[Math.floor(Math.random()*6)];openModal(id)}});
+$('resetBtn').addEventListener('click',()=>{if(confirm('Start a new beginning? This clears the Mossberry Island save in this browser.')){state=fresh();save(true);closeModal();$('placeTitle').textContent='The Heart of Mossberry';updateStats();switchTab('today');toast('A new little beginning.')}})
+$('weather').addEventListener('click',()=>{const w=[['☀️ Soft sunshine','The leaves turn toward the light.'],['🌦️ Passing shower','The island smells of rain and moss.'],['🌙 Moonlit hush','The pond catches a little silver light.'],['🍃 Breezy afternoon','The trees whisper a new tune.']];let next=w.findIndex(x=>x[0]===state.weather);next=(next+1)%w.length;state.weather=w[next][0];$('weather').textContent=state.weather;$('dailyText').textContent=w[next][1]+' '+(state.visited.length?'The island seems glad you are here.':'Something gentle is waiting to be discovered.');toast('The island weather changed.');});
+$('scene').addEventListener('dblclick',()=>{state.day++;$('dayLabel').textContent='Day '+state.day+' · '+(['Spring','Summer','Autumn','Winter'][Math.floor((state.day-1)/7)%4]);toast('A peaceful day passes on Mossberry.');save(true)});
+updateStats();
+if(!state.introSeen){state.introSeen=true;save(true);setTimeout(()=>{if(!state.visited.length){$('modalEyebrow').textContent='A little story before you begin';$('modalArt').textContent='🌊';$('modalTitle').textContent='The island that waited';$('modalBody').textContent='The little boat drifts to shore just as the rain stops. There is no signpost, no welcome committee, no map — only a path of mossy stones leading inland. You have been told this island appears only to people who need a place to begin again. In the grass, a cottage key glints softly.';$('modalNote').style.display='block';$('modalNote').innerHTML='<strong>✦ Your story starts here</strong><p>Explore at your own pace. Discover places, collect keepsakes, restore the island and uncover the memories Mossberry has kept safe.</p>';$('modalActions').innerHTML='<button class="action" id="beginBtn">Step onto the island →</button>';$('beginBtn').onclick=closeModal;$('modalBackdrop').classList.add('open')}},500)}
+})();
+</script>
+</body>
+</html>
