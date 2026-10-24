@@ -27,7 +27,7 @@
  <section class="world-card">
   <div class="world-head"><div><div class="eyebrow">Your living map</div><h2 id="placeTitle">The Heart of Mossberry</h2></div><div class="weather" id="weather">☀️ Soft sunshine</div></div>
   <div class="scene" id="scene" aria-label="Illustrated interactive island">
-   <div class="sun"></div><div class="cloud one">☁️</div><div class="cloud two">☁️</div><div class="farhill"></div><div class="farhill two"></div>
+   <div class="sun"></div><div class="cloud one">☁️</div><div class="cloud two">☁️</div><div class="farhill"></div><div class="farhill two"></div><div class="sea"></div>
    <div class="island"><div class="path"></div><div class="pond"></div></div>
    <span class="tree t1">🌳</span><span class="tree t2">🌲</span><span class="tree t3">🌳</span><span class="tree t4">🌲</span><span class="tree t5">🌳</span>
    <span class="flower f1">🌼</span><span class="flower f2">🌷</span><span class="flower f3">🍄</span><span class="flower f4">🌸</span>
@@ -173,14 +173,11 @@ function openModal(placeId){
  $('modalBody').textContent=first?p.desc:'You know this place now. The island feels a little less quiet when you return. Take a moment; there may still be something new to notice.';
  const note=$('modalNote');note.style.display='none';note.innerHTML='';
  const actions=$('modalActions');actions.innerHTML='';
- if(first){
+ if(p.item&&!hasItem(p.item)){
   const findBtn=document.createElement('button');findBtn.className='action';findBtn.textContent='Look a little closer ✦';findBtn.onclick=()=>discover(placeId);actions.appendChild(findBtn);
-  if(p.lore&&loreData[p.lore]&&!hasLore(p.lore)){const loreBtn=document.createElement('button');loreBtn.className='action secondary';loreBtn.textContent='Listen to the memory';loreBtn.onclick=()=>discoverLore(placeId);actions.appendChild(loreBtn)}
- }else{
-  const maybeLore= p.lore&&loreData[p.lore]&&!hasLore(p.lore);
-  if(maybeLore){const loreBtn=document.createElement('button');loreBtn.className='action';loreBtn.textContent='Listen to the memory';loreBtn.onclick=()=>discoverLore(placeId);actions.appendChild(loreBtn)}
-  const closeBtn=document.createElement('button');closeBtn.className='action secondary';closeBtn.textContent='Stay a little longer';closeBtn.onclick=closeModal;actions.appendChild(closeBtn);
  }
+ if(p.lore&&loreData[p.lore]&&!hasLore(p.lore)){const loreBtn=document.createElement('button');loreBtn.className='action secondary';loreBtn.textContent='Listen to the memory';loreBtn.onclick=()=>discoverLore(placeId);actions.appendChild(loreBtn)}
+ const closeBtn=document.createElement('button');closeBtn.className='action secondary';closeBtn.textContent=first?'Maybe later':'Stay a little longer';closeBtn.onclick=closeModal;actions.appendChild(closeBtn);
  $('modalBackdrop').classList.add('open');updateStats();
 }
 function discover(placeId){
@@ -191,7 +188,7 @@ function discover(placeId){
  $('modalBody').textContent='You found '+p.item+'. '+itemInfo[p.item].desc;
  $('modalNote').style.display='block';$('modalNote').innerHTML='<strong>✦ A little detail</strong><p>'+p.note+'</p>';
  $('modalActions').innerHTML='';
- const loreBtn=document.createElement('button');loreBtn.className='action';loreBtn.textContent=hasLore(p.lore)?'Memory already kept ✓':'Keep this memory';loreBtn.onclick=()=>discoverLore(placeId);$('modalActions').appendChild(loreBtn);
+ if(p.lore&&loreData[p.lore]){const loreBtn=document.createElement('button');loreBtn.className='action';loreBtn.textContent=hasLore(p.lore)?'Memory already kept ✓':'Keep this memory';loreBtn.onclick=()=>discoverLore(placeId);$('modalActions').appendChild(loreBtn)}
  const closeBtn=document.createElement('button');closeBtn.className='action secondary';closeBtn.textContent='Put it in my satchel';closeBtn.onclick=closeModal;$('modalActions').appendChild(closeBtn);
  updateStats();
 }
